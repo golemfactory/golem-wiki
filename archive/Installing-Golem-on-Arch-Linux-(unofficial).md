@@ -2,7 +2,7 @@
 
 This is an unofficial guide done some of the Golems. It may be completely,
 extremely, unbelievably out-of-date.
-Arch Linux is not officially supported. Anyway, if you encounter troubles, feel free to raise an issue and mention @marmistrz.
+Arch Linux is not officially supported. Anyway, if you encounter troubles, feel free to raise an issue.
 
 You have been warned. Proceed on your own risk.
 
