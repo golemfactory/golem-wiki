@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Golem-Team">
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Old GUI - Golem Wiki</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">Golem Wiki</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">1. Installation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../../1.-Installation/Installation/">Installers</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">MacOS</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../1.-Installation/MacOS/Installation-from-source-on-macOS/">Installation from source on macOS</a>
+</li>
+            
+<li >
+    <a href="../../../1.-Installation/MacOS/Installation-on-Mac/">Installation on Mac</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Others</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../1.-Installation/Others/Installing-Golem-on-Arch-Linux-unofficial/">Proceed on your own risk.</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Ubuntu</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../1.-Installation/Ubuntu/Installation-from-source-on-Ubuntu/">Installation from source on Ubuntu</a>
+</li>
+            
+<li >
+    <a href="../../../1.-Installation/Ubuntu/Installation-on-Ubuntu/">Installation on Ubuntu</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Windows</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../1.-Installation/Windows/Installation-Packaging-Win/">Packaging</a>
+</li>
+            
+<li >
+    <a href="../../../1.-Installation/Windows/Installation-from-source-on-Windows/">Installation from source on Windows</a>
+</li>
+            
+<li >
+    <a href="../../../1.-Installation/Windows/Installation-on-Windows/">Installation on Windows</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../Command-Line/">Using the command line interface</a>
+</li>
+                            
+<li >
+    <a href="../../Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+</li>
+                            
+<li >
+    <a href="../../Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+</li>
+                            
+<li >
+    <a href="../../Development/">FAQ for developers</a>
+</li>
+                            
+<li >
+    <a href="../../Logging/">Logging</a>
+</li>
+                            
+<li >
+    <a href="../../devp2p-installation/">Devp2p installation</a>
+</li>
+                            
+<li >
+    <a href="../../systemd-service-template/">Systemd service template</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Testing</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">Old GUI</a>
+</li>
+            
+<li >
+    <a href="../Testing-with-IMUNES/">Testing with IMUNES</a>
+</li>
+            
+<li >
+    <a href="../Testing/">Testing</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">3. FAQ <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../../3.-FAQ/FAQ/">FAQ</a>
+</li>
+                            
+<li >
+    <a href="../../../3.-FAQ/Roadmap/">Roadmap</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">UseCases</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../3.-FAQ/UseCases/Blender/">Blender</a>
+</li>
+            
+<li >
+    <a href="../../../3.-FAQ/UseCases/LuxRender/">LuxRender</a>
+</li>
+            
+<li >
+    <a href="../../../3.-FAQ/UseCases/Use-cases/">Use cases</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../../systemd-service-template/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Testing-with-IMUNES/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/golemfactory/golem/">github</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#old-gui">Old GUI</a></li>
+            <li><a href="#first-steps">First steps</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#status">Status</a></li>
+            <li><a href="#account">Account</a></li>
+            <li><a href="#new-task">New task</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="old-gui">Old GUI</h1>
+<p><strong><em> Old GUI is obsolete </em></strong></p>
+<h2 id="first-steps">First steps</h2>
+<p>After you successfully installed the Golem App, you will be prompted to enter your node name. You can change it later so don't worry much about it, but you have to set it to a non-empty string. We encourage to choose your Slack login, so we will be able to easily identify your node.</p>
+<p>Now you should see something similar to <img alt="" src="https://camo.githubusercontent.com/a9cbd29596e2e0f69898bf7af109b77ff198ca7a/687474703a2f2f676f6c656d70726f6a6563742e6e65742f696d672f676f6c656d737461727473637265656e73686f742e706e67" />.</p>
+<p>The icons on the left are the main app menu. Currently you are in a <code>Task</code> submenu. White area in the center is where your tasks will appear when you add some, on the right there is a bunch of information about a specific task when you select it.</p>
+<h3 id="command-line-interface">Command line interface</h3>
+<p>Type <code>help</code> to list available commands and their descriptions. For example, to gain some knowledge on available Golem's settings, enter:</p>
+<p><code>settings -h</code></p>
+<p>Note that most commands also have sub-commands and optional flags, just like 
+<code>settings show --provider</code>. To clear that up, type:</p>
+<p><code>settings show -h</code></p>
+<p>Set a new node name with a command:</p>
+<p><code>settings set node_name &lt;new_name&gt;</code></p>
+<h2 id="settings">Settings</h2>
+<p>Click <code>Preferences</code> on the left. The three tabs on the top of the window are different settings groups. Let's start with the <code>General</code> tab:
+   1. <code>Seed address</code> and <code>Seed port</code> are data you need to provide if you want to connect to a specific machine, i.e. your second PC. By default Golem on start connects to one of our computers to enter the network, so you usually don't need to change anything here.
+   2. <code>Node name</code> is the name you were asked to type on the first start, here is where you can change it.</p>
+<p>Click the <kbd>Show more</kbd> button on the bottom to display more (mostly highly advanced) options. The default values are reasonable and should be OK, so if you don't want to change them there is no need to do so, however we encourage you to experiment with them. Like most of the UI elements, the properties' names have tooltips - they should give you an idea on what are the meanings of them.</p>
+<p>Now click the <code>Provider</code> tab. In general, these are options controlling the proccess of choosing and computing other Golems' tasks. You can set here your financial expectations, maximal resources size, maximal RAM usage, number of CPU cores to use and minimal trust level of a requestor to accept their tasks. Again, the default values of technical parameters should be fine.
+The estimated performances are measurement of your PC's effectiveness and are dependent on the above settings like RAM and number of cores. You can recount them at any moment if you want to. 
+The <code>Don't accept any tasks</code> checkbox seems quite clear: just check it if you don't want to compute other persons' tasks.</p>
+<p>The <code>Requestor</code> tab is simple and consists of only two fields analogical to the ones present in the <code>Provider</code>.</p>
+<p><strong>Important!</strong> Note that settings are saved after clicking the <code>Change</code> button. If you forget to accept your changes, they won't take place.</p>
+<h3 id="command-line-interface_1">Command line interface</h3>
+<p>You can manage node's settings with these 2 commands:
+- <code>settings show</code> - displays node's settings
+- <code>settings set &lt;name&gt; &lt;new_value&gt;</code> - updates a setting <code>&lt;name&gt;</code> with a <code>&lt;new_value&gt;</code></p>
+<h2 id="status">Status</h2>
+<p>Here you can view the current state of the network and information about tasks you computed or tried to compute. Also, by clicking the <kbd>Show disk usage</kbd> button, you can manage data stored on your PC. A good idea is to go there from time to time and erase the data since it won't be deleted automatically (but do not do this while computing some tasks/accepting your tasks).</p>
+<h3 id="command-line-interface_2">Command line interface</h3>
+<p>Useful network commands:
+- <code>network show</code> - shows connected peers
+- <code>network status</code> - displays node's network and computing status
+- <code>network connect &lt;ip_address&gt; &lt;tcp_port&gt;</code> - connects to a specified node in the network</p>
+<p>Disk resource management:
+- <code>res show</code> - shows the amount of disk space used by resources
+- <code>res clear --provider</code> - clears computing resources</p>
+<h2 id="account">Account</h2>
+<p>In this submenu you can check your financial history and account balance. Also Ethereum address, node name and Golem ID (a long HEX number used to identify you in the network) are displayed along with your reputation (how trustworthy other nodes find you).</p>
+<h3 id="command-line-interface_3">Command line interface</h3>
+<ul>
+<li><code>account</code> - displays account information</li>
+<li><code>payments</code> - shows a list of payments made</li>
+<li><code>incomes</code> - shows a list of recently received payments</li>
+</ul>
+<h2 id="new-task">New task</h2>
+<p>The main functionality of the Golem app is computing tasks (both as a requestor and a provider). You are automatically accepting others' tasks (if you didn't check the <code>Don't accept any tasks</code> option in settings) - being a provider is that simple. </p>
+<p>To become a requestor, try to render something - add a random Blender or Luxrender task (if you are not a 3D artist you can find example scene files on the Internet - search for <em>.lxs for LuxRender files and </em>.blend for Blender) with reasonable parameters and see if it's working. To add a new task: 
+   1. Click <code>New Task</code> on the left.
+   2. Choose appropriate renderer (Blender or LuxRender).
+   3. Set path to a .blend or .lxs file in the <code>Main scene file</code>. You can click <kbd>...</kbd> to choose a file from your machine. 
+   4. If your scene needs some additional data, for instance textures, select the right files or directories after clicking <kbd>Add</kbd>.
+   5. Set <code>Output format</code> and <code>Output file</code>. You can click <kbd>...</kbd> to define path to a new file on your machine. 
+   6. Experiment with other options. Keep in mind that if you set a too short timeout value, the task won't be finished in time. Generally is better to set too long timeout than too short. Also, if you set <code>max price</code> to low people may not want to render it. Pessimistic cost is calculated as a number of subtasks * subtask timeout (in hours) * price.
+   7. Be careful with enabling compositing (or: don't enable it if you are not sure what you are doing). When you split a frame into several subtasks, some of Blender postprocessing functions can give different results than when applied to a whole image.
+   8. When you're ready click <kbd>Test task</kbd> and wait until the test is finished. Be patient: it can take a while dependending on the scene's complexity. After testing the number of resources can increase by one - it's OK (means the scene file was added to resources list)
+   9. If the test was successful you can click <kbd>Create task</kbd>. 
+   10. Click <code>Tasks</code> on the left side of the app, mark the new task and click <kbd>Start task</kbd> there. 
+   11. Wait for the results.</p>
+<p>Optionally you can save a task on your disk and load it later.</p>
+<h3 id="command-line-interface_4">Command line interface</h3>
+<p>To load a task from a file, enter:</p>
+<p><code>tasks load "&lt;full_path_to_file&gt;"</code></p>
+<p>which will test and automatically start that particular task. If your task has been previously tested in GUI, you can skip the testing phase with the <code>--skip-test</code> flag. </p>
+<p>For more information on task management, type <code>tasks -h</code>.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../search/require.js"></script>
+        <script src="../../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
