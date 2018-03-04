@@ -216,9 +216,6 @@ Key security elements will be:
 
 ### Installing Golem
 
-Install Golem using *Installers*, see [installation manual](../../1.-Installation/Installation.md).
-
-
 * [Installation on Mac](../1.-Installation/MacOS/Installation-on-Mac.md)
 
 * [Installation on Ubuntu](../1.-Installation/Ubuntu/Installation-on-Ubuntu.md)
