@@ -1,0 +1,3 @@
+mkdocs
+mkdocs-bootswatch
+python-markdown-math

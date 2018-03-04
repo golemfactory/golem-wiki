@@ -1,0 +1,19 @@
+site_name: Golem Wiki
+site_description: Golem Network Wiki - manual for running Golem node on your machine
+site_author: Golem-Team
+
+theme:
+  #name: 'material'
+  #name: 'readthedocs'
+  name: 'journal'
+repo_name: github
+repo_url: https://github.com/golemfactory/golem/
+edit_uri: ""
+
+markdown_extensions:
+    - fenced_code
+    - codehilite
+    - mdx_math
+    - admonition
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
