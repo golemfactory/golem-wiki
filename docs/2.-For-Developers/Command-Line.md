@@ -20,6 +20,8 @@ You can now execute the command line interface client in interactive mode:
 
 # Command Line Arguments 
 
+```text
+
     golemcli.py  
     positional arguments:
 
@@ -42,6 +44,7 @@ You can now execute the command line interface client in interactive mode:
         -i, --interactive     Enter interactive mode
         -h, --help            Display command's help message
         --json                Return results in JSON format
+```
 
 ## Environments
 
@@ -87,7 +90,8 @@ Currently only subset of showed settings can be modified, check which with `sett
 ## Tasks
 
 `tasks create <file_name>` - Create a task from file, this is a json file, example file:
-```
+
+```json
 {
     "duration": 36000,
     "id": "awesome-id",

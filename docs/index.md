@@ -10,11 +10,13 @@ output: html_document
 ## Current Status
 The Golem software is in Alpha testing. 
 Users can [install the software](1.-Installation/Installation.md) on a variety of platforms 
-and [participate in testing](2.-ForDevelopers/Testing/Testing.md). 
+and [participate in testing](2.-For-Developers/Testing/Testing.md). 
 The first use of Golem, called _Brass Golem_, will provide CGI rendering for Blender. 
 The [Golem project milestones](3.-FAQ/Roadmap.md) do not have set dates, 
 Brass Golem is expected to be completed in 2018. 
 To follow the progress of Brass Golem, you can follow our [Kanban](https://trello.com/b/YL1qZ2pZ/brass-kanban)
+
+Golem is open source and distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Vision
 With Golem, anyone will be able to rent their unused computing resources. 
@@ -32,8 +34,7 @@ Golem is a decentralized P2P network that uses Ethereum and smart contracts for 
 * [Twitter](https://twitter.com/golemproject)
 
 
-## Acknowledgements
-Golem is open source and distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html).
+## Technologies
 
 It communicates with external technologies some of them may be downloaded and installed with the Golem package:
 
@@ -44,7 +45,6 @@ It communicates with external technologies some of them may be downloaded and in
 * [OpenSSL](https://www.openssl.org/) (OpenSSL License)
 * [Python3.6](https://www.python.org/) (PSF license)
 * [SQLite3](https://sqlite.org/index.html) (Public Domain)
-
 
 Benchmarks:
 

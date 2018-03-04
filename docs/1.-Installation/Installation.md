@@ -112,7 +112,7 @@ For more info see [[this instruction|https://docs.golem.network]]
   `python3 setup.py test`
 
 To run more complicated test with imunes follow instruction from 
-[here](../2.-ForDevelopers/Testing/Testing-with-IMUNES.md)
+[here](../2.-For-Developers/Testing/Testing-with-IMUNES.md)
 
 
 # Packaging

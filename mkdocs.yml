@@ -3,9 +3,10 @@ site_description: Golem Network Wiki - manual for running Golem node on your mac
 site_author: Golem-Team
 
 theme:
-  #name: 'material'
-  #name: 'readthedocs'
-  name: 'journal'
+  # name: 'readthedocs'
+  # name: 'material'
+  # name: 'journal'
+  name: 'readable'
 repo_name: github
 repo_url: https://github.com/golemfactory/golem/
 edit_uri: ""
