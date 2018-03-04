@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Golem-Team">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Common problems - Golem Wiki</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Golem Wiki</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">1. Installation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../1.-Installation/Installation/">Installers</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">MacOS</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../1.-Installation/MacOS/Installation-from-source-on-macOS/">Installation from source on macOS</a>
+</li>
+            
+<li >
+    <a href="../../1.-Installation/MacOS/Installation-on-Mac/">Installation on Mac</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Others</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../1.-Installation/Others/Installing-Golem-on-Arch-Linux-unofficial/">Proceed on your own risk.</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Ubuntu</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../1.-Installation/Ubuntu/Installation-from-source-on-Ubuntu/">Installation from source on Ubuntu</a>
+</li>
+            
+<li >
+    <a href="../../1.-Installation/Ubuntu/Installation-on-Ubuntu/">Installation on Ubuntu</a>
+</li>
+    </ul>
+  </li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Windows</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../1.-Installation/Windows/Installation-Packaging-Win/">Packaging</a>
+</li>
+            
+<li >
+    <a href="../../1.-Installation/Windows/Installation-from-source-on-Windows/">Installation from source on Windows</a>
+</li>
+            
+<li >
+    <a href="../../1.-Installation/Windows/Installation-on-Windows/">Installation on Windows</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../2.-For-Developers/Command-Line/">Using the command line interface</a>
+</li>
+                            
+<li >
+    <a href="../../2.-For-Developers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+</li>
+                            
+<li >
+    <a href="../../2.-For-Developers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+</li>
+                            
+<li >
+    <a href="../../2.-For-Developers/Development/">FAQ for developers</a>
+</li>
+                            
+<li >
+    <a href="../../2.-For-Developers/Logging/">Logging</a>
+</li>
+                            
+<li >
+    <a href="../../2.-For-Developers/devp2p-installation/">Devp2p installation</a>
+</li>
+                            
+<li >
+    <a href="../../2.-For-Developers/systemd-service-template/">Systemd service template</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">Testing</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../2.-For-Developers/Testing/Testing-old-GUI/">Old GUI</a>
+</li>
+            
+<li >
+    <a href="../../2.-For-Developers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
+</li>
+            
+<li >
+    <a href="../../2.-For-Developers/Testing/Testing/">How to start testing</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">3. FAQ <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">Common problems</a>
+</li>
+                            
+<li >
+    <a href="../FAQ/">FAQ</a>
+</li>
+                            
+<li >
+    <a href="../Roadmap/">Roadmap</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">UseCases</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../UseCases/Blender/">Blender</a>
+</li>
+            
+<li >
+    <a href="../UseCases/LuxRender/">LuxRender</a>
+</li>
+            
+<li >
+    <a href="../UseCases/Use-cases/">Use cases</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../../2.-For-Developers/Testing/Testing/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../FAQ/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/golemfactory/golem/">github</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jump-to-a-section">Jump to a Section:</a></li>
+        <li class="main "><a href="#installing">Installing</a></li>
+            <li><a href="#common">Common</a></li>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#mac">Mac</a></li>
+            <li><a href="#linux">Linux</a></li>
+        <li class="main "><a href="#running">Running</a></li>
+            <li><a href="#common_1">Common</a></li>
+            <li><a href="#windows_1">Windows</a></li>
+            <li><a href="#mac_1">Mac</a></li>
+            <li><a href="#linux_1">Linux</a></li>
+        <li class="main "><a href="#builds-and-tests">Builds and tests</a></li>
+            <li><a href="#common_2">Common</a></li>
+            <li><a href="#windows_2">Windows</a></li>
+            <li><a href="#mac_2">Mac</a></li>
+            <li><a href="#linux_2">Linux</a></li>
+        <li class="main "><a href="#running-source">Running source</a></li>
+            <li><a href="#common_3">Common</a></li>
+            <li><a href="#windows_3">Windows</a></li>
+            <li><a href="#mac_3">Mac</a></li>
+            <li><a href="#linux_3">Linux</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h5 id="jump-to-a-section">Jump to a Section:</h5>
+<div class="toc">
+<ul>
+<li><a href="#jump-to-a-section">Jump to a Section:</a></li>
+<li><a href="#installing">Installing</a><ul>
+<li><a href="#common">Common</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#mac">Mac</a></li>
+<li><a href="#linux">Linux</a></li>
+</ul>
+</li>
+<li><a href="#running">Running</a><ul>
+<li><a href="#common_1">Common</a><ul>
+<li><a href="#final-image-has-magenta-elements">Final image has magenta elements</a><ul>
+<li><a href="#symptoms">Symptoms:</a></li>
+<li><a href="#description">Description:</a></li>
+<li><a href="#resolution">Resolution:</a></li>
+<li><a href="#found">Found</a></li>
+<li><a href="#relates-to">Relates to:</a></li>
+<li><a href="#affected-version">Affected version:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#windows_1">Windows</a><ul>
+<li><a href="#error-starting-docker-first-run-of-golem-after-installation">"Error Starting Docker" first run of golem after installation</a><ul>
+<li><a href="#symptoms_1">Symptoms</a></li>
+<li><a href="#description_1">Description</a></li>
+<li><a href="#resolution_1">Resolution</a></li>
+<li><a href="#found_1">Found</a></li>
+<li><a href="#relates-to_1">Relates to:</a></li>
+<li><a href="#affected-version_1">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#error-starting-docker-after-upgrade-of-golem">"Error Starting Docker" after upgrade of golem</a><ul>
+<li><a href="#symptoms_2">Symptoms:</a></li>
+<li><a href="#description_2">Description:</a></li>
+<li><a href="#resolution_2">Resolution</a></li>
+<li><a href="#found_2">Found</a></li>
+<li><a href="#relates-to_2">Relates to</a></li>
+<li><a href="#affected-version_2">Affected version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#mac_1">Mac</a></li>
+<li><a href="#linux_1">Linux</a></li>
+</ul>
+</li>
+<li><a href="#builds-and-tests">Builds and tests</a><ul>
+<li><a href="#common_2">Common</a><ul>
+<li><a href="#enum-has-int-field">Enum has Int field</a><ul>
+<li><a href="#symptoms_3">Symptoms:</a></li>
+<li><a href="#description_3">Description:</a></li>
+<li><a href="#resolution_3">Resolution:</a></li>
+<li><a href="#found_3">Found</a></li>
+<li><a href="#relates-to_3">Relates to:</a></li>
+<li><a href="#affected-version_3">Affected version:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#windows_2">Windows</a><ul>
+<li><a href="#import-error-twisted-requires-zopeinterface">Import error: Twisted requires zope.interface</a><ul>
+<li><a href="#symptoms_4">Symptoms:</a></li>
+<li><a href="#description_4">Description:</a></li>
+<li><a href="#resolution_4">Resolution:</a></li>
+<li><a href="#found_4">Found</a></li>
+<li><a href="#relates-to_4">Relates to:</a></li>
+<li><a href="#affected-version_4">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#importerror-no-system-module-pywintypes">ImportError: No system module 'pywintypes'</a><ul>
+<li><a href="#symptoms_5">Symptoms:</a></li>
+<li><a href="#description_5">Description:</a></li>
+<li><a href="#resolution_5">Resolution:</a></li>
+<li><a href="#found_5">Found</a></li>
+<li><a href="#relates-to_5">Relates to:</a></li>
+<li><a href="#affected-version_5">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#environmenterror-library-libgcc_s_dw2-1dll-not-found">EnvironmentError: Library "libgcc_s_dw2-1.dll" not found</a><ul>
+<li><a href="#symptoms_6">Symptoms:</a></li>
+<li><a href="#description_6">Description:</a></li>
+<li><a href="#resolution_6">Resolution:</a></li>
+<li><a href="#found_6">Found</a></li>
+<li><a href="#relates-to_6">Relates to:</a></li>
+<li><a href="#affected-version_6">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#importerror-no-module-named-win32api">ImportError: No module named win32api</a><ul>
+<li><a href="#symptoms_7">Symptoms:</a></li>
+<li><a href="#description_7">Description:</a></li>
+<li><a href="#resolution_7">Resolution:</a></li>
+<li><a href="#found_7">Found</a></li>
+<li><a href="#relates-to_7">Relates to:</a></li>
+<li><a href="#affected-version_7">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#bad-magic-number-in">Bad magic number in ...</a><ul>
+<li><a href="#symptoms_8">Symptoms:</a></li>
+<li><a href="#description_8">Description:</a></li>
+<li><a href="#resolution_8">Resolution:</a></li>
+<li><a href="#found_8">Found</a></li>
+<li><a href="#relates-to_8">Relates to:</a></li>
+<li><a href="#affected-version_8">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#unicodedecodeerror-utf-8-codec-cant-decode">UnicodeDecodeError: 'utf-8' codec can't decode</a><ul>
+<li><a href="#symptoms_9">Symptoms:</a></li>
+<li><a href="#description_9">Description:</a></li>
+<li><a href="#resolution_9">Resolution:</a></li>
+<li><a href="#found_9">Found</a></li>
+<li><a href="#relates-to_9">Relates to:</a></li>
+<li><a href="#affected-version_9">Affected version:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#mac_2">Mac</a></li>
+<li><a href="#linux_2">Linux</a><ul>
+<li><a href="#modulenotfounderror-no-module-named-setuptools">ModuleNotFoundError: No module named 'setuptools'</a><ul>
+<li><a href="#symptoms_10">Symptoms:</a></li>
+<li><a href="#description_10">Description:</a></li>
+<li><a href="#resolution_10">Resolution:</a></li>
+<li><a href="#found_10">Found</a></li>
+<li><a href="#relates-to_10">Relates to:</a></li>
+<li><a href="#affected-version_10">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#building-taskcollector-failed-make-g-5-command-not-found">Building TaskCollector failed make: g++-5: Command not found</a><ul>
+<li><a href="#symptoms_11">Symptoms:</a></li>
+<li><a href="#description_11">Description:</a></li>
+<li><a href="#resolution_11">Resolution:</a></li>
+<li><a href="#found_11">Found</a></li>
+<li><a href="#relates-to_11">Relates to:</a></li>
+<li><a href="#affected-version_11">Affected version:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#running-source">Running source</a><ul>
+<li><a href="#common_3">Common</a><ul>
+<li><a href="#argument-log-format-conflicting-option">argument --log-format: conflicting option</a><ul>
+<li><a href="#symptoms_12">Symptoms:</a></li>
+<li><a href="#description_12">Description:</a></li>
+<li><a href="#resolution_12">Resolution:</a></li>
+<li><a href="#found_12">Found</a></li>
+<li><a href="#relates-to_12">Relates to:</a></li>
+<li><a href="#affected-version_12">Affected version:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#windows_3">Windows</a></li>
+<li><a href="#mac_3">Mac</a></li>
+<li><a href="#linux_3">Linux</a><ul>
+<li><a href="#syntaxerror-invalid-syntax">SyntaxError: invalid syntax</a><ul>
+<li><a href="#symptoms_13">Symptoms:</a></li>
+<li><a href="#description_13">Description:</a></li>
+<li><a href="#resolution_13">Resolution:</a></li>
+<li><a href="#found_13">Found</a></li>
+<li><a href="#relates-to_13">Relates to:</a></li>
+<li><a href="#affected-version_13">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#environmenterror-library-openexrso-not-found">EnvironmentError: Library "OpenEXR.so" not found</a><ul>
+<li><a href="#symptoms_14">Symptoms:</a></li>
+<li><a href="#description_14">Description:</a></li>
+<li><a href="#resolution_14">Resolution:</a></li>
+<li><a href="#found_14">Found</a></li>
+<li><a href="#relates-to_14">Relates to:</a></li>
+<li><a href="#affected-version_14">Affected version:</a></li>
+</ul>
+</li>
+<li><a href="#environmenterror-library-_psutil_linuxso-not-found">EnvironmentError: Library "_psutil_linux.so" not found</a><ul>
+<li><a href="#symptoms_15">Symptoms:</a></li>
+<li><a href="#description_15">Description:</a></li>
+<li><a href="#resolution_15">Resolution:</a></li>
+<li><a href="#found_15">Found</a></li>
+<li><a href="#relates-to_15">Relates to:</a></li>
+<li><a href="#affected-version_15">Affected version:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="installing">Installing</h1>
+<p>These are the common problems while installing the released versions</p>
+<h2 id="common">Common</h2>
+<h2 id="windows">Windows</h2>
+<h2 id="mac">Mac</h2>
+<h2 id="linux">Linux</h2>
+<h1 id="running">Running</h1>
+<p>These are the common problems while running the released versions</p>
+<h2 id="common_1">Common</h2>
+<h3 id="final-image-has-magenta-elements">Final image has magenta elements</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms">Symptoms:</h4>
+<p>On completion of a blender task on the network the image shows magenta elements where it should not.</p>
+<h4 id="description">Description:</h4>
+<p>When the textures for rendering are missing it replaces them with these magenta elements. Please include all required texture files in the golem-task.</p>
+<h4 id="resolution">Resolution:</h4>
+<p>Check that you're using relative paths in your scene and that you have added all the required resources during task definition.</p>
+<h4 id="found">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version">Affected version:</h4>
+<p>unknown</p>
+<h2 id="windows_1">Windows</h2>
+<h3 id="error-starting-docker-first-run-of-golem-after-installation">"Error Starting Docker" first run of golem after installation</h3>
+<h4 id="symptoms_1">Symptoms</h4>
+<ul>
+<li>When <code>golem</code> starts it shows the error "Error Starting Docker"</li>
+</ul>
+<p>image::https://user-images.githubusercontent.com/10008353/36040756-b3bc64ae-0dc6-11e8-84e4-08fa270300d9.png[Error starting docker]</p>
+<h4 id="description_1">Description</h4>
+<p>Docker requires specific settings to be able to run, check the included docker quickstart terminal for the full error and solve that first</p>
+<h4 id="resolution_1">Resolution</h4>
+<ul>
+<li>close Golem</li>
+<li>hit windows key and type "Docker Quickstart Terminal"</li>
+<li>wait for it to start, this can take a while</li>
+<li>If any error appears, follow the proposed resolution</li>
+</ul>
+<h4 id="found_1">Found</h4>
+<p>20 Dec 2017 by @ederenn</p>
+<h4 id="relates-to_1">Relates to:</h4>
+<p>None</p>
+<h4 id="affected-version_1">Affected version:</h4>
+<p>None</p>
+<h3 id="error-starting-docker-after-upgrade-of-golem">"Error Starting Docker" after upgrade of golem</h3>
+<h4 id="symptoms_2">Symptoms:</h4>
+<ul>
+<li>When <code>golem</code> starts it shows the error "Error Starting Docker" </li>
+</ul>
+<p>image::https://user-images.githubusercontent.com/10008353/36040756-b3bc64ae-0dc6-11e8-84e4-08fa270300d9.png[Error starting docker]</p>
+<ul>
+<li>When starting <code>Docker Quickstart Terminal</code> it shows error "Error creating machine"</li>
+</ul>
+<p>image::https://user-images.githubusercontent.com/10008353/36040768-bcba4b02-0dc6-11e8-829f-ff2bb13af2e9.png[Error creating machine]</p>
+<ul>
+<li>In <code>golem.log</code> it shows <code>ERROR    golem.docker.manager    DockerMachine: failed to start the VM: Command '['docker-machine', 'restart', 'golem']' returned non-zero exit status 1.</code></li>
+</ul>
+<h4 id="description_2">Description:</h4>
+<p>During the upgrade of golem, VirtualBox also got updated, this caused the existing docker-machines to stop working. </p>
+<h4 id="resolution_2">Resolution</h4>
+<ul>
+<li>close Golem</li>
+<li>close VirtualBox in Task Manager</li>
+<li>hit windows key and type "Add or remove programs"</li>
+<li>then search for "virtual box" and select "modify"</li>
+<li>click modify -&gt; repair</li>
+<li>restart</li>
+</ul>
+<h4 id="found_2">Found</h4>
+<p>20 Dec 2017 by @ederenn</p>
+<h4 id="relates-to_2">Relates to</h4>
+<p>https://github.com/golemfactory/golem/issues/1786</p>
+<h4 id="affected-version_2">Affected version</h4>
+<p>golem 0.9.1 and before</p>
+<h2 id="mac_1">Mac</h2>
+<h2 id="linux_1">Linux</h2>
+<h1 id="builds-and-tests">Builds and tests</h1>
+<p>These are the common problems while running tests and building packages.</p>
+<h2 id="common_2">Common</h2>
+<h3 id="enum-has-int-field">Enum has Int field</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_3">Symptoms:</h4>
+<p><code>python setup.py develop</code> shows </p>
+<div class="codehilite"><pre><span></span>Enum has Int field
+</pre></div>
+
+
+<h4 id="description_3">Description:</h4>
+<p>A dependency upgraded enum34 to a wrong version, please uninstall it.</p>
+<h4 id="resolution_3">Resolution:</h4>
+<p>Run with virtualenv enabled:</p>
+<div class="codehilite"><pre><span></span>pip uninstall enum34
+</pre></div>
+
+
+<h4 id="found_3">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_3">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_3">Affected version:</h4>
+<p>unknown</p>
+<h2 id="windows_2">Windows</h2>
+<h3 id="import-error-twisted-requires-zopeinterface">Import error: Twisted requires zope.interface</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_4">Symptoms:</h4>
+<p><code>pip install -r requirements.txt</code> shows </p>
+<div class="codehilite"><pre><span></span>Import error: Twisted requires zope.interface 3.6.0 or later: no module named zope.interface.
+</pre></div>
+
+
+<h4 id="description_4">Description:</h4>
+<p><code>zope.interface</code> was installed incorrectly. please re-install it with easy_install as non-admin user</p>
+<h4 id="resolution_4">Resolution:</h4>
+<p>Run in non-admin cmd with venv enabled:</p>
+<div class="codehilite"><pre><span></span>easy_install zope.interface
+</pre></div>
+
+
+<h4 id="found_4">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_4">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_4">Affected version:</h4>
+<p>unknown</p>
+<h3 id="importerror-no-system-module-pywintypes">ImportError: No system module 'pywintypes'</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_5">Symptoms:</h4>
+<p><code>pip install -r requirements.txt</code> shows </p>
+<div class="codehilite"><pre><span></span><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">system</span> <span class="n">module</span> <span class="s1">&#39;pywintypes&#39;</span> <span class="o">(</span><span class="n">pywintypes27</span><span class="o">.</span><span class="na">dll</span><span class="o">)</span>
+</pre></div>
+
+
+<h4 id="description_5">Description:</h4>
+<p><code>pywin32</code> was installed incorrectly, it is missing a dll. please install the dll by downloading the correct version and adding it to the package or somewhere in the PATH</p>
+<h4 id="resolution_5">Resolution:</h4>
+<p>Download pywin32 https://sourceforge.net/projects/pywin32/files/pywin32/Build%20220/[from this site] install and copy <code>$PYTHON/Lib/site-packages/pywin32_system32/pywintypes36.dll</code> into <code>$PYTHON/Lib/site-packages/win32/</code></p>
+<p>or</p>
+<p>Add <code>$PYTHON/Lib/site-packages/pypiwin32_system32</code> to the system PATH and restart your cmd</p>
+<h4 id="found_5">Found</h4>
+<ul>
+<li>23-nov-2017 by @maaktweluit during development of #1400</li>
+<li>Before 0.7.1 by unknown</li>
+</ul>
+<h4 id="relates-to_5">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_5">Affected version:</h4>
+<p>external dependency</p>
+<h3 id="environmenterror-library-libgcc_s_dw2-1dll-not-found">EnvironmentError: Library "libgcc_s_dw2-1.dll" not found</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_6">Symptoms:</h4>
+<p>When building in the mingw32 terminal <code>python setup.py develop</code> shows </p>
+<div class="codehilite"><pre><span></span><span class="n">EnvironmentError</span><span class="o">:</span> <span class="n">Library</span> <span class="s2">&quot;libgcc_s_dw2-1.dll&quot;</span> <span class="n">not</span> <span class="n">found</span>
+</pre></div>
+
+
+<h4 id="description_6">Description:</h4>
+<p>Your mingw32 installation is missing a required library, please download and add it manually.</p>
+<h4 id="resolution_6">Resolution:</h4>
+<p>Download the package gcc-core-4.4.0-mingw32-dll.tar.gz https://sourceforge.net/projects/mingw/files/MinGW/Base/gcc/Version4/Previous%20Release%20gcc-4.4.0/[from here]. Copy required dll from the bin folder into your mingw bin folder.</p>
+<h4 id="found_6">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_6">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_6">Affected version:</h4>
+<p>unknown</p>
+<h3 id="importerror-no-module-named-win32api">ImportError: No module named win32api</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_7">Symptoms:</h4>
+<p>When running <code>python setup.py develop</code> it shows </p>
+<div class="codehilite"><pre><span></span><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">win32api</span>
+</pre></div>
+
+
+<h4 id="description_7">Description:</h4>
+<p>pypiwin32 failed to install, try installing it without cache</p>
+<h4 id="resolution_7">Resolution:</h4>
+<p>Run this while your venv is loaded.</p>
+<div class="codehilite"><pre><span></span>python -m pip install --no-cache pypiwin32
+</pre></div>
+
+
+<h4 id="found_7">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_7">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_7">Affected version:</h4>
+<p>unknown</p>
+<h3 id="bad-magic-number-in">Bad magic number in ...</h3>
+<h4 id="symptoms_8">Symptoms:</h4>
+<p>When running <code>python setup.py develop</code> it shows </p>
+<div class="codehilite"><pre><span></span>Bad magic number in ...
+</pre></div>
+
+
+<h4 id="description_8">Description:</h4>
+<p>There is an error with your pyc files, please delete the and run again.</p>
+<h4 id="resolution_8">Resolution:</h4>
+<p>Run this in your golem source folder.</p>
+<div class="codehilite"><pre><span></span>find . -name &#39;*.pyc&#39; -delete
+</pre></div>
+
+
+<h4 id="found_8">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_8">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_8">Affected version:</h4>
+<p>unknown</p>
+<h3 id="unicodedecodeerror-utf-8-codec-cant-decode">UnicodeDecodeError: 'utf-8' codec can't decode</h3>
+<h4 id="symptoms_9">Symptoms:</h4>
+<p><code>pip install -r requirements.txt</code> shows </p>
+<div class="codehilite"><pre><span></span><span class="n">Exception</span><span class="o">:</span>
+<span class="n">Traceback</span> <span class="o">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="o">):</span>
+  <span class="n">File</span> <span class="s2">&quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\compat\__init__.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">73</span><span class="o">,</span> <span class="k">in</span> <span class="n">console_to_str</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">decode</span><span class="o">(</span><span class="n">sys</span><span class="o">.</span><span class="na">__stdout__</span><span class="o">.</span><span class="na">encoding</span><span class="o">)</span>
+<span class="n">UnicodeDecodeError</span><span class="o">:</span> <span class="s1">&#39;utf-8&#39;</span> <span class="n">codec</span> <span class="n">can</span><span class="s1">&#39;t decode byte 0xf1 in position 4: invalid continuation byte</span>
+
+<span class="s1">During handling of the above exception, another exception occurred:</span>
+
+<span class="s1">Traceback (most recent call last):</span>
+<span class="s1">  File &quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\basecommand.py&quot;, line 215, in main</span>
+<span class="s1">    status = self.run(options, args)</span>
+<span class="s1">  File &quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\commands\install.py&quot;, line 342, in run</span>
+<span class="s1">    prefix=options.prefix_path,</span>
+<span class="s1">  File &quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\req\req_set.py&quot;, line 784, in install</span>
+<span class="s1">    **kwargs</span>
+<span class="s1">  File &quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\req\req_install.py&quot;, line 878, in install</span>
+<span class="s1">    spinner=spinner,</span>
+<span class="s1">  File &quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\utils\__init__.py&quot;, line 676, in call_subprocess</span>
+<span class="s1">    line = console_to_str(proc.stdout.readline())</span>
+<span class="s1">  File &quot;c:\users\ederenn\projects\golem-env\lib\site-packages\pip\compat\__init__.py&quot;, line 75, in console_to_str</span>
+<span class="s1">    return s.decode(&#39;</span><span class="n">utf_8</span><span class="s1">&#39;)</span>
+<span class="s1">UnicodeDecodeError: &#39;</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="s1">&#39; codec can&#39;</span><span class="n">t</span> <span class="n">decode</span> <span class="n">byte</span> <span class="mh">0xf1</span> <span class="k">in</span> <span class="n">position</span> <span class="mi">4</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">continuation</span> <span class="n">byte</span>
+</pre></div>
+
+
+<h4 id="description_9">Description:</h4>
+<p>You are missing the 'utf-8' codec on the python installation, you can edit your local pip as work-around</p>
+<h4 id="resolution_9">Resolution:</h4>
+<p>in <code>pip\compat\__init__.py:70</code> add this:</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
+    <span class="k">def</span> <span class="nf">console_to_str</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">__stdout__</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf_8&#39;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">cdll</span>
+                <span class="n">os_encoding</span> <span class="o">=</span> <span class="s1">&#39;cp&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cdll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">GetACP</span><span class="p">())</span>
+                <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">os_encoding</span><span class="p">)</span>
+</pre></div>
+
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">locale</span>
+<span class="k">def</span> <span class="nf">console_to_str</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">getpreferredencoding</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h4 id="found_9">Found</h4>
+<p>29 November 2017 by @ederenn</p>
+<h4 id="relates-to_9">Relates to:</h4>
+<p>https://github.com/golemfactory/golem/issues/1707</p>
+<h4 id="affected-version_9">Affected version:</h4>
+<p>unknown</p>
+<h2 id="mac_2">Mac</h2>
+<h2 id="linux_2">Linux</h2>
+<h3 id="modulenotfounderror-no-module-named-setuptools">ModuleNotFoundError: No module named 'setuptools'</h3>
+<h4 id="symptoms_10">Symptoms:</h4>
+<p><code>python setup.py develop</code> shows </p>
+<div class="codehilite"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;setup.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<span class="n">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;setuptools&#39;</span>
+<span class="n">Error</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span><span class="p">:</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3/dist-packages/apport_python_hook.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">63</span><span class="p">,</span> <span class="ow">in</span> <span class="n">apport_excepthook</span>
+    <span class="kn">from</span> <span class="nn">apport.fileutils</span> <span class="kn">import</span> <span class="n">likely_packaged</span><span class="p">,</span> <span class="n">get_recent_crashes</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3/dist-packages/apport/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">apport.report</span> <span class="kn">import</span> <span class="n">Report</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3/dist-packages/apport/report.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">30</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">import</span> <span class="nn">apport.fileutils</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3/dist-packages/apport/fileutils.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">apport.packaging_impl</span> <span class="kn">import</span> <span class="n">impl</span> <span class="k">as</span> <span class="n">packaging</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3/dist-packages/apport/packaging_impl.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">import</span> <span class="nn">apt</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3/dist-packages/apt/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">import</span> <span class="nn">apt_pkg</span>
+<span class="n">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;apt_pkg&#39;</span>
+
+<span class="n">Original</span> <span class="n">exception</span> <span class="n">was</span><span class="p">:</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;setup.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<span class="n">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;setuptools&#39;</span>
+</pre></div>
+
+
+<h4 id="description_10">Description:</h4>
+<p>You are missing the python-dev package, it is required to run golem from source</p>
+<h4 id="resolution_10">Resolution:</h4>
+<p>Install python3.6-dev</p>
+<div class="codehilite"><pre><span></span>sudo apt-get install python3.6-dev -y
+</pre></div>
+
+
+<h4 id="found_10">Found</h4>
+<p>23 feb 2018 by @kascheri12</p>
+<h4 id="relates-to_10">Relates to:</h4>
+<p>https://github.com/golemfactory/golem/issues/2184</p>
+<h4 id="affected-version_10">Affected version:</h4>
+<p>All golem versions, commands are applicable from <code>0.12.0</code> ( python version upgrade )</p>
+<h3 id="building-taskcollector-failed-make-g-5-command-not-found">Building TaskCollector failed make: g++-5: Command not found</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_11">Symptoms:</h4>
+<p><code>setup.py develop</code> shows </p>
+<div class="codehilite"><pre><span></span>Building TaskCollector failed b&#39;make: g++-5: Command not found\nmake: *** [Release/taskcollector] Error 127\n&#39;
+</pre></div>
+
+
+<h4 id="description_11">Description:</h4>
+<p>You are missing the <code>g\++-5</code> shortcut on your system library folder, you can link it to <code>g++</code></p>
+<h4 id="resolution_11">Resolution:</h4>
+<div class="codehilite"><pre><span></span>sudo ln -s /usr/bin/g\+\+ /usr/bin/g\+\+-5
+</pre></div>
+
+
+<h4 id="found_11">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_11">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_11">Affected version:</h4>
+<p>unknown</p>
+<h1 id="running-source">Running source</h1>
+<p>These are the common problems when setting up and running from source</p>
+<h2 id="common_3">Common</h2>
+<h3 id="argument-log-format-conflicting-option">argument --log-format: conflicting option</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_12">Symptoms:</h4>
+<p><code>pytest</code> shows </p>
+<div class="codehilite"><pre><span></span>argparse.ArgumentError: argument --log-format: conflicting option string(s): --log-format
+</pre></div>
+
+
+<h4 id="description_12">Description:</h4>
+<p>Pytest and plugins are installed as an incorrect version, please re-install them from requirements-tst.txt</p>
+<h4 id="resolution_12">Resolution:</h4>
+<p>Clear your virtualenv and re install requirements.</p>
+<div class="codehilite"><pre><span></span>python3 -m venv .venv --clear
+pip install -r requirements.txt -r requirements-test.txt
+</pre></div>
+
+
+<h4 id="found_12">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_12">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_12">Affected version:</h4>
+<p>unknown</p>
+<h2 id="windows_3">Windows</h2>
+<h2 id="mac_3">Mac</h2>
+<h2 id="linux_3">Linux</h2>
+<h3 id="syntaxerror-invalid-syntax">SyntaxError: invalid syntax</h3>
+<h4 id="symptoms_13">Symptoms:</h4>
+<p><code>python golemapp.py</code> shows </p>
+<div class="codehilite"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/local/bin/golemapp&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">11</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">load_entry_point</span><span class="p">(</span><span class="s1">&#39;golem&#39;</span><span class="p">,</span> <span class="s1">&#39;gui_scripts&#39;</span><span class="p">,</span> <span class="s1">&#39;golemapp&#39;</span><span class="p">)()</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/local/lib/python3.5/dist-packages/pkg_resources/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">572</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_entry_point</span>
+    <span class="k">return</span> <span class="n">get_distribution</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span><span class="o">.</span><span class="n">load_entry_point</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/local/lib/python3.5/dist-packages/pkg_resources/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2755</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_entry_point</span>
+    <span class="k">return</span> <span class="n">ep</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/local/lib/python3.5/dist-packages/pkg_resources/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2408</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/local/lib/python3.5/dist-packages/pkg_resources/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2414</span><span class="p">,</span> <span class="ow">in</span> <span class="n">resolve</span>
+    <span class="n">module</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">,</span> <span class="n">fromlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;__name__&#39;</span><span class="p">],</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/kentrendz/golem/golemapp.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">15</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">golem.node</span> <span class="kn">import</span> <span class="n">Node</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/kentrendz/golem/golem/node.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">golem.client</span> <span class="kn">import</span> <span class="n">Client</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/kentrendz/golem/golem/client.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">60</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">golem.task.taskserver</span> <span class="kn">import</span> <span class="n">TaskServer</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/kentrendz/golem/golem/task/taskserver.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">25</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">.server</span> <span class="kn">import</span> <span class="n">concent</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/kentrendz/golem/golem/task/server/concent.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">golem.network.concent.handlers_library</span> <span class="kn">import</span> <span class="n">library</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/kentrendz/golem/golem/network/concent/handlers_library.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">29</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_handlers</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="n">message</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                  <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+
+
+<h4 id="description_13">Description:</h4>
+<p>The project switched to python 3.6 as lowest supported version, this error indicates python3.5 can not run the code anymore</p>
+<h4 id="resolution_13">Resolution:</h4>
+<p>Install python3.6 next to your system python ( do not replace it! )</p>
+<div class="codehilite"><pre><span></span>sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo apt-get update &amp;&amp; sudo apt-get install python3.6 python3.6-dev python3.6-venv -y
+</pre></div>
+
+
+<p>or
+Build python 3.6 including dev and venv.</p>
+<h4 id="found_13">Found</h4>
+<p>22 feb 2018 by @kascheri12</p>
+<h4 id="relates-to_13">Relates to:</h4>
+<p>https://github.com/golemfactory/golem/pull/2012</p>
+<h4 id="affected-version_13">Affected version:</h4>
+<p>Last working version on 3.5 is 0.11.0, from 0.12.0 python3.6 is required</p>
+<h3 id="environmenterror-library-openexrso-not-found">EnvironmentError: Library "OpenEXR.so" not found</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_14">Symptoms:</h4>
+<p><code>golem.log</code> shows </p>
+<div class="codehilite"><pre><span></span>Library &quot;OpenEXR.so&quot; not found
+</pre></div>
+
+
+<h4 id="description_14">Description:</h4>
+<p>You are missing the OpenEXR library in your system library folder, you can copy it from the installed python package to resolve this</p>
+<h4 id="resolution_14">Resolution:</h4>
+<div class="codehilite"><pre><span></span>sudo cp $HOME/.virtualenvs/golem-env/lib/python2.7/site-packages/OpenEXR.so /usr/lib/
+</pre></div>
+
+
+<p>or
+Copy the OpenEXR.so from the Golem package</p>
+<h4 id="found_14">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_14">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_14">Affected version:</h4>
+<p>Pre python3, latest version 0.7.1</p>
+<h3 id="environmenterror-library-_psutil_linuxso-not-found">EnvironmentError: Library "_psutil_linux.so" not found</h3>
+<p><em>TODO: reproduce and copy full errors</em></p>
+<h4 id="symptoms_15">Symptoms:</h4>
+<p><code>golem.log</code> shows </p>
+<div class="codehilite"><pre><span></span><span class="n">EnvironmentError</span><span class="o">:</span> <span class="n">Library</span> <span class="s2">&quot;(&#39;_psutil_linux.x86_64-linux-gnu.so&#39;, &#39;_psutil_linux.so&#39;, &#39;/usr/local/lib/python2.7/dist-packages/psutil/_psutil_linux.so&#39;)&quot;</span> <span class="n">not</span> <span class="n">found</span>
+</pre></div>
+
+
+<h4 id="description_15">Description:</h4>
+<p>You are missing the Process and system library in your system library folder.</p>
+<h4 id="resolution_15">Resolution:</h4>
+<p>Simplest way to fix this is to create a symlink:</p>
+<div class="codehilite"><pre><span></span>sudo ln -s /usr/lib/python2.7/dist-packages/psutil /usr/local/lib/python2.7/dist-packages/psutil
+</pre></div>
+
+
+<p>and then</p>
+<div class="codehilite"><pre><span></span>sudo ln -s /usr/local/lib/python2.7/dist-packages/psutil/_psutil_linux.x86_64-linux-gnu.so /usr/local/lib/python2.7/dist-packages/psutil/_psutil_posix.so
+</pre></div>
+
+
+<h4 id="found_15">Found</h4>
+<p>unknown date by unknown</p>
+<h4 id="relates-to_15">Relates to:</h4>
+<p>No issue reported</p>
+<h4 id="affected-version_15">Affected version:</h4>
+<p>Pre python3, latest version 0.7.1</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
