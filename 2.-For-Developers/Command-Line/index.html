@@ -8,7 +8,7 @@
         <meta name="author" content="Golem-Team">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Logging - Golem Wiki</title>
+        <title>Using the command line interface - Golem Wiki</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -114,11 +114,11 @@
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
-<li >
-    <a href="../Command-Line/">Using the command line interface</a>
+<li class="active">
+    <a href="./">Using the command line interface</a>
 </li>
                             
 <li >
@@ -130,11 +130,11 @@
 </li>
                             
 <li >
-    <a href="../Development/">FAQ for developers</a>
+    <a href="../Development/">Development</a>
 </li>
                             
-<li class="active">
-    <a href="./">Logging</a>
+<li >
+    <a href="../Logging/">Logging</a>
 </li>
                             
 <li >
@@ -204,12 +204,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../Development/">
+                        <a rel="next" href="../../1.-Installation/Windows/Installation-on-Windows/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../devp2p-installation/">
+                        <a rel="prev" href="../Computing-Tasks-in-Docker/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -224,48 +224,121 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#default-settings">Default settings</a></li>
-        <li class="main "><a href="#time-rotation">Time rotation</a></li>
-        <li class="main "><a href="#more-than-one-golem-instance-on-the-same-machine">More than one Golem instance on the same machine</a></li>
-        <li class="main "><a href="#how-to-set-higher-logging-level-for-your-part-of-the-code-for-developers">How to set higher logging level for your part of the code (for developers)</a></li>
+        <li class="main active"><a href="#using-the-command-line-interface">Using the command line interface</a></li>
+        <li class="main "><a href="#command-line-arguments">Command Line Arguments</a></li>
+            <li><a href="#environments">Environments</a></li>
+            <li><a href="#network">Network</a></li>
+            <li><a href="#incomes">Incomes</a></li>
+            <li><a href="#payments">Payments</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#tasks">Tasks</a></li>
+            <li><a href="#subtasks">Subtasks</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>Log configuration is in file <code>logging.ini</code> in <code>gnr</code>. </p>
-<h2 id="default-settings">Default settings</h2>
-<p>Default log name is <code>golem.log</code> and it is saved in the same directory as <code>main.py</code>. 
-Default log level: 
-<em> DEBUG for <code>golem.pay</code>
-</em> INFO for <code>golem</code> (so also for all <code>golem.*</code> logs)
-* WARNING for everything else (especially for everything from <code>gnr</code>.</p>
-<h2 id="time-rotation">Time rotation</h2>
-<p>This file is timed rotating, ie. once a day it is replaced with a new <code>golem.log</code> and the old file is saved in <code>golem.log.&lt;date&gt;</code> file. Only five last copies are saved. 
-If you want to change this settings edit <code>args</code> in <code>handler_fileHandlerWithTimeRot</code> section. </p>
-<h2 id="more-than-one-golem-instance-on-the-same-machine">More than one Golem instance on the same machine</h2>
-<p>Logs from other golem instances are saved in their <code>datadir</code> directories.</p>
-<h2 id="how-to-set-higher-logging-level-for-your-part-of-the-code-for-developers">How to set higher logging level for your part of the code (for developers)</h2>
-<p>Let's imagine that you want to set DEBUG level for all network logs. 
-You should:</p>
-<ol>
-<li>
-<p>Open <code>gnr.logger.ini</code></p>
-</li>
-<li>
-<p>Add new key in <code>[loggers]</code> section</p>
-<p><code>keys: root,golem,pay,net</code></p>
-</li>
-<li>
-<p>Create new section for the new logger: </p>
-</li>
-</ol>
-<pre class="codehilite"><code>     [logger_net]
-     level: DEBUG
-     qualname: golem.network
-     handlers: fileHandlerWithTimeRot</code></pre>
+<h1 id="using-the-command-line-interface">Using the command line interface</h1>
+<p><code>golemcli</code> requires a running Golem instance to work. To start Golem in headless mode, type:
+- for the packaged version:</p>
+<p><code>golemapp</code>
+- when running from source:</p>
+<p><code>python golemapp.py</code></p>
+<p>You can now execute the command line interface client in interactive mode:
+- for the packaged version:</p>
+<p><code>golemcli -i</code>
+- when running from source:</p>
+<p><code>python golemcli.py -i</code></p>
+<h1 id="command-line-arguments">Command Line Arguments</h1>
+<div class="codehilite"><pre><span></span>    golemcli.py  
+    positional arguments:
+
+        exit                Exit the interactive shell
+        help                Display this help message
+        account             Display account &amp; financial info
+        envs                Manage environments
+        network             Manage network
+        incomes             Display incomes
+        payments            Display payments
+        res                 Manage resources
+        settings            Manage settings
+        tasks               Manage tasks
+        subtasks            Manage subtasks
+
+    optional arguments:
+        -a ADDRESS, --address ADDRESS 
+                              Golem node&#39;s address
+        -p PORT, --port PORT  Golem node&#39;s port
+        -i, --interactive     Enter interactive mode
+        -h, --help            Display command&#39;s help message
+        --json                Return results in JSON format
+</pre></div>
 
 
-<p>Feel free to also change <code>getLogger(__name__)</code> in <code>golem</code> code to something more general, ie. <code>getLogger(golem.net)</code>.</p></div>
+<h2 id="environments">Environments</h2>
+<p><code>envs show [--sort {name|supported|active|performance|description}]</code> - Show environments</p>
+<p><code>envs enable &lt;name&gt;</code> - Enable environment</p>
+<p><code>envs disable &lt;name&gt;</code> - Disable environment</p>
+<p><code>recount &lt;name&gt;</code> - Recount performance for an environment</p>
+<h2 id="network">Network</h2>
+<p><code>network status</code> - Show client status</p>
+<p><code>network connect &lt;ip&gt; &lt;port&gt;</code> - Connect to a node </p>
+<p><code>network show [--sort {ip|port|id|name|version}]</code> - Show connected nodes.</p>
+<p><code>network dht [--sort {ip|port|id|name|version}]</code> - Show known nodes.</p>
+<h2 id="incomes">Incomes</h2>
+<p><code>incomes [--sort {subtask|payee|status|value|fee}]</code> - Show incomes</p>
+<h2 id="payments">Payments</h2>
+<p><code>payments [--sort {subtask|payee|status|value|fee}]</code> - Show payments</p>
+<h2 id="resources">Resources</h2>
+<p><code>res show</code> - Show information on used resources</p>
+<p><code>res clear {--provider|--requestor}</code> - Clear provider or requestor resources</p>
+<h2 id="settings">Settings</h2>
+<p>Currently only subset of showed settings can be modified, check which with <code>settings set</code> without arguments </p>
+<p><code>settings set &lt;key&gt; &lt;value&gt;</code> - Change setting</p>
+<p><code>settings show {--basic|--requestor|--provider}</code> - Show current settings</p>
+<h2 id="tasks">Tasks</h2>
+<p><code>tasks create &lt;file_name&gt;</code> - Create a task from file, this is a json file, example file:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">36000</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;awesome-id&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Golem Task&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Blender&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;subtasks&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;progress&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;frame_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;output_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/any/Documents&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;PNG&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;resolution&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="mi">1000</span><span class="p">,</span>
+            <span class="mi">600</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;frames&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;compositing&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;time_started&quot;</span><span class="p">:</span> <span class="mf">1504695406.465682</span><span class="p">,</span>
+    <span class="nt">&quot;time_remaining&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Waiting&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timeout&quot;</span><span class="p">:</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;subtask_timeout&quot;</span><span class="p">:</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;bid&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="nt">&quot;resources&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;/home/any/blender/benchmark/test_task/cube.blend&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;legacy&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><code>tasks stats</code> - Show statistics for tasks</p>
+<p><code>tasks show [--sort {id|remaining|subtasks|statsus|completion}]</code> - Show task details</p>
+<p><code>tasks abort &lt;task_id&gt;</code> - Abort a task</p>
+<p><code>tasks subtasks &lt;task_id&gt; [--sort {node|id|remaining|status|completion}]</code> - Show subtasks</p>
+<p><code>tasks restart &lt;task_id&gt;</code> - Restart a task</p>
+<p><code>tasks delete &lt;task_id&gt;</code> - Delete a task</p>
+<h2 id="subtasks">Subtasks</h2>
+<p><code>subtasks restart &lt;subtask_id&gt;</code>  - Restart a subtask</p>
+<p><code>subtasks show &lt;subtask_id&gt;</code> - Show subtask details</p></div>
         </div>
 
         <footer class="col-md-12">

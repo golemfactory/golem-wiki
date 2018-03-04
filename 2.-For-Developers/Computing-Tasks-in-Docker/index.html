@@ -8,7 +8,7 @@
         <meta name="author" content="Golem-Team">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Systemd service template - Golem Wiki</title>
+        <title>Computing Tasks in Docker - Golem Wiki</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -114,15 +114,15 @@
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
     <a href="../Command-Line/">Using the command line interface</a>
 </li>
                             
-<li >
-    <a href="../Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+<li class="active">
+    <a href="./">Computing Tasks in Docker</a>
 </li>
                             
 <li >
@@ -130,7 +130,7 @@
 </li>
                             
 <li >
-    <a href="../Development/">FAQ for developers</a>
+    <a href="../Development/">Development</a>
 </li>
                             
 <li >
@@ -141,8 +141,8 @@
     <a href="../devp2p-installation/">Devp2p installation</a>
 </li>
                             
-<li class="active">
-    <a href="./">Systemd service template</a>
+<li >
+    <a href="../systemd-service-template/">Systemd service template</a>
 </li>
                             
   <li class="dropdown-submenu">
@@ -204,12 +204,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../devp2p-installation/">
+                        <a rel="next" href="../Command-Line/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../Testing/Testing-old-GUI/">
+                        <a rel="prev" href="../Creating-a-subnet-of-nodes/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -224,24 +224,91 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#computing-tasks-in-docker">Computing Tasks in Docker</a></li>
+            <li><a href="#overview-of-the-implementation">Overview of the implementation</a></li>
+            <li><a href="#how-to-build-required-docker-images">How to build required Docker images</a></li>
+            <li><a href="#how-to-prepare-a-docker-based-task">How to prepare a Docker-based task</a></li>
+            <li><a href="#how-to-monitor-docker-computations">How to monitor Docker computations</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>A template for advanced users, who'd like to have Golem as a systemd service. You'll probably want to tweak it to your needs.</p>
-<pre class="codehilite"><code>[Unit]
-Description=Golem
-After=network.target
+<h1 id="computing-tasks-in-docker">Computing Tasks in Docker</h1>
+<p>Various bits of information on the implementation of Docker-based tasks in Golem (a <strong>Docker-based task</strong> is a task that is computed in a Docker container).</p>
+<p><strong>This is work in progress</strong></p>
+<h2 id="overview-of-the-implementation">Overview of the implementation</h2>
+<p>Most of the new code resides in the package <code>golem.docker</code>. The most interesting class there is <code>golem.docker.job.DockerJob</code> which wraps Python Docker API calls for convenient use in Golem. Example use:</p>
+<div class="codehilite"><pre><span></span><span class="k">with</span> <span class="n">DockerJob</span><span class="p">(</span><span class="n">DockerImage</span><span class="p">(</span><span class="s2">&quot;golem/blender&quot;</span><span class="p">),</span> <span class="n">task_script_src</span><span class="p">,</span> <span class="n">task_params</span><span class="p">,</span>
+               <span class="n">resources_dir</span><span class="p">,</span> <span class="n">work_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">job</span><span class="p">:</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">exit_code</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">dump_logs</span><span class="p">(</span><span class="n">stdout_file</span><span class="o">=</span><span class="s2">&quot;stdout.log&quot;</span><span class="p">)</span>
+</pre></div>
 
-[Service]
-ExecStart=/usr/local/bin/golemapp --nogui 
-Restart=on-failure
-User=ubuntu
-Group=ubuntu
-WorkingDirectory=/home/ubuntu
 
-[Install]
-WantedBy=multi-user.target</code></pre></div>
+<p>The above code will </p>
+<ul>
+<li>create a new Docker container based on the image <code>golem/blender:latest</code>;</li>
+<li>mount the host directories <code>resources_dir</code>, <code>work_dir</code>, <code>output_dir</code> as <code>/golem/resources</code>, <code>/golem/work</code> and <code>/golem/output</code>, respectively, in the container;</li>
+<li>save the string <code>task_script_src</code> as <code>/golem/work/job.py</code>;</li>
+<li>execute the command <code>/usr/bin/python /golem/work/job.py</code> in the container (with <code>/golem/work</code> as the working dir);</li>
+<li>wait for the container to exit;</li>
+<li>save the output of the command to file <code>stdout.log</code> on the host;</li>
+<li>remove the container.</li>
+</ul>
+<p>GNR specific Docker support is implemented by patching existing class hierarchy with a few Docker-specific fields and methods.</p>
+<ul>
+<li><code>golem.task.taskbase.TaskHeader</code>
+There is a new field <code>docker_images</code> which holds a list of <code>DockerImages</code>. The idea is that any of these images has to be present in order to compute the task. Usually the list will be singleton, for example will contain just <code>golem/blender</code>.</li>
+</ul>
+<p><strong>To be continued...</strong></p>
+<h2 id="how-to-build-required-docker-images">How to build required Docker images</h2>
+<p>So far there are three images:</p>
+<ul>
+<li><code>Dockerfile.base</code> for building the base image <code>golem/base</code> based on <code>debian/jessie</code></li>
+<li><code>Dockerfile.blender</code> for building the Blender image <code>golem/blender</code> based on <code>golem/base</code></li>
+<li><code>Dockerfile.luxrender</code> for building the LuxRendef image <code>golem/luxrender</code> based on <code>golem/base</code></li>
+</ul>
+<p>To build, go to the golem root dir and execute, for <code>&lt;image&gt;</code> in <code>{"base", "blender", "luxrender"}</code>:</p>
+<div class="codehilite"><pre><span></span>$ docker build -t golem/&lt;image&gt; -f scripts/Dockerfile.&lt;image&gt; .
+</pre></div>
+
+
+<p>Note that <code>Dockerfile.luxrender</code> downloads the luxrender binary distribution from imapp's repo 
+<code>https://github.com/imapp-pl/golem-binary-dependencies</code>.</p>
+<h2 id="how-to-prepare-a-docker-based-task">How to prepare a Docker-based task</h2>
+<p>Right now the GUI does not support Docker-based tasks. The workflow for producing a Docker-based Blender task definition file is as follows:</p>
+<ol>
+<li>Create and save a Blender task definition file in GUI. Suppose the file is <code>blendertask.gt</code>.</li>
+<li>Run <code>scripts/pickle2json.py blendertask.gt blendertask.json</code> to convert the <code>.gt</code> file to JSON format.</li>
+<li>
+<p>Run <code>scripts/blender2docker.py blendertask.json docker-blendertask.json</code> to add Docker-specific data to the task definition file. This step does the following:</p>
+</li>
+<li>
+<p>Adds the default Docker image <code>golem/blender</code> to the list of images required to compute the task.</p>
+</li>
+<li>Replaces the environment object with an instance of <code>BlenderDockerEnvironment</code>.</li>
+<li>Changes the value of <code>main_program_file</code> from <code>&lt;path-to-script-folder&gt;/blendertask.py</code> <code>&lt;path-to-script-folder&gt;/docker_blendertask.py</code>.</li>
+</ol>
+<p>The resulting file <code>docker-blendertask.json</code> may now be submitted for computation in Golem:</p>
+<div class="codehilite"><pre><span></span>$ python gnr/node.py --task docker-blendertask.py
+</pre></div>
+
+
+<h2 id="how-to-monitor-docker-computations">How to monitor Docker computations</h2>
+<p>Standard output and error streams of the process running in the container may be redirected to Golem logs.
+For this, set the logging level for the logger <code>golem.task.docker.job.container</code> to <code>DEBUG</code>:</p>
+<div class="codehilite"><pre><span></span><span class="k">[loggers]</span>
+<span class="na">keys</span><span class="o">=</span><span class="s">container,...</span>
+
+<span class="k">[logger_container]</span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
+<span class="na">qualname</span><span class="o">=</span><span class="s">golem.task.docker.job.container</span>
+<span class="na">propagate</span><span class="o">=</span><span class="s">0</span>
+</pre></div>
+
+
+<p>I suspect that for performance reasons this should probably be turned on only during development.</p></div>
         </div>
 
         <footer class="col-md-12">

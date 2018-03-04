@@ -114,35 +114,35 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Command-Line/">Command Line</a>
+    <a href="../../../2.-For-Developers/Command-Line/">Command Line</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+    <a href="../../../2.-For-Developers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+    <a href="../../../2.-For-Developers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Development/">Development</a>
+    <a href="../../../2.-For-Developers/Development/">Development</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Logging/">Logging</a>
+    <a href="../../../2.-For-Developers/Logging/">Logging</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/devp2p-installation/">Devp2p installation</a>
+    <a href="../../../2.-For-Developers/devp2p-installation/">Devp2p installation</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/systemd-service-template/">Systemd service template</a>
+    <a href="../../../2.-For-Developers/systemd-service-template/">Systemd service template</a>
 </li>
                             
   <li class="dropdown-submenu">
@@ -150,15 +150,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-old-GUI/">Testing old GUI</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-old-GUI/">Testing old GUI</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing/">Testing</a>
+    <a href="../../../2.-For-Developers/Testing/Testing/">Testing</a>
 </li>
     </ul>
   </li>
@@ -235,7 +235,8 @@
 
 <h2 id="get-the-code">Get the code</h2>
 <p>Clone the repo</p>
-<pre class="codehilite"><code>  git clone https://github.com/golemfactory/golem.git</code></pre>
+<div class="codehilite"><pre><span></span>  git clone https://github.com/golemfactory/golem.git
+</pre></div>
 
 
 <p>Command line developer tools are required and may be proposed by macOS.
@@ -246,25 +247,28 @@ When required, just follow the instructions.</p>
 <ol>
 <li>Install Homebrew <code>https://brew.sh</code>, if required:</li>
 </ol>
-<pre class="codehilite"><code>  /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre>
+<div class="codehilite"><pre><span></span>  /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</pre></div>
 
 
 <ol>
 <li>Install the latest Python 3 with <code>brew</code>:</li>
 </ol>
-<pre class="codehilite"><code>  brew install python3</code></pre>
+<div class="codehilite"><pre><span></span>  brew install python3
+</pre></div>
 
 
 <ol>
 <li>Update pip, setuptools, and wheel:</li>
 </ol>
-<pre class="codehilite"><code>  pip3 install --upgrade pip setuptools wheel</code></pre>
+<div class="codehilite"><pre><span></span>  pip3 install --upgrade pip setuptools wheel
+</pre></div>
 
 
 <ol>
 <li>Install software, drivers and libraries with <code>brew</code>:  </li>
 </ol>
-<pre class="codehilite"><code>  brew install docker
+<div class="codehilite"><pre><span></span>  brew install docker
   brew cask install docker
   brew install docker-machine
   brew install openexr
@@ -273,15 +277,17 @@ When required, just follow the instructions.</p>
   brew install golemfactory/hyperg/hyperg
   brew install ethereum/ethereum/ethereum
   brew install xhyve
-  brew install docker-machine-driver-xhyve</code></pre>
+  brew install docker-machine-driver-xhyve
+</pre></div>
 
 
 <ol>
 <li><code>docker-machine-driver-xhyve</code> driver requires superuser privileges to access the hypervisor. To
 enable, execute:</li>
 </ol>
-<pre class="codehilite"><code>  sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-  sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve</code></pre>
+<div class="codehilite"><pre><span></span>  sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+  sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+</pre></div>
 
 
 <ol>
@@ -289,8 +295,9 @@ enable, execute:</li>
 </ol>
 <p>source: https://stackoverflow.com/a/44719239/3805131</p>
 <p>Launch the <strong>Docker</strong> app. Click next. It will ask for privileged access. Confirm. A whale icon should appear in the top bar. Click it and wait for "Docker is running" to appear and after that:</p>
-<pre class="codehilite"><code>docker image pull golemfactory/base:1.2
-docker image pull golemfactory/blender:1.3</code></pre>
+<div class="codehilite"><pre><span></span>docker image pull golemfactory/base:1.2
+docker image pull golemfactory/blender:1.3
+</pre></div>
 
 
 <h2 id="prepare-stuff-for-development">Prepare stuff for development</h2>
@@ -298,80 +305,92 @@ docker image pull golemfactory/blender:1.3</code></pre>
 <ol>
 <li>Install virtualenv</li>
 </ol>
-<pre class="codehilite"><code>  pip3 install virtualenv</code></pre>
+<div class="codehilite"><pre><span></span>  pip3 install virtualenv
+</pre></div>
 
 
 <ol>
 <li>Create a virtual environment</li>
 </ol>
-<pre class="codehilite"><code>  virtualenv venv</code></pre>
+<div class="codehilite"><pre><span></span>  virtualenv venv
+</pre></div>
 
 
 <ol>
 <li>Switch to the virtual environment and test whether Python 3 has been activated</li>
 </ol>
-<pre class="codehilite"><code>  source venv/bin/activate
+<div class="codehilite"><pre><span></span>  source venv/bin/activate
   which python
-  python --version</code></pre>
+  python --version
+</pre></div>
 
 
 <p><strong>Install requirements</strong></p>
 <ol>
 <li>Install requirements for development</li>
 </ol>
-<pre class="codehilite"><code>  pip install -r requirements.txt</code></pre>
+<div class="codehilite"><pre><span></span>  pip install -r requirements.txt
+</pre></div>
 
 
 <ol>
 <li>Install requirements for testing</li>
 </ol>
-<pre class="codehilite"><code>  pip install -r requirements-test.txt</code></pre>
+<div class="codehilite"><pre><span></span>  pip install -r requirements-test.txt
+</pre></div>
 
 
 <p><strong>Create and run docker machine</strong></p>
 <ol>
 <li>Create docker machine using xhyve driver</li>
 </ol>
-<pre class="codehilite"><code>  docker-machine create  --driver xhyve --xhyve-virtio-9p --xhyve-cpu-count 1 --xhyve-memory-size 2596 golem
+<div class="codehilite"><pre><span></span>  docker-machine create  --driver xhyve --xhyve-virtio-9p --xhyve-cpu-count 1 --xhyve-memory-size 2596 golem
   docker-machine start golem  
-  eval $(docker-machine env golem)</code></pre>
+  eval $(docker-machine env golem)
+</pre></div>
 
 
 <ol>
 <li>Start docker machine, if required (when your macOS was restarted)</li>
 </ol>
-<pre class="codehilite"><code>  docker-machine start golem</code></pre>
+<div class="codehilite"><pre><span></span>  docker-machine start golem
+</pre></div>
 
 
 <ol>
 <li>Check whether machine is active (<code>*</code> active, <code>-</code> inactive)</li>
 </ol>
-<pre class="codehilite"><code>  docker-machine ls</code></pre>
+<div class="codehilite"><pre><span></span>  docker-machine ls
+</pre></div>
 
 
 <ol>
 <li>Make machine active</li>
 </ol>
-<pre class="codehilite"><code>  eval $(docker-machine env golem)</code></pre>
+<div class="codehilite"><pre><span></span>  eval $(docker-machine env golem)
+</pre></div>
 
 
 <ol>
 <li>Considering there is a problem, restart docker machine</li>
 </ol>
-<pre class="codehilite"><code>  docker-machine restart golem</code></pre>
+<div class="codehilite"><pre><span></span>  docker-machine restart golem
+</pre></div>
 
 
 <h2 id="run">Run</h2>
 <ol>
 <li>First, <code>setup.py</code></li>
 </ol>
-<pre class="codehilite"><code>  python setup.py develop</code></pre>
+<div class="codehilite"><pre><span></span>  python setup.py develop
+</pre></div>
 
 
 <ol>
 <li>Second, <code>golemapp.py</code></li>
 </ol>
-<pre class="codehilite"><code>  python golemapp.py</code></pre>
+<div class="codehilite"><pre><span></span>  python golemapp.py
+</pre></div>
 
 
 <p><strong>That's it!</strong></p></div>

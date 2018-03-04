@@ -8,7 +8,7 @@
         <meta name="author" content="Golem-Team">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Devp2p installation - Golem Wiki</title>
+        <title>Creating a subnet of nodes - Golem Wiki</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -114,7 +114,7 @@
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -125,20 +125,20 @@
     <a href="../Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
 </li>
                             
-<li >
-    <a href="../Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+<li class="active">
+    <a href="./">Creating a subnet of nodes</a>
 </li>
                             
 <li >
-    <a href="../Development/">FAQ for developers</a>
+    <a href="../Development/">Development</a>
 </li>
                             
 <li >
     <a href="../Logging/">Logging</a>
 </li>
                             
-<li class="active">
-    <a href="./">Devp2p installation</a>
+<li >
+    <a href="../devp2p-installation/">Devp2p installation</a>
 </li>
                             
 <li >
@@ -204,12 +204,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../Logging/">
+                        <a rel="next" href="../Computing-Tasks-in-Docker/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../systemd-service-template/">
+                        <a rel="prev" href="../Development/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -224,15 +224,59 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#creating-a-subnet-of-nodes">Creating a subnet of nodes</a></li>
+            <li><a href="#way-no1">Way No1</a></li>
+            <li><a href="#alternative-way-no2">Alternative, Way No2</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<ol>
-<li>Install tulipcore: https://github.com/decentfox/tulipcore and set up the env variables.</li>
-</ol>
-<p>If you forget to set the env variable, you'll get:</p>
-<pre class="codehilite"><code>AttributeError: 'gevent.libev.corecext.loop' object has no attribute 'aio'</code></pre></div>
+<h1 id="creating-a-subnet-of-nodes">Creating a subnet of nodes</h1>
+<p>For compability, Golems' nodes can connect if they have the same the 'protocol_id'.</p>
+<p>During tests, it is useful to apply a 'mask' which will create a subnet of nodes.
+To do so, the node_A and node_B need to be run im a following manner:</p>
+<h2 id="way-no1">Way No1</h2>
+<p>1) Since the 'protocol_id' is restricted, nodes cannot connect to default (hardcoded) seed.
+Edit the config files </p>
+<p>app_cfg.ini of node_A </p>
+<div class="codehilite"><pre><span></span>...
+start port = 40102
+...
+</pre></div>
+
+
+<p>app_cfg.ini of node_B</p>
+<div class="codehilite"><pre><span></span>...
+seed port = 40102
+seed host = &lt;ip of node_A&gt;
+...
+</pre></div>
+
+
+<p>2) run the golem's node_A with command line argumend <code>--protocol_id=12345</code>
+3) run the golem's node_B with command line argumend <code>--protocol_id=12345</code></p>
+<p>Note: 
+When launching 2 instances of golem on the same local machine replace the <ip of node_A> with 127.0.0.1</p>
+<p>Then, you shall observe in logs on node_A:</p>
+<div class="codehilite"><pre><span></span>INFO     [twisted                            ] ProtocolFactory starting on 40102 
+INFO     [twisted                            ] Starting factory &lt;golem.network.transport.network.ProtocolFactory object at 0x7fbf5594efd0&gt; 
+INFO     [twisted                            ] ProtocolFactory starting on 40103 
+</pre></div>
+
+
+<p>When launching node_B, the ports 40102, 40103 are already used by node_A, thus node_B will take next ones:</p>
+<div class="codehilite"><pre><span></span>INFO     [twisted                            ] ProtocolFactory starting on 40104 
+INFO     [twisted                            ] Starting factory &lt;golem.network.transport.network.ProtocolFactory object at 0x7fb19a8b34a8&gt; 
+INFO     [twisted                            ] ProtocolFactory starting on 40105 
+</pre></div>
+
+
+<p>Thus, it is important to launch nodes in order: node_A then node_B - according to the config file.</p>
+<h2 id="alternative-way-no2">Alternative, Way No2</h2>
+<p>1) run the golem's node_A with command line argumend:</p>
+<p><code>--protocol_id=12345</code></p>
+<p>2) run the golem's node_B with command line argumend:</p>
+<p><code>--protocol_id=12345 --peer=127.0.0.1:40102 --rpc-address=127.0.0.1:61011</code></p></div>
         </div>
 
         <footer class="col-md-12">

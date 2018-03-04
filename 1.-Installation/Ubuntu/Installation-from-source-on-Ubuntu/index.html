@@ -114,35 +114,35 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Command-Line/">Command Line</a>
+    <a href="../../../2.-For-Developers/Command-Line/">Command Line</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+    <a href="../../../2.-For-Developers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+    <a href="../../../2.-For-Developers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Development/">Development</a>
+    <a href="../../../2.-For-Developers/Development/">Development</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Logging/">Logging</a>
+    <a href="../../../2.-For-Developers/Logging/">Logging</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/devp2p-installation/">Devp2p installation</a>
+    <a href="../../../2.-For-Developers/devp2p-installation/">Devp2p installation</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/systemd-service-template/">Systemd service template</a>
+    <a href="../../../2.-For-Developers/systemd-service-template/">Systemd service template</a>
 </li>
                             
   <li class="dropdown-submenu">
@@ -150,15 +150,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-old-GUI/">Testing old GUI</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-old-GUI/">Testing old GUI</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing/">Testing</a>
+    <a href="../../../2.-For-Developers/Testing/Testing/">Testing</a>
 </li>
     </ul>
   </li>
@@ -234,42 +234,49 @@
 
 <h2 id="getting-the-code">Getting the code</h2>
 <p>Clone the repo</p>
-<pre class="codehilite"><code>git clone https://github.com/golemfactory/golem.git</code></pre>
+<div class="codehilite"><pre><span></span>git clone https://github.com/golemfactory/golem.git
+</pre></div>
 
 
 <h2 id="system-setup">System setup</h2>
 <h3 id="ubuntu">Ubuntu</h3>
 <p><strong>Dependencies</strong></p>
 <p>1a. Install additional libraries:  </p>
-<pre class="codehilite"><code>sudo apt install openssl python3-dev libffi-dev pkg-config libjpeg-dev \
+<div class="codehilite"><pre><span></span>sudo apt install openssl python3-dev libffi-dev pkg-config libjpeg-dev \
     libopenexr-dev libssl-dev autoconf libgmp-dev \
     libfreeimage-dev libtool python3-netifaces python3-psutil build-essential \
-    python3-pip docker.io</code></pre>
+    python3-pip docker.io
+</pre></div>
 
 
 <p>To enable docker usage add yourself to <code>docker</code> group</p>
-<pre class="codehilite"><code>sudo usermod -a -G docker $USER</code></pre>
+<div class="codehilite"><pre><span></span>sudo usermod -a -G docker $USER
+</pre></div>
 
 
 <p>and restart the system for changes to take effect.</p>
 <p>1b. Install additional python libraries:  </p>
-<pre class="codehilite"><code>pip3 install -r requirements.txt</code></pre>
+<div class="codehilite"><pre><span></span>pip3 install -r requirements.txt
+</pre></div>
 
 
 <p>or for local installation only</p>
-<pre class="codehilite"><code>pip3 install --user -r requirements.txt</code></pre>
+<div class="codehilite"><pre><span></span>pip3 install --user -r requirements.txt
+</pre></div>
 
 
 <p>In case the installation fails with a <code>403 Client Error: SSL is required</code> error, you need to re-install pip with <code>pip3 install --upgrade pip</code>.</p>
 <p>1c. Run setup via</p>
-<pre class="codehilite"><code>python3 setup.py develop --prefix=$HOME/.local</code></pre>
+<div class="codehilite"><pre><span></span>python3 setup.py develop --prefix=$HOME/.local
+</pre></div>
 
 
 <ol>
 <li>To run tests install additional libraries:</li>
 </ol>
-<pre class="codehilite"><code>sudo apt-get install libyaml-dev mock
-pip3 install pytest pycodestyle freezegun</code></pre>
+<div class="codehilite"><pre><span></span>sudo apt-get install libyaml-dev mock
+pip3 install pytest pycodestyle freezegun
+</pre></div>
 
 
 <p>If you run into import problems, e.g. <code>ImportError: cannot import name keccak</code>, run:

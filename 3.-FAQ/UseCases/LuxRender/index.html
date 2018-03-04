@@ -114,35 +114,35 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Command-Line/">Using the command line interface</a>
+    <a href="../../../2.-For-Developers/Command-Line/">Using the command line interface</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+    <a href="../../../2.-For-Developers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+    <a href="../../../2.-For-Developers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Development/">FAQ for developers</a>
+    <a href="../../../2.-For-Developers/Development/">FAQ for developers</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Logging/">Logging</a>
+    <a href="../../../2.-For-Developers/Logging/">Logging</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/devp2p-installation/">Devp2p installation</a>
+    <a href="../../../2.-For-Developers/devp2p-installation/">Devp2p installation</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/systemd-service-template/">Systemd service template</a>
+    <a href="../../../2.-For-Developers/systemd-service-template/">Systemd service template</a>
 </li>
                             
   <li class="dropdown-submenu">
@@ -150,15 +150,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-old-GUI/">Old GUI</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-old-GUI/">Old GUI</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing/">How to start testing</a>
+    <a href="../../../2.-For-Developers/Testing/Testing/">How to start testing</a>
 </li>
     </ul>
   </li>
@@ -249,10 +249,11 @@ To validate the results, one has to calculate a metric against a reference image
 No matter which metric we use, there will always be some mismatch because of non-determinism.
 To overcome this issue, the requestor's machine renders two sample images and calculates the metric between them. 
 Since the result depends on image resolution and quality (sampling rate), we have to formulate a self-adjustable validation mechanism:</p>
-<pre class="codehilite"><code class="language-python">    if Metric(sample1, providers_results) &lt; relaxation_coeff * Metric(sample1, sample2)
-       validation success
-    else 
-       validation false</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="k">if</span> <span class="n">Metric</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">providers_results</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">relaxation_coeff</span> <span class="o">*</span> <span class="n">Metric</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span><span class="p">)</span>
+       <span class="n">validation</span> <span class="n">success</span>
+    <span class="k">else</span> 
+       <span class="n">validation</span> <span class="n">false</span>
+</pre></div>
 
 
 <h2 id="task-specific-options">Task specific options</h2>

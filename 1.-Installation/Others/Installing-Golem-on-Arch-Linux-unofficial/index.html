@@ -114,35 +114,35 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. ForDevelopers <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Command-Line/">Command Line</a>
+    <a href="../../../2.-For-Developers/Command-Line/">Command Line</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
+    <a href="../../../2.-For-Developers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
+    <a href="../../../2.-For-Developers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Development/">Development</a>
+    <a href="../../../2.-For-Developers/Development/">Development</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/Logging/">Logging</a>
+    <a href="../../../2.-For-Developers/Logging/">Logging</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/devp2p-installation/">Devp2p installation</a>
+    <a href="../../../2.-For-Developers/devp2p-installation/">Devp2p installation</a>
 </li>
                             
 <li >
-    <a href="../../../2.-ForDevelopers/systemd-service-template/">Systemd service template</a>
+    <a href="../../../2.-For-Developers/systemd-service-template/">Systemd service template</a>
 </li>
                             
   <li class="dropdown-submenu">
@@ -150,15 +150,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-old-GUI/">Testing old GUI</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-old-GUI/">Testing old GUI</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
+    <a href="../../../2.-For-Developers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
 </li>
             
 <li >
-    <a href="../../../2.-ForDevelopers/Testing/Testing/">Testing</a>
+    <a href="../../../2.-For-Developers/Testing/Testing/">Testing</a>
 </li>
     </ul>
   </li>
@@ -243,47 +243,56 @@ Arch Linux is not officially supported. Anyway, if you encounter troubles, feel 
 <h1 id="installing-through-virtualenv">Installing through virtualenv</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>I had all of this installed because of my previous Golem (Python 2) installation.</p>
-<pre class="codehilite"><code>pacman -S openexr openssl-1.0 freeimage python-pyqt5 geth</code></pre>
+<div class="codehilite"><pre><span></span>pacman -S openexr openssl-1.0 freeimage python-pyqt5 geth
+</pre></div>
 
 
 <p>New prerequisite was (from AUR):</p>
-<pre class="codehilite"><code>pacaur -S libsecp256k1-git</code></pre>
+<div class="codehilite"><pre><span></span>pacaur -S libsecp256k1-git
+</pre></div>
 
 
 <p>Besides, setup Docker: https://wiki.archlinux.org/index.php/Docker
 Install HyperG (I put it into my virtualenv): https://github.com/mfranciszkiewicz/golem-hyperdrive/releases</p>
 <h2 id="setup-the-environment">Setup the environment</h2>
 <p>Create a virtualenv.</p>
-<pre class="codehilite"><code>virtualenv golem
-source golem/bin/activate</code></pre>
+<div class="codehilite"><pre><span></span>virtualenv golem
+source golem/bin/activate
+</pre></div>
 
 
 <p>and download the sources</p>
-<pre class="codehilite"><code>git clone ...</code></pre>
+<div class="codehilite"><pre><span></span>git clone ...
+</pre></div>
 
 
 <h2 id="install-the-dependencies">Install the dependencies</h2>
 <p>We have OpenSSL in Arch Linux but the version of <code>python-cryptography</code> (and some other libs) golem uses requires OpenSSL 1.0 (they are not compatible). Thus, we'll need
 to compile it separately. Do</p>
-<pre class="codehilite"><code>pip download -r requirements.txt</code></pre>
+<div class="codehilite"><pre><span></span>pip download -r requirements.txt
+</pre></div>
 
 
 <p>to see which version of <code>cryptography</code> is needed. In my case it was <code>1.8.1</code>, so
 I did:</p>
-<pre class="codehilite"><code>pip install --global-option=build_ext --global-option=&quot;-I/usr/include/openssl-1.0&quot; --global-option=&quot;-L/usr/lib/openssl-1.0&quot; cryptography==1.8.1</code></pre>
+<div class="codehilite"><pre><span></span>pip install --global-option=build_ext --global-option=&quot;-I/usr/include/openssl-1.0&quot; --global-option=&quot;-L/usr/lib/openssl-1.0&quot; cryptography==1.8.1
+</pre></div>
 
 
 <p>Then do</p>
-<pre class="codehilite"><code>pip install -r requirements.txt</code></pre>
+<div class="codehilite"><pre><span></span>pip install -r requirements.txt
+</pre></div>
 
 
 <h2 id="compile-golem">Compile golem</h2>
-<pre class="codehilite"><code>python setup.py develop</code></pre>
+<div class="codehilite"><pre><span></span>python setup.py develop
+</pre></div>
 
 
 <h2 id="final-patches">Final patches</h2>
 <p>We'll need to patch pyelliptic to use OpenSSL 1.0</p>
-<pre class="codehilite"><code>sed &quot;s%ctypes.util.find_library('crypto')%'/usr/lib/openssl-1.0/libcrypto.so'%&quot; -i &quot;$VIRTUAL_ENV/golem/lib/python3.6/site-packages/pyelliptic/openssl.py&quot;</code></pre>
+<div class="codehilite"><pre><span></span>sed &quot;s%ctypes.util.find_library(&#39;crypto&#39;)%&#39;/usr/lib/openssl-1.0/libcrypto.so&#39;%&quot; -i &quot;$VIRTUAL_ENV/golem/lib/python3.6/site-packages/pyelliptic/openssl.py&quot;
+</pre></div>
 
 
 <p>Now you can run golem by <code>golemapp</code></p>
