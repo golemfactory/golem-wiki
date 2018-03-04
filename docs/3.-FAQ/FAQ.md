@@ -1,13 +1,9 @@
 ### Jump to a Section:
 
-* [How Golem Works](FAQ#golem-technology)
-* [Business Model](FAQ#golem-business-model)
-* [Safety and Security](FAQ#safety-and-security)
-* [Using Golem (Troubleshooting)](FAQ#using-golem)
-   - [What to do if Something Goes Wrong](FAQ#what-do-i-do-if-something-goes-wrong)
-* [Golem vs. Others](FAQ#comparing-golem-to-other-services)
-* [Golem Token](FAQ#golem-token)
+[TOC]
+
 * [Read our Whitepaper (ctrl + click to open in new tab)](https://golem.network/doc/Golemwhitepaper.pdf)
+
 
 # How and why Golem will change the world (or at least the Internet)
 ### What is Golem?
@@ -83,7 +79,7 @@ https://trello.com/b/YL1qZ2pZ/brass-kanban
 
 Thanks for your support and patience while we deliver our product!
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)
 
 # Golem technology
 ### How Golem works?
@@ -114,7 +110,7 @@ We are building the transaction framework on top of Ethereum. Ethereum gives us 
 
 We're using IPFS (https://ipfs.io/) for resource distribution and Docker (https://www.docker.com/) containers as computational environments.
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)
 
 # Golem business model
 ### How will payments work in Golem?
@@ -188,7 +184,7 @@ When we find or create suitable virtualization solution that supports virtual GP
 In the future, as the network evolves and more developers build on top of Golem, we may explore other avenues beyond virtualization for computation environments, like host-direct modes. This is not a priority focus at this time though.
 
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)
 
 # Safety and Security
 ### Can you use private data for computation? Can providers see your data?
@@ -214,11 +210,14 @@ Key security elements will be:
 * The Ethereum integration and transaction framework makes custom payment-based security mechanisms possible, eg. escrows, deposits, insurance and audit proofs.
 * Security audits will be conducted for every release, performed by external contractors.
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)
 
 # Using Golem
 
 ### Installing Golem
+
+Install Golem using *Installers*, see [installation manual](../../1.-Installation/Installation.md).
+
 
 * [Installation on Mac](../1.-Installation/MacOS/Installation-on-Mac.md)
 
@@ -314,7 +313,7 @@ The first things to do if you have any error while running Golem are:
     - Your Golem.log and Hyperg.log files
     - The name and size of the blender file you were attempting to render
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)
 
 # Comparing Golem to Other Services
 
@@ -344,7 +343,7 @@ We do not invest in ICOs. We should not speculate with ETH and nowadays ICOs hav
 
 Golem would prefer to work together to achieve mutual goals than to speculate and invest capital.
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)
 
 
 # Golem Token
@@ -395,4 +394,4 @@ The best thing you can do going forward is:
 
 At Golem we are only working on the App. The GNT token is an important part of our ecosystem but we are powerless to help with transactions between independent investors and 3rd party exchanges.
 
-### [back to top](FAQ#jump-to-a-section)
+[back to top](FAQ#jump-to-a-section)

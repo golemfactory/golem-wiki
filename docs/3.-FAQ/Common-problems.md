@@ -1,8 +1,7 @@
-:toc:
-:toclevels: 2
-:toc-title:
 
-toc::[]
+##### Jump to a Section:
+
+[TOC]
 
 # Installing
 These are the common problems while installing the released versions
