@@ -1,5 +1,7 @@
 
-# Installers
+# Installation - General Guide
+
+## Installers
 
 [macOS](MacOS/Installation-on-Mac.md)
 
@@ -73,9 +75,6 @@ For more info see [[this instruction|https://docs.golem.network]]
 [Installation on Ubuntu](Ubuntu/Installation-from-source-on-Ubuntu.md)
 
 [Installation on Windows 10](Windows/Installation-from-source-on-Windows.md)
-
-[Arch Linux-unofficial](Others/Installing-Golem-on-Arch-Linux-unofficial.md)
-
 
 ## Running
 

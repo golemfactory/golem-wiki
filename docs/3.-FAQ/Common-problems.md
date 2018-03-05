@@ -1,5 +1,8 @@
 
-##### Jump to a Section:
+
+# Common problems 
+
+**Jump to a Section:**
 
 [TOC]
 

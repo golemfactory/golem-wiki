@@ -1,3 +1,7 @@
+
+
+# Mac - install from source instructions
+
 ## Get the code
 
 Clone the repo
@@ -15,22 +19,22 @@ When required, just follow the instructions.
 
 **Install dependencies**
 
-1. Install Homebrew `https://brew.sh`, if required:
+*1.* Install Homebrew `https://brew.sh`, if required:
 ```
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-2. Install the latest Python 3 with `brew`:
+*2.* Install the latest Python 3 with `brew`:
 ```
   brew install python3
 ```
 
-3. Update pip, setuptools, and wheel:
+*3.* Update pip, setuptools, and wheel:
 ```
   pip3 install --upgrade pip setuptools wheel
 ```
 
-4. Install software, drivers and libraries with `brew`:  
+*4.* Install software, drivers and libraries with `brew`:  
 ```
   brew install docker
   brew cask install docker
@@ -44,14 +48,14 @@ When required, just follow the instructions.
   brew install docker-machine-driver-xhyve
 ```
 
-5. `docker-machine-driver-xhyve` driver requires superuser privileges to access the hypervisor. To
+*5.* `docker-machine-driver-xhyve` driver requires superuser privileges to access the hypervisor. To
 enable, execute:
 ```
   sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 ```
 
-6. pull docker images
+*6.* pull docker images
 
 source: https://stackoverflow.com/a/44719239/3805131
 
@@ -66,17 +70,17 @@ docker image pull golemfactory/blender:1.3
 
 **Prepare virtual environment**
 
-1. Install virtualenv
+*1.* Install virtualenv
 ```
   pip3 install virtualenv
 ```
 
-2. Create a virtual environment
+*2.* Create a virtual environment
 ```
   virtualenv venv
 ```
 
-3. Switch to the virtual environment and test whether Python 3 has been activated
+*3.* Switch to the virtual environment and test whether Python 3 has been activated
 ```
   source venv/bin/activate
   which python
@@ -85,13 +89,13 @@ docker image pull golemfactory/blender:1.3
 
 **Install requirements**
 
-1. Install requirements for development
+*1.* Install requirements for development
 
 ```
   pip install -r requirements.txt
 ```
 
-2. Install requirements for testing
+*2.* Install requirements for testing
 
 ```
   pip install -r requirements-test.txt
@@ -99,7 +103,7 @@ docker image pull golemfactory/blender:1.3
 
 **Create and run docker machine**
 
-1. Create docker machine using xhyve driver
+*1.* Create docker machine using xhyve driver
 
 ```
   docker-machine create  --driver xhyve --xhyve-virtio-9p --xhyve-cpu-count 1 --xhyve-memory-size 2596 golem
@@ -107,25 +111,25 @@ docker image pull golemfactory/blender:1.3
   eval $(docker-machine env golem)
 ```
 
-2. Start docker machine, if required (when your macOS was restarted)
+*2.* Start docker machine, if required (when your macOS was restarted)
 
 ```
   docker-machine start golem
 ```
 
-3. Check whether machine is active (`*` active, `-` inactive)
+*3.* Check whether machine is active (`*` active, `-` inactive)
 
 ```
   docker-machine ls
 ```
 
-4. Make machine active
+*4.* Make machine active
 
 ```
   eval $(docker-machine env golem)
 ```
 
-5. Considering there is a problem, restart docker machine
+*5.* Considering there is a problem, restart docker machine
 
 ```
   docker-machine restart golem
@@ -133,13 +137,13 @@ docker image pull golemfactory/blender:1.3
 
 ## Run
 
-1. First, `setup.py`
+*1.* First, `setup.py`
 
 ```
   python setup.py develop
 ```
 
-2. Second, `golemapp.py`
+*2.* Second, `golemapp.py`
 
 ```
   python golemapp.py

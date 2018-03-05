@@ -1,3 +1,7 @@
+
+# Windows - install from source instructions
+
+
 Please note that these instructions are for the **64-bit** version of [Python 3.6](https://www.python.org/ftp/python/3.6.2/python-3.6.2-amd64.exe).
 
 1. OpenSSL libraries (64-bit)
@@ -26,3 +30,5 @@ pip install -r requirements-win.txt
   - In case of error `Error LNK1181 cannot open input file '\FreeImage.lib` download package from [[this site|https://sourceforge.net/projects/freeimage/files/Binary%20Distribution/3.17.0/FreeImage3170Win32Win64.zip/download?use_mirror=vorboss]] and extract `FreeImage.lib` to `<golem dir>\apps\rendering\resources\taskcollector\FreeImage\Release` and `FreeImage.dll` to the `<golem dir>\apps\rendering\resources\taskcollector\Release` folder.
 __NOTE__ use 64bit libraries
 4. Build the project
+
+**That's it!**

@@ -1,3 +1,6 @@
+
+# Logging
+
 Log configuration is in file `logging.ini` in `gnr`. 
 
 ## Default settings

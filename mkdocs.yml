@@ -5,9 +5,11 @@ site_author: Golem-Team
 theme:
   # name: 'readthedocs'
   # name: 'material'
-  name: 'journal'
-  # name: 'readable'
-repo_name: github
+  name: 'cinder'
+
+extra_css:
+  - "css/golem_style.css"
+
 repo_url: https://github.com/golemfactory/golem/
 edit_uri: ""
 

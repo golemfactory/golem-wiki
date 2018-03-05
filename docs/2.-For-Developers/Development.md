@@ -52,3 +52,33 @@ If you rename a property / model, `peewee_migrate` will generate a series of `re
 Please replace those with `rename_table` and `rename_field` accordingly.
 
 Otherwise, your migration script will cause unnecessary data loss.
+
+
+## How to install devp2p?
+
+Install tulipcore: https://github.com/decentfox/tulipcore and set up the env variables.
+
+If you forget to set the env variable, you'll get:
+```
+AttributeError: 'gevent.libev.corecext.loop' object has no attribute 'aio'
+```
+
+## How do I run Golem as a systemd service?
+
+A template for advanced users, who'd like to have Golem as a systemd service. You'll probably want to tweak it to your needs.
+
+```
+[Unit]
+Description=Golem
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/golemapp --nogui 
+Restart=on-failure
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu
+
+[Install]
+WantedBy=multi-user.target
+```
