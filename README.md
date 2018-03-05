@@ -15,9 +15,12 @@ You can lookup your pythons' distributions using `$ whereis python` or just pick
 
 To activate `$ workon my-mkdocs-env`, to deactive enter `$ deactivate`
 
-Install dependencies:
+Clone the repo and install dependencies:
 
-```(my-mkdocs-env) $  pip install -r requirements.txt```
+```
+(my-mkdocs-env) $ git clone https://github.com/ggruszczynski/gn_mkdocs.git
+(my-mkdocs-env) $ pip install -r requirements.txt
+```
 
 Run server on you local machine:
 
