@@ -1,6 +1,6 @@
 # gn_mkdocs
 
-This short tutorial will show you how to serve the webpage at you local machine (Ubuntu) at test your changes.
+This short tutorial will show you how to serve the webpage at you local machine (Ubuntu) and test your changes.
 
 First, it is safe to isolate your enviroment.
 
