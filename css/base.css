@@ -73,11 +73,11 @@ pre code {
 }
 
 a code {
-    color: #4582ec;
+    color: #eb6864;
 }
 
 a:hover code, a:focus code {
-    color: #134fb8;
+    color: #e22620;
 }
 
 kbd {
@@ -95,18 +95,21 @@ footer {
     margin-bottom: 10px;
     text-align: center;
     font-weight: 200;
+    line-height: 1.1;
 }
 
 .modal-dialog {
-    margin-top: 65px;
+    margin-top: 70px;
 }
 
 /* Style the admonitions. */
 
 .admonition {
-    margin-bottom: 22px;
+    margin-bottom: 21px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .admonition > .admonition-title {
@@ -115,12 +118,11 @@ footer {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     border-bottom: 1px solid #ddd;
-    color: #333;
+    color: #777;
     background-color: #f5f5f5;
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.1;
+    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .admonition > * {
@@ -140,30 +142,30 @@ footer {
 /* Style each kind of admonition. */
 
 .admonition.note, .admonition.note > .admonition-title {
-    border-color: #5bc0de;
+    border-color: #336699;
 }
 
 .admonition.note > .admonition-title {
     color: #fff;
-    background-color: #5bc0de;
+    background-color: #336699;
 }
 
 .admonition.warning, .admonition.warning > .admonition-title {
-    border-color: #f0ad4e;
+    border-color: #f5e625;
 }
 
 .admonition.warning > .admonition-title {
     color: #fff;
-    background-color: #f0ad4e;
+    background-color: #f5e625;
 }
 
 .admonition.danger, .admonition.danger > .admonition-title {
-    border-color: #d9534f;
+    border-color: #f57a00;
 }
 
 .admonition.danger > .admonition-title {
     color: #fff;
-    background-color: #d9534f;
+    background-color: #f57a00;
 }
 
 /*
