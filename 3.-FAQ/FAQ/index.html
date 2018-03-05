@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="author" content="Golem-Team">
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>FAQ - Golem Wiki</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title></title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+
+    <link href="../../css/golem_style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
 
-    <body>
+    
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
         <!-- Collapsed navigation -->
@@ -38,6 +53,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            
+
+            <!-- Main title -->
+
             <a class="navbar-brand" href="../..">Golem Wiki</a>
         </div>
 
@@ -45,168 +64,240 @@
         <div class="navbar-collapse collapse">
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
+                
+                
                     <li >
                         <a href="../..">Home</a>
                     </li>
+                
+                
+                
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">1. Installation <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                        
                             
 <li >
-    <a href="../../1.-Installation/Installation/">Installers</a>
+    <a href="../../1.-Installation/Installation/">Installation - General Guide</a>
 </li>
-                            
-  <li class="dropdown-submenu">
-    <a href="#">MacOS</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../1.-Installation/MacOS/Installation-from-source-on-macOS/">Installation from source on macOS</a>
-</li>
-            
-<li >
-    <a href="../../1.-Installation/MacOS/Installation-on-Mac/">Installation on Mac</a>
-</li>
-    </ul>
-  </li>
+
+                        
                             
   <li class="dropdown-submenu">
-    <a href="#">Others</a>
+    <a tabindex="-1" href="">MacOS</a>
     <ul class="dropdown-menu">
+        
             
 <li >
-    <a href="../../1.-Installation/Others/Installing-Golem-on-Arch-Linux-unofficial/">Proceed on your own risk.</a>
+    <a href="../../1.-Installation/MacOS/Installation-from-source-on-macOS/">Mac - install from source instructions</a>
 </li>
+
+        
+            
+<li >
+    <a href="../../1.-Installation/MacOS/Installation-on-Mac/">Mac - install instructions</a>
+</li>
+
+        
     </ul>
   </li>
+
+                        
                             
   <li class="dropdown-submenu">
-    <a href="#">Ubuntu</a>
+    <a tabindex="-1" href="">Ubuntu</a>
     <ul class="dropdown-menu">
+        
             
 <li >
-    <a href="../../1.-Installation/Ubuntu/Installation-from-source-on-Ubuntu/">Installation from source on Ubuntu</a>
+    <a href="../../1.-Installation/Ubuntu/Installation-from-source-on-Ubuntu/">Ubuntu - install from source instructions</a>
 </li>
+
+        
             
 <li >
-    <a href="../../1.-Installation/Ubuntu/Installation-on-Ubuntu/">Installation on Ubuntu</a>
+    <a href="../../1.-Installation/Ubuntu/Installation-on-Ubuntu/">Ubuntu - install instructions</a>
 </li>
+
+        
     </ul>
   </li>
+
+                        
                             
   <li class="dropdown-submenu">
-    <a href="#">Windows</a>
+    <a tabindex="-1" href="">Windows</a>
     <ul class="dropdown-menu">
+        
             
 <li >
-    <a href="../../1.-Installation/Windows/Installation-Packaging-Win/">Packaging</a>
+    <a href="../../1.-Installation/Windows/Installation-Packaging-Win/">Windows - Installation Packaging</a>
 </li>
+
+        
             
 <li >
-    <a href="../../1.-Installation/Windows/Installation-from-source-on-Windows/">Installation from source on Windows</a>
+    <a href="../../1.-Installation/Windows/Installation-from-source-on-Windows/">Windows - install from source instructions</a>
 </li>
+
+        
             
 <li >
-    <a href="../../1.-Installation/Windows/Installation-on-Windows/">Installation on Windows</a>
+    <a href="../../1.-Installation/Windows/Installation-on-Windows/">Windows - install instructions</a>
 </li>
+
+        
     </ul>
   </li>
+
+                        
                         </ul>
                     </li>
+                
+                
+                
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. For Developers <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                        
                             
 <li >
     <a href="../../2.-For-Developers/Command-Line/">Using the command line interface</a>
 </li>
+
+                        
                             
 <li >
     <a href="../../2.-For-Developers/Computing-Tasks-in-Docker/">Computing Tasks in Docker</a>
 </li>
+
+                        
                             
 <li >
     <a href="../../2.-For-Developers/Creating-a-subnet-of-nodes/">Creating a subnet of nodes</a>
 </li>
+
+                        
                             
 <li >
     <a href="../../2.-For-Developers/Development/">FAQ for developers</a>
 </li>
+
+                        
                             
 <li >
     <a href="../../2.-For-Developers/Logging/">Logging</a>
 </li>
-                            
-<li >
-    <a href="../../2.-For-Developers/devp2p-installation/">Devp2p installation</a>
-</li>
-                            
-<li >
-    <a href="../../2.-For-Developers/systemd-service-template/">Systemd service template</a>
-</li>
+
+                        
                             
   <li class="dropdown-submenu">
-    <a href="#">Testing</a>
+    <a tabindex="-1" href="">Testing</a>
     <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../2.-For-Developers/Testing/Testing-old-GUI/">Old GUI</a>
-</li>
+        
             
 <li >
     <a href="../../2.-For-Developers/Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
 </li>
+
+        
             
 <li >
     <a href="../../2.-For-Developers/Testing/Testing/">How to start testing</a>
 </li>
+
+        
     </ul>
   </li>
+
+                        
                         </ul>
                     </li>
+                
+                
+                
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">3. FAQ <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                        
                             
 <li >
     <a href="../Common-problems/">Common problems</a>
 </li>
+
+                        
                             
 <li class="active">
     <a href="./">FAQ</a>
 </li>
+
+                        
                             
 <li >
     <a href="../Roadmap/">Roadmap</a>
 </li>
+
+                        
                             
   <li class="dropdown-submenu">
-    <a href="#">UseCases</a>
+    <a tabindex="-1" href="">Obsolete</a>
     <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../Obsolete/Installing-Golem-on-Arch-Linux-unofficial/">Installing Golem on Arch Linux unofficial</a>
+</li>
+
+        
+            
+<li >
+    <a href="../Obsolete/Testing-old-GUI/">Testing old GUI</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">UseCases</a>
+    <ul class="dropdown-menu">
+        
             
 <li >
     <a href="../UseCases/Blender/">Blender</a>
 </li>
+
+        
             
 <li >
     <a href="../UseCases/LuxRender/">LuxRender</a>
 </li>
+
+        
             
 <li >
     <a href="../UseCases/Use-cases/">Use cases</a>
 </li>
+
+        
     </ul>
   </li>
+
+                        
                         </ul>
                     </li>
+                
+                
                 </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../Common-problems/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -218,68 +309,111 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/golemfactory/golem/">github</a>
+                        <a href="https://github.com/golemfactory/golem/"><i class="fa fa-github"></i> GitHub</a>
                     </li>
             </ul>
         </div>
     </div>
 </div>
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jump-to-a-section">Jump to a Section:</a></li>
-        <li class="main "><a href="#how-and-why-golem-will-change-the-world-or-at-least-the-internet">How and why Golem will change the world (or at least the Internet)</a></li>
-            <li><a href="#what-is-golem">What is Golem?</a></li>
-            <li><a href="#who-can-use-golem-and-why">Who can use Golem and why?</a></li>
-            <li><a href="#what-is-the-current-state-of-the-project-and-the-way-ahead">What is the current state of the project and the way ahead?</a></li>
-            <li><a href="#how-golem-will-help-to-build-a-new-internet-of-tomorrow">How Golem will help to build a new Internet of tomorrow?</a></li>
-            <li><a href="#when-will-the-latest-version-be-released">When will the latest version be released?</a></li>
-        <li class="main "><a href="#golem-technology">Golem technology</a></li>
-            <li><a href="#how-golem-works">How Golem works?</a></li>
-            <li><a href="#how-are-your-going-to-verify-computations">How are your going to verify computations?</a></li>
-            <li><a href="#why-are-you-making-it-decentralized">Why are you making it decentralized?</a></li>
-            <li><a href="#why-are-you-using-ethereum">Why are you using Ethereum?</a></li>
-            <li><a href="#are-you-using-some-external-solutions-libraries">Are you using some external solutions / libraries?</a></li>
-        <li class="main "><a href="#golem-business-model">Golem business model</a></li>
-            <li><a href="#how-will-payments-work-in-golem">How will payments work in Golem?</a></li>
-            <li><a href="#what-are-use-cases-for-golem">What are use cases for Golem?</a></li>
-            <li><a href="#why-computing-prices-will-be-lower-with-the-golem-network">Why computing prices will be lower with the Golem Network?</a></li>
-            <li><a href="#why-golem-is-unlikely-to-be-successfully-copied">Why Golem is unlikely to be successfully copied?</a></li>
-            <li><a href="#how-do-you-ensure-fairness-of-task-assignment-in-the-network">How do you ensure fairness of task assignment in the network?</a></li>
-            <li><a href="#how-does-golem-compare-to-currentreal-supercomputers">How does Golem compare to current/real supercomputers?</a></li>
-            <li><a href="#when-will-you-support-gpus-and-how">When will you support GPUs and How?</a></li>
-        <li class="main "><a href="#safety-and-security">Safety and Security</a></li>
-            <li><a href="#can-you-use-private-data-for-computation-can-providers-see-your-data">Can you use private data for computation? Can providers see your data?</a></li>
-            <li><a href="#what-if-someone-would-like-to-use-golem-for-ddos-botnet-or-other-illegal-activities">What if someone would like to use Golem for DDoS, Botnet or other illegal activities?</a></li>
-            <li><a href="#is-it-safe">Is it safe?</a></li>
-        <li class="main "><a href="#using-golem">Using Golem</a></li>
-            <li><a href="#installing-golem">Installing Golem</a></li>
-            <li><a href="#app-overview">App Overview</a></li>
-            <li><a href="#what-are-the-optimal-settings-for-my-machine-to-run-golem">What are the optimal settings for my machine to run Golem?</a></li>
-            <li><a href="#how-much-money-can-i-expect-to-make-with-golem">How much money can I expect to make with Golem?</a></li>
-            <li><a href="#feature-requests">Feature Requests</a></li>
-            <li><a href="#what-do-i-do-if-something-goes-wrong">What do I do if something goes wrong?</a></li>
-            <li><a href="#my-task-is-stuck-and-not-rendering">My task is stuck and not rendering</a></li>
-        <li class="main "><a href="#comparing-golem-to-other-services">Comparing Golem to Other Services</a></li>
-            <li><a href="#golem-vs-iexec">Golem vs iExec</a></li>
-            <li><a href="#golem-vs-sonm">Golem vs SONM</a></li>
-            <li><a href="#golem-vs-boinc">Golem vs BOINC</a></li>
-            <li><a href="#does-golem-factory-invest-in-other-businesses-icos">Does Golem Factory invest in other businesses? ICOs?</a></li>
-        <li class="main "><a href="#golem-token">Golem Token</a></li>
-            <li><a href="#what-is-the-purpose-of-golem-network-token">What is the purpose of Golem Network Token?</a></li>
-            <li><a href="#can-i-deposit-and-withdraw-real-gnt-during-the-alpha-test">Can I deposit and withdraw real GNT during the Alpha test?</a></li>
-            <li><a href="#where-to-purchase-gnt">Where to Purchase GNT</a></li>
-            <li><a href="#what-wallet-should-i-use-to-store-gnt">What wallet should I use to store GNT?</a></li>
-            <li><a href="#i-sent-my-tokens-to-the-wrong-address-and-my-gnt-is-gone">"I sent my tokens to the wrong address and my GNT is gone"</a></li>
+        <li class="first-level active"><a href="#faq">FAQ</a></li>
+            <li class="second-level"><a href="#jump-to-a-section">Jump to a Section:</a></li>
+                
+        <li class="first-level "><a href="#how-and-why-golem-will-change-the-world-or-at-least-the-internet">How and why Golem will change the world (or at least the Internet)</a></li>
+            <li class="second-level"><a href="#what-is-golem">What is Golem?</a></li>
+                
+            <li class="second-level"><a href="#who-can-use-golem-and-why">Who can use Golem and why?</a></li>
+                
+            <li class="second-level"><a href="#what-is-the-current-state-of-the-project-and-the-way-ahead">What is the current state of the project and the way ahead?</a></li>
+                
+            <li class="second-level"><a href="#how-golem-will-help-to-build-a-new-internet-of-tomorrow">How Golem will help to build a new Internet of tomorrow?</a></li>
+                
+            <li class="second-level"><a href="#when-will-the-latest-version-be-released">When will the latest version be released?</a></li>
+                
+        <li class="first-level "><a href="#golem-technology">Golem technology</a></li>
+            <li class="second-level"><a href="#how-golem-works">How Golem works?</a></li>
+                
+            <li class="second-level"><a href="#how-are-your-going-to-verify-computations">How are your going to verify computations?</a></li>
+                
+            <li class="second-level"><a href="#why-are-you-making-it-decentralized">Why are you making it decentralized?</a></li>
+                
+            <li class="second-level"><a href="#why-are-you-using-ethereum">Why are you using Ethereum?</a></li>
+                
+            <li class="second-level"><a href="#are-you-using-some-external-solutions-libraries">Are you using some external solutions / libraries?</a></li>
+                
+        <li class="first-level "><a href="#golem-business-model">Golem business model</a></li>
+            <li class="second-level"><a href="#how-will-payments-work-in-golem">How will payments work in Golem?</a></li>
+                
+            <li class="second-level"><a href="#what-are-use-cases-for-golem">What are use cases for Golem?</a></li>
+                
+            <li class="second-level"><a href="#why-computing-prices-will-be-lower-with-the-golem-network">Why computing prices will be lower with the Golem Network?</a></li>
+                
+            <li class="second-level"><a href="#why-golem-is-unlikely-to-be-successfully-copied">Why Golem is unlikely to be successfully copied?</a></li>
+                
+            <li class="second-level"><a href="#how-do-you-ensure-fairness-of-task-assignment-in-the-network">How do you ensure fairness of task assignment in the network?</a></li>
+                
+            <li class="second-level"><a href="#how-does-golem-compare-to-currentreal-supercomputers">How does Golem compare to current/real supercomputers?</a></li>
+                
+            <li class="second-level"><a href="#when-will-you-support-gpus-and-how">When will you support GPUs and How?</a></li>
+                
+        <li class="first-level "><a href="#safety-and-security">Safety and Security</a></li>
+            <li class="second-level"><a href="#can-you-use-private-data-for-computation-can-providers-see-your-data">Can you use private data for computation? Can providers see your data?</a></li>
+                
+            <li class="second-level"><a href="#what-if-someone-would-like-to-use-golem-for-ddos-botnet-or-other-illegal-activities">What if someone would like to use Golem for DDoS, Botnet or other illegal activities?</a></li>
+                
+            <li class="second-level"><a href="#is-it-safe">Is it safe?</a></li>
+                
+        <li class="first-level "><a href="#using-golem">Using Golem</a></li>
+            <li class="second-level"><a href="#installing-golem">Installing Golem</a></li>
+                
+            <li class="second-level"><a href="#app-overview">App Overview</a></li>
+                
+            <li class="second-level"><a href="#what-are-the-optimal-settings-for-my-machine-to-run-golem">What are the optimal settings for my machine to run Golem?</a></li>
+                
+            <li class="second-level"><a href="#how-much-money-can-i-expect-to-make-with-golem">How much money can I expect to make with Golem?</a></li>
+                
+            <li class="second-level"><a href="#feature-requests">Feature Requests</a></li>
+                
+            <li class="second-level"><a href="#what-do-i-do-if-something-goes-wrong">What do I do if something goes wrong?</a></li>
+                
+            <li class="second-level"><a href="#my-task-is-stuck-and-not-rendering">My task is stuck and not rendering</a></li>
+                
+        <li class="first-level "><a href="#comparing-golem-to-other-services">Comparing Golem to Other Services</a></li>
+            <li class="second-level"><a href="#golem-vs-iexec">Golem vs iExec</a></li>
+                
+            <li class="second-level"><a href="#golem-vs-sonm">Golem vs SONM</a></li>
+                
+            <li class="second-level"><a href="#golem-vs-boinc">Golem vs BOINC</a></li>
+                
+            <li class="second-level"><a href="#does-golem-factory-invest-in-other-businesses-icos">Does Golem Factory invest in other businesses? ICOs?</a></li>
+                
+        <li class="first-level "><a href="#golem-token">Golem Token</a></li>
+            <li class="second-level"><a href="#what-is-the-purpose-of-golem-network-token">What is the purpose of Golem Network Token?</a></li>
+                
+            <li class="second-level"><a href="#can-i-deposit-and-withdraw-real-gnt-during-the-alpha-test">Can I deposit and withdraw real GNT during the Alpha test?</a></li>
+                
+            <li class="second-level"><a href="#where-to-purchase-gnt">Where to Purchase GNT</a></li>
+                
+            <li class="second-level"><a href="#what-wallet-should-i-use-to-store-gnt">What wallet should I use to store GNT?</a></li>
+                
+            <li class="second-level"><a href="#i-sent-my-tokens-to-the-wrong-address-and-my-gnt-is-gone">"I sent my tokens to the wrong address and my GNT is gone"</a></li>
+                
     </ul>
 </div></div>
-                <div class="col-md-9" role="main">
+        <div class="col-md-9" role="main">
 
+<h1 id="faq">FAQ</h1>
 <h3 id="jump-to-a-section">Jump to a Section:</h3>
 <div class="toc">
 <ul>
+<li><a href="#faq">FAQ</a><ul>
 <li><a href="#jump-to-a-section">Jump to a Section:</a></li>
+</ul>
+</li>
 <li><a href="#how-and-why-golem-will-change-the-world-or-at-least-the-internet">How and why Golem will change the world (or at least the Internet)</a><ul>
 <li><a href="#what-is-golem">What is Golem?</a></li>
 <li><a href="#who-can-use-golem-and-why">Who can use Golem and why?</a></li>
@@ -630,82 +764,55 @@ https://github.com/ethereum/mist/releases</p>
 </ul>
 <p>At Golem we are only working on the App. The GNT token is an important part of our ecosystem but we are powerless to help with transactions between independent investors and 3rd party exchanges.</p>
 <p><a href="../FAQ#jump-to-a-section">back to top</a></p></div>
-        </div>
+        
+    </div>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="../../search/require.js"></script>
-        <script src="../../search/search.js"></script>
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../search/require.js"></script>
+    <script src="../../search/search.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-
 
     </body>
+
 </html>
