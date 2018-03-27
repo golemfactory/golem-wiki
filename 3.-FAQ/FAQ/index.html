@@ -279,7 +279,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/golemfactory/golem/"><i class="fa fa-github"></i> GitHub</a>
+                        <a href="https://github.com/golemfactory/golem-wiki/"><i class="fa fa-github"></i> GitHub</a>
                     </li>
             </ul>
         </div>
@@ -539,11 +539,13 @@
 <p>Golem is a p2p network, ie. there is no central server and users are equally privileged. People who want to compute tasks and people who have computer power to rent broadcast their offers in the network. Golem's transaction system matches providers and requestors, taking into account prices, reputations and their machines' performance. Resources, ie. files needed for computation are sent to provider's machine. After computation is completed, the provider's app sends back results to the requestor's app. If the result passes our verification process, the provider is paid. If someone tries to cheat, for instance sends bad results or doesn't pay, he/she will hurt their reputation and won't be chosen again for computations.</p>
 <p>Check our <a href="https://blog.golemproject.net/golem-architecture-bfd75faa8ecc">blog post</a> to learn more.</p>
 <h3 id="how-are-your-going-to-verify-computations">How are your going to verify computations?</h3>
-<p>There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: 
-<em> simple correctness: checking of the result, eg. proof-of-work,
-</em> redundant computation: ie. a few providers compute same part of the task and their results are compared, 
-<em> computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, 
-</em> analysis of output logs. </p>
+<p>There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: </p>
+<ul>
+<li>simple correctness: checking of the result, eg. proof-of-work,</li>
+<li>redundant computation: ie. a few providers compute same part of the task and their results are compared, </li>
+<li>computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, </li>
+<li>analysis of output logs. </li>
+</ul>
 <p>See our blog post for more info on our verification ideas: https://blog.golemproject.net/more-twain-less-cheating-129f7bc93a5c</p>
 <h3 id="why-are-you-making-it-decentralized">Why are you making it decentralized?</h3>
 <p>We believe that decentralization will be the future of internet development. With decentralization, it will be possible to achieve full scalability without expanding and maintaining our own network and server infrastructure; the solution will also be free from single points of failure and resistant to attempts to disable and censor the network. </p>
@@ -555,28 +557,34 @@
 <h1 id="golem-business-model">Golem business model</h1>
 <h3 id="how-will-payments-work-in-golem">How will payments work in Golem?</h3>
 <p>When creating something so new, it’s hard if not impossible to predict all the opportunities that will suddenly be possible. Golem is a generalized global supercomputer, and as such, it will no doubt find its niche with vastly varied applications. They might need very diverse remuneration models. We are not able to design a one-size-fits-all payment system for Golem, nor will we attempt to force one upon application authors. 
-When a developer integrates her application with Golem, she has the freedom to decide which transaction model she implements, as long as it is compliant with Golem's Transaction Framework. The Transaction Framework will take the form of a set of requirements to follow; basic requirements may include:
-<em> Entry in the Application Registry;
-</em> Use of open source and/or deterministic environment, such as EVM;
-<em> Community approval or rating of transaction model;
-</em> Use of GNT for remunerating software and resource providers
-We are building the transaction framework on top of Ethereum. Ethereum gives us expressive power, which is much-needed when implementing advanced, trustless schemes.
-Example transaction framework components:
-<em> Diverse payout schemes such as nanopayments, batching
-</em> Off-chain payment channels
-<em> Custom receipts
-</em> Payment to software developer
-* Per-unit use of software (per-node, per-hour, etc.)</p>
+When a developer integrates her application with Golem, she has the freedom to decide which transaction model she implements, as long as it is compliant with Golem's Transaction Framework. The Transaction Framework will take the form of a set of requirements to follow; basic requirements may include:</p>
+<ul>
+<li>Entry in the Application Registry;</li>
+<li>Use of open source and/or deterministic environment, such as EVM;</li>
+<li>Community approval or rating of transaction model;</li>
+<li>Use of GNT for remunerating software and resource providers</li>
+</ul>
+<p>We are building the transaction framework on top of Ethereum. Ethereum gives us expressive power, which is much-needed when implementing advanced, trustless schemes.
+Example transaction framework components:</p>
+<ul>
+<li>Diverse payout schemes such as nanopayments, batching</li>
+<li>Off-chain payment channels</li>
+<li>Custom receipts</li>
+<li>Payment to software developer</li>
+<li>Per-unit use of software (per-node, per-hour, etc.)</li>
+</ul>
 <p>It is also possible to introduce more sophisticated components into the transaction model design, to meet specific goals not related to payments. For example:
 Requestor escrow for tasks where a higher level of commitment is required (high
 price because of specialized hardware or long running subtasks); the requestor may
-create a two-party escrow account and require providers to take part in it.
-<em> Provider deposit: the requestor may require to be in control of some amount of
-timelocked GNT.
-</em> Requestor deposit: the provider may accept tasks only from requestors who are in
-control of some amount of timelocked GNT.
-* Registration of a task as an anchor for a TrueBit-style conflict resolution fallback
-mechanism.</p>
+create a two-party escrow account and require providers to take part in it.</p>
+<ul>
+<li>Provider deposit: the requestor may require to be in control of some amount of
+timelocked GNT.</li>
+<li>Requestor deposit: the provider may accept tasks only from requestors who are in
+control of some amount of timelocked GNT.</li>
+<li>Registration of a task as an anchor for a TrueBit-style conflict resolution fallback
+mechanism.</li>
+</ul>
 <h3 id="what-are-use-cases-for-golem">What are use cases for Golem?</h3>
 <p>The first and most illustrative use case of Golem is CGI rendering. Other technically similar to implement use cases are scientific, engineering, statistical and financial tasks which need extensive computing and are (technically) feasible to distribute. Check our <a href="https://blog.golemproject.net/what-can-golem-do-for-you-503b2449767a">blog post</a> to learn more about potential uses.<br />
 We are not going to explore and develop all possible use cases, but we will rather focus on delivering a task API, Golem Standard Library to give developers the ability to integrate any software with the Golem Network.
@@ -590,10 +598,12 @@ barriers to entry and exit are very low.
 In a market with near "perfect competition" the prices are as low as they need to be to keep providers interested - which means that the Golem Network will create a situation that is quite different from today's internet infrastructure - with a few large providers exercising monopolistic control over the market.</p>
 <p>Check our <a href="https://blog.golemproject.net/why-should-render-farms-be-afraid-of-golem-3dd1b9e70f47">blog post</a> to learn more. </p>
 <h3 id="why-golem-is-unlikely-to-be-successfully-copied">Why Golem is unlikely to be successfully copied?</h3>
-<p>Golem software is open-source and as such it can be forked by other parties. We are sure that over time many Golem forks will emerge either for specialised or general purposes. We believe that Golem's core business will remain unaffected by this.
-<em> Golem business model strongly a favors larger network over a smaller network, so the first and largest network will always be preferable over the smaller networks.
-</em> What Golem Network delivers is an infrastructure, open for any project, software, dapp, community etc. willing to use it. So any individual or organisation interested in building a decentralized solution (or a decentralized marketplace) will be able to use Golem as a platform, without a need of copying it. Therefore, developers will not be interested in copying Golem as long as we will be able to provide all the features they need. <br />
-* Requestors choose where to buy computing power based on price and functionality. Our real competitors are Amazon Web Services, Google Cloud and other cloud providers. Our aim is to provide similar functionality at much lower prices.   </p>
+<p>Golem software is open-source and as such it can be forked by other parties. We are sure that over time many Golem forks will emerge either for specialised or general purposes. We believe that Golem's core business will remain unaffected by this.</p>
+<ul>
+<li>Golem business model strongly a favors larger network over a smaller network, so the first and largest network will always be preferable over the smaller networks.</li>
+<li>What Golem Network delivers is an infrastructure, open for any project, software, dapp, community etc. willing to use it. So any individual or organisation interested in building a decentralized solution (or a decentralized marketplace) will be able to use Golem as a platform, without a need of copying it. Therefore, developers will not be interested in copying Golem as long as we will be able to provide all the features they need.   </li>
+<li>Requestors choose where to buy computing power based on price and functionality. Our real competitors are Amazon Web Services, Google Cloud and other cloud providers. Our aim is to provide similar functionality at much lower prices.   </li>
+</ul>
 <h3 id="how-do-you-ensure-fairness-of-task-assignment-in-the-network">How do you ensure fairness of task assignment in the network?</h3>
 <p>Right now it's mostly random. The most important is facilitating a direct connection and a quick network which will allow nodes to get tasks assigned to them as quickly as possible. It's a FIFO system. </p>
 <p>Later we'll add competition where the nodes with the best price / benchmark / reputation will be chosen. The Requestor should be able to choose which of this three options is the most important to them.</p>
@@ -612,15 +622,17 @@ Curious and technically savvy providers can look at what is being computed for n
 <p>Computations take place in an isolated environment, so Golem can’t be used for DDoS or Botnet this way. We'll consider preparing special tasks that may have access to external data, but they won't be executed on machines if the provider doesn't deliberately agree to this. </p>
 <h3 id="is-it-safe">Is it safe?</h3>
 <p>Every new technology is exposed to attacks, some new and unpredictable. All components of the Golem application will be designed to be robust against attacks. </p>
-<p>Key security elements will be:
-<em> computations in isolated environments with minimal privileges and lack of external network connectivity.
-</em> Well-known safety cryptography based on elliptic curves.
-<em> Signed and encrypted messages inside the Golem network ensuring authenticity, which protects against man-in-the-middle attacks and passive data collection.
-</em> Reputation system helping to detect malicious nodes and mitigate them. Evaluating these reputation metrics will assist in secure, efficient and correct task routing.
-<em> Whitelist and blacklist mechanisms allowing providers to build trust networks and run only applications prepared by trusted developers.
-</em> Together, the application registry and transaction framework mitigates Sybil and whitewashing attacks by providing an disincentive to participate, introducing an economic and computational cost to participation, and providing a metric for reputation in order to maintain optimal connectivity.
-<em> The Ethereum integration and transaction framework makes custom payment-based security mechanisms possible, eg. escrows, deposits, insurance and audit proofs.
-</em> Security audits will be conducted for every release, performed by external contractors.</p>
+<p>Key security elements will be:</p>
+<ul>
+<li>computations in isolated environments with minimal privileges and lack of external network connectivity.</li>
+<li>Well-known safety cryptography based on elliptic curves.</li>
+<li>Signed and encrypted messages inside the Golem network ensuring authenticity, which protects against man-in-the-middle attacks and passive data collection.</li>
+<li>Reputation system helping to detect malicious nodes and mitigate them. Evaluating these reputation metrics will assist in secure, efficient and correct task routing.</li>
+<li>Whitelist and blacklist mechanisms allowing providers to build trust networks and run only applications prepared by trusted developers.</li>
+<li>Together, the application registry and transaction framework mitigates Sybil and whitewashing attacks by providing an disincentive to participate, introducing an economic and computational cost to participation, and providing a metric for reputation in order to maintain optimal connectivity.</li>
+<li>The Ethereum integration and transaction framework makes custom payment-based security mechanisms possible, eg. escrows, deposits, insurance and audit proofs.</li>
+<li>Security audits will be conducted for every release, performed by external contractors.</li>
+</ul>
 <p><a href="../FAQ#jump-to-a-section">back to top</a></p>
 <h1 id="using-golem">Using Golem</h1>
 <h3 id="installing-golem">Installing Golem</h3>
@@ -692,10 +704,12 @@ Curious and technically savvy providers can look at what is being computed for n
 <p>Golem uses the Ethereum blockchain to facilitate fast and secure payments between Requestors and Providers. ETH is the native currency of Ethereum and is used to pay for transaction fees on the network. Only a small amount is needed to complete a transaction. All Applications built on the Ethereum blockchain pay for transactions using ETH.</p>
 <h3 id="feature-requests">Feature Requests</h3>
 <p>To help get more visibility for your request feel free to send me more details to contact@golem.network. We are always looking to improve our app and your feedback is appreciated.</p>
-<p>Be sure to include:
-<em> Screenshots
-</em> Use Case
-* Pain points of existing system</p>
+<p>Be sure to include:</p>
+<ul>
+<li>Screenshots</li>
+<li>Use Case</li>
+<li>Pain points of existing system</li>
+</ul>
 <p>If this issue is more severe and disrupting your workflow within the Golem App, you can report it here as well: https://github.com/golemfactory/golem/issues</p>
 <h3 id="backing-up-your-golem-app">Backing Up Your Golem App</h3>
 <p>We recommend backing up your Golem app when after installing. This will allow you to restore your Golem node if your machine crashes and you need to install your node on another computer without starting from scratch with your reputation.</p>
