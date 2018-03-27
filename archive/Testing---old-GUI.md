@@ -1,8 +1,4 @@
-
-# Old GUI
-
-*** Old GUI is obsolete ***
-
+# What can you test aka how does the app work 
 ## First steps
 After you successfully installed the Golem App, you will be prompted to enter your node name. You can change it later so don't worry much about it, but you have to set it to a non-empty string. We encourage to choose your Slack login, so we will be able to easily identify your node.
 
