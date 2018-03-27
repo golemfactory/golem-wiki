@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,7 +13,7 @@
         
     <url>
      <loc>/1.-Installation/Installation/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -40,38 +40,44 @@
     
         
     <url>
-     <loc>/2.-For-Developers/Command-Line/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <loc>/2.-For-Developers/Command-Line-Interface/</loc>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/2.-For-Developers/Computing-Tasks-in-Docker/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/2.-For-Developers/Creating-a-subnet-of-nodes/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/2.-For-Developers/Development/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/2.-For-Developers/How-to-freeze-pip-modules/</loc>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/2.-For-Developers/Logging/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/2.-For-Developers/Testing/</loc>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -81,25 +87,19 @@
         
     <url>
      <loc>/3.-FAQ/Common-problems/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/3.-FAQ/FAQ/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/3.-FAQ/Roadmap/</loc>
-     <lastmod>2018-03-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

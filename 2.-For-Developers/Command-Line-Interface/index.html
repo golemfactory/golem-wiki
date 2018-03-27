@@ -162,7 +162,7 @@
                         
                             
 <li class="active">
-    <a href="./">Using the command line interface</a>
+    <a href="./">Command Line Interface</a>
 </li>
 
                         
@@ -186,29 +186,20 @@
                         
                             
 <li >
+    <a href="../How-to-freeze-pip-modules/">How to freeze pip modules</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../Logging/">Logging</a>
 </li>
 
                         
                             
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Testing</a>
-    <ul class="dropdown-menu">
-        
-            
 <li >
-    <a href="../Testing/Testing-with-IMUNES/">Testing with IMUNES</a>
+    <a href="../Testing/">Testing</a>
 </li>
-
-        
-            
-<li >
-    <a href="../Testing/Testing/">Testing</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                         
                         </ul>
@@ -236,27 +227,6 @@
 <li >
     <a href="../../3.-FAQ/Roadmap/">Roadmap</a>
 </li>
-
-                        
-                            
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Obsolete</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../../3.-FAQ/Obsolete/Installing-Golem-on-Arch-Linux-unofficial/">Installing Golem on Arch Linux unofficial</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../3.-FAQ/Obsolete/Testing-old-GUI/">Testing old GUI</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                         
                             
@@ -320,29 +290,25 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#using-the-command-line-interface">Using the command line interface</a></li>
-        <li class="first-level "><a href="#command-line-arguments">Command Line Arguments</a></li>
-            <li class="second-level"><a href="#environments">Environments</a></li>
+        <li class="first-level active"><a href="#command-line-interface">Command Line Interface</a></li>
+            <li class="second-level"><a href="#using-the-command-line-interface">Using the command line interface</a></li>
                 
-            <li class="second-level"><a href="#network">Network</a></li>
+            <li class="second-level"><a href="#command-line-arguments">Command Line Arguments</a></li>
                 
-            <li class="second-level"><a href="#incomes">Incomes</a></li>
-                
-            <li class="second-level"><a href="#payments">Payments</a></li>
-                
-            <li class="second-level"><a href="#resources">Resources</a></li>
-                
-            <li class="second-level"><a href="#settings">Settings</a></li>
-                
-            <li class="second-level"><a href="#tasks">Tasks</a></li>
-                
-            <li class="second-level"><a href="#subtasks">Subtasks</a></li>
-                
+                <li class="third-level"><a href="#environments">Environments</a></li>
+                <li class="third-level"><a href="#network">Network</a></li>
+                <li class="third-level"><a href="#incomes">Incomes</a></li>
+                <li class="third-level"><a href="#payments">Payments</a></li>
+                <li class="third-level"><a href="#resources">Resources</a></li>
+                <li class="third-level"><a href="#settings">Settings</a></li>
+                <li class="third-level"><a href="#tasks">Tasks</a></li>
+                <li class="third-level"><a href="#subtasks">Subtasks</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="using-the-command-line-interface">Using the command line interface</h1>
+<h1 id="command-line-interface">Command Line Interface</h1>
+<h2 id="using-the-command-line-interface">Using the command line interface</h2>
 <p><code>golemcli</code> requires a running Golem instance to work. To start Golem in headless mode, type:
 - for the packaged version:</p>
 <p><code>golemapp</code>
@@ -353,84 +319,77 @@
 <p><code>golemcli -i</code>
 - when running from source:</p>
 <p><code>python golemcli.py -i</code></p>
-<h1 id="command-line-arguments">Command Line Arguments</h1>
-<div class="codehilite"><pre><span></span>    golemcli.py  
-    positional arguments:
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+<div class="codehilite"><pre><span></span>golemcli.py  
+positional arguments:
 
-        exit                Exit the interactive shell
-        help                Display this help message
-        account             Display account &amp; financial info
-        envs                Manage environments
-        network             Manage network
-        incomes             Display incomes
-        payments            Display payments
-        res                 Manage resources
-        settings            Manage settings
-        tasks               Manage tasks
-        subtasks            Manage subtasks
+    exit                Exit the interactive shell
+    help                Display this help message
+    account             Display account &amp; financial info
+    envs                Manage environments
+    network             Manage network
+    incomes             Display incomes
+    payments            Display payments
+    res                 Manage resources
+    settings            Manage settings
+    tasks               Manage tasks
+    subtasks            Manage subtasks
 
-    optional arguments:
-        -a ADDRESS, --address ADDRESS 
-                              Golem node&#39;s address
-        -p PORT, --port PORT  Golem node&#39;s port
-        -i, --interactive     Enter interactive mode
-        -h, --help            Display command&#39;s help message
-        --json                Return results in JSON format
+optional arguments:
+    -a ADDRESS, --address ADDRESS 
+                          Golem node&#39;s address
+    -p PORT, --port PORT  Golem node&#39;s port
+    -i, --interactive     Enter interactive mode
+    -h, --help            Display command&#39;s help message
+    --json                Return results in JSON format
 </pre></div>
 
 
-<h2 id="environments">Environments</h2>
+<h3 id="environments">Environments</h3>
 <p><code>envs show [--sort {name|supported|active|performance|description}]</code> - Show environments</p>
 <p><code>envs enable &lt;name&gt;</code> - Enable environment</p>
 <p><code>envs disable &lt;name&gt;</code> - Disable environment</p>
 <p><code>recount &lt;name&gt;</code> - Recount performance for an environment</p>
-<h2 id="network">Network</h2>
+<h3 id="network">Network</h3>
 <p><code>network status</code> - Show client status</p>
 <p><code>network connect &lt;ip&gt; &lt;port&gt;</code> - Connect to a node </p>
 <p><code>network show [--sort {ip|port|id|name|version}]</code> - Show connected nodes.</p>
 <p><code>network dht [--sort {ip|port|id|name|version}]</code> - Show known nodes.</p>
-<h2 id="incomes">Incomes</h2>
+<h3 id="incomes">Incomes</h3>
 <p><code>incomes [--sort {subtask|payee|status|value|fee}]</code> - Show incomes</p>
-<h2 id="payments">Payments</h2>
+<h3 id="payments">Payments</h3>
 <p><code>payments [--sort {subtask|payee|status|value|fee}]</code> - Show payments</p>
-<h2 id="resources">Resources</h2>
+<h3 id="resources">Resources</h3>
 <p><code>res show</code> - Show information on used resources</p>
 <p><code>res clear {--provider|--requestor}</code> - Clear provider or requestor resources</p>
-<h2 id="settings">Settings</h2>
+<h3 id="settings">Settings</h3>
 <p>Currently only subset of showed settings can be modified, check which with <code>settings set</code> without arguments </p>
 <p><code>settings set &lt;key&gt; &lt;value&gt;</code> - Change setting</p>
 <p><code>settings show {--basic|--requestor|--provider}</code> - Show current settings</p>
-<h2 id="tasks">Tasks</h2>
+<h3 id="tasks">Tasks</h3>
 <p><code>tasks create &lt;file_name&gt;</code> - Create a task from file, this is a json file, example file:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">36000</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;awesome-id&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Golem Task&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Blender&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;subtasks&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;progress&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-    <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;frame_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;output_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/any/Documents&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;PNG&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;resolution&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">1000</span><span class="p">,</span>
-            <span class="mi">600</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;frames&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;compositing&quot;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;time_started&quot;</span><span class="p">:</span> <span class="mf">1504695406.465682</span><span class="p">,</span>
-    <span class="nt">&quot;time_remaining&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Waiting&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;timeout&quot;</span><span class="p">:</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;subtask_timeout&quot;</span><span class="p">:</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;bid&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
-    <span class="nt">&quot;resources&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;/home/any/blender/benchmark/test_task/cube.blend&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;legacy&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
+<div class="codehilite"><pre><span></span>{
+    &quot;name&quot;: &quot;Golem Task&quot;,
+    &quot;type&quot;: &quot;Blender&quot;,
+    &quot;subtasks&quot;: 1,
+    &quot;options&quot;: {
+        &quot;frame_count&quot;: 1,
+        &quot;output_path&quot;: &quot;/home/any/Documents&quot;,
+        &quot;format&quot;: &quot;PNG&quot;,
+        &quot;resolution&quot;: [
+            1000,
+            600
+        ],
+        &quot;frames&quot;: &quot;1&quot;,
+        &quot;compositing&quot;: false
+    },
+    &quot;timeout&quot;: &quot;10:00:00&quot;,
+    &quot;subtask_timeout&quot;: &quot;10:00:00&quot;,
+    &quot;bid&quot;: 10.0,
+    &quot;resources&quot;: [
+        &quot;/home/any/blender/benchmark/test_task/cube.blend&quot;
+    ]
+}
 </pre></div>
 
 
@@ -440,7 +399,7 @@
 <p><code>tasks subtasks &lt;task_id&gt; [--sort {node|id|remaining|status|completion}]</code> - Show subtasks</p>
 <p><code>tasks restart &lt;task_id&gt;</code> - Restart a task</p>
 <p><code>tasks delete &lt;task_id&gt;</code> - Delete a task</p>
-<h2 id="subtasks">Subtasks</h2>
+<h3 id="subtasks">Subtasks</h3>
 <p><code>subtasks restart &lt;subtask_id&gt;</code>  - Restart a subtask</p>
 <p><code>subtasks show &lt;subtask_id&gt;</code> - Show subtask details</p></div>
         
