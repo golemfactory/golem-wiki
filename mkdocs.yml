@@ -11,7 +11,7 @@ extra_css:
   - "css/golem_style.css"
 
 # repo_name: github
-repo_url: https://github.com/golemfactory/golem/
+repo_url: https://github.com/golemfactory/golem-wiki/
 edit_uri: ""
 
 markdown_extensions:

@@ -93,6 +93,7 @@ Check our [blog post](https://blog.golemproject.net/golem-architecture-bfd75faa8
 ### How are your going to verify computations?
 
 There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: 
+
 * simple correctness: checking of the result, eg. proof-of-work,
 * redundant computation: ie. a few providers compute same part of the task and their results are compared, 
 * computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, 
@@ -119,12 +120,15 @@ We're using IPFS (https://ipfs.io/) for resource distribution and Docker (https:
 
 When creating something so new, it’s hard if not impossible to predict all the opportunities that will suddenly be possible. Golem is a generalized global supercomputer, and as such, it will no doubt find its niche with vastly varied applications. They might need very diverse remuneration models. We are not able to design a one-size-fits-all payment system for Golem, nor will we attempt to force one upon application authors. 
 When a developer integrates her application with Golem, she has the freedom to decide which transaction model she implements, as long as it is compliant with Golem's Transaction Framework. The Transaction Framework will take the form of a set of requirements to follow; basic requirements may include:
+
 * Entry in the Application Registry;
 * Use of open source and/or deterministic environment, such as EVM;
 * Community approval or rating of transaction model;
 * Use of GNT for remunerating software and resource providers
+
 We are building the transaction framework on top of Ethereum. Ethereum gives us expressive power, which is much-needed when implementing advanced, trustless schemes.
 Example transaction framework components:
+
 * Diverse payout schemes such as nanopayments, batching
 * Off-chain payment channels
 * Custom receipts
@@ -135,6 +139,7 @@ It is also possible to introduce more sophisticated components into the transact
 Requestor escrow for tasks where a higher level of commitment is required (high
 price because of specialized hardware or long running subtasks); the requestor may
 create a two-party escrow account and require providers to take part in it.
+
 * Provider deposit: the requestor may require to be in control of some amount of
 timelocked GNT.
 * Requestor deposit: the provider may accept tasks only from requestors who are in
@@ -163,6 +168,7 @@ Check our [blog post](https://blog.golemproject.net/why-should-render-farms-be-a
 ### Why Golem is unlikely to be successfully copied?
 
 Golem software is open-source and as such it can be forked by other parties. We are sure that over time many Golem forks will emerge either for specialised or general purposes. We believe that Golem's core business will remain unaffected by this.
+
 * Golem business model strongly a favors larger network over a smaller network, so the first and largest network will always be preferable over the smaller networks.
 * What Golem Network delivers is an infrastructure, open for any project, software, dapp, community etc. willing to use it. So any individual or organisation interested in building a decentralized solution (or a decentralized marketplace) will be able to use Golem as a platform, without a need of copying it. Therefore, developers will not be interested in copying Golem as long as we will be able to provide all the features they need.   
 * Requestors choose where to buy computing power based on price and functionality. Our real competitors are Amazon Web Services, Google Cloud and other cloud providers. Our aim is to provide similar functionality at much lower prices.   
@@ -203,6 +209,7 @@ Computations take place in an isolated environment, so Golem can’t be used for
 Every new technology is exposed to attacks, some new and unpredictable. All components of the Golem application will be designed to be robust against attacks. 
 
 Key security elements will be:
+
 * computations in isolated environments with minimal privileges and lack of external network connectivity.
 * Well-known safety cryptography based on elliptic curves.
 * Signed and encrypted messages inside the Golem network ensuring authenticity, which protects against man-in-the-middle attacks and passive data collection.
@@ -295,6 +302,7 @@ Golem uses the Ethereum blockchain to facilitate fast and secure payments betwee
 To help get more visibility for your request feel free to send me more details to contact@golem.network. We are always looking to improve our app and your feedback is appreciated.
 
 Be sure to include:
+
 * Screenshots
 * Use Case
 * Pain points of existing system
