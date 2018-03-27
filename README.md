@@ -1,6 +1,11 @@
 # Golem Wiki
 
-This short tutorial will show you how to serve a wiki webpage using mkdocs at you local machine (Ubuntu) and test your changes.
+Wiki is avaiable here:
+https://golemfactory.github.io/golem-wiki/
+
+## Tutorial
+
+Tutorial will show you how to serve a wiki webpage using mkdocs at you local machine (Ubuntu) and test your changes.
 
 First, it is safe to isolate your enviroment.
 
