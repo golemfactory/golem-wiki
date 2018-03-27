@@ -1,6 +1,6 @@
 # Golem Wiki
 
-Wiki is avaiable here:
+Wiki is available here:
 https://golemfactory.github.io/golem-wiki/
 
 ## Tutorial
