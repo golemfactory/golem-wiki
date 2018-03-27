@@ -3,9 +3,9 @@
 Wiki is available here:
 https://golemfactory.github.io/golem-wiki/
 
-## Tutorial
+## How to update wiki?
 
-Tutorial will show you how to serve a wiki webpage using mkdocs at you local machine (Ubuntu) and test your changes.
+This short tutorial will show you how to serve a wiki webpage using mkdocs at you local machine (Ubuntu) to test your changes and how to deploy.
 
 First, it is safe to isolate your enviroment.
 
