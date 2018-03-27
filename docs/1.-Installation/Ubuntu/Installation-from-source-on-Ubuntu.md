@@ -64,7 +64,7 @@ If you run into import problems, e.g. `ImportError: cannot import name keccak`, 
 
 1. Install FreeImage (version 3.17.0 or newer):
   - from source:
-    - download source code from [[this site|http://golem.network/FreeImage.zip]]
+    - download source code from [[this site|https://sourceforge.net/projects/freeimage/files/Source%20Distribution/3.17.0/FreeImage3170.zip/download?use_mirror=excellmedia]]
     - `unzip <free_image_archive>`
     - `cd FreeImage`
     - `make`

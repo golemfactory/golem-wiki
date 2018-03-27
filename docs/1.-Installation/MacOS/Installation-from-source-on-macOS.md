@@ -63,7 +63,7 @@ Launch the **Docker** app. Click next. It will ask for privileged access. Confir
 
 ```
 docker image pull golemfactory/base:1.2
-docker image pull golemfactory/blender:1.3
+docker image pull golemfactory/blender:1.4
 ```
 
 ## Prepare stuff for development

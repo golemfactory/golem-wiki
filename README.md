@@ -11,24 +11,24 @@ $ source /usr/local/bin/virtualenvwrapper.sh
 ```
 You can lookup your pythons' distributions using `$ whereis python` or just pick the default one...
 
-```$ mkvirtualenv --python=$(which python3) my-mkdocs-env```
+```$ mkvirtualenv --python=$(which python3) golem-docs-env```
 
-To activate `$ workon my-mkdocs-env`, to deactive enter `$ deactivate`
+To activate `$ workon golem-docs-env`, to deactive enter `$ deactivate`
 
 Clone the repo and install dependencies:
 
 ```
-(my-mkdocs-env) $ git clone https://github.com/ggruszczynski/gn_mkdocs.git
-(my-mkdocs-env) $ pip install -r requirements.txt
+(golem-docs-env) $ git clone https://github.com/ggruszczynski/gn_mkdocs.git
+(golem-docs-env) $ pip install -r requirements.txt
 ```
 
 Run server on you local machine:
 
-```(my-mkdocs-env) $ mkdocs serve```
+```(golem-docs-env) $ mkdocs serve```
 
 To deploy:
 
-```(my-mkdocs-env) $ mkdocs gh-deploy```
+```(golem-docs-env) $ mkdocs gh-deploy```
 
 More questions? Visit original documentation: http://www.mkdocs.org/
 

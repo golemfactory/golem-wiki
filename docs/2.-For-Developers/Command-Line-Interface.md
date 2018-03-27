@@ -1,4 +1,6 @@
-# Using the command line interface
+# Command Line Interface
+
+## Using the command line interface
 
 `golemcli` requires a running Golem instance to work. To start Golem in headless mode, type:
 - for the packaged version:
@@ -17,10 +19,7 @@ You can now execute the command line interface client in interactive mode:
   `python golemcli.py -i`
 
 
-
-# Command Line Arguments 
-
-```text
+## Command Line Arguments 
 
     golemcli.py  
     positional arguments:
@@ -44,9 +43,8 @@ You can now execute the command line interface client in interactive mode:
         -i, --interactive     Enter interactive mode
         -h, --help            Display command's help message
         --json                Return results in JSON format
-```
 
-## Environments
+### Environments
 
 `envs show [--sort {name|supported|active|performance|description}]` - Show environments
 
@@ -56,7 +54,7 @@ You can now execute the command line interface client in interactive mode:
 
 `recount <name>` - Recount performance for an environment
 
-## Network
+### Network
 
 `network status` - Show client status
 
@@ -66,39 +64,35 @@ You can now execute the command line interface client in interactive mode:
 
 `network dht [--sort {ip|port|id|name|version}]` - Show known nodes.
 
-## Incomes
+### Incomes
 
 `incomes [--sort {subtask|payee|status|value|fee}]` - Show incomes
 
-## Payments
+### Payments
 
 `payments [--sort {subtask|payee|status|value|fee}]` - Show payments
 
-## Resources
+### Resources
 
 `res show` - Show information on used resources
 
 `res clear {--provider|--requestor}` - Clear provider or requestor resources
 
-## Settings
+### Settings
 Currently only subset of showed settings can be modified, check which with `settings set` without arguments 
 
 `settings set <key> <value>` - Change setting
 
 `settings show {--basic|--requestor|--provider}` - Show current settings
 
-## Tasks
+### Tasks
 
 `tasks create <file_name>` - Create a task from file, this is a json file, example file:
-
-```json
+```
 {
-    "duration": 36000,
-    "id": "awesome-id",
     "name": "Golem Task",
     "type": "Blender",
     "subtasks": 1,
-    "progress": 0.0,
     "options": {
         "frame_count": 1,
         "output_path": "/home/any/Documents",
@@ -110,16 +104,12 @@ Currently only subset of showed settings can be modified, check which with `sett
         "frames": "1",
         "compositing": false
     },
-    "time_started": 1504695406.465682,
-    "time_remaining": 0,
-    "status": "Waiting",
     "timeout": "10:00:00",
     "subtask_timeout": "10:00:00",
     "bid": 10.0,
     "resources": [
         "/home/any/blender/benchmark/test_task/cube.blend"
-    ],
-    "legacy": false
+    ]
 }
 ```
 
@@ -135,10 +125,8 @@ Currently only subset of showed settings can be modified, check which with `sett
 
 `tasks delete <task_id>` - Delete a task
 
-## Subtasks
+### Subtasks
 
 `subtasks restart <subtask_id>`  - Restart a subtask
 
 `subtasks show <subtask_id>` - Show subtask details
-
-

@@ -230,6 +230,12 @@ If you don't have a public ip, your router doesn't support uPNP, you need to for
 
 To check if your ports are forwarded correctly you can use www.canyouseeme.org
 
+### Setting and Saving Your Password
+
+Golem is Open Source software built on the Ethereum blockchain as part of a P2P network, because our network security relies on the decentralized nature of blockchain technology we do not keep backups of your wallet keys or password. We recommend that you backup your keys and password by writing them down and storing them in a safe place. This is the best way to protect your data.
+
+We do not offer password recovery so please write down your password when you first install Golem. We also have documentation on how to backup your app and keys here.
+
 ### App Overview
 
 Here are some direct links designed to give you a top to bottom overview of the Golem App. Included in these docs are some troubleshooting tips for common issues. 
@@ -262,12 +268,27 @@ In the future we plan to support GPUs for use within Golem. Docker currently onl
 
 After initial tests we do not have a standard for the "optimal" machine. As the network grows there could be a way to determine which configurations perform better than others. Right now, our main focus it building a strong network. Over time computing standards will become more refined. The best rule of thumb right now is "the more power you are willing to spare, the more tasks you will receive".
 
-### How much money can I expect to make with Golem?
+### What data do I share with Golem?
 
+We will automatically send any errors that occur in your Golem instance to our dev team so they can improve the product in later releases, your private data will remain private. Specifically, we will be creating a live feed of traceback errors so we can identify bugs more quickly and speed up development on new features.
+
+To be clear we do not store or share any personal data, we only use traceback error data to help improve the app. Because we do not store any other personal data, it is important to write down your password and keys and store them in a safe place.
+
+### How much money can I expect to make with Golem?
 
 It is too early to give estimates like this, but you can refer to our [blog post](https://blog.golemproject.net/why-should-render-farms-be-afraid-of-golem-3dd1b9e70f47) to understand better how we fit in the market and what financial and technical advantages we offer.
 
 As we grow, your earning potential will also grow.
+
+### Why do I need GNT and ETH?
+
+- GNT:
+
+GNT or Golem Network Token is needed to pay for computations on the network and is the currency that drives our marketplace. As a Requestor, you set a bid for an amount of GNT you are willing to pay to have your task completed. As a Provider, you earn GNT by computing tasks for Requestors. You can set your minimum and maximum price thresholds in your settings.
+
+- ETH:
+
+Golem uses the Ethereum blockchain to facilitate fast and secure payments between Requestors and Providers. ETH is the native currency of Ethereum and is used to pay for transaction fees on the network. Only a small amount is needed to complete a transaction. All Applications built on the Ethereum blockchain pay for transactions using ETH.
 
 ### Feature Requests
 
@@ -279,6 +300,171 @@ Be sure to include:
 * Pain points of existing system
 
 If this issue is more severe and disrupting your workflow within the Golem App, you can report it here as well: https://github.com/golemfactory/golem/issues
+
+### Backing Up Your Golem App
+
+We recommend backing up your Golem app when after installing. This will allow you to restore your Golem node if your machine crashes and you need to install your node on another computer without starting from scratch with your reputation.
+
+All you need to do is copy all the files in your app directory. The locations of the app directories for each OS are here:
+
+**Windows:** C:\Documents and Settings\<User>\Application Data\Local Settings\golem\golem\default
+
+**MacOS:** ~/Library/Application Support/golem/default
+
+**Linux:** ~/.local/share/golem/default
+
+Once you’ve copied all the files in your app directory, paste them into an external hard drive, or another storage device of your choosing.
+
+To restore your Golem app, run through an installation and then copy these files back into your app directory.
+
+### Backing Up Your Golem Wallet
+
+Your Golem wallet stores GNT and ETH for use on the network. We highly recommend that you backup your wallet when you begin to use your Golem app. That way if your computer crashes and you cannot recover your files, you have the keys to your wallet to restore Golem on a new machine.
+
+**Finding Your Wallet Keys:**
+
+Your wallet keys can be found in your app directory. The locations of the app directories for each supported OS are below:
+
+**Windows:** C:\Documents and Settings\<User>\Application Data\Local Settings\golem\golem\default
+
+**MacOS:** ~/Library/Application Support/golem/default
+
+**Linux:** ~/.local/share/golem/default
+
+These directories contain everything associated with your Golem account and the app itself. The exact location of the wallet keys are inside those directories under:
+
+ `/keys/keystore.json`
+
+
+
+Copy your keys from that file directory onto a piece of paper and store in a safe place. You can also back these files up to another hard drive if you wish, but the safest way to store this data is to write it down (just remember where you put it!).
+
+# Submitting a Task
+
+### Two Ways to Add a Task:
+
+For individual users, there are two ways to add tasks to the Golem desktop app, via the Add Task button (circle with a “+” sign) on the main toolbar which allows the user to select a file through the system chooser or via drag and drop. Both single files or folders can be added.
+
+To add a task via the system chooser, click the Add Task icon, select your file or folder and your task will be added to Golem (after you have filled out the Task Settings).
+To add a file via drag and drop, simply drag a file (or multiple files inside a folder, in case of tasks with multiple resources) onto the Task view, and the task will be added.
+
+**Task Settings:**
+
+Your task settings and computing time will vary depending on the complexity of your Blender file, but there are some basic principles to understand and general guidelines to use when submitting a task to the network. Below is a breakdown of all you see on the Task Settings screen.
+
+**Local Render Test:**
+
+Before Golem can assign your task to other nodes, your machine must first complete a local render test. Golem prompts your machine to render a single low resolution frame of your file to determine if it is a valid blender file. This is integral to our verification process and must be completed to ensure the accuracy of computations.
+
+
+You will see a small window with an icon showing the status of your local render test. Once the test is completed, you can finish up the rest of the required settings.
+
+### Render Settings:
+
+This section includes all render specific settings:
+
+**Preset:** A dropdown menu where you can choose from saved settings that fit your workflow. This is great for users who render the same or similar files more often.
+
+**Dimensions:** Standard HD dimensions are 1920 x 1080 but you can set whatever dimensions fit your needs in this section.
+
+**Frame Range:** Define frames to render. You can separate frame numbers with ;, eg. 1;4;7 will define frame 1, 4 and 7. You can also define frames ranges with -, eg. 1-4 will define frame 1, 2, 3 and 4. Finally, you can also define every x-th frame with ,, eg. 1-10,2 will define frames 1, 3, 5, 7 and 9. So defining frames to render as 1-4;7;10-30,5 will render frames with numbers: 1, 2, 3, 4, 7, 10, 15, 20, 25, 30.
+
+**Format:** This determines the output format of your render frames. Blender supported formats are PNG and EXR.
+
+**Output to:** Choose your output filepath. This is where your render frames will be saved. This will override your default file location in your App Settings.
+
+**Blender Compositing:** Turn this feature on if your blender file requires the use of compositing. It’s suggested to turn off this option if you have more subtasks than frames, otherwise images may not be rendered correctly. To learn more about compositing go here: https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Compositing
+
+*Note: At this point you can save your settings as a preset. If your files uses Cycles, there will be an option to set how many Samples you want instead of Frames.*
+
+### Task and Subtask Timeouts:
+
+Task and Subtask timeouts are the most important settings when submitting a task. So be sure to carefully consider the size and complexity of your blender file when setting timeouts.
+
+**Task Timeout:** Determines how long you are willing to wait for your task to be computed. This setting should be much higher than your subtask timeout and significantly higher than you expect your render to take. If you render takes 4 hours on your personal machine, then set your Task timeout to 8-10hrs. It is likely that your render will take less time, but you need to be safe since you are paying for the render and you do not want to accidently timeout before the render is completed if your personal connection is slow or if network traffic is low.
+
+**Subtask Amount:** Tells the system how many subtasks to break a task into. Generally if you are rendering a number of frames you should set subtasks to the same number.
+
+**Subtask Timeout:** Determines the timeout threshold of every individual subtask. This setting should be significantly lower than your overall task timeout. You can use the following formula to determine a starting point for your subtask timeouts:
+
+	Overall Task Timeout / Subtask Amount + 1 hr
+
+	10hr Overall Task Timeout / 5 subtasks + 1 hr = 3hr subtask timeout
+
+If you set your subtask timeout too high, you can get stuck with a weak node trying to compute your subtask which could lead to network performance issues. If your subtask timeout is too low, then you run the risk of even high powered nodes not finishing your task.
+
+Note: If your task times out halfway through, you will still pay for subtasks computed. If you are rendering an animation rather than a still image, it is best to have your subtask amount match your frame amount. This means that if a timeout occurs, but some of your subtasks were still computed, you can re-submit the task with the previously completed subtasks removed to avoid rendering them twice (and paying for them twice).
+
+From: https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Basic_Animation/Rendering
+
+“Animation rendering can take a while. Consider a short animation sequence of, say 10 seconds at 25 frames per second—250 frames. If a single frame takes 10 seconds to render, then the whole sequence will take about 40 minutes. If a single frame takes a minute, then the whole animation will need over 4 hours to render. And it gets worse the longer the movie is. And so it goes.”
+
+This is why Golem exists, to save you time while rendering.
+
+Once your settings are complete you can set your price. Learn more about price here. (link to pricing best practices below.
+
+
+Local render test determines if the file is valid, if it uses cycles, if it is valid blender file. Imperative to verification and accuracy.
+
+https://docs.golem.network/04-task-settings.html
+Determining whether or not your blender has cycles
+File Guidelines
+
+You cannot submit a file that is IP protected, this includes rendering copyrighted material without the license to do so.
+Pre-Baking must be completed on any files which require it before rendering with Golem
+Using the Particle System to create randomly generated objects (ie. trees, fire, snow) may not work with Golem. You must pre-bake the file and attach the added elements to your task
+If your machine is not powerful enough to create the local test render, you will not be able to submit your task
+
+Figure out all variables and most common uses - provide recommended settings
+
+If task times out they cannot start again in middle. Halfway timeout, start again, start from beginning paying 1.5x
+
+Video: Submitting a task (wait til last moment); Timeouts explained (benchmarking files); Pricing best practices
+
+You cannot submit any task with asserts that are IP protected
+Pre baking scene - need to be done before using render farm or use special instructions
+Randomly created object - trees, shifted or gone, wont be able to use Golem (Particle System?) Do not use in Golem
+
+Pre bake scene, attach element with particle add multiple elements to the blender task, fire, trees, snow. Submit to Golem:
+
+Multiple elements - Drag and drop only for windows, Plus only for Mac.
+
+https://docs.blender.org/manual/en/dev/render/blender_render/bake.html
+
+
+### Pricing Best Practices
+
+Pricing Best Practices:*
+
+The formula for calculating the estimated cost of a task: 
+
+{subtask amount*GNT/h*Subtask timeout settings in hourly increments}
+
+Examples:
+
+5 substasks * 0.5 GNT/hr * 30mins Subtask Timeout = 1.25 GNT
+
+  - or 5 * 0.5 * (30/60) = 1.25
+
+10 subtasks * 1 GNT/hr * 1hr Subtask Timeout = 10 GNT
+
+  - or 10 * 1 * 1 = 10
+
+**Note: If your settings result in a number with long decimal, Golem will round to the nearest 100th.**
+
+3 substasks * 0.5 GNT/hr * 12mins 30sec Substask Timeout = 0.31 GNT
+
+  - or 3 * 0.5 * (12.5/60) = 0.3125 rounded down to 0.31
+
+5 subtasks * 0.5 GNT/hr * 15mins 30sec Subtask Timeout = 0.65 GNT
+
+  - or 5 * 0.5 GNT/hr * (15.5/60) = 0.645833333~ rounded up to 0.65
+
+
+
+Since price is directly tied to your subtask timeouts, it is important to test your typical workflow a few times in our alpha app to determine the best settings for the lowest price.
+
+User is paying for payment for task (cost: nodes-that-are-computing-tasks*price-estimation*GNT-price)
 
 
 ### What do I do if something goes wrong?
@@ -301,18 +487,44 @@ The first things to do if you have any error while running Golem are:
 
 ### My task is stuck and not rendering
 
+* Make sure you have the latest versions of both Golem and Blender installed.
 * Check if you can see your node on https://stats.golem.network/show
-* Test for open ports 3282, 40102 and 40103 with an external tool like canyouseeme.org ( app must be running )
-* Adjust your Network Trust settings to accept more incoming nodes
-* Check your task settings to see if you set high enough task and subtask timeouts, if not, retest with higher timeout thresholds
+* Test for open ports 3282, 40102 and 40103 with an external tool like canyouseeme.org (app must be running).
+* Adjust your Network Trust settings to accept more incoming nodes.
+* Check your task settings to see if you set high enough task and subtask timeouts, if not, retest with higher timeout thresholds.
 * Test a smaller blender file to see if it renders: [Golem Logo Demo](http://golem.timjones.id.au/)
 * Check for errors in your logs [found here](https://github.com/golemfactory/golem/wiki/Testing#where-are-the-logs)
 * If you still cannot render a task send the following to contact@golem.network:
-    - A screenshot or description of your task settings and network trust settings
-    - Your Golem.log and Hyperg.log files
-    - The name and size of the blender file you were attempting to render
+    - A screenshot or description of your task settings and network trust settings.
+    - Your Golem.log and Hyperg.log files.
+    - The name and size of the blender file you were attempting to render.
 
 [back to top](FAQ#jump-to-a-section)
+
+### Docker Errors
+
+If you receive any errors regarding the Docker VM in the GUI or in your logs it is always to try the following steps to troubleshoot:
+
+* Shutdown the Golem App
+
+* `Docker-machine ls`
+
+     - This command shows if docker is running any errors. It is good to run this command before and after running any of the following docker commands to see if the error is solved.
+
+* `Docker-machine restart golem`
+
+     - This will restart docker’s golem instance.
+
+* `Docker-machine rm golem`
+
+     - This will remove the docker container. If you see an error when running this command contact Golem Support.
+
+* `Docker-machine create --driver xhyve --xhyve-virtio-9p golem`
+
+     - This will create and engage the necessary drivers for your docker machine
+
+
+* Now you can restart Golem and test.
 
 # Comparing Golem to Other Services
 
@@ -351,9 +563,11 @@ Golem would prefer to work together to achieve mutual goals than to speculate an
 
 GNT is used to pay for rented computing power on the network. For more information about how GNT fits into the network, see our blog post on the [Economics of the Golem Network Token](https://blog.golemproject.net/the-economics-of-the-golem-network-token-d64c1a50b1d5)
 
-### Can I deposit and withdraw real GNT during the Alpha test?
+### Can I deposit and withdraw real GNT and ETH during the Alpha test?
 
 Since we are in the Alpha stage our first POC, all GNT on the app is test GNT (tGNT) and has no value outside of the app. We have purposely removed deposit and withdrawal options from the Alpha test because they are not necessary. Do not under any circumstances attempt to send real GNT to your node ID, you will lose your tokens permanently and we cannot get them back for you.
+
+The same goes for ETH. All ETH balances you see on the Alpha app are test ETH (tETH). The Golem alpha is being run on the Rinkeby Testnet, and no ETH holds value on this testnet. Please do not send any real ETH to your node ID or the Golem Smart Contract address. You will lose your tokens forever, and we cannot get them back for you.
 
 When we launch the mainnet version of the app, we will have deposit and withdrawal options for real GNT.
 

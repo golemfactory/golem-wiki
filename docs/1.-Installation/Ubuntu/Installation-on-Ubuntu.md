@@ -13,3 +13,5 @@ The officially supported release is 16.04 at the moment.
 4. You might be asked for root password
 5. If any dependencies needs to be installed, you will be asked if you want to install them. We strongly recommend to agree.
 6. When the script terminates, the program, along with dependencies, will be installed. All you need to do is to restart your PC.
+7. To ensure, you can run golem without `sudo` run `$ sudo usermod -aG docker $USER` 
+Warning: The docker group grants privileges equivalent to the root user. For details on how this impacts security in your system, look up for: Docker Daemon Attack Surface.

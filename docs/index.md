@@ -10,7 +10,7 @@ output: html_document
 ## Current Status
 The Golem software is in Alpha testing. 
 Users can [install the software](1.-Installation/Installation.md) on a variety of platforms 
-and [participate in testing](2.-For-Developers/Testing/Testing.md). 
+and [participate in testing](2.-For-Developers/Testing.md). 
 The first use of Golem, called _Brass Golem_, will provide CGI rendering for Blender. 
 The [Golem project milestones](3.-FAQ/Roadmap.md) do not have set dates, 
 Brass Golem is expected to be completed in 2018. 
