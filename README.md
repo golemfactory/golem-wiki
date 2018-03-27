@@ -1,6 +1,6 @@
-# gn_mkdocs
+# Golem Wiki
 
-This short tutorial will show you how to serve the webpage at you local machine (Ubuntu) and test your changes.
+This short tutorial will show you how to serve a wiki webpage using mkdocs at you local machine (Ubuntu) and test your changes.
 
 First, it is safe to isolate your enviroment.
 
@@ -18,7 +18,7 @@ To activate `$ workon golem-docs-env`, to deactive enter `$ deactivate`
 Clone the repo and install dependencies:
 
 ```
-(golem-docs-env) $ git clone https://github.com/ggruszczynski/gn_mkdocs.git
+(golem-docs-env) $ git clone https://github.com/golemfactory/golem-wiki.git
 (golem-docs-env) $ pip install -r requirements.txt
 ```
 
