@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golem Network Wiki - manual for running Golem node on your machine"> 
+    <meta name="author" content="Golem-Team"> 
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title></title>
+    <title>Windows - install from source instructions - Golem Wiki</title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -320,11 +322,11 @@ pip install -r requirements-win.txt</code></p>
 <p><strong>Build taskcollector</strong></p>
 <ol>
 <li>Open project in VisualStudio:</li>
-<li>If you don't have installed VS download it for free from [[this site|https://www.visualstudio.com/vs/visual-studio-express/]]</li>
+<li>If you don't have installed VS download it for free from <a href="https://www.visualstudio.com/vs/visual-studio-express/">this site</a></li>
 <li>Open <code>taskcollector.sln</code></li>
 <li>Set build type as <em>Release</em></li>
 <li>In case of error <code>Error MSB8020 The build tools for v120 (Platform Toolset = 'v120') cannot be found. To build using the v120 build tools, please install v120 build tools.</code> right click on solution and in <em>General</em> change <em>Platform Toolset</em> to <strong>Visual Studio 2015 (v140)</strong></li>
-<li>In case of error <code>Error LNK1181 cannot open input file '\FreeImage.lib</code> download package from [[this site|https://sourceforge.net/projects/freeimage/files/Binary%20Distribution/3.17.0/FreeImage3170Win32Win64.zip/download?use_mirror=vorboss]] and extract <code>FreeImage.lib</code> to <code>&lt;golem dir&gt;\apps\rendering\resources\taskcollector\FreeImage\Release</code> and <code>FreeImage.dll</code> to the <code>&lt;golem dir&gt;\apps\rendering\resources\taskcollector\Release</code> folder.
+<li>In case of error <code>Error LNK1181 cannot open input file '\FreeImage.lib</code> download package from <a href="https://sourceforge.net/projects/freeimage/files/Binary%20Distribution/3.17.0/FreeImage3170Win32Win64.zip/download?use_mirror=vorboss">this site</a> and extract <code>FreeImage.lib</code> to <code>&lt;golem dir&gt;\apps\rendering\resources\taskcollector\FreeImage\Release</code> and <code>FreeImage.dll</code> to the <code>&lt;golem dir&gt;\apps\rendering\resources\taskcollector\Release</code> folder.
 <strong>NOTE</strong> use 64bit libraries</li>
 <li>Build the project</li>
 </ol>
