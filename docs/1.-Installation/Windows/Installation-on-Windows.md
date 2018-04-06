@@ -2,8 +2,10 @@
 # Windows - install instructions
 
 
-*1.* Download latest installer from [[this site|https://github.com/golemfactory/golem/releases]]
+*1.* Download latest installer from [this site](https://github.com/golemfactory/golem/releases).
+
 *2.* Launch installer
+
 *3.* Accept License Agreement
 
 [[https://golem.network/img/screens/1.png|alt=1.png]]
@@ -17,6 +19,7 @@
 [[https://golem.network/img/screens/3.png|alt=3.png]]
 
 *6.* Click `Install`
+
 *7.* Accept License Agreement for Microsoft Visual C++2013 and click `Install`
 
 [[https://golem.network/img/screens/4.png|alt=4.png]]
@@ -38,5 +41,6 @@
 [[https://golem.network/img/screens/8.png|alt=8.png]]
 
 *12.* Golem with all dependencies has been installed, click finish
+
 
 **That's it!**

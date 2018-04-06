@@ -37,7 +37,7 @@ You may also need to open the ports through your firewall.
 
       Type `golem` into Spotlight or select `golem` from _Applications_.
 
-For more info see [[this instruction|https://docs.golem.network]]
+For more info see [this instruction](https://docs.golem.network).
 
 ## Command line interface
 

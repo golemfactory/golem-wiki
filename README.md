@@ -37,5 +37,7 @@ To deploy:
 
 More questions? Visit original documentation: http://www.mkdocs.org/
 
+Don't forget to push files_you_modified.md into repo's master branch.
+
 #### Common issues
 It may be required to install the following: `$ apt-get install python3.6-dev`
