@@ -38,6 +38,7 @@ _From version 0.10.0 and up_
 The logs are located in the `logs` folder inside the Golem data directory. The default values can be found below, you can set your own using the `-d` argument when starting `golemapp`.
 
 By default, the log files are located at:
+
 - windows in `%LOCALAPPDATA%\golem\golem\default\logs`
 - mac in `~/Library/Application\ Support/golem/default/logs`
 - linux in `~/.local/share/golem/default/logs`
