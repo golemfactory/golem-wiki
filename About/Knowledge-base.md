@@ -2,7 +2,7 @@ Below we provide the collection of Golem's presentations, documents and other us
 
 ---
 
-#### Documents
+### Documents
 
 ##### Golem Whitepaper
 
