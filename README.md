@@ -1,43 +1,84 @@
-# Golem Wiki
+# Golem
 
-Wiki is available here:
-https://golemfactory.github.io/golem-wiki/
+[![Buildbot](https://shield.lwan.ws/img/MN1w5S/buildpackage_linux)](https://buildbot.golem.network/buildbot/#/builders/buildpackage_linux)
+[![Buildbot](https://shield.lwan.ws/img/MN1w5S/buildpackage_macOS)](https://buildbot.golem.network/buildbot/#/builders/buildpackage_macOS)
+[![Buildbot](https://shield.lwan.ws/img/MN1w5S/buildpackage_windows)](https://buildbot.golem.network/buildbot/#/builders/buildpackage_windows)
+[![codecov](https://codecov.io/gh/golemfactory/golem/branch/develop/graph/badge.svg)](https://codecov.io/gh/golemfactory/golem)
 
-## How to update wiki?
+?> Golem is a decentralized marketplace for computing power. It enables CPUs and GPUs to connect in a peer-to-peer network, enabling both application owners and individual users ("requestors") to rent resources from other users’ ("providers") machines. These resources can be used to complete tasks requiring any amount of computation time and capacity. 
+Nowadays, centralized cloud providers are in control of these services, these platforms are constrained by closed networks, proprietary payment systems, and hard-coded provisioning operations. Golem proposes an open-source, decentralized and user controlled alternative.
+ 
+One core component to Golem’s built-in feature set is an [**Ethereum-based transaction system**](/About/payments), which enables direct payments between requestors, providers, and software developers.
 
-This short tutorial will show you how to serve a wiki webpage using mkdocs at you local machine (Ubuntu) to test your changes and how to deploy.
 
-First, it is safe to isolate your enviroment.
+---
 
-Install virtual enviroment: 
-```
-$ pip3 install virtualenv virtualenvwrapper
-$ source /usr/local/bin/virtualenvwrapper.sh
-```
-You can lookup your pythons' distributions using `$ whereis python` or just pick the default one...
+### Components
 
-```$ mkvirtualenv --python=$(which python3) golem-docs-env```
+>Golem is open source software, distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html).
 
-To activate `$ workon golem-docs-env`, to deactive enter `$ deactivate`
+It communicates with external technologies. Some of them may be downloaded and installed with the Golem package:
+* [Docker](https://www.docker.com/) (Apache License 2)
+* [FreeImage](http://freeimage.sourceforge.net/) (GPLv3)
+* [OpenEXR](http://www.openexr.com/) (modified BSD)
+* [OpenSSL](https://www.openssl.org/) (OpenSSL License)
+* [Python3.6](https://www.python.org/) (PSF license)
+* [OpenCV](https://opencv.org)
+* [Crossbar](https://crossbar.io)
 
-Clone the repo and install dependencies:
+---
 
-```
-(golem-docs-env) $ git clone https://github.com/golemfactory/golem-wiki.git
-(golem-docs-env) $ pip install -r requirements.txt
-```
+## Products
 
-Run server on you local machine:
+### Brass Beta
 
-```(golem-docs-env) $ mkdocs serve```
+* Installing Golem Brass beta on [Windows 10](Products/Brass-Beta/Installation?id=windows-quick-install)
+* Installing Golem Brass beta on [MacOs](Products/Brass-Beta/Installation?id=macos-quick-install)
+* Installing Golem Brass beta on [Ubuntu](Products/Brass-Beta/Installation?id=ubuntu-quick-install)
 
-To deploy:
+#### Usage & troubleshoothing
 
-```(golem-docs-env) $ mkdocs gh-deploy```
+The most common problems are described in [Common issues & troubleshooting](Products/Brass-Beta/Issues-&-Troubleshooting) section
 
-More questions? Visit original documentation: http://www.mkdocs.org/
+>[!WARNING|style:callout]
+Golem Project is work in progress. The current version is a Beta stage -  named Brass Golem Beta - and it's not fully secure. 
+>Check [this list of issues](https://github.com/golemfactory/golem/labels/security) for more details. 
+>Make sure to understand all risks before installing the software.
 
-Don't forget to push files_you_modified.md into repo's master branch.
+Benchmarks:
+* General: [Minilight](http://www.hxa.name/minilight) by Harrison Ainsworth / HXA7241 and Juraj Sukop.
+* Blender: [scene-BMW](https://www.blender.org/download/demo-files/).
+---
 
-#### Common issues
-It may be required to install the following: `$ apt-get install python3.6-dev`
+### Unlimited
+
+* [Installing and testing](Products/Unlimited/Basic-Usage?id=installing-and-testing)
+
+---
+
+### Contact  
+
+[Chat](https://chat.golem.network)
+
+[Twitter](https://twitter.com/golemproject)
+
+[Reddit](https://www.reddit.com/r/GolemProject/)
+
+email contact@golem.network
+
+---
+
+#### Other links
+
+[Website](https://golem.network)
+
+[Facebook](https://www.facebook.com/golemproject)
+
+[Blog](https://golem.network)
+
+---
+
+### Job offers
+
+All current job offers can be found [here](https://golem.network/careers/)
+
