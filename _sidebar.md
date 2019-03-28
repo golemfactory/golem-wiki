@@ -1,5 +1,3 @@
-<!-- docs/_sidebar.md -->
-
 - <p class="category">About</p>
 <ul class="app-sub-sidebar">
 - [What is Golem](About/What-is-Golem.md)

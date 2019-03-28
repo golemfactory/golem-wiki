@@ -1,4 +1,3 @@
-<!-- - <p class="category">Useful links</p> -->
 - [Website](https://golem.network)
 - [Chat](https://chat.golem.network)
 - [Twitter](https://twitter.com/golemproject)
