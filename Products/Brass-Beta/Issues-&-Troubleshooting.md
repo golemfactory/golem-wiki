@@ -145,7 +145,7 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\VBoxDrv" -Name "
 Start-Service vboxdrv
 ```
 
-  ?>**After installation of Docker Toolbox restart your machine and then run Golem.**
+?>**After installation of Docker Toolbox restart your machine and then run Golem.**
 
 #### Error Creating Docker VM
 
