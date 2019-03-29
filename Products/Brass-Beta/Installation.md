@@ -114,7 +114,7 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 
   If you are upgrading from previous version of Golem on Windows 10 Home eddition you will not need to install Docker Toolbox, as it was allready installed during previous installations.
 
-  If this is clean install on Windows 10 Home (or you decide to go with Docker Toolbox) after installation of [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) please open your `Windows Power Shell` as an administrator and paste scripts provided below:
+  If this is clean install on Windows 10 Home (or you decide to go with Docker Toolbox) after installation of [Docker Toolbox](https://github.com/docker/toolbox/releases/download/v18.06.1-ce/DockerToolbox-18.06.1-ce.exe) please open your `Windows Power Shell` as an administrator and paste scripts provided below:
 
   *Those scripts will provide fixes to native Docker Toolbox software and allow Golem to work properly in this environment*
   ```bash
