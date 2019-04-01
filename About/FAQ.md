@@ -1,5 +1,5 @@
 #### How are your going to verify computations?
-There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: simple correctness: checking of the result, eg. proof-of-work, redundant computation: ie. a few providers compute same part of the task and their results are compared, computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, analysis of output logs. See our [blog post](https://blog.golemproject.net/more-twain-less-cheating-129f7bc93a5c) for more info on our verification ideas 
+There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: simple correctness: checking of the result, eg. proof-of-work, redundant computation: ie. a few providers compute same part of the task and their results are compared, computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, analysis of output logs. See our [blog post](https://blog.golemproject.net/more-twain-less-cheating/) for more info on our verification ideas 
 
 #### Why are you making it decentralized?
 With decentralization, it will be possible to achieve full scalability without expanding and maintaining our own network and server infrastructure; the solution will also be free from single points of failure and resistant to attempts to disable and censor the network.
@@ -53,7 +53,7 @@ To opt-out of sending error messages to the Golem dev team, uncheck the icon tha
 #### How much money can I expect to make with Golem?
 
 
-It is too early to give estimates like this, but you can refer to our [blog post](https://blog.golemproject.net/why-should-render-farms-be-afraid-of-golem-3dd1b9e70f47) to understand better how we fit in the market and what financial and technical advantages we offer.
+It is too early to give estimates like this, but you can refer to our [blog post](https://medium.com/golem-project/why-should-render-farms-be-afraid-of-golem-3dd1b9e70f47) to understand better how we fit in the market and what financial and technical advantages we offer.
 
 As we grow, tasks in the network will multiply, and the providers will start making more GNT.
 
@@ -108,7 +108,7 @@ Golem chooses to cooperate with the ecosystem by working together with others, r
 
 #### What is the purpose of Golem Network Token?
 
-GNT is used to pay for rented computing power on the network. For more information about how GNT fits into the network, see our blog post on the [Economics of the Golem Network Token](https://blog.golemproject.net/the-economics-of-the-golem-network-token-d64c1a50b1d5)
+GNT is used to pay for rented computing power on the network. For more information about how GNT fits into the network, see our blog post on the [Economics of the Golem Network Token](https://blog.golemproject.net/the-economics-of-the-golem-network-token/)
 
 #### Can I deposit and withdraw real GNT and ETH during the Beta stage?
 
@@ -133,7 +133,7 @@ The two most popular wallets used to store Golem are:
 
 Be sure to read and follow the wallets safety instructions before sending your GNT to your new wallet. There are a lot of phishing scams out there, and if you are not careful, you can easily compromise your wallet security. If you follow their instructions carefully you should have no problem.
 
-For more wallet suggestions from our users go to our [chat](chat.golem.network) and pose your question in the #wallets room.
+For more wallet suggestions from our users go to our [chat](https://chat.golem.network) and pose your question in the #wallets room.
 
 #### "I sent my tokens to the wrong address and my GNT is gone"
 

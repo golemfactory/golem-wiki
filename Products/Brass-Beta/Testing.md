@@ -80,7 +80,7 @@ _(Optional: What could be a solution for that issue)_
 #### Miscellaneous
 **Testing tweaks**
 TODO: check if still is valid
-Creating a subnet of nodes [here](https://github.com/golemfactory/golem/wiki/Creating-a-subnet-of-nodes)
+Creating a subnet of nodes [here](/Contributing/Creating-a-subnet-of-nodes)
 
 #### How can you send us your comments? 
 Add a new issue to the repository or write a comment on [Rocket Chat](http://chat.golem.network). Add an annotation "[ERR]", "[UX]" or "[FUNC]" (see description above). If you add information about an error, please append as much information as possible, try to add screenshots and attach your logs to the issue. You can send your detailed comments to [contact@golem.network](mailto:contact@golem.network) with all the above information and attachments.

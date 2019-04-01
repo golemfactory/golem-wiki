@@ -8,7 +8,7 @@ Below we provide the collection of Golem's presentations, documents and other us
 
 The original Golem whitepaper contains the vision and assumptions of the project.
 
-[Whitepaper.pdf](About/img/Golemwhitepaper.pdf ':ignore')
+[Whitepaper.pdf](About/img/Golem_Whitepaper.pdf ':ignore')
 
 ---
 
@@ -24,7 +24,7 @@ The fundamental assumptions for the potential defence mechanism anti-sybil attac
 
 This paper presents the Brass Golem Marketplace structure and assumptions.
 
-[Brass Golem Marketplace.pdf](About/img/brass_market.pdf ':ignore')
+[Brass Golem Marketplace.pdf](About/img/Brass_Golem_Marketplace.pdf ':ignore')
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Explanatory Note & Governance Terms
 
-[GNT terms.pdf](About/img/GNTterms.pdf ':ignore')
+[GNT Creation and GOLEM Project Creation Conditions.pdf](About/img/GNT_Creation_and_GOLEM_Project_Creation_Conditions.pdf ':ignore')
 
 ---
 
@@ -42,7 +42,7 @@ Explanatory Note & Governance Terms
 
 Step by step instruction of acquiring GNT during crowdfunding
 
-[Croudfunding manual.pdf](About/img/MistEWManual.pdf ':ignore')
+[Croudfunding manual.pdf](About/img/Crowdfunding_Manual.pdf ':ignore')
 
 ---
 
@@ -98,7 +98,7 @@ ____
 
 Topic: **Solutions for trusted and private computations in Golem and in the wider Ecosystem** *By: Piotr Janiuk | 07.10.2018*
 
-Presentation [PDF](About/img/Solutions_for_trus_computations.pdf ':ignore') 
+Presentation [PDF](About/img/Solutions_for_trusted_and_private_computations_in_Golem_and_in_the_wider_Ecosystem.pdf ':ignore') 
 
 <iframe width="100%" height="315px" src="https://www.youtube.com/embed/w0bYO8DOT8A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -149,7 +149,7 @@ ____
 ##### King's College London
 Topic: **Golem at King's College meetup** *By: Piotr Janiuk | 30.01.2018*
 
-Presentation [PDF](About/img/kings_collage.pdf ':ignore')
+Presentation [PDF](About/img/A_deep_dive_into_the_Golem_architecture.pdf ':ignore')
 
 <iframe width="100%" height="315px" src="https://www.youtube.com/embed/DmmBK32o5Bc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

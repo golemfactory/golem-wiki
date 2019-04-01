@@ -3,4 +3,4 @@
 - [Twitter](https://twitter.com/golemproject)
 - [Reddit](https://www.reddit.com/r/GolemProject/)
 - [Facebook](https://www.facebook.com/golemproject)
-- [Blog](https://golem.network)
+- [Blog](https://blog.golemproject.net/)

@@ -19,7 +19,7 @@ to the wrong address or it was lost due to an unknown bug in the software, you
 cannot get it back.
 
 * The app is likely to have bugs in the UI. If you identify any strange behavior in the
-app that affects your ability to use it, please reach out to us on [chat](chat.golem.network),
+app that affects your ability to use it, please reach out to us on [chat](https://chat.golem.network),
 or contact@golem.network. Including screenshots and detailed descriptions of the
 issues you experience will help us find a solution or ship a fix in a future release.
 
@@ -65,4 +65,4 @@ If you are rendering heavy tasks on Golem please make sure that you share/provid
 
 ---
 
-Remember that we are here to help you, so if you are not sure about something just ask us on our [Rocket Chat](chat.golem.network) or contact@golem.network
+Remember that we are here to help you, so if you are not sure about something just ask us on our [Rocket Chat](https://chat.golem.network) or contact@golem.network

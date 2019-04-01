@@ -24,7 +24,7 @@ Golem’s function as the backbone of a decentralized market for computing power
 
 ?>**Platform-as-a-Service (PaaS)**
 
-However, Golem’s strongest proposal relies on the addition of *dedicated software integrations* to the equation. [**Any interested party**](/usecases) is free to create and deploy software to the Golem network by publishing it to the Application Registry. The Transaction Framework enables developers to extend and customize the payment mechanism resulting in unique new alternatives for software monetization. 
+However, Golem’s strongest proposal relies on the addition of *dedicated software integrations* to the equation. [**Any interested party**](/About/Use-Cases) is free to create and deploy software to the Golem network by publishing it to the Application Registry. The Transaction Framework enables developers to extend and customize the payment mechanism resulting in unique new alternatives for software monetization. 
 
 #### How Golem will help to build a new Internet of tomorrow
 

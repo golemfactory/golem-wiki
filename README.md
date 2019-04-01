@@ -74,7 +74,7 @@ email contact@golem.network
 
 [Facebook](https://www.facebook.com/golemproject)
 
-[Blog](https://golem.network)
+[Blog](https://blog.golemproject.net/)
 
 ---
 

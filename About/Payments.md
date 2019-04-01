@@ -21,7 +21,7 @@ Other possible components:
 * **Registration of a task as an anchor for a TrueBit-style conflict resolution fallback mechanism**
 
 #### Golem Network Token
-GNT is used to pay for rented computing power on the network. For more information about how GNT fits into the network, see our [blog post](https://blog.golemproject.net/the-economics-of-the-golem-network-token-d64c1a50b1d5) on the Economics of the Golem Network Token
+GNT is used to pay for rented computing power on the network. For more information about how GNT fits into the network, see our [blog post](https://blog.golemproject.net/the-economics-of-the-golem-network-token/) on the Economics of the Golem Network Token
 
 #### Can I deposit and withdraw real GNT and ETH during the Beta test?
 Brass Golem is now on the mainnet, using real GNT and ETH. Meaning you can use the app to earn money and pay for computations. Users are in charge of making conscious choices when setting prices and depositing GNT or ETH for their use in the app. On chain transactions are not reversible. 

@@ -5,7 +5,7 @@
 * **[Minimum Requirements to Run Golem](Products/Brass-Beta/Installation?id=minimum-requirements-to-run-golem)**
 * **[Port Forwarding](Products/Brass-Beta/Installation?id=port-forwarding)**
 * **[Acquiring GNT and ETH for transactions](Products/Brass-Beta/Installation?id=acquiring-gnt-and-eth)**
-* For Windows users, Virtualization VT-X/AMD-v needs to be enabled in BIOS or your VMware settings. You can find instructions on enabling VT-X in BIOS **[here](https://golem.network/documentation/how-to-enable-vt-x-in-bios/)**
+* For Windows users, Virtualization VT-X/AMD-v needs to be enabled in BIOS or your VMware settings. You can find instructions on enabling VT-X in BIOS **[here](Products/Brass-Beta/Issues-&-Troubleshooting?id=enabling-virtualization-in-bios)**
 ---
 
 #### Minimum requirements to run Golem:
@@ -76,7 +76,7 @@ When Golem is up and you are able to connect to nodes, you can adjust your setti
 
 Instructions below were based on screenshots from Golem version 0.19.0.
 
-1. Download latest installer from [this site](https://github.com/golemfactory/golem/releases)
+1. Download latest installer from [this site](https://golem-releases.cdn.golem.network/)
 
 2. Launch installer
 ![installer](/img/installation-windows/01-install-icon.jpg)
@@ -871,7 +871,7 @@ export PATH="$PATH:<path_to_your_hyperg_directory>"
 
 #### Done!
 You are now ready to run Golem!
-To do so, either start the [Golem Electron app](https://github.com/golemfactory/golem-electron) or start Golem manually from its source directory:
+To do so, either start the [Golem Electron app](Products/Brass-Beta/Electron) or start Golem manually from its source directory:
 
 ```bash
 ./golemapp.py

@@ -266,7 +266,7 @@ brew upgrade golem
 ```
 
 ##### Windows 
-- download the latest Golem installer from **[here](https://github.com/golemfactory/golem/releases)** and run it again.
+- download the latest Golem installer from **[here](https://golem-releases.cdn.golem.network/)** and run it again.
 
 ---
 
@@ -315,7 +315,7 @@ Those errors should be followed with particular issues that caused them along wi
 ## Port Forwarding Connection Errors
 In order to connect to other Nodes on th Golem Network, your router needs to support UPnP or you need to forward ports **40102**, **40103**, and **3282** manually. Forwarding ports manually requires setting a static IP as well. The process of forwarding ports varies based on your router model. For router specific instructions on how to forward your ports go to **[https://portforward.com/](https://portforward.com/)**, then follow the instructions.
 
-Once you have forwarded your ports try to connect to Golem. If you still cannot connect check your **[golem.log](https://golem.network/documentation/15-understanding-logs/)** for the following errors.
+Once you have forwarded your ports try to connect to Golem. If you still cannot connect check your **[golem.log](/Products/Brass-Beta/Understanding-Logs)** for the following errors.
 
 ---
 
