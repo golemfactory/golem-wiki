@@ -74,3 +74,135 @@ The user may choose simple verification, however the correctness of the computat
 * Main scene file: click "..." button on the right to choose .blend file. If a scene is using external resources, textures, etc. and they are not built into .blend file then you should add them using the "Add" button. Make sure that your scene is using only [relative paths](https://docs.blender.org/manual/en/dev/data_system/files/relative_paths.html), otherwise your task won't compute properly. 
 
 * Frames: if checkbox is not checked than only the first frame will be rendered. If you want to render a specific frame or set of frames, check checkbox and write the numbers of frames that should be rendered. You may use short notation, eg.: "1-4; 10-20,2" will render frames 1, 2, 3, 4, 10, 12, 14, 16, 18, 20. 
+
+---
+
+## Wasm
+
+The WebAssembly task is capable of running arbitrary code compiled to
+WebAssembly with Emscripten backend on Golem. Under the hood, the task uses
+the [WebAssembly Sandbox](https://github.com/golemfactory/sp-wasm).
+
+#### Task preparation
+The following section describes steps necessary to prepare and create a Wasm
+task on Golem.
+
+#### Program compilation
+First, you have to compile the code you want to run to WebAssembly using Emscripteny+JavaScript
+backend. The instructions on how to do that can be found
+[here](https://github.com/golemfactory/sp-wasm).
+
+#### Subtask division
+The task is manually divided into subtasks. Each subtask runs the same program,
+but gets (possibly) different input and execution arguments,
+and produces (possibly) different output.
+
+#### Input/output
+The compiled programs have to read their input from files and write their
+output to files.
+
+A directory has to be created for the program and its input. The JavaScript and WebAssembly
+files produced by *Emscripten* have to be placed directly inside this directory. Then, 
+for each subtask, a subdirectory named the same as the subtask has to be created inside the
+input directory. Everything the program has to access for a particular subtask has
+to be placed inside its input subdirectory.
+
+Another directory has to be created for program output. The output files specified
+in `output_file_paths` for each subtask will be copied to a subdirectory named the
+same as the subtask inside the output directory.
+
+The final (example) directory structure should look like this:
+
+```bash
+.
+|-- input_dir
+|   |-- program.js
+|   |-- program.wasm
+|   |-- subtask1
+|   |   |-- input_file_1_1
+|   |   `-- input_file_1_2
+|   `-- subtask2
+|       |-- input_file_2_1
+|       `-- input_file_2_2
+`-- output_dir
+    |-- subtask1
+    |   |-- output_file_1_1
+    |   `-- output_file_1_2
+    `-- subtask2
+        |-- output_file_2_1
+        `-- output_file_2_2
+```
+
+#### Task JSON
+
+To create the task, its JSON definition has to be created. The non-task-specific
+fields that **have** to be present are:
+
+* `type`: has to be `wasm`
+* `name`
+* `bid`
+* `timeout`
+* `subtask_timeout`
+* `options`: defined below
+
+#### Task options
+The following options have to be specified for the WebAssembly task:
+
+* `js_name`: The name of the JavaScript file produced by *Emscripten*. The file
+should be inside the input directory (specified below).
+* `wasm_name`: The name of the WebAssembly file produced by *Emscripten*. The 
+file should be inside the input directory (specified below).
+* `input_dir`: The path to the input directory containing the JavaScript and
+WebAssembly program files and the input subdirectories for each subtask. For each
+subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside
+the program's virtual filesystem.
+* `output_dir`: The path to the output directory where for each subtask, the output
+files specified in `output_file_paths` will be copied to a subdirectory named the 
+same as the subtask.
+* `subtasks`: A dictionary containing the options for each subtask. The keys should
+be the subtask names, the values should be dictionaries with fields specified below:
+  * `exec_args`: The execution arguments that will be passed to the program for this
+  subtask.
+  * `output_file_paths`: The paths to the files the program is expected to produce
+  for this subtask. Each file specified here will be copied from the program's
+  virtual filesystem to the output subdirectory for this subtask. If any of the
+  files are missing, the subtask will fail.
+  
+#### Example
+An example WASM task JSON:
+```json
+{
+    "type": "wasm", 
+    "name": "wasm", 
+    "bid":  1,
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "test.js",
+        "wasm_name": "test.wasm",
+        "input_dir": "/home/user/test_in",
+        "output_dir": "/home/user/test_out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["arg1", "arg2"],
+                "output_file_paths": ["out.txt"]
+            },
+            "subtask2": {
+                "exec_args": ["arg3", "arg4"],
+                "output_file_paths": ["out.txt"]
+            }
+        }
+    }
+}
+```
+
+#### Creating the task
+To create the task, run the following:
+
+```bash
+golemcli tasks create path/to/the/task_definition.json
+```
+
+#### Wasm store
+In order to simplify the on-boarding process for Wasm in Golem, we have prepared a special repo on Github which
+contains a curated list of precompiled Wasm binaries that are known to run fine in Golem. The repo can be accessed [here](https://github.com/golemfactory/wasm-store).
