@@ -108,13 +108,13 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 
   - Click `Yes` and follow installation instructions. 
 
-  ?>After internal testing we have found out that leaving **Docker Toolbox** on Windows during installation of Hyper-V **should not cause any issues with Golem**, and thus uninstalling it should not be mandatory by any means. There might be cases tough where after such process Docker Toolbox is going to be treated as a preferred virtualization by Windows machine. So if you are a user who uses virtualization only with Golem then uninstall Docker Toolbox and run Golem again.
+  ?>After internal testing we have found out that leaving **Docker Toolbox** on Windows during installation of Hyper-V **may cause issues with Golem**, and thus is being uninstalled during Hyper-V installation.
 
   ##### Docker Toolbox
 
-  If you are upgrading from previous version of Golem on Windows 10 Home eddition you will not need to install Docker Toolbox, as it was allready installed during previous installations.
+  If you are upgrading from previous version of Golem on Windows 10 Home eddition you will need to install Docker Toolbox.
 
-  If this is clean install on Windows 10 Home (or you decide to go with Docker Toolbox) after installation of [Docker Toolbox](https://github.com/docker/toolbox/releases/download/v18.06.1-ce/DockerToolbox-18.06.1-ce.exe) please open your `Windows Power Shell` as an administrator and paste scripts provided below:
+  After installation of [Docker Toolbox](https://github.com/docker/toolbox/releases/download/v18.06.1-ce/DockerToolbox-18.06.1-ce.exe) please open your `Windows Power Shell` as an administrator and paste scripts provided below:
 
   *Those scripts will provide fixes to native Docker Toolbox software and allow Golem to work properly in this environment*
   ```bash
@@ -287,6 +287,7 @@ This includes:
 
 ##### With Hyper-V
 
+- Make sure that Docker Toolbox is not installed (Windows 10 Pro only). Uninstall if present
 - Enable the Windows feature Hyper-V
 - Configure docker
  - Create windows share user
