@@ -102,7 +102,7 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 
   If you are a **Windows 10 Home** user you will **not be able to install Hyper-V** as it's not supported. Fortunately, we have kept Docker Toolbox support in this case. The only downside is, that you will have to install Docker Toolbox manually from now on, as it's no longer part of the install package.
 
-  !> Please be aware that **if you are using any other virtualization software** (for eg. Docker Toolbox, VMware), **do not install Hyper-V** as this could potentially impact performance. If you encounter any problems with Hyper-V you can still uninstall it, and try to run Golem with Docker Toolbox.
+  !> Please be aware that **if you are using any other virtualization software** (for eg. Docker Toolbox, VMware), **do not install Hyper-V** as this could potentially impact performance. If you encounter any problems with Hyper-V you can still uninstall it, and try to run Golem with Docker Toolbox. If you do please before installing Docker Toolbox make sure that you have disabled Hyper-V in Windows Features.
 
   ##### Docker for Windows (Hyper-V)
 
