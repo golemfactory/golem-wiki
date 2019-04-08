@@ -115,14 +115,24 @@ If you don't see anything like this in the output that means shares need to be c
 
 #### 4. Wrong permissions
 1. Go to your Golem data directory.
-1. Right-click "ComputerRes" folder and select "Properties".
-1. Go to "Security" tab and click "Advanced" button.
-1. Open "Permissions" tab and make sure "golem-docker" user has full control for subfolders and files:
+2. Right-click "ComputerRes" folder and select "Properties".
+3. Go to "Security" tab and click "Advanced" button.
+4. Open "Permissions" tab and make sure "golem-docker" user has full control for subfolders and files:
     ![folder-permissions](/img/docker-errors/folder_permissions.png)
 
-1. Open "Share" tab and make sure "golem-docker" user has full control:
+4a. If you don't have `golem-docker` on list 
+
+* Click "Add"
+* Type in "Enter object name to select" `golem-docker`
+* Hit ok
+![folder-permissions-add](/img/docker-errors/folder_permissions_add.jpg)
+
+    4b. Make sure to set all required permissions (as in step 5)
+    ![folder-permissions-add-2](/img/docker-errors/folder_permissions_add_2.jpg)
+
+5. Open "Share" tab and make sure "golem-docker" user has full control:
     ![share-permissions](/img/docker-errors/share_permissions.png)
-1. You're done.
+6. You're done.
 
 ---
 
