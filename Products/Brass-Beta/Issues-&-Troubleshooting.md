@@ -82,6 +82,9 @@ If you're using custom, third-party firewall: we won't help you. Find out how to
 ---
 
 #### 2. golem-docker user not present, or improperly configured
+
+?>Please uncheck "User must change password at next login" and you will be able to select "Password never expires".
+
 Open user management (`lusrmgr.msc` in terminal) and make sure there is a user named `golem-docker`.  
 Then right-click the user name, choose "Properties" and make sure they look like this:
 
