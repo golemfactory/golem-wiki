@@ -88,7 +88,9 @@ Add a new issue to the repository or write a comment on [Rocket Chat](http://cha
 #### Where are the logs?
 **From version 0.14.0 and up**
 
-TODO: screenshot from app with GUI footer link to logs
+You can also open logs containing folred directly from GUI
+![open-logs](/img/usage/open-logs.jpg)
+
 The logs are located in the *logs* folder inside the Golem data directory. The default values can be found below, you can set your own using the `-d` argument when starting `golemapp`.
 Logs for mainnet and testnet are stored seperately, replace *mainnet* with *rinkeby* to find the test logs
 
@@ -97,5 +99,5 @@ By default, the log files are located at:
 - **Mac** *~/Library/Application\ Support/golem/default/mainnet/logs*
 - **Linux** *~/.local/share/golem/default/mainnet/logs*
 
-?> **Note** For testnet users the logs are located in the rinkeby/logs rather than mainnet/logs folders. Understanding your Logs
+?> **Note** For testnet users the logs are located in the rinkeby/logs rather than mainnet/logs folders.
 

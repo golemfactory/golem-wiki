@@ -44,14 +44,13 @@ We do not have a standard for the "optimal" Golem machine. As the network grows 
 
 #### What data do I share with Golem?
 
-We do not store or share any personal data, we only use traceback error data to help improve the app. As Golem does not store any other personal data, make sure to write down your password and keys and store them in a safe place.
-We will automatically send any errors that occur in your Golem instance to our dev team so they can improve the product in later releases - however your private data will always remain private. We are creating a live feed of traceback errors so we can identify bugs quicker and speed up development on new features.
+It depends on you. You can use Golem app fully anonymously if you wish to. If this is the case, then during the first start of the app during the onboarding process, make sure to uncheck the icons that reads "I want to help Golem by sending my statistics." and "I want to help Golem by sending my logs.". If on the other hand, you would like to helps us improve the app, sending this data will helps us a lot with identifying the most common issues in the app. We use both traceback error and monitor data to help improve the app. We will automatically send any errors that occur in your Golem instance to our dev team so they can improve the product in later releases. We are creating a live feed of traceback errors so we can identify bugs quicker and speed up development on new features. 
 
-To opt-out of sending error messages to the Golem dev team, uncheck the icon that reads "I want to help Golem by sending my statistics anonymously." If you checked the icon on your first initial setup and changed your mind, you can run golem through the CLI with the `--nomonitor` flag to turn off error reporting.
+If you at any point change your mind, you can run golem trough the [CLI](/Products/Brass-Beta/Command-line-interface) and then `terms` type `n` both to `Enable monitor` and `Enable talkback`.
 
+You can find out more in our [privacy policy](https://golem.network/privacy/)
 
 #### How much money can I expect to make with Golem?
-
 
 It is too early to give estimates like this, but you can refer to our [blog post](https://medium.com/golem-project/why-should-render-farms-be-afraid-of-golem-3dd1b9e70f47) to understand better how we fit in the market and what financial and technical advantages we offer.
 
