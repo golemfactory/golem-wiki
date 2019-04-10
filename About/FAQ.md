@@ -103,7 +103,6 @@ We do not invest in ICOs, nor we speculateETH or other cryptocurrencies. In case
 
 Golem chooses to cooperate with the ecosystem by working together with others, rather than investing capital.
 
-### Golem Token
 
 #### What is the purpose of Golem Network Token?
 
