@@ -272,7 +272,7 @@ For rust and python to find each other you also need to add `<Python36 install l
 #### Validate install:
 Command:  
 ```bash
-rustup --version
+rustc --version
 ```
 Result:
 ```bash
