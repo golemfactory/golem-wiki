@@ -28,6 +28,8 @@ Intel’s SGX technology enables requestors to compute their tasks in a trustwor
 
 SGX’s (through Graphene) integration with Golem will provide an additional security layer, however it will not be mandatory for the users. The providers with Intel processors supporting SGX will have the option to participate in receiving SGX tasks, but this will not limit them in computing other tasks in the network. The requestors, on the other hand, will have the option to choose if they would like to compute their tasks through nodes providing SGX security. As for the price of the computations itself, we have discovered that computations with SGX take more time than those without it, so this would be a reason for them being more expensive. However, we can not confirm that this will be the case, as this is still a new technology that will change/improve over time. By the nature of our open marketplace, we can’t  make predictions for providers setting their prices higher, upon getting more offers due to SGX support, which is a possibility.
 
+Learn more on projects website: [Graphene project](https://grapheneproject.io/)
+
 ---
 
 ##### Graphene-ng demo part 1
