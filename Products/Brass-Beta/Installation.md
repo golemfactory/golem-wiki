@@ -775,6 +775,7 @@ Currently there is no in app uprgade avaliable. You need to download newest inst
 #### System setup
 
 #### 1. Install additional libraries
+
 ```bash
 sudo apt install openssl python3-dev libffi-dev pkg-config libjpeg-dev \
     libopenexr-dev libssl-dev autoconf libgmp-dev \
@@ -794,15 +795,42 @@ sudo usermod -a -G docker $USER
 
 and restart the system for changes to take effect.
 
-##### _3. Optional: Install Python virtualenv_
 
-Steps 4., 5. and 6. use pip and Python to install dependencies and set up your development environment.
+#### 3. Install HyperG
+
+  **3a.** Downloading binaries
+
+  Download the latest Linux release [here](https://github.com/mfranciszkiewicz/golem-hyperdrive/releases).
+  Extract the archive to a directory of your choosing, for example:
+  ```bash
+  tar xzf hyperg_0.2.10_linux-x64.tar.gz $HOME/.local/bin/
+  ```
+
+  **3b.** Adding HyperG to PATH
+
+  HyperG needs to be available on your system's PATH. Considering the example above, the directory `$HOME/.local/bin` should already be included in PATH (this depends on your Ubuntu version, you can run `echo $PATH` to verify).
+
+  If your HyperG directory is not included in PATH, you need to add it manually. For example, this can be done by adding the below line to `$HOME/.profile` (this assumes you're using `bash` as your shell, which is the default on Ubuntu):
+
+```bash
+export PATH="$PATH:<path_to_your_hyperg_directory>"
+```
+
+#### 4. Get the code
+
+Clone the repo
+```bash
+  git clone https://github.com/golemfactory/golem.git
+```
+##### _5. Optional: Install Python virtualenv_
+
+Use pip and Python to install dependencies and set up your development environment.
 By default, the system installation of Python is used, installing all of Golem's dependencies in a system-wide manner.
 Using a Python virtual environment allows you to create an isolated Python installation which will be used specifically with Golem.
 
 For more details on Python virtual envs take a look [here](https://docs.python-guide.org/dev/virtualenvs/).
 
-**3a.** Install `virtualenv` and `virtualenvwrapper`:
+**5a.** Install `virtualenv` and `virtualenvwrapper`:
 
    ```bash
    sudo pip3 install virtualenv virtualenvwrapper
@@ -810,7 +838,7 @@ For more details on Python virtual envs take a look [here](https://docs.python-g
    ```
    The script `virtualenvwrapper.sh` provides additional commands that we'll use below.
 
-**3b.** Create a virtual env:
+**5b.** Create a virtual env:
 
    ```bash
    mkvirtualenv --python=$(which python3) golem-env
@@ -822,7 +850,7 @@ For more details on Python virtual envs take a look [here](https://docs.python-g
    workon golem-env
    ```
 
-#### 4. Install additional Python libraries
+#### 6. Install additional Python libraries
 This step needs to be run from the Golem source directory.
 
 ```
@@ -831,14 +859,14 @@ pip3 install -r requirements.txt
 
 In case the installation fails with a `403 Client Error: SSL is required` error, you need to re-install pip with `pip3 install --upgrade pip`.
 
-#### 5. Run setup
+#### 7. Run setup
 This step needs to be run from the Golem source directory.
 
 ```
 python3 setup.py develop --prefix=$HOME/.local
 ```
 
-#### _6. Optional: Install test dependencies_
+#### _8. Optional: Install test dependencies_
 In order to run unit and integration tests you need to install test-specific dependencies.
 This step needs to be run from the Golem source directory.
 
@@ -850,25 +878,6 @@ If you run into import problems, e.g. `ImportError: cannot import name keccak`, 
   - `sudo apt-get remove python-crypto`
   - `sudo pip install --upgrade pycryptodome`
 
-#### 7. Install HyperG
-
-  **7a.** Downloading binaries
-
-  Download the latest Linux release [here](https://github.com/mfranciszkiewicz/golem-hyperdrive/releases).
-  Extract the archive to a directory of your choosing, for example:
-  ```bash
-  tar xzf hyperg_0.2.10_linux-x64.tar.gz $HOME/.local/bin/
-  ```
-
-  **7b.** Adding HyperG to PATH
-
-  HyperG needs to be available on your system's PATH. Considering the example above, the directory `$HOME/.local/bin` should already be included in PATH (this depends on your Ubuntu version, you can run `echo $PATH` to verify).
-
-  If your HyperG directory is not included in PATH, you need to add it manually. For example, this can be done by adding the below line to `$HOME/.profile` (this assumes you're using `bash` as your shell, which is the default on Ubuntu):
-
-```bash
-export PATH="$PATH:<path_to_your_hyperg_directory>"
-```
 
 #### Done!
 You are now ready to run Golem!
