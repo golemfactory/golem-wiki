@@ -124,7 +124,7 @@ Instructions below were based on screenshots from Golem version 0.19.0.
   Start-Service vboxdrv
   ```
 
-  ?>**After installation of Docker Toolbox restart your machine and then run Golem.**
+  ?>**After installation of Docker Toolbox restart your machine, run Docker Quickstart Terminal and then run Golem.**
 
 ![installer](/img/installation-windows/06-hyper-v.jpg)
 
