@@ -331,7 +331,7 @@ Please clone the source directory now and then continue with this step.
 
 In an administrator PowerShell go to the golem source directory and run:
 ```bash
-powershell.exe -ExecutionPolicy RemoteSigned -File .\scripts\docker\prepare-docker-for-windows.ps1 ".\scripts\docker\" "$env:LocalAppData" "$env:UserName"
+powershell.exe -ExecutionPolicy RemoteSigned -File .\scripts\docker\prepare-docker-for-windows.ps1 ".\scripts\docker\create-share.ps1" "$env:LocalAppData" "$env:UserName"
 ```
 
 ?> After docker is configured you need to re-log into windows.
