@@ -142,6 +142,30 @@ We are aware that there are more possible causes of mount errors than the ones l
 docker-machine --native-ssh ssh golem dmesg
 ```
 
+#### 6. Error creating Virtual Machine
+
+Logs:
+```bash
+2019-05-22 11:13:47 INFO     golem.node                          Got password
+2019-05-22 11:13:47 INFO     golem.docker.hypervisor.hyperv      Hyper-V: Restoring VM golem ...
+2019-05-22 11:14:20 WARNING  golem.docker.hypervisor.docker_machine DockerMachine: failed to update env for VM: Command '['docker-machine', '--native-ssh', 'env', '--shell', 'cmd', 'golem']' returned non-zero exit status 1.
+```
+
+If you see error in your `golem.log` file, then follow these troubleshooting steps:
+
+- Shutdown the Golem App
+
+-  Open Power Shell
+
+-  Run the following command:
+
+    *This will remove the docker container.*
+    ```bash
+docker-machine rm -f golem
+``` 
+
+-  Relaunch Golem.
+
 ---
 
 ### Errors with Docker Toolbox
