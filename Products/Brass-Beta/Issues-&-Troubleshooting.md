@@ -142,6 +142,8 @@ We are aware that there are more possible causes of mount errors than the ones l
 docker-machine --native-ssh ssh golem dmesg
 ```
 
+---
+
 #### 6. Error creating Virtual Machine
 
 Logs:
