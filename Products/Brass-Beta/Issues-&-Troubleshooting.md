@@ -153,6 +153,8 @@ Logs:
 2019-05-22 11:14:20 WARNING  golem.docker.hypervisor.docker_machine DockerMachine: failed to update env for VM: Command '['docker-machine', '--native-ssh', 'env', '--shell', 'cmd', 'golem']' returned non-zero exit status 1.
 ```
 
+![stuck-on-creating-vm](/img/docker-errors/stuck_on_creating.png)
+
 If you see error in your `golem.log` file, then follow these troubleshooting steps:
 
 - Shutdown the Golem App
@@ -284,6 +286,14 @@ If you continue to see errors, then the debug flag (-D) should reveal the proble
 
 ## Other Common Errors
 
+#### Golem is not starting
+
+---
+
+If your node installed properly on Windows 10, but it does not want to start then please try to delete Golem from `C:\Users\[User]\.docker\machine\machines`
+
+---
+
 #### Outdated Hyperg Version
 
 ```bash
@@ -384,7 +394,6 @@ This error means that your ports are not forwarded or Golem monitor is down. Che
 * Enable UPnP on your router or, if this option is not available, manually forward your ports
 * Adjust your Firewall settings to enable incoming connections
 * Call your ISP if issues persist, they sometimes block ports even if they are manually forwarded
-
 
 
 ```bash
