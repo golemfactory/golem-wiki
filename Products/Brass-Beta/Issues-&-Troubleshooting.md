@@ -1,8 +1,8 @@
 ## Warnings
-### Disk space warning
+#### Disk space warning
 Since 0.18.0 Golem uses 
 
-### RAM warning
+#### RAM warning
 Since 0.18.0 Golem uses 
 
 ## Docker Errors on MacOS
