@@ -1,10 +1,3 @@
-## Warnings
-#### Disk space warning
-Since 0.18.0 Golem uses 
-
-#### RAM warning
-Since 0.18.0 Golem uses 
-
 ## Docker Errors on MacOS
 Since 0.18.0 Golem uses Docker for Mac, the first step is to make sure that all previous Docker instances are removed from your machine. Open terminal, press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keybord and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
