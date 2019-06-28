@@ -79,130 +79,19 @@ The user may choose simple verification, however the correctness of the computat
 
 ## Wasm
 
+In 0.20.0 [Brass Beta](Products/Brass-Beta/Installation) release we provide Golem-WASM integration available on testnet, called [**gWASM**](Products/Brass-Beta/gWASM). In the next release, we plan to enable it on mainnet. 
+
+?> It is possible to compile many applications as WebAssembly binaries and run them in a secure and portable manner. To read more on WebAssembly, you can start with [this](https://webassembly.org/), however, note that there are many fantastic sources for beginners on the internet also.
+
+In our [**gWASM**](Products/Brass-Beta/gWASM) integration, your data and **WASM** binary is transferred to the remote machine and executed. The target machine is secured by the in-sandbox execution. The binary is portable and compatible with various OS and environments since it is executed by a runtime engine rather than natively. The solution is designed to run large number of computations in parallel in order to profit from Golem Network capabilities.
+
+#### Disclaimer
+This is still a work in progress. The codebase and functionality may change frequently. We do our best to keep the documentation up to date and keep you informed. Please report back to us any issues that you may encounter. We are also open and look forward to your suggestions and experience to make our software better. You can message us here TODO(link).
+
 The WebAssembly task is capable of running arbitrary code compiled to
 WebAssembly with Emscripten backend on Golem. Under the hood, the task uses
 the [WebAssembly Sandbox](https://github.com/golemfactory/sp-wasm).
 
-#### Task preparation
-The following section describes steps necessary to prepare and create a Wasm
-task on Golem.
+#### Usage 
 
-#### Program compilation
-First, you have to compile the code you want to run to WebAssembly using Emscripteny+JavaScript
-backend. The instructions on how to do that can be found
-[here](https://github.com/golemfactory/sp-wasm).
-
-#### Subtask division
-The task is manually divided into subtasks. Each subtask runs the same program,
-but gets (possibly) different input and execution arguments,
-and produces (possibly) different output.
-
-#### Input/output
-The compiled programs have to read their input from files and write their
-output to files.
-
-A directory has to be created for the program and its input. The JavaScript and WebAssembly
-files produced by *Emscripten* have to be placed directly inside this directory. Then, 
-for each subtask, a subdirectory named the same as the subtask has to be created inside the
-input directory. Everything the program has to access for a particular subtask has
-to be placed inside its input subdirectory.
-
-Another directory has to be created for program output. The output files specified
-in `output_file_paths` for each subtask will be copied to a subdirectory named the
-same as the subtask inside the output directory.
-
-The final (example) directory structure should look like this:
-
-```bash
-.
-|-- input_dir
-|   |-- program.js
-|   |-- program.wasm
-|   |-- subtask1
-|   |   |-- input_file_1_1
-|   |   `-- input_file_1_2
-|   `-- subtask2
-|       |-- input_file_2_1
-|       `-- input_file_2_2
-`-- output_dir
-    |-- subtask1
-    |   |-- output_file_1_1
-    |   `-- output_file_1_2
-    `-- subtask2
-        |-- output_file_2_1
-        `-- output_file_2_2
-```
-
-#### Task JSON
-
-To create the task, its JSON definition has to be created. The non-task-specific
-fields that **have** to be present are:
-
-* `type`: has to be `wasm`
-* `name`
-* `bid`
-* `timeout`
-* `subtask_timeout`
-* `options`: defined below
-
-#### Task options
-The following options have to be specified for the WebAssembly task:
-
-* `js_name`: The name of the JavaScript file produced by *Emscripten*. The file
-should be inside the input directory (specified below).
-* `wasm_name`: The name of the WebAssembly file produced by *Emscripten*. The 
-file should be inside the input directory (specified below).
-* `input_dir`: The path to the input directory containing the JavaScript and
-WebAssembly program files and the input subdirectories for each subtask. For each
-subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside
-the program's virtual filesystem.
-* `output_dir`: The path to the output directory where for each subtask, the output
-files specified in `output_file_paths` will be copied to a subdirectory named the 
-same as the subtask.
-* `subtasks`: A dictionary containing the options for each subtask. The keys should
-be the subtask names, the values should be dictionaries with fields specified below:
-  * `exec_args`: The execution arguments that will be passed to the program for this
-  subtask.
-  * `output_file_paths`: The paths to the files the program is expected to produce
-  for this subtask. Each file specified here will be copied from the program's
-  virtual filesystem to the output subdirectory for this subtask. If any of the
-  files are missing, the subtask will fail.
-  
-#### Example
-An example WASM task JSON:
-```json
-{
-    "type": "wasm", 
-    "name": "wasm", 
-    "bid":  1,
-    "subtask_timeout": "00:10:00",
-    "timeout": "00:10:00",
-    "options": {
-        "js_name": "test.js",
-        "wasm_name": "test.wasm",
-        "input_dir": "/home/user/test_in",
-        "output_dir": "/home/user/test_out",
-        "subtasks": {
-            "subtask1": {
-                "exec_args": ["arg1", "arg2"],
-                "output_file_paths": ["out.txt"]
-            },
-            "subtask2": {
-                "exec_args": ["arg3", "arg4"],
-                "output_file_paths": ["out.txt"]
-            }
-        }
-    }
-}
-```
-
-#### Creating the task
-To create the task, run the following:
-
-```bash
-golemcli tasks create path/to/the/task_definition.json
-```
-
-#### Wasm store
-In order to simplify the on-boarding process for Wasm in Golem, we have prepared a special repo on Github which
-contains a curated list of precompiled Wasm binaries that are known to run fine in Golem. The repo can be accessed [here](https://github.com/golemfactory/wasm-store).
+To read more about how to integrate your apps with **gWASM** head over here [**here**](Products/Brass-Beta/gWASM)

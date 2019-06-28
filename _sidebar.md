@@ -20,7 +20,8 @@
 * [Acting as Provider](Products/Brass-Beta/Acting-as-Provider.md)
 * [Issues & Troubleshooting](Products/Brass-Beta/Issues-&-Troubleshooting.md)
 * [Understanding Logs](Products/Brass-Beta/Understanding-Logs.md)
-* [Testing](Products/Brass-Beta/Testing.md)</ul>
+* [Testing](Products/Brass-Beta/Testing.md)
+* [gWASM](Products/Brass-Beta/gWASM.md)</ul>
 - <p class="product">Unlimited</p>
 <ul class="app-sub-sidebar">
 * [Basic Usage](Products/Unlimited/Basic-Usage.md)</ul>
