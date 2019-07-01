@@ -24,10 +24,10 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ### How to build gWASM application
 
-Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See this for more details. 
-Again, be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
+Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See [this](Products/Brass-Beta/gWASM?id=sandboxing) for more details. 
 
----
+> Again, be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
+
 
 ### Limitations
 
@@ -53,7 +53,9 @@ Again, be sure that you are not violating any licenses or property rights, you t
 
 ### Creating gWASM tasks in Golem
 
-If you want to run your WASM application (.wasm file and .js file), you can create tasks connecting directly to your Golem node. No additional client, like g-flite, is required. This is pretty straightforward. See this below for more details. Be sure that you are not violating any licenses or property rights: you take legal responsibility for your actions. It is absolutely fine if you use open source software or your own code.
+If you want to run your WASM application (.wasm file and .js file), you can create tasks connecting directly to your Golem node. No additional client, like g-flite, is required. This is pretty straightforward. 
+
+> Be sure that you are not violating any licenses or property rights: you take legal responsibility for your actions. It is absolutely fine if you use open source software or your own code.
 
 
 #### Task preparation
@@ -115,6 +117,7 @@ To create the task, its JSON definition has to be created. The non-task-specific
 
 
 #### Task options
+
 The following options have to be specified for the WebAssembly task:
 
 * `js_name`: The name of the JavaScript file produced by *Emscripten*. The file should be inside the input directory (specified below).
@@ -307,7 +310,7 @@ This program is still very much a work-in-progress, so if you find (and you most
 
 ##### License
 
-Licensed under [GNU General Public License v3.0](LICENSE) with the exception of `flite` WASM binary which is licensed under [BSD-like License](LICENSE.flite).
+Licensed under [GNU General Public License v3.0](https://github.com/golemfactory/g-flite/blob/master/LICENSE) with the exception of `flite` WASM binary which is licensed under [BSD-like License](https://github.com/golemfactory/g-flite/blob/master/LICENSE.flite).
 
 
 ---
@@ -328,7 +331,7 @@ The applications augmented with a GUI/CLI are naturally more user friendly, beca
 
 The list of applications with GUI/CLI:
 
-* [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) - text-to-speech
+* [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
 
 The list of raw applications:
 * [7-zip](https://github.com/golemfactory/wasm-store/tree/master/7-zip) - 7-zip archiver
@@ -410,7 +413,7 @@ where the `task.json` would consist of
     }
 }
 ```
-For an example, see how [7-zip](7-zip) is set up in [this repo](https://github.com/golemfactory/wasm-store).
+For an example, see how [7-zip](https://github.com/golemfactory/wasm-store/tree/master/7-zip) is set up in [this repo](https://github.com/golemfactory/wasm-store).
 
 Of course, if anything is unclear or you find some inconsistencies, please do submit a new issue and we'll make sure it's sorted asap.
 
