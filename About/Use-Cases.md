@@ -77,7 +77,7 @@ The user may choose simple verification, however the correctness of the computat
 
 ---
 
-## Wasm
+## gWASM
 
 In 0.20.0 [Brass Beta](Products/Brass-Beta/Installation) release we provide Golem-WASM integration available on testnet, called [**gWASM**](Products/Brass-Beta/gWASM). In the next release, we plan to enable it on mainnet. 
 

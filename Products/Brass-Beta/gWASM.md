@@ -22,7 +22,7 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ---
 
-### How to build WASM application
+### How to build gWASM application
 
 Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See this for more details. 
 Again, be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
@@ -51,21 +51,19 @@ Again, be sure that you are not violating any licenses or property rights, you t
 
 ---
 
-### Creating WASM tasks in Golem
+### Creating gWASM tasks in Golem
 
 If you want to run your WASM application (.wasm file and .js file), you can create tasks connecting directly to your Golem node. No additional client, like g-flite, is required. This is pretty straightforward. See this below for more details. Be sure that you are not violating any licenses or property rights: you take legal responsibility for your actions. It is absolutely fine if you use open source software or your own code.
 
 
 #### Task preparation
 
-The following section describes steps necessary to prepare and create a Wasm
-task on Golem.
+The following section describes steps necessary to prepare and create a Wasm task on Golem.
 
 
 #### Program compilation
 
-First, you have to compile the code you want to run to WebAssembly using **Emscripteny+JavaScript** backend. The instructions on how to do that can be found
-[here](Products/Brass-Beta/gWASM?id=sandboxing).
+First, you have to compile the code you want to run to WebAssembly using **Emscripteny+JavaScript** backend. The instructions on how to do that can be found [here](Products/Brass-Beta/gWASM?id=sandboxing).
 
 
 #### Subtask division
@@ -79,8 +77,7 @@ The compiled programs have to read their input from files and write their output
 
 A directory has to be created for the program and its input. The JavaScript and WebAssembly files produced by *Emscripten* have to be placed directly inside this directory. Then, for each subtask, a subdirectory named the same as the subtask has to be created inside the input directory. Everything the program has to access for a particular subtask has to be placed inside its input subdirectory.
 
-Another directory has to be created for program output. The output files specified in `output_file_paths` for each subtask will be copied to a subdirectory named the
-same as the subtask inside the output directory.
+Another directory has to be created for program output. The output files specified in `output_file_paths` for each subtask will be copied to a subdirectory named the same as the subtask inside the output directory.
 
 The final (example) directory structure should look like this:
 
@@ -312,6 +309,112 @@ This program is still very much a work-in-progress, so if you find (and you most
 
 Licensed under [GNU General Public License v3.0](LICENSE) with the exception of `flite` WASM binary which is licensed under [BSD-like License](LICENSE.flite).
 
+
+---
+
+### gWASM-store
+
+?> First of all, we provided a catalog of ready to use gWASM applications (like [gflite](Products/Brass-Beta/gWASM?id=g-flite-)). If you feel that your application is worth to be shared, you can contribute to that also. The goal for this catalog is to kick off the adoption and help new users to get familiar with it fast. All apps are self contained but requires to run Golem node locally. Please see the description to the specific application to know how to use it.
+
+**A curated list of precompiled Wasm binaries of programs that are known to successfully work with [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in [Golem](https://github.com/golemfactory/golem).**
+
+The list includes applications located directly in [this repo](https://github.com/golemfactory/wasm-store), as well as links that point to external sources.
+
+The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
+Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](Products/Brass-Beta/Command-line-interface)). Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
+See [here](Products/Brass-Beta/gWASM?id=creating-wasm-tasks-in-golem) to learn how to launch a Wasm task in Golem.
+
+The applications augmented with a GUI/CLI are naturally more user friendly, because they handle communication with Golem node. Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) app for instance.
+
+The list of applications with GUI/CLI:
+
+* [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) - text-to-speech
+
+The list of raw applications:
+* [7-zip](https://github.com/golemfactory/wasm-store/tree/master/7-zip) - 7-zip archiver
+* [dcraw](https://github.com/golemfactory/wasm-store/tree/master/dcraw) - raw image to tiff/ppm
+* [flite](https://github.com/golemfactory/wasm-store/tree/master/flite) - text-to-speech
+* [Minimal Hamiltonian Path](https://github.com/golemfactory/wasm-store/tree/master/MinimalHamiltonianPath) - searches for minimal Hamiltonian path in weighted directed graphs
+
+
+#### Cloning the repo
+
+When cloning the repo, remember to set up [git-lfs](https://git-lfs.github.com) for this repo on your machine. Usually, this can be accomplished as follows:
+
+```bash
+$ git clone https://github.com/golemfactory/wasm-store
+$ cd wasm-store
+$ git lfs install
+$ git lfs pull
+```
+
+
+#### Contributing
+
+We welcome contributions in the form of links to precompiled Wasm binaries of other programs. If you would like to submit such a link, do not hesitate to open a new PR. Your repo should contain **README** file and license. If it is a raw Wasm binary, it should follow the guidelines below.
+
+For apps augmented with GUI/CLI, the requirements are more relaxed and not set in stone, with the only must-have: good user experience.
+
+
+#### Directories structure
+
+When contributing an application in a raw Wasm format, please make sure that the submitted link adheres to the structure expected by Wasm task in Golem. That is, we're looking for dir structure similar to the following
+
+```bash
+.
+|-- task.json
+|-- README.md
+|-- LICENSE
+|-- input_dir
+|   |-- program.js
+|   |-- program.wasm
+|   |-- subtask1
+|   |   |-- input_file_1_1
+|   |   `-- input_file_1_2
+|   `-- subtask2
+|       |-- input_file_2_1
+|       `-- input_file_2_2
+`-- output_dir
+    |-- subtask1
+    |   |-- output_file_1_1
+    |   `-- output_file_1_2
+    `-- subtask2
+        |-- output_file_2_1
+        `-- output_file_2_2
+```
+
+where the `task.json` would consist of
+
+```json
+{
+    "type": "wasm", 
+    "name": "program", 
+    "bid":  1,
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "program.js",
+        "wasm_name": "program.wasm",
+        "input_dir": "<abs_path_to_the_repo>/input_dir",
+        "output_dir": "<abs_path_to_the_repo>/output_dir",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["arg1_1", "arg1_2"],
+                "output_file_paths": ["output_file_1_1", "output_file_1_2"]
+            },
+            "subtask2": {
+                "exec_args": ["arg2_1", "arg2_2"],
+                "output_file_paths": ["output_file_2_1", "output_file_2_2"]
+            }
+        }
+    }
+}
+```
+For an example, see how [7-zip](7-zip) is set up in [this repo](https://github.com/golemfactory/wasm-store).
+
+Of course, if anything is unclear or you find some inconsistencies, please do submit a new issue and we'll make sure it's sorted asap.
+
+
 ---
 
 ### Sandboxing
@@ -321,16 +424,16 @@ We developed the sandbox and **every WASM application is run within the sandbox 
 
 #### SpiderMonkey-based WebAssembly Sandbox
 
-[![Build Status]][travis] [![Rustc 1.33]][rustc] [![License]][license]
+<!-- [![Build Status]][travis] [![Rustc 1.33]][rustc] [![License]][license]
 
 [Build Status]: https://travis-ci.org/golemfactory/sp-wasm.svg?branch=master
 [travis]: http://travis-ci.org/golemfactory/sp-wasm
 [Rustc 1.33]: https://img.shields.io/badge/rustc-1.33+-lightgray.svg
 [rustc]: https://blog.rust-lang.org/2019/02/28/Rust-1.33.0.html
 [License]: https://img.shields.io/github/license/golemfactory/sp-wasm.svg 
-[license]: https://www.gnu.org/licenses/gpl-3.0.en.html
+[license]: https://www.gnu.org/licenses/gpl-3.0.en.html -->
 
-A WebAssembly sandbox using standalone SpiderMonkey engine. For `v8` version, see [golemfactory/v8-wasm](https://github.com/golemfactory/v8-wasm).
+?> A WebAssembly sandbox using standalone SpiderMonkey engine. For `v8` version, see [golemfactory/v8-wasm](https://github.com/golemfactory/v8-wasm).
 
 <!-- This WebAssembly sandbox is used in current development version of Golem: [golem/apps/wasm](https://github.com/golemfactory/golem/tree/develop/apps/wasm).
 If you would like to launch a gWASM task in Golem, see [here](https://docs.golem.network/#/About/Use-Cases?id=wasm).
@@ -357,12 +460,13 @@ If you would like to launch a gWASM task in Golem, see [here](https://docs.golem
 This guide assumes you have successfully built the `wasm-sandbox` binary; for build instructions, see section [Build instructions](Products/Brass-Beta/gWASM?id=build-instructions) below. If you are running Linux, then you can also use the prebuilt binaries from [here](https://github.com/golemfactory/sp-wasm/releases).
 
 
-#### 1. Create and cross-compile simple program
+##### 1. Create and cross-compile simple program
 
 Let us create a simple `hello world` style program which will read in some text from `in.txt` text file, read your name from the command line, and save the resultant text in `out.txt`. We'll demonstrate how to cross-compile apps to Wasm for use in Golem in two languages of choice: C and Rust.
 
 
-#### 1.1 C/C++
+##### 1.1 C/C++
+
 ```C
 #include <stdio.h>
 
@@ -403,7 +507,7 @@ Note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0`. By default, the E
 Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
-#### 1.2 Rust
+##### 1.2 Rust
 
 With Rust, firstly go ahead and create a new binary with `cargo`
 
@@ -461,7 +565,7 @@ Just like in [C program](Products/Brass-Beta/gWASM?id=_11-cc)'s case, the produc
 Again, note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0` passed as additional compiler flags to `rustc`. By default, when building for target `wasm32-unknown-emscripten` with `rustc` the compiler will cross-compile with default Emscripten compiler flags which require async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
-#### 2. Create input and output dirs and files
+##### 2. Create input and output dirs and files
 
 The sandbox will require us to specify input and output paths together with output filenames to create, and any additional arguments (see [CLI arguments explained](#cli-arguments-explained) section below for detailed specification of the required arguments). Suppose we have the following file structure locally
 
@@ -481,7 +585,7 @@ You are running Wasm!
 ```
 
 
-#### 3. Run!
+##### 3. Run!
 
 After you have successfully run all of the above steps up to now, you should have the following file structure locally
 
@@ -544,7 +648,7 @@ You are running Wasm!
 #### Build instructions
 
 
-#### Using Docker (recommended)
+##### Using Docker (recommended)
 To build using Docker, simply run
 
 ```bash
@@ -558,7 +662,7 @@ docker build -t wasm-sandbox:latest .
 ```
 
 
-#### Natively on Linux
+##### Natively on Linux
 
 To build natively on Linux, you need to follow the installation instructions of [servo/rust-mozjs](https://github.com/servo/rust-mozjs) and [servo/mozjs](https://github.com/servo/mozjs). The latter is Mozilla's Servo's SpiderMonkey fork and low-level Rust bindings, and as such, requires C/C++ compiler and Autoconf 2.13. See [servo/mozjs/README.md](https://github.com/servo/mozjs) for detailed building instructions.
 
@@ -575,12 +679,12 @@ $ cargo build --features "debugmozjs"
 ```
 
 
-#### Natively on other OSes
+##### Natively on other OSes
 
 We currently do not offer any support for building the sandbox natively on other OSes.
 
 
-#### CLI arguments explained
+##### CLI arguments explained
 
 ```
 wasm-sandbox -I <input-dir> -O <output-dir> -j <wasm-js> -w <wasm> -o <output-file>... -- <args>...
@@ -614,11 +718,6 @@ RUST_LOG=debug
 * Emscripten, by default, doesn't support `/dev/(u)random` emulation targets different than either browser or `nodejs`. Therefore, we have added basic emulation of the random device that is *fully* deterministic. For details, see [#5](https://github.com/golemfactory/sp-wasm/pull/5).
 
 
-#### Wasm store
-
-More examples of precompiled Wasm binaries can be found in [golemfactory/wasm-store](Products/Brass-Beta/gWASM?id=store).
-
-
 #### Contributing to sp-wasm
 
 We welcome all issues and pull requests!
@@ -639,114 +738,6 @@ $ cargo build && ./target/debug/sp-wasm-tests
 #### License
 
 Licensed under [GNU General Public License v3.0](https://github.com/golemfactory/sp-wasm/blob/master/LICENSE).
-
----
-
-### Store
-
-First of all, we provided a catalog of ready to use gWASM applications (like gflite) in Golem Network here. If you feel that your application is worth to be shared, you can contribute to that also. On the rules see the readme file there. The goal for this catalog is to kick off the adoption and help new users to get familiar with it fast. All apps are self contained but requires to run Golem node locally.  Please see the description to the specific application to know how to use it.
-
-
-#### Wasm-store
-
-A curated list of precompiled Wasm binaries of programs that are known to successfully work with [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in [Golem](https://github.com/golemfactory/golem).
-
-The list includes applications located directly in this repo, as well as links that point to external sources.
-
-The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
-Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](Products/Brass-Beta/Command-line-interface)). Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
-See [here](Products/Brass-Beta/gWASM?id=creating-wasm-tasks-in-golem) to learn how to launch a Wasm task in Golem.
-
-The applications augmented with a GUI/CLI are naturally more user friendly, because they handle communication with Golem node,
-Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) app for instance.
-
-The list of applications with GUI/CLI:
-
-* [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) - text-to-speech
-
-The list of raw applications:
-* [7-zip](https://github.com/golemfactory/wasm-store/tree/master/7-zip) - 7-zip archiver
-* [dcraw](https://github.com/golemfactory/wasm-store/tree/master/dcraw) - raw image to tiff/ppm
-* [flite](https://github.com/golemfactory/wasm-store/tree/master/flite) - text-to-speech
-* [Minimal Hamiltonian Path](https://github.com/golemfactory/wasm-store/tree/master/MinimalHamiltonianPath) - searches for minimal Hamiltonian path in weighted directed graphs
-
-
-#### Cloning the repo
-
-When cloning the repo, remember to set up [git-lfs](https://git-lfs.github.com) for this repo on your machine. Usually, this can be accomplished as follows:
-
-```bash
-$ git clone https://github.com/golemfactory/wasm-store
-$ cd wasm-store
-$ git lfs install
-$ git lfs pull
-```
-
-
-#### Contributing
-
-We welcome contributions in the form of links to precompiled Wasm binaries of other programs. If you would like to submit such a link, do not hesitate to open a new PR. Your repo should contain README file and license. If it is a raw Wasm binary, it should follow the guidelines below.
-
-For apps augmented with GUI/CLI, the requirements are more relaxed and not set in stone, with the only must-have: good user experience.
-
-
-#### Directories structure
-
-When contributing an application in a raw Wasm format, please make sure that the submitted link adheres to the structure expected by Wasm task in Golem. That is, we're looking for dir structure similar to the following
-
-```bash
-.
-|-- task.json
-|-- README.md
-|-- LICENSE
-|-- input_dir
-|   |-- program.js
-|   |-- program.wasm
-|   |-- subtask1
-|   |   |-- input_file_1_1
-|   |   `-- input_file_1_2
-|   `-- subtask2
-|       |-- input_file_2_1
-|       `-- input_file_2_2
-`-- output_dir
-    |-- subtask1
-    |   |-- output_file_1_1
-    |   `-- output_file_1_2
-    `-- subtask2
-        |-- output_file_2_1
-        `-- output_file_2_2
-```
-
-where the `task.json` would consist of
-
-```json
-{
-    "type": "wasm", 
-    "name": "program", 
-    "bid":  1,
-    "subtask_timeout": "00:10:00",
-    "timeout": "00:10:00",
-    "options": {
-        "js_name": "program.js",
-        "wasm_name": "program.wasm",
-        "input_dir": "<abs_path_to_the_repo>/input_dir",
-        "output_dir": "<abs_path_to_the_repo>/output_dir",
-        "subtasks": {
-            "subtask1": {
-                "exec_args": ["arg1_1", "arg1_2"],
-                "output_file_paths": ["output_file_1_1", "output_file_1_2"]
-            },
-            "subtask2": {
-                "exec_args": ["arg2_1", "arg2_2"],
-                "output_file_paths": ["output_file_2_1", "output_file_2_2"]
-            }
-        }
-    }
-}
-```
-For an example, see for example how [7-zip](7-zip) is set up in this repo.
-
-Of course, if anything is unclear or you find some inconsistencies, please do submit a new issue and we'll make sure it's sorted asap.
 
 
 
