@@ -6,7 +6,7 @@ Description=Golem
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/golemapp --nogui 
+ExecStart=/usr/local/bin/golemapp
 Restart=on-failure
 User=ubuntu
 Group=ubuntu
