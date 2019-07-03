@@ -207,8 +207,8 @@ You can grab a precompiled version of the program for each OS, Linux, Mac, and W
 If you wish however, you can also build the program from source. To do this, you'll first need to clone the repo.
 
 ```bash
-$ git clone --depth 50 https://github.com/golemfactory/g-flite
-$ cd g-flite
+git clone --depth 50 https://github.com/golemfactory/g-flite
+cd g-flite
 ```
 
 Afterwards, you need to ensure you have Rust installed in version at least `1.34.0`. A good place to get your hands on the latest Rust is [rustup website](https://rustup.rs/).
@@ -216,13 +216,13 @@ Afterwards, you need to ensure you have Rust installed in version at least `1.34
 With Rust installed on your OS, you then need to simply run from within `g-flite` dir
 
 ```bash
-$ cargo build
+cargo build
 ```
 
 for debug version, or
 
 ```bash
-$ cargo build --release
+cargo build --release
 ```
 
 for release version. Your program can then be found in
@@ -245,7 +245,7 @@ for release version.
 Typical usage should not differ much or at all from how you would use the original `flite` app
 
 ```bash
-$ g_flite some_text_input.txt some_speech_output.wav
+g_flite some_text_input.txt some_speech_output.wav
 ```
 
 Note that it is required to specify the name of the output file. All of this assumes that you
@@ -265,19 +265,19 @@ have your Golem installed using the default settings
 If any of the above information is not correct for your Golem configuration, you can adjust them directly in the command-line as follows
 
 ```bash
-$ g_flite --address 127.0.0.1 --port 61000 --datadir /abs/path/to/golem/datadir some_text_input.txt some_speech_output.wav
+g_flite --address 127.0.0.1 --port 61000 --datadir /abs/path/to/golem/datadir some_text_input.txt some_speech_output.wav
 ```
 
 Finally, by default `g-flite` will split your input text into 6 subtasks and compute them on Golem Network. You can also adjust this option in the command-line as follows
 
 ```bash
-$ g_flite --subtasks 2 some_text_input.txt some_speech_output.wav
+g_flite --subtasks 2 some_text_input.txt some_speech_output.wav
 ```
 
 All of this information can also be extracted from the command-line with the `-h` or `--help` flags
 
 ```bash
-$ g_flite -h
+g_flite -h
 
 g_flite 0.1.0
 Golem RnD Team <contact@golem.network>
@@ -345,10 +345,10 @@ The list of raw applications:
 When cloning the repo, remember to set up [git-lfs](https://git-lfs.github.com) for this repo on your machine. Usually, this can be accomplished as follows:
 
 ```bash
-$ git clone https://github.com/golemfactory/wasm-store
-$ cd wasm-store
-$ git lfs install
-$ git lfs pull
+git clone https://github.com/golemfactory/wasm-store
+cd wasm-store
+git lfs install
+git lfs pull
 ```
 
 
