@@ -60,7 +60,7 @@ If you want to run your WASM application (.wasm file and .js file), you can crea
 
 #### Task preparation
 
-The following section describes steps necessary to prepare and create a Wasm task on Golem.
+The following section describes steps necessary to prepare and create a gWASM task on Golem.
 
 
 #### Program compilation
@@ -184,11 +184,6 @@ You need to run [Golem node](Products/Brass-Beta/Installation) locally, which is
 
 
 #### g-flite
-
-[![travis-build-status]][travis]
-
-[travis-build-status]: https://travis-ci.org/golemfactory/g-flite.svg?branch=master
-[travis]: https://travis-ci.org/golemfactory/g-flite
 
 `g-flite` is a command-line utility which lets you run [flite](http://www.festvox.org/flite/) text-to-speech app on Golem Network.
 
