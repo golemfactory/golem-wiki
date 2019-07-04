@@ -314,7 +314,7 @@ Licensed under [GNU General Public License v3.0](https://github.com/golemfactory
 
 ?> First of all, we provided a catalog of ready to use gWASM applications (like [gflite](Products/Brass-Beta/gWASM?id=g-flite-)). If you feel that your application is worth to be shared, you can contribute to that also. The goal for this catalog is to kick off the adoption and help new users to get familiar with it fast. All apps are self contained but requires to run Golem node locally. Please see the description to the specific application to know how to use it.
 
-**A curated list of precompiled Wasm binaries of programs that are known to successfully work with [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in [Golem](https://github.com/golemfactory/golem).**
+**gWASM-store is a curated list of precompiled Wasm binaries of programs that are known to successfully work with [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in [Golem](https://github.com/golemfactory/golem).**
 
 The list includes applications located directly in [this repo](https://github.com/golemfactory/wasm-store), as well as links that point to external sources.
 
