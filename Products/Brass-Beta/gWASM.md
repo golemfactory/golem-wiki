@@ -4,7 +4,7 @@
 
 ---
 
-### WASM-Golem applications
+### gWASM applications
 
 We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runtime to run WASM binaries. Because of this the applications must be compiled with the Emscripten compiler or compiled to Emscripten target.
 
