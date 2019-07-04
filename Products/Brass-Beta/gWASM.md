@@ -320,7 +320,7 @@ The list includes applications located directly in [this repo](https://github.co
 
 The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
 Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](Products/Brass-Beta/Command-line-interface)). Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
-See [here](Products/Brass-Beta/gWASM?id=creating-wasm-tasks-in-golem) to learn how to launch a Wasm task in Golem.
+See [here](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem) to learn how to launch a Wasm task in Golem.
 
 The applications augmented with a GUI/CLI are naturally more user friendly, because they handle communication with Golem node. Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) app for instance.
 
