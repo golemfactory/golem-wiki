@@ -10,6 +10,8 @@ We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runt
 
 Typical gWASM application consists of a client and WASM binary. The client is non-WASM software. Its purpose is to connect to Golem node, create tasks and process results. The example of the client is [g-flite](Products/Brass-Beta/gWASM?id=sample-application). The WASM binary consists of the actual binary .wasm and the JavaScript glue code .js file (both are generated automatically when compiling with Emscripten). It is transferred with input data to provider’s machine and executed by WASM engine. The example is flite compiled to WebAssembly.
 
+Until very recently, people mainly associated WebAssembly with web browsers. This trend is changing rapidly thanks to standardisation efforts in the form of WebAssembly System Interface (or [WASI](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)) which will essentially allow WebAssembly to be run on the server. gWASM is a nod in that direction, taking WASM from the browser environment and enabling server-side computations. This implies that gWASM will not run in a web browser but on the different Golem Nodes. Note that while gWASM is currently not WASI compatible, we are actively participating in WASI’s development together with Mozilla Foundation, and when it’s tagged stable (currently, still experimental), we will make gWasm WASI compatible as well.
+
 ---
 
 ### Deterministic computations
