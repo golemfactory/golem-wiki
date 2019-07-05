@@ -4,11 +4,13 @@
 
 ---
 
-### WASM-Golem applications
+### gWASM applications
 
 We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runtime to run WASM binaries. Because of this the applications must be compiled with the Emscripten compiler or compiled to Emscripten target.
 
 Typical gWASM application consists of a client and WASM binary. The client is non-WASM software. Its purpose is to connect to Golem node, create tasks and process results. The example of the client is [g-flite](Products/Brass-Beta/gWASM?id=sample-application). The WASM binary consists of the actual binary .wasm and the JavaScript glue code .js file (both are generated automatically when compiling with Emscripten). It is transferred with input data to provider’s machine and executed by WASM engine. The example is flite compiled to WebAssembly.
+
+Until very recently, people mainly associated WebAssembly with web browsers. This trend is changing rapidly thanks to standardisation efforts in the form of WebAssembly System Interface (or [WASI](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)) which will essentially allow WebAssembly to be run on the server. gWASM is a nod in that direction, taking WASM from the browser environment and enabling server-side computations. This implies that gWASM will not run in a web browser but on the different Golem Nodes. Note that while gWASM is currently not WASI compatible, we are actively participating in WASI’s development together with Mozilla Foundation, and when it’s tagged stable (currently, still experimental), we will make gWasm WASI compatible as well.
 
 ---
 
@@ -22,11 +24,11 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ---
 
-### How to build gWASM application
+### How to compile gWASM application
 
-Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See [this](Products/Brass-Beta/gWASM?id=sandboxing) for more details. 
+Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See [this](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program) for detailed instructions on cross-compiling of C and Rust code. Note that gWASM applications are executed in the [sandbox](Products/Brass-Beta/gWASM?id=sandboxing) and compilation must comply to its requirements.
 
-> Again, be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
+> Be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
 
 
 ### Limitations
@@ -55,17 +57,17 @@ Many applications can be compiled to WASM. It is hard to say if a specific code 
 
 If you want to run your WASM application (.wasm file and .js file), you can create tasks connecting directly to your Golem node. No additional client, like g-flite, is required. This is pretty straightforward. 
 
-> Be sure that you are not violating any licenses or property rights: you take legal responsibility for your actions. It is absolutely fine if you use open source software or your own code.
+> Again, be sure that you are not violating any licenses or property rights: you take legal responsibility for your actions. It is absolutely fine if you use open source software or your own code.
 
 
 #### Task preparation
 
-The following section describes steps necessary to prepare and create a Wasm task on Golem.
+The following section describes steps necessary to prepare and create a gWASM task on Golem.
 
 
 #### Program compilation
 
-First, you have to compile the code you want to run to WebAssembly using **Emscripteny+JavaScript** backend. The instructions on how to do that can be found [here](Products/Brass-Beta/gWASM?id=sandboxing).
+First, you have to compile the code you want to run to WebAssembly using **Emscripteny+JavaScript** backend. The instructions on how to do that can be found [here](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program).
 
 
 #### Subtask division
@@ -184,11 +186,6 @@ You need to run [Golem node](Products/Brass-Beta/Installation) locally, which is
 
 
 #### g-flite
-
-[![travis-build-status]][travis]
-
-[travis-build-status]: https://travis-ci.org/golemfactory/g-flite.svg?branch=master
-[travis]: https://travis-ci.org/golemfactory/g-flite
 
 `g-flite` is a command-line utility which lets you run [flite](http://www.festvox.org/flite/) text-to-speech app on Golem Network.
 
@@ -319,15 +316,15 @@ Licensed under [GNU General Public License v3.0](https://github.com/golemfactory
 
 ?> First of all, we provided a catalog of ready to use gWASM applications (like [gflite](Products/Brass-Beta/gWASM?id=g-flite-)). If you feel that your application is worth to be shared, you can contribute to that also. The goal for this catalog is to kick off the adoption and help new users to get familiar with it fast. All apps are self contained but requires to run Golem node locally. Please see the description to the specific application to know how to use it.
 
-**A curated list of precompiled Wasm binaries of programs that are known to successfully work with [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in [Golem](https://github.com/golemfactory/golem).**
+**gWASM-store is a curated list of precompiled Wasm binaries of programs that are known to successfully work with [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in [Golem](https://github.com/golemfactory/golem).**
 
 The list includes applications located directly in [this repo](https://github.com/golemfactory/wasm-store), as well as links that point to external sources.
 
 The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
 Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](Products/Brass-Beta/Command-line-interface)). Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
-See [here](Products/Brass-Beta/gWASM?id=creating-wasm-tasks-in-golem) to learn how to launch a Wasm task in Golem.
+See [here](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem) to learn how to launch a Wasm task in Golem.
 
-The applications augmented with a GUI/CLI are naturally more user friendly, because they handle communication with Golem node. Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](Products/Brass-Beta/gWASM?id=g-flite-) app for instance.
+The applications augmented with a GUI/CLI are naturally more user friendly, because they handle communication with Golem node. Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](Products/Brass-Beta/gWASM?id=g-flite) app for instance.
 
 The list of applications with GUI/CLI:
 
@@ -422,7 +419,7 @@ Of course, if anything is unclear or you find some inconsistencies, please do su
 
 ### Sandboxing
 
-We developed the sandbox and **every WASM application is run within the sandbox on a provider’s machine**. It brings security for providers and allows for better control over execution without sacrificing the performance. This is written in Rust and is available for all common OS. We ship it with Golem client, so users-providers do not need to take any additional steps. For the purpose of tests and development, it is possible to run it locally without Golem client. See below for instructions. The sandbox **includes embedded SpriderMonkey from Mozilla** as the runtime for WASM. Remember that **only Emscripten compiled binaries are supported**.
+We developed the sandbox and **every gWASM application is run within the sandbox on a provider’s machine**. It brings security for providers and allows for better control over execution without sacrificing the performance. This is written in Rust and is available for all common OS. We ship it with Golem client, so users-providers do not need to take any additional steps. For the purpose of tests and development, it is possible to run it locally without Golem client. See below for instructions. The sandbox **includes embedded SpriderMonkey from Mozilla** as the runtime for WASM. Remember that **only Emscripten compiled binaries are supported**.
 
 
 #### SpiderMonkey-based WebAssembly Sandbox
