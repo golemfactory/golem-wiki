@@ -271,6 +271,38 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 
 6. After command completes, the output file `golem.wav` should be available and you can test it.
 
+#### How to use gWASM-store
+
+1. Visit the github page with [gWASM-store](https://github.com/golemfactory/wasm-store).
+
+2. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+```
+git clone https://github.com/golemfactory/wasm-store.git
+```
+
+3. Open terminal and check if your Golem node is up.
+```
+golemcli
+```
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+```
+golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+```
+
+4. Test if you are connected to testnet, not mainnet. Run the command.
+```
+golemcli debug rpc golem.mainnet
+```
+The answer should be `False`.
+
+5. Choose the use case. For instance `hello`. Follow the instructions in the appriopriate `README` file in the use case directory. Prepare `in` directory and `task.json` file and run the task in Golem.
+
+##### Remark
+
+[gWASM-store](https://github.com/golemfactory/wasm-store) contains use cases located in this repository and links to other use cases. If you want to run [g-flite](https://github.com/golemfactory/g-flite) see the section [How to run g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-g-flite). If you want to follow the link to external repository, it is no need to download gWASM-store repository as stated in the point 2, rather the external repository.
+
 ---
 
 ### How to compile gWASM application
