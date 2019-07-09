@@ -1138,4 +1138,14 @@ Typical `task.json` file has the following form.
 
 * `type` is always `wasm`.
 * `name` is arbitrary.
-* `bid` .
+* `bid` is price in GNT per hour for computation. It is maximal possible price and actual price is usually less than this. You pay only for the computation time - as we apply usage market for gWASM. In testnet the value is irrelevant.
+* `subtask_timeout` is arbitrary and does not affect payment value in gWASM. It should be reasonable long.
+* `timeout` is a task timeout. It should be at least two times `subtask_timeout`.
+* `js_name` and `wasm_name` are outputs of cross-compilation. They should be placed in `input_dir`.
+* `input_dir` should have proper structure. It contains input files for subtasks. The files are to be open in read-only mode.
+* `output_dir` is an existing directory. Can be empty. If it is not empty, then the files are overriden.
+* `subtasks` - the configuration of subtasks. The number of elements reflects the number of subtasks.
+* `subtask1` - names of subtasks are arbitrary.
+* `exec_args` are arguments passed to each instance/subtask.
+* `output_file_paths` is array of permissible output files. If the program tries to write-open another file, an error is rised.
+
