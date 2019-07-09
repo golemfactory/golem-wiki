@@ -227,7 +227,7 @@ If the command is not recognized, then please check your Golem installation and 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 
 ```bash
-golemcli --datadir=/home/USER/wasm_test_5/datadir1
+golemcli --datadir=/path/to/your/datadir
 ```
 
 2. Test if you are connected to testnet, not mainnet. Run the command.
@@ -372,7 +372,7 @@ An example WASM task JSON:
 ```json
 {
     "type": "wasm", 
-    "name": "wasm", 
+    "name": "test", 
     "bid":  1,
     "subtask_timeout": "00:10:00",
     "timeout": "00:10:00",
@@ -453,7 +453,7 @@ If the command is not recognized, then please check your Golem installation and 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 
 ```bash
-golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+golemcli --datadir=/path/to/your/datadir
 ```
 
 6. Test if you are connected to testnet, not mainnet. Run the command.
@@ -468,15 +468,15 @@ The answer should be `False`.
 ```json
 {
     "type": "wasm",
-    "name": "wasm",
+    "name": "hello",
     "bid":  "1",
     "subtask_timeout": "00:10:00",
     "timeout": "00:10:00",
     "options": {
         "js_name": "hello.js",
         "wasm_name": "hello.wasm",
-        "input_dir": "/home/lukaszglen/wasm_test_5/hello/in",
-        "output_dir": "/home/lukaszglen/wasm_test_5/hello/out",
+        "input_dir": "/path/to/your/working/directory/hello/in",
+        "output_dir": "/path/to/your/working/directory/hello/out",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["world"],
@@ -498,7 +498,7 @@ golemcli tasks create task.json
 If you specified the datadir, add it to the command
 
 ```bash
-golemcli tasks create task.json --datadir=/home/lukaszglen/wasm_test_5/datadir1
+golemcli tasks create task.json --datadir=/path/to/your/datadir
 ```
 
 9. You can track the task progress by executing the following command.
@@ -667,7 +667,7 @@ If the command is not recognized, then please check your Golem installation and 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 
 ```bash
-golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+golemcli --datadir=/path/to/your/datadir
 ```
 
 2. Test if you are connected to testnet, not mainnet. Run the command.
@@ -820,7 +820,7 @@ If the command is not recognized, then please check your Golem installation and 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 
 ```bash
-golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+golemcli --datadir=/path/to/your/datadir
 ```
 
 4. Test if you are connected to testnet, not mainnet. Run the command.
@@ -1087,7 +1087,7 @@ golemcli tasks create task.json
 If you specified the datadir, add it to the command
 
 ```bash
-golemcli tasks create task.json --datadir=/home/lukaszglen/wasm_test_5/datadir1
+golemcli tasks create task.json --datadir=/path/to/your/datadir
 ```
 
 5. You can track the task progress by executing the following command.
@@ -1108,6 +1108,34 @@ The content should be
 hello world!
 ```
 
+---
 
+### Task json explained
 
+Typical `task.json` file has the following form.
 
+```json
+{
+    "type": "wasm",
+    "name": "hello",
+    "bid":  "1",
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "hello.js",
+        "wasm_name": "hello.wasm",
+        "input_dir": "/path/to/your/working/directory/hello/in",
+        "output_dir": "/path/to/your/working/directory/hello/out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["world"],
+                "output_file_paths": ["out.txt"]
+            }
+        }
+    }
+}
+```
+
+* `type` is always `wasm`.
+* `name` is arbitrary.
+* `bid` .
