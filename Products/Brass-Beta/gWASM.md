@@ -24,6 +24,42 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ---
 
+### How to 
+
+#### How to cross-compile C program
+
+1. Test if Emscripten SDK is installed. Open terminal and execute
+```
+emcc --version
+```
+If it is not installed, follow the instruction from [here](https://emscripten.org/docs/getting_started/downloads.html).
+
+2. Create simple program `hello.c`
+```
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+  char* name = argc >= 2 ? argv[1] : "anonymous";
+
+  FILE* f_out = fopen("out.txt", "w");
+
+  fprintf(f_out, "hello %s!\n", name);
+
+  fclose(f_out);
+
+  return 0;
+}
+```
+
+3. Do cross-compilation with `emcc`
+```
+emcc -o hello.js -s BINARYEN_ASYNC_COMPILATION=0 hello.c
+```
+
+4. You should get outcome files `hello.js` and `hello.wasm`
+
+---
+
 ### How to compile gWASM application
 
 Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See [this](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program) for detailed instructions on cross-compiling of C and Rust code. Note that gWASM applications are executed in the [sandbox](Products/Brass-Beta/gWASM?id=sandboxing) and compilation must comply to its requirements.
