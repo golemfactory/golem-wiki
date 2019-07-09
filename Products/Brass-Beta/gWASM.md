@@ -11,7 +11,7 @@
 * Then [create and cross-compile simple program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program)
 * Or check step by step guides for [cross compilation of C program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program)
 * Learn how to [Create gWASM tasks in Golem](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
-* How to run your own gWASM task](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-your-own-gwasm-task)
+* How to run [your own gWASM task](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-your-own-gwasm-task)
 * Check our [sample application - g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference
 * And learn [how to run g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-g-flite)
 * [gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=gwasm-store)
