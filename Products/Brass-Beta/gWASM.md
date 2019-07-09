@@ -58,6 +58,56 @@ emcc -o hello.js -s BINARYEN_ASYNC_COMPILATION=0 hello.c
 
 4. You should get outcome files `hello.js` and `hello.wasm`
 
+#### How to send gWASM task
+
+1. Open terminal and check if your Golem node is up.
+```
+golemcli
+```
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+```
+golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+```
+
+2. Test if you are connected to testnet, not mainnet. Run the command.
+```
+golemcli debug rpc golem.mainnet
+```
+The answer should be `False`.
+
+3. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+```
+git clone https://github.com/golemfactory/wasm-store.git
+```
+Then enter `hello` directory.
+
+4. Edit `task.json` file and update it.
+```
+        "input_dir": "/your/path/to/input/dir",
+        "output_dir": "/your/path/to/output/dir",
+```
+
+5. Send task to Golem.
+```
+golemcli tasks create task.json
+```
+
+6. You can track the task progress by executing the following command.
+```
+golemcli tasks show
+```
+
+7. When it is done, check the result - the `out.txt` file.
+```
+cat out/subtask1/out.txt
+```
+The content should be
+```
+hello world!
+```
+
 ---
 
 ### How to compile gWASM application
