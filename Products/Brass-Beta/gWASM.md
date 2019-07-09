@@ -240,6 +240,37 @@ The content should be
 hello world!
 ```
 
+#### How to run g-flite
+
+1. Open terminal and check if your Golem node is up.
+```
+golemcli
+```
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+```
+golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+```
+
+2. Test if you are connected to testnet, not mainnet. Run the command.
+```
+golemcli debug rpc golem.mainnet
+```
+The answer should be `False`.
+
+3. Go to [releases page](https://github.com/golemfactory/g-flite/releases) and get binaries for your OS. Unpack it.
+
+4. Get the text file you want to read. Any text file in English. Lets say it is `golem.txt`.
+
+5. Run the command.
+```
+g_flite --subtasks 2 golem.txt golem.wav
+```
+The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI program. For more information see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sample-application).
+
+6. After command completes, the output file `golem.wav` should be available and you can test it.
+
 ---
 
 ### How to compile gWASM application
