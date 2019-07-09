@@ -147,6 +147,99 @@ The content should be
 hello world!
 ```
 
+#### How to run your own gWASM task
+
+You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
+
+1. Create your working directory and enter it.
+
+2. Follow the instructions in [How to cross-compile C program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-cross-compile-C-program).
+
+3. Create `in` directory. 
+```
+mkdir in
+```
+Copy binaries to `in` directory
+```
+cp hello.js in/
+cp hello.wasm in/
+```
+Create output directory also.
+```
+mkdir out
+```
+Leave it empty.
+
+4. Create subtask's input directory
+```
+mkdir in/subtask1
+```
+The `hello` sample program does not use files so leave the directory empty. In case you want more subtasks, create more directories, but do not forget to add them to `task.json`.
+
+5. Open terminal and check if your Golem node is up.
+```
+golemcli
+```
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+```
+golemcli --datadir=/home/lukaszglen/wasm_test_5/datadir1
+```
+
+6. Test if you are connected to testnet, not mainnet. Run the command.
+```
+golemcli debug rpc golem.mainnet
+```
+The answer should be `False`.
+
+7. Create the file `task.json`.
+```
+{
+    "type": "wasm",
+    "name": "wasm",
+    "bid":  "1",
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "hello.js",
+        "wasm_name": "hello.wasm",
+        "input_dir": "/home/lukaszglen/wasm_test_5/hello/in",
+        "output_dir": "/home/lukaszglen/wasm_test_5/hello/out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["world"],
+                "output_file_paths": ["out.txt"]
+            }
+        }
+    }
+}
+```
+Make sure that you updated fields `input_dir` and `output_dir`.
+
+8. Send the task Golem.
+```
+golemcli tasks create task.json
+```
+If you specified the datadir, add it to the command
+```
+golemcli tasks create task.json --datadir=/home/lukaszglen/wasm_test_5/datadir1
+```
+
+9. You can track the task progress by executing the following command.
+```
+golemcli tasks show
+```
+
+10. When it is done, check the result - the `out.txt` file.
+```
+cat out/subtask1/out.txt
+```
+The content should be
+```
+hello world!
+```
+
 ---
 
 ### How to compile gWASM application
