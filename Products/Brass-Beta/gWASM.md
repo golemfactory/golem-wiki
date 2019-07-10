@@ -1119,9 +1119,15 @@ You can create gWASM application from the scratch or integrate existing applicat
 
 #### g-flite design
 
+This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?sample-application---g-flite).
+
+pic here
+
 It is clear that there are two main components. First one is flite cross-compiled to TODO
 
 #### How to build custom gWASM application
+
+pic here
 
 1. Write backend logic of your application. Supported languages are C and Rust for now. 
 
