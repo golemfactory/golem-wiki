@@ -70,7 +70,7 @@ Many applications can be compiled to WASM. It is hard to say if a specific code 
 ---
 
 
-#### 1. Create and cross-compile simple program
+#### 1. Cross compilation
 
 Let us create a simple `hello world` style program which will read in some text from `in.txt` text file, read your name from the command line, and save the resultant text in `out.txt`. We'll demonstrate how to cross-compile apps to Wasm for use in Golem in two languages of choice: C and Rust.
 
@@ -175,7 +175,7 @@ Just like in [C program](Products/Brass-Beta/gWASM?id=_11-cc)'s case, the produc
 Again, note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0` passed as additional compiler flags to `rustc`. By default, when building for target `wasm32-unknown-emscripten` with `rustc` the compiler will cross-compile with default Emscripten compiler flags which require async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
-#### How to cross-compile C program
+#### How to cross-compile C program - step by step
 
 ?> Step by step instructions of how to cross-compule C program to WASM and send it to Golem.
 
@@ -336,38 +336,39 @@ The final (example) directory structure should look like this:
 
 To create the task, its JSON definition has to be created. The non-task-specific fields that **have** to be present are:
 
-* `type`: has to be `wasm`
-* `name`
-* `bid`
-* `timeout`
-* `subtask_timeout`
-* `options`: defined below
+* `type` is always `wasm`.
+* `name` is arbitrary.
+* `bid` is price in GNT per hour for computation. It is maximal possible price and actual price is usually less than this. You pay only for the computation time - as we apply usage market for gWASM. In testnet the value is irrelevant.
+* `subtask_timeout` is arbitrary and does not affect payment value in gWASM. It should be reasonable long.
+* `timeout` is a task timeout. It should be at least two times `subtask_timeout`.
 
 
 #### Task options
 
 The following options have to be specified for the WebAssembly task:
 
-* `js_name`: The name of the JavaScript file produced by *Emscripten*. The file should be inside the input directory (specified below).
+* `js_name`: The name of the JavaScript file produced by *Emscripten*. The file should be inside the input directory (specified below) `input_dir`.
 
-* `wasm_name`: The name of the WebAssembly file produced by *Emscripten*. The file should be inside the input directory (specified below).
+* `wasm_name`: The name of the WebAssembly file produced by *Emscripten*. The file should be inside the input directory (specified below) `input_dir`.
 
 * `input_dir`: The path to the input directory containing the JavaScript and WebAssembly program files and the input subdirectories for each subtask. For each
-subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside the program's virtual filesystem.
+subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside the program's virtual filesystem. The subtasks files are to be open in read-only mode.
 
 * `output_dir`: The path to the output directory where for each subtask, the output files specified in `output_file_paths` will be copied to a subdirectory named the 
-same as the subtask.
+same as the subtask. It is an existing directory. Can be empty. If it is not empty, then the files are overriden.
 
-* `subtasks`: A dictionary containing the options for each subtask. The keys should be the subtask names, the values should be dictionaries with fields specified below:
+* `subtasks`: A dictionary containing the options for each subtask. The number of elements reflects the number of subtasks. The keys should be the subtask names, the values should be dictionaries with fields specified below:
 
-  * `exec_args`: The execution arguments that will be passed to the program for this subtask.
+  * `subtask1` - names of subtasks are arbitrary.
 
-  * `output_file_paths`: The paths to the files the program is expected to produce for this subtask. Each file specified here will be copied from the program's virtual filesystem to the output subdirectory for this subtask. If any of the files are missing, the subtask will fail.
+    * `exec_args`: The execution arguments that will be passed to the program for this subtask.
+
+    * `output_file_paths`: The paths to the files the program is expected to produce for this subtask. Each file specified here will be copied from the program's virtual filesystem to the output subdirectory for this subtask. If any of the files are missing, the subtask will fail.
   
 
 #### Example
 
-An example WASM task JSON:
+Create a task from file, this is a json WASM example file:
 
 ```json
 {
@@ -1107,45 +1108,4 @@ The content should be
 ```bash
 hello world!
 ```
-
----
-
-### Task json explained
-
-Typical `task.json` file has the following form.
-
-```json
-{
-    "type": "wasm",
-    "name": "hello",
-    "bid":  "1",
-    "subtask_timeout": "00:10:00",
-    "timeout": "00:10:00",
-    "options": {
-        "js_name": "hello.js",
-        "wasm_name": "hello.wasm",
-        "input_dir": "/path/to/your/working/directory/hello/in",
-        "output_dir": "/path/to/your/working/directory/hello/out",
-        "subtasks": {
-            "subtask1": {
-                "exec_args": ["world"],
-                "output_file_paths": ["out.txt"]
-            }
-        }
-    }
-}
-```
-
-* `type` is always `wasm`.
-* `name` is arbitrary.
-* `bid` is price in GNT per hour for computation. It is maximal possible price and actual price is usually less than this. You pay only for the computation time - as we apply usage market for gWASM. In testnet the value is irrelevant.
-* `subtask_timeout` is arbitrary and does not affect payment value in gWASM. It should be reasonable long.
-* `timeout` is a task timeout. It should be at least two times `subtask_timeout`.
-* `js_name` and `wasm_name` are outputs of cross-compilation. They should be placed in `input_dir`.
-* `input_dir` should have proper structure. It contains input files for subtasks. The files are to be open in read-only mode.
-* `output_dir` is an existing directory. Can be empty. If it is not empty, then the files are overriden.
-* `subtasks` - the configuration of subtasks. The number of elements reflects the number of subtasks.
-* `subtask1` - names of subtasks are arbitrary.
-* `exec_args` are arguments passed to each instance/subtask.
-* `output_file_paths` is array of permissible output files. If the program tries to write-open another file, an error is rised.
 
