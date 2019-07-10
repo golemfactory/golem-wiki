@@ -1123,11 +1123,9 @@ This section is focused on the design. Its intention is to demonstrate how to in
 
 pic here
 
-It is clear that there are two main components. First one is flite cross-compiled to TODO
+It is clear that there are two main components. First one is flite cross-compiled to WebAssembly. It serves as backend and is executed on providers' remote machines. 
 
 #### How to build custom gWASM application
-
-pic here
 
 1. Write backend logic of your application. Supported languages are C and Rust for now. 
 
@@ -1143,7 +1141,9 @@ Remark. Defining Golem adapter API is very important part of gWASM application.
 
 #### How to integrate an application with gWASM
 
-This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
+pic here
+
+This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every programming language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
 
 1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
 
