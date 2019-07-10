@@ -1109,3 +1109,44 @@ The content should be
 hello world!
 ```
 
+---
+
+### Building gWASM applications
+
+gWASM application is an application integrated with Golem. It consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
+
+You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
+
+#### g-flite design
+
+It is clear that there are two main components. First one is flite cross-compiled to TODO
+
+#### How to build custom gWASM application
+
+1. Write backend logic of your application. Supported languages are C and Rust for now. 
+
+2. Cross-compile backend component in compliance with gWASM requirements.
+
+3. Test it by sending gWASM task to testnet Golem.
+
+4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API.
+
+5. Develop a client component / user interface that invokes Golem adapter.
+
+Remark. Defining Golem adapter API is very important part of gWASM application.
+
+#### How to integrate an application with gWASM
+
+This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
+
+1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
+
+2. Cross-compile this component in compliance with gWASM requirements.
+
+3. Test it by sending gWASM task to testnet Golem.
+
+4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API. API should imitate original components API. Asynchronous calls are preferable due to Golem tasks' nature.
+
+5. Combine Golem adapter with the rest of the application. And gWASM application is ready to go.
+
+Remark. Accessing Golem requires Golem specific paramters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 
