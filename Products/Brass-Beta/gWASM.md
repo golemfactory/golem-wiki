@@ -4,7 +4,6 @@
 
 ---
 
-
 #### Quick links
 
 * Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
@@ -18,10 +17,9 @@
 * [gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=gwasm-store)
 * [How to use gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-use-gwasm-store)
 * [Sandboxing](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing)
-* [How to test gWASM locally](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
+* [How to test gWASM localy](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
 
 ---
-
 
 ### gWASM applications
 
@@ -29,11 +27,11 @@ We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runt
 
 Typical gWASM application consists of a client and WASM binary. The client is non-WASM software. Its purpose is to connect to Golem node, create tasks and process results. The example of the client is [g-flite](Products/Brass-Beta/gWASM?id=sample-application). The WASM binary consists of the actual binary .wasm and the JavaScript glue code .js file (both are generated automatically when compiling with Emscripten). It is transferred with input data to provider’s machine and executed by WASM engine. The example is flite compiled to WebAssembly.
 
-Until very recently, people mainly associated WebAssembly with web browsers. This trend is changing rapidly thanks to standardisation efforts in the form of WebAssembly System Interface (or [WASI](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)) which will essentially allow WebAssembly to be run on the server. gWASM is a nod in that direction, taking WASM from the browser environment and enabling server-side computations. This implies that gWASM will not run in a web browser but on the different Golem Nodes. Note that while gWASM is currently not WASI compatible, we are actively participating in WASI’s development together with Mozilla Foundation, and when it’s tagged stable (currently, still experimental), we will make gWasm WASI compatible as well.
+?> Until very recently, people mainly associated WebAssembly with web browsers. This trend is changing rapidly thanks to standardisation efforts in the form of WebAssembly System Interface **(or [WASI](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)) which will essentially allow WebAssembly to be run on the server**. gWASM is a nod in that direction, taking **WASM from the browser environment and enabling server-side computations**. This implies that gWASM will not run in a web browser but on the different Golem Nodes. Note that while gWASM is currently not WASI compatible, we are actively participating in WASI’s development together with Mozilla Foundation, and when it’s tagged stable (currently, still experimental), we will make gWasm WASI compatible as well.
 
 ---
 
-### Deterministic computations
+#### Deterministic computations
 
 **Our goal is to make computations fully deterministic.** This way it can be proved that results are correct or incorrect by byte-to-byte comparison. Computations repeated on various machines should always generate the same results. In our solution, we provide redundant computations in order to enable verification of results.
 
@@ -41,7 +39,9 @@ Until very recently, people mainly associated WebAssembly with web browsers. Thi
 
 Date and time operations are mocked, you should not rely on them. Currently you cannot access to external devices, like GPU, which are sources of indeterminism. The sandbox emulates pseudo random numbers generation. **Every node draws the same sequence of pseudo random numbers.**
 
+
 ---
+
 
 ### How to compile gWASM application
 
@@ -49,26 +49,233 @@ Many applications can be compiled to WASM. It is hard to say if a specific code 
 
 > Be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
 
+---
 
-### Limitations
+#### Limitations
 
-###### 1. Single thread
 * All supported applications need to be single threaded. 
 
-###### 2. Once instance
 * Forks, IPC calls and synchronization are not allowed. It is convenient to run multiple instances of an application on multi core CPU.
 
-###### 3. Time and date
 * You cannot rely on time and date operations. They are mocked for the sake of determinism.
 
-###### 4. CPU only
 * All computations are limited to CPU, you cannot access to GPU.
 
-###### 5. Determinism
 * You cannot rely on randomness in order to generate cryptography or secrets. Moreover, in order to preserve determinism in the future, we will strive at providing the same source of entropy to all providers involved in verification of a WASM task. This way, the task will have access to real entropy and the determinism on providers’ machines will be preserved.
 
-###### 6. Output size
 * All files are mapped to RAM memory. So having input and output files size in total greater than a few GB is not supported. 
+
+* gWASM is still under developement. At the moment it is available for testnet only. We do not guarantee proper verification and settlement.
+
+---
+
+
+#### 1. Cross compilation
+
+Let us create a simple `hello world` style program which will read in some text from `in.txt` text file, read your name from the command line, and save the resultant text in `out.txt`. We'll demonstrate how to cross-compile apps to Wasm for use in Golem in two languages of choice: C and Rust.
+
+
+#### 1.1 C/C++
+
+```C
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+  char* name = argc >= 2 ? argv[1] : "anonymous";
+  size_t len = 0;
+  char* line = NULL;
+  ssize_t read;
+  
+  FILE* f_in = fopen("in.txt", "r");
+  FILE* f_out = fopen("out.txt", "w");
+  
+  while ((read = getline(&line, &len, f_in)) != -1)
+      fprintf(f_out, "%s\n", line);
+  
+  fprintf(f_out, "%s\n", name);
+  
+  fclose(f_out);
+  fclose(f_in);
+  
+  return 0;
+}
+```
+
+There is one important thing to notice here. The sandbox communicates the results of computation by reading and writing to files. Thus, every Wasm program is required to at the very least create an output file. If your code does not include file manipulation in its main body, then the Emscripten compiler, by default, will not initialise JavaScript `FS` library, and will trip the sandbox. This will also be true
+for programs cross-compiled [from Rust](Products/Brass-Beta/gWASM?id=_12-rust).
+
+Now, we can try and compile the program with Emscripten. In order to do that you need Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
+
+```
+$ emcc -o simple.js -s BINARYEN_ASYNC_COMPILATION=0 simple.c
+```
+
+Emscripten will then produce two files: `simple.js` and `simple.wasm`. The produced JavaScript file acts as glue code and sets up all of
+the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our C program cross-compiled to Wasm.
+
+Note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0`. By default, the Emscripten compiler enables async IO lib when cross-compiling to Wasm which we currently do not support.
+Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
+
+
+#### 1.2 Rust
+
+With Rust, firstly go ahead and create a new binary with `cargo`
+
+```rust
+$ cargo new --bin simple
+```
+
+Then go ahead and paste the following to `simple/src/main.rs`
+file
+
+```rust
+use std::env;
+use std::fs;
+use std::io::{self, Read, Write};
+
+fn main() -> io::Result<()> {
+    let args = env::args().collect::<Vec<String>>();
+    let name = args.get(1).map_or("anonymous".to_owned(), |x| x.clone());
+
+    let mut in_file = fs::File::open("in.txt")?;
+    let mut contents = String::new();
+    in_file.read_to_string(&mut contents)?;
+
+    let mut out_file = fs::File::create("out.txt")?;
+    out_file.write_all(&contents.as_bytes())?;
+    out_file.write_all(&name.as_bytes())?;
+
+    Ok(())
+}
+```
+
+As was the case with [C program](Products/Brass-Beta/gWASM?id=_11-cc), it is important to notice here that the sandbox communicates the results of computation by reading and writing to files. Thus, every Wasm program is required to at the very least create an output file. If your code does not include file manipulation in its main body, then the Emscripten compiler, by default, will not initialise JavaScript `FS` library, and will trip the sandbox.
+
+In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install the required target which is `wasm32-unknown-emscripten`. The easiest way of doing so, as well as generally managing your Rust installations, is to use [rustup](https://rustup.rs/)
+
+```rust
+$ rustup target add wasm32-unknown-emscripten
+```
+
+Note that cross-compiling Rust to this target still requires that you have Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
+
+Now, we can compile our Rust program to Wasm. Make sure you are in the root of your Rust crate, i.e., at the top of `simple` if you didn't change the name of your crate, and run
+
+```rust
+$ cargo rustc --target=wasm32-unknown-emscripten --release -- \
+  -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
+```
+
+If everything went OK, you should now see two files:
+
+`simple.js` and `simple.wasm` in `simple/target/wasm32-unknown-emscripten/release`.
+
+Just like in [C program](Products/Brass-Beta/gWASM?id=_11-cc)'s case, the produced JavaScript file acts as glue code and sets up all of the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our Rust program cross-compiled to Wasm.
+
+Again, note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0` passed as additional compiler flags to `rustc`. By default, when building for target `wasm32-unknown-emscripten` with `rustc` the compiler will cross-compile with default Emscripten compiler flags which require async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
+
+
+#### How to cross-compile C program - step by step
+
+?> Step by step instructions of how to cross-compule C program to WASM and send it to Golem.
+
+1. Test if Emscripten SDK is installed. Open terminal and execute
+
+```bash
+emcc --version
+```
+
+If it is not installed, follow the instructions from [here](https://emscripten.org/docs/getting_started/downloads.html).
+
+2. Create simple program `hello.c`
+
+```C
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+  char* name = argc >= 2 ? argv[1] : "anonymous";
+
+  FILE* f_out = fopen("out.txt", "w");
+
+  fprintf(f_out, "hello %s!\n", name);
+
+  fclose(f_out);
+
+  return 0;
+}
+```
+
+3. Do cross-compilation with `emcc`
+
+```bash
+emcc -o hello.js -s BINARYEN_ASYNC_COMPILATION=0 hello.c
+```
+
+4. You should get outcome files `hello.js` and `hello.wasm`
+
+
+#### How to send gWASM task
+
+1. Open terminal and check if your Golem node is up (It is required to have it running in the background).
+
+```bash
+golemcli
+```
+
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+
+```bash
+golemcli --datadir=/path/to/your/datadir
+```
+
+2. Test if you are connected to testnet, not mainnet. Run the command.
+
+```bash
+golemcli debug rpc golem.mainnet
+```
+
+The answer should be `False`.
+
+3. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+
+```bash
+git clone https://github.com/golemfactory/wasm-store.git
+```
+
+Then enter `hello` directory.
+
+4. Edit `task.json` file and update it.
+
+```json
+        "input_dir": "/your/path/to/input/dir",
+        "output_dir": "/your/path/to/output/dir",
+```
+
+5. Send task to Golem.
+
+```bash
+golemcli tasks create task.json
+```
+
+6. You can track the task progress by executing the following command.
+
+```bash
+golemcli tasks show
+```
+
+7. When it is done, check the result - the `out.txt` file.
+
+```bash
+cat out/subtask1/out.txt
+```
+
+The content should be
+
+```bash
+hello world!
+```
 
 ---
 
@@ -129,43 +336,44 @@ The final (example) directory structure should look like this:
 
 To create the task, its JSON definition has to be created. The non-task-specific fields that **have** to be present are:
 
-* `type`: has to be `wasm`
-* `name`
-* `bid`
-* `timeout`
-* `subtask_timeout`
-* `options`: defined below
+* `type` is always `wasm`.
+* `name` is arbitrary.
+* `bid` is price in GNT per hour for computation. It is maximal possible price and actual price is usually less than this. You pay only for the computation time - as we apply usage market for gWASM. In testnet the value is irrelevant.
+* `subtask_timeout` is arbitrary and does not affect payment value in gWASM. It should be reasonable long.
+* `timeout` is a task timeout. It should be at least two times `subtask_timeout`.
 
 
 #### Task options
 
 The following options have to be specified for the WebAssembly task:
 
-* `js_name`: The name of the JavaScript file produced by *Emscripten*. The file should be inside the input directory (specified below).
+* `js_name`: The name of the JavaScript file produced by *Emscripten*. The file should be inside the input directory (specified below) `input_dir`.
 
-* `wasm_name`: The name of the WebAssembly file produced by *Emscripten*. The file should be inside the input directory (specified below).
+* `wasm_name`: The name of the WebAssembly file produced by *Emscripten*. The file should be inside the input directory (specified below) `input_dir`.
 
 * `input_dir`: The path to the input directory containing the JavaScript and WebAssembly program files and the input subdirectories for each subtask. For each
-subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside the program's virtual filesystem.
+subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside the program's virtual filesystem. The subtasks files are to be open in read-only mode.
 
 * `output_dir`: The path to the output directory where for each subtask, the output files specified in `output_file_paths` will be copied to a subdirectory named the 
-same as the subtask.
+same as the subtask. It is an existing directory. Can be empty. If it is not empty, then the files are overriden.
 
-* `subtasks`: A dictionary containing the options for each subtask. The keys should be the subtask names, the values should be dictionaries with fields specified below:
+* `subtasks`: A dictionary containing the options for each subtask. The number of elements reflects the number of subtasks. The keys should be the subtask names, the values should be dictionaries with fields specified below:
 
-  * `exec_args`: The execution arguments that will be passed to the program for this subtask.
+  * `subtask1` - names of subtasks are arbitrary.
 
-  * `output_file_paths`: The paths to the files the program is expected to produce for this subtask. Each file specified here will be copied from the program's virtual filesystem to the output subdirectory for this subtask. If any of the files are missing, the subtask will fail.
+    * `exec_args`: The execution arguments that will be passed to the program for this subtask.
+
+    * `output_file_paths`: The paths to the files the program is expected to produce for this subtask. Each file specified here will be copied from the program's virtual filesystem to the output subdirectory for this subtask. If any of the files are missing, the subtask will fail.
   
 
 #### Example
 
-An example WASM task JSON:
+Create a task from file, this is a json WASM example file:
 
 ```json
 {
     "type": "wasm", 
-    "name": "wasm", 
+    "name": "test", 
     "bid":  1,
     "subtask_timeout": "00:10:00",
     "timeout": "00:10:00",
@@ -198,13 +406,129 @@ golemcli tasks create path/to/the/task_definition.json
 
 ---
 
-### Sample application
+
+### How to run your own gWASM task
+
+You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
+
+1. Create your working directory and enter it.
+
+2. Follow the instructions in [How to cross-compile C program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-cross-compile-C-program).
+
+3. Create `in` directory. 
+
+```bash
+mkdir in
+```
+
+Copy binaries to `in` directory
+
+```bash
+cp hello.js in/
+cp hello.wasm in/
+```
+
+Create output directory also.
+
+```bash
+mkdir out
+```
+Leave it empty.
+
+4. Create subtask's input directory
+
+```bash
+mkdir in/subtask1
+```
+
+The `hello` sample program does not use files so leave the directory empty. In case you want more subtasks, create more directories, but do not forget to add them to `task.json`.
+
+5. Open terminal and check if your Golem node is up.
+
+```bash
+golemcli
+```
+
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+
+```bash
+golemcli --datadir=/path/to/your/datadir
+```
+
+6. Test if you are connected to testnet, not mainnet. Run the command.
+
+```bash
+golemcli debug rpc golem.mainnet
+```
+The answer should be `False`.
+
+7. Create the file `task.json`.
+
+```json
+{
+    "type": "wasm",
+    "name": "hello",
+    "bid":  "1",
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "hello.js",
+        "wasm_name": "hello.wasm",
+        "input_dir": "/path/to/your/working/directory/hello/in",
+        "output_dir": "/path/to/your/working/directory/hello/out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["world"],
+                "output_file_paths": ["out.txt"]
+            }
+        }
+    }
+}
+```
+
+Make sure that you updated fields `input_dir` and `output_dir`.
+
+8. Send the task Golem.
+
+```bash
+golemcli tasks create task.json
+```
+
+If you specified the datadir, add it to the command
+
+```bash
+golemcli tasks create task.json --datadir=/path/to/your/datadir
+```
+
+9. You can track the task progress by executing the following command.
+
+```bash
+golemcli tasks show
+```
+
+10. When it is done, check the result - the `out.txt` file.
+
+```bash
+cat out/subtask1/out.txt
+```
+
+The content should be
+
+```bash
+hello world!
+```
+
+---
+
+### Sample application - g-flite
 
 For the start, please get familiar with our demonstration application - g-flite. This is an **end-to-end and ready to use Golem integration**. All internals and technical details are covered by the client and user friendly interface is exposed for your convenience. This includes creating Golem tasks and completing results. 
 You need to run [Golem node](Products/Brass-Beta/Installation) locally, which is currently the default setup for our use cases.
 
 
-#### g-flite
+#### about
 
 `g-flite` is a command-line utility which lets you run [flite](http://www.festvox.org/flite/) text-to-speech app on Golem Network.
 
@@ -328,6 +652,47 @@ This program is still very much a work-in-progress, so if you find (and you most
 
 Licensed under [GNU General Public License v3.0](https://github.com/golemfactory/g-flite/blob/master/LICENSE) with the exception of `flite` WASM binary which is licensed under [BSD-like License](https://github.com/golemfactory/g-flite/blob/master/LICENSE.flite).
 
+---
+
+
+### How to run g-flite
+
+1. Open terminal and check if your Golem node is up.
+
+```bash
+golemcli
+```
+
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+
+```bash
+golemcli --datadir=/path/to/your/datadir
+```
+
+2. Test if you are connected to testnet, not mainnet. Run the command.
+
+```bash
+golemcli debug rpc golem.mainnet
+```
+
+The answer should be `False`.
+
+3. Go to [releases page](https://github.com/golemfactory/g-flite/releases) and get binaries for your OS. Unpack it.
+
+4. Get the text file you want to read. Any text file in English. Lets say it is `golem.txt`.
+
+5. Run the command.
+
+```bash
+g_flite --subtasks 2 golem.txt golem.wav
+```
+
+The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI program. For more information see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sample-application).
+
+6. After command completes, the output file `golem.wav` should be available and you can test it.
+
 
 ---
 
@@ -433,6 +798,46 @@ For an example, see how [7-zip](https://github.com/golemfactory/wasm-store/tree/
 
 Of course, if anything is unclear or you find some inconsistencies, please do submit a new issue and we'll make sure it's sorted asap.
 
+---
+
+### How to use gWASM-store
+
+1. Visit the github page with [gWASM-store](https://github.com/golemfactory/wasm-store).
+
+2. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+
+```
+git clone https://github.com/golemfactory/wasm-store.git
+```
+
+3. Open terminal and check if your Golem node is up.
+
+```bash
+golemcli
+```
+
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+
+```bash
+golemcli --datadir=/path/to/your/datadir
+```
+
+4. Test if you are connected to testnet, not mainnet. Run the command.
+
+```bash
+golemcli debug rpc golem.mainnet
+```
+
+The answer should be `False`.
+
+5. Choose the use case. For instance `hello`. Follow the instructions in the appriopriate `README` file in the use case directory. Prepare `in` directory and `task.json` file and run the task in Golem.
+
+##### Remark
+
+[gWASM-store](https://github.com/golemfactory/wasm-store) contains use cases located in this repository and links to other use cases. If you want to run [g-flite](https://github.com/golemfactory/g-flite) see the section [How to run g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-g-flite). If you want to follow the link to external repository, it is no need to download gWASM-store repository as stated in the point 2, rather the external repository.
+
 
 ---
 
@@ -477,111 +882,6 @@ If you would like to launch a gWASM task in Golem, see [here](https://docs.golem
 #### Quick start guide
 
 This guide assumes you have successfully built the `wasm-sandbox` binary; for build instructions, see section [Build instructions](Products/Brass-Beta/gWASM?id=build-instructions) below. If you are running Linux, then you can also use the prebuilt binaries from [here](https://github.com/golemfactory/sp-wasm/releases).
-
-
-##### 1. Create and cross-compile simple program
-
-Let us create a simple `hello world` style program which will read in some text from `in.txt` text file, read your name from the command line, and save the resultant text in `out.txt`. We'll demonstrate how to cross-compile apps to Wasm for use in Golem in two languages of choice: C and Rust.
-
-
-##### 1.1 C/C++
-
-```C
-#include <stdio.h>
-
-int main(int argc, char** argv) {
-  char* name = argc >= 2 ? argv[1] : "anonymous";
-  size_t len = 0;
-  char* line = NULL;
-  ssize_t read;
-  
-  FILE* f_in = fopen("in.txt", "r");
-  FILE* f_out = fopen("out.txt", "w");
-  
-  while ((read = getline(&line, &len, f_in)) != -1)
-      fprintf(f_out, "%s\n", line);
-  
-  fprintf(f_out, "%s\n", name);
-  
-  fclose(f_out);
-  fclose(f_in);
-  
-  return 0;
-}
-```
-
-There is one important thing to notice here. The sandbox communicates the results of computation by reading and writing to files. Thus, every Wasm program is required to at the very least create an output file. If your code does not include file manipulation in its main body, then the Emscripten compiler, by default, will not initialise JavaScript `FS` library, and will trip the sandbox. This will also be true
-for programs cross-compiled [from Rust](Products/Brass-Beta/gWASM?id=_12-rust).
-
-Now, we can try and compile the program with Emscripten. In order to do that you need Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
-
-```
-$ emcc -o simple.js -s BINARYEN_ASYNC_COMPILATION=0 simple.c
-```
-
-Emscripten will then produce two files: `simple.js` and `simple.wasm`. The produced JavaScript file acts as glue code and sets up all of
-the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our C program cross-compiled to Wasm.
-
-Note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0`. By default, the Emscripten compiler enables async IO lib when cross-compiling to Wasm which we currently do not support.
-Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
-
-
-##### 1.2 Rust
-
-With Rust, firstly go ahead and create a new binary with `cargo`
-
-```rust
-$ cargo new --bin simple
-```
-
-Then go ahead and paste the following to `simple/src/main.rs`
-file
-
-```rust
-use std::env;
-use std::fs;
-use std::io::{self, Read, Write};
-
-fn main() -> io::Result<()> {
-    let args = env::args().collect::<Vec<String>>();
-    let name = args.get(1).map_or("anonymous".to_owned(), |x| x.clone());
-
-    let mut in_file = fs::File::open("in.txt")?;
-    let mut contents = String::new();
-    in_file.read_to_string(&mut contents)?;
-
-    let mut out_file = fs::File::create("out.txt")?;
-    out_file.write_all(&contents.as_bytes())?;
-    out_file.write_all(&name.as_bytes())?;
-
-    Ok(())
-}
-```
-
-As was the case with [C program](Products/Brass-Beta/gWASM?id=_11-cc), it is important to notice here that the sandbox communicates the results of computation by reading and writing to files. Thus, every Wasm program is required to at the very least create an output file. If your code does not include file manipulation in its main body, then the Emscripten compiler, by default, will not initialise JavaScript `FS` library, and will trip the sandbox.
-
-In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install the required target which is `wasm32-unknown-emscripten`. The easiest way of doing so, as well as generally managing your Rust installations, is to use [rustup](https://rustup.rs/)
-
-```rust
-$ rustup target add wasm32-unknown-emscripten
-```
-
-Note that cross-compiling Rust to this target still requires that you have Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
-
-Now, we can compile our Rust program to Wasm. Make sure you are in the root of your Rust crate, i.e., at the top of `simple` if you didn't change the name of your crate, and run
-
-```rust
-$ cargo rustc --target=wasm32-unknown-emscripten --release -- \
-  -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
-```
-
-If everything went OK, you should now see two files:
-
-`simple.js` and `simple.wasm` in `simple/target/wasm32-unknown-emscripten/release`.
-
-Just like in [C program](Products/Brass-Beta/gWASM?id=_11-cc)'s case, the produced JavaScript file acts as glue code and sets up all of the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our Rust program cross-compiled to Wasm.
-
-Again, note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0` passed as additional compiler flags to `rustc`. By default, when building for target `wasm32-unknown-emscripten` with `rustc` the compiler will cross-compile with default Emscripten compiler flags which require async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
 ##### 2. Create input and output dirs and files
@@ -758,6 +1058,101 @@ $ cargo build && ./target/debug/sp-wasm-tests
 
 Licensed under [GNU General Public License v3.0](https://github.com/golemfactory/sp-wasm/blob/master/LICENSE).
 
+---
 
+#### How to test gWASM locally
 
+1. Follow [these](https://docs.golem.network/#/Contributing/Creating-a-subnet-of-nodes) instructions and run two Golem nodes locally in your private subnet.
 
+2. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+
+```bash
+git clone https://github.com/golemfactory/wasm-store.git
+```
+
+Then enter `hello` directory.
+
+3. Edit `task.json` file and update it.
+
+```json
+        "input_dir": "/your/path/to/input/dir",
+        "output_dir": "/your/path/to/output/dir",
+```
+
+4. Send task to one of your Golem nodes.
+
+```bash
+golemcli tasks create task.json
+```
+
+If you specified the datadir, add it to the command
+
+```bash
+golemcli tasks create task.json --datadir=/path/to/your/datadir
+```
+
+5. You can track the task progress by executing the following command.
+
+```bash
+golemcli tasks show
+```
+
+6. When it is done, check the result - the `out.txt` file.
+
+```bash
+cat out/subtask1/out.txt
+```
+
+The content should be
+
+```bash
+hello world!
+```
+
+---
+
+### Building gWASM applications
+
+gWASM application is an application integrated with Golem. It consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
+
+You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
+
+#### g-flite design
+
+This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?sample-application---g-flite).
+
+![g-flite design](/img/gwasm/g-flite-design.png)
+
+It is clear that there are two main components. First one is flite cross-compiled to WebAssembly. It serves as backend and is executed on providers' remote machines. 
+
+#### How to build custom gWASM application
+
+1. Write backend logic of your application. Supported languages are C and Rust for now. 
+
+2. Cross-compile backend component in compliance with gWASM requirements.
+
+3. Test it by sending gWASM task to testnet Golem.
+
+4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API.
+
+5. Develop a client component / user interface that invokes Golem adapter.
+
+Remark. Defining Golem adapter API is very important part of gWASM application.
+
+#### How to integrate an application with gWASM
+
+![integrating app with gWASM](/img/gwasm/integrating-app-with-gWASM.png)
+
+This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every programming language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
+
+1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
+
+2. Cross-compile this component in compliance with gWASM requirements.
+
+3. Test it by sending gWASM task to testnet Golem.
+
+4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API. API should imitate original components API. Asynchronous calls are preferable due to Golem tasks' nature.
+
+5. Combine Golem adapter with the rest of the application. And gWASM application is ready to go.
+
+Remark. Accessing Golem requires Golem specific paramters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 
