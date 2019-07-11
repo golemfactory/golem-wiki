@@ -416,11 +416,11 @@ hello world!
 
 #### How to run your own gWASM task
 
-You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
+You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
 
 1. Create your working directory and enter it.
 
-2. Follow the instructions in [How to cross-compile C program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-cross-compile-C-program).
+2. Follow the instructions in [How to cross-compile C program](Products/Brass-Beta/gWASM?id=how-to-cross-compile-C-program).
 
 3. Create `in` directory. 
 
@@ -748,7 +748,7 @@ The answer should be `False`.
 g_flite --subtasks 2 golem.txt golem.wav
 ```
 
-The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI program. For more information see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sample-application).
+The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI program. For more information see [this](Products/Brass-Beta/gWASM?id=sample-application).
 
 6. After command completes, the output file `golem.wav` should be available and you can test it.
 
@@ -762,7 +762,7 @@ You can create gWASM application from the scratch or integrate existing applicat
 
 #### g-flite design
 
-This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?sample-application---g-flite).
+This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](/gWASM?sample-application---g-flite&id=sample-application-g-flite).
 
 ![g-flite design](/img/gwasm/g-flite-design.png)
 
