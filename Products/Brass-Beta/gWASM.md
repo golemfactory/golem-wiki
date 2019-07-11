@@ -784,8 +784,6 @@ Remark. Defining Golem adapter API is very important part of gWASM application.
 
 #### How to integrate an application with gWASM
 
-![integrating app with gWASM](/img/gwasm/integrating-app-with-gWASM.png)
-
 This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every programming language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
 
 1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
@@ -797,6 +795,8 @@ This section is a very brief guidelines how to integrate existing application wi
 4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API. API should imitate original components API. Asynchronous calls are preferable due to Golem tasks' nature.
 
 5. Combine Golem adapter with the rest of the application. And gWASM application is ready to go.
+
+![integrating app with gWASM](/img/gwasm/integrating-app-with-gWASM.png)
 
 Remark. Accessing Golem requires Golem specific paramters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 
 
