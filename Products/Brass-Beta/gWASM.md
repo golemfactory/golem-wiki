@@ -6,22 +6,25 @@
 
 #### Quick links
 
-* Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
-* Learn [how to compile gWASM application](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-compile-gwasm-application)
-* Then [create and cross-compile simple program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program)
-* Or check step by step guides for [cross compilation of C program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program)
-* Learn how to [Create gWASM tasks in Golem](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
-* How to run [your own gWASM task](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-your-own-gwasm-task)
-* Check our [sample application - g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference
-* And learn [how to run g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-g-flite)
-* [gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=gwasm-store)
-* [How to use gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-use-gwasm-store)
-* [Sandboxing](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing)
-* [How to test gWASM locally](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
+?> Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
+
+* Learn [how to compile gWASM application](Products/Brass-Beta/gWASM?id=how-to-compile-gwasm-application)
+* Then [create and cross-compile simple program](Products/Brass-Beta/gWASM?id=create-and-cross-compile-simple-program)
+* Or check step by step guides for [cross compilation of C program](Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program-step-by-step)
+* Learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
+* How to run [your own gWASM task](Products/Brass-Beta/gWASM?id=how-to-run-your-own-gwasm-task)
+* Check our [sample application - g-flite](Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference
+* And learn [how to run g-flite](Products/Brass-Beta/gWASM?id=how-to-run-g-flite) - the simplest way to play arround with gWASM 
+* [Building gWASM applications](Products/Brass-Beta/gWASM?id=building-gwasm-applications)
+* [gWASM store](Products/Brass-Beta/gWASM?id=gwasm-store)
+* [How to use gWASM store](Products/Brass-Beta/gWASM?id=how-to-use-gwasm-store)
+* [Sandboxing](Products/Brass-Beta/gWASM?id=sandboxing)
+* [How to test gWASM locally](Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
+
 
 ---
 
-### gWASM applications
+### Introduction to gWASM applications
 
 We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runtime to run WASM binaries. Because of this the applications must be compiled with the Emscripten compiler or compiled to Emscripten target.
 
@@ -70,12 +73,12 @@ Many applications can be compiled to WASM. It is hard to say if a specific code 
 ---
 
 
-#### 1. Cross compilation
+#### Cross compilation
 
 Let us create a simple `hello world` style program which will read in some text from `in.txt` text file, read your name from the command line, and save the resultant text in `out.txt`. We'll demonstrate how to cross-compile apps to Wasm for use in Golem in two languages of choice: C and Rust.
 
 
-#### 1.1 C/C++
+#### C/C++
 
 ```C
 #include <stdio.h>
@@ -117,7 +120,7 @@ Note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0`. By default, the E
 Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
-#### 1.2 Rust
+#### Rust
 
 With Rust, firstly go ahead and create a new binary with `cargo`
 
@@ -214,70 +217,8 @@ emcc -o hello.js -s BINARYEN_ASYNC_COMPILATION=0 hello.c
 4. You should get outcome files `hello.js` and `hello.wasm`
 
 
-#### How to send gWASM task
-
-1. Open terminal and check if your Golem node is up (It is required to have it running in the background).
-
-```bash
-golemcli
-```
-
-If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
-
-If your Golem working directory is not default, then you need to point `datadir` as follows.
-
-```bash
-golemcli --datadir=/path/to/your/datadir
-```
-
-2. Test if you are connected to testnet, not mainnet. Run the command.
-
-```bash
-golemcli debug rpc golem.mainnet
-```
-
-The answer should be `False`.
-
-3. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
-
-```bash
-git clone https://github.com/golemfactory/wasm-store.git
-```
-
-Then enter `hello` directory.
-
-4. Edit `task.json` file and update it.
-
-```json
-        "input_dir": "/your/path/to/input/dir",
-        "output_dir": "/your/path/to/output/dir",
-```
-
-5. Send task to Golem.
-
-```bash
-golemcli tasks create task.json
-```
-
-6. You can track the task progress by executing the following command.
-
-```bash
-golemcli tasks show
-```
-
-7. When it is done, check the result - the `out.txt` file.
-
-```bash
-cat out/subtask1/out.txt
-```
-
-The content should be
-
-```bash
-hello world!
-```
-
 ---
+
 
 ### Creating gWASM tasks in Golem
 
@@ -407,7 +348,73 @@ golemcli tasks create path/to/the/task_definition.json
 ---
 
 
-### How to run your own gWASM task
+#### How to send gWASM task
+
+1. Open terminal and check if your Golem node is up (It is required to have it running in the background).
+
+```bash
+golemcli
+```
+
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+
+If your Golem working directory is not default, then you need to point `datadir` as follows.
+
+```bash
+golemcli --datadir=/path/to/your/datadir
+```
+
+2. Test if you are connected to testnet, not mainnet. Run the command.
+
+```bash
+golemcli debug rpc golem.mainnet
+```
+
+The answer should be `False`.
+
+3. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+
+```bash
+git clone https://github.com/golemfactory/wasm-store.git
+```
+
+Then enter `hello` directory.
+
+4. Edit `task.json` file and update it.
+
+```json
+        "input_dir": "/your/path/to/input/dir",
+        "output_dir": "/your/path/to/output/dir",
+```
+
+5. Send task to Golem.
+
+```bash
+golemcli tasks create task.json
+```
+
+6. You can track the task progress by executing the following command.
+
+```bash
+golemcli tasks show
+```
+
+7. When it is done, check the result - the `out.txt` file.
+
+```bash
+cat out/subtask1/out.txt
+```
+
+The content should be
+
+```bash
+hello world!
+```
+
+---
+
+
+#### How to run your own gWASM task
 
 You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
 
@@ -521,6 +528,59 @@ hello world!
 ```
 
 ---
+
+
+#### How to test gWASM locally
+
+1. Follow [these](https://docs.golem.network/#/Contributing/Creating-a-subnet-of-nodes) instructions and run two Golem nodes locally in your private subnet.
+
+2. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+
+```bash
+git clone https://github.com/golemfactory/wasm-store.git
+```
+
+Then enter `hello` directory.
+
+3. Edit `task.json` file and update it.
+
+```json
+        "input_dir": "/your/path/to/input/dir",
+        "output_dir": "/your/path/to/output/dir",
+```
+
+4. Send task to one of your Golem nodes.
+
+```bash
+golemcli tasks create task.json
+```
+
+If you specified the datadir, add it to the command
+
+```bash
+golemcli tasks create task.json --datadir=/path/to/your/datadir
+```
+
+5. You can track the task progress by executing the following command.
+
+```bash
+golemcli tasks show
+```
+
+6. When it is done, check the result - the `out.txt` file.
+
+```bash
+cat out/subtask1/out.txt
+```
+
+The content should be
+
+```bash
+hello world!
+```
+
+---
+
 
 ### Sample application - g-flite
 
@@ -654,8 +714,7 @@ Licensed under [GNU General Public License v3.0](https://github.com/golemfactory
 
 ---
 
-
-### How to run g-flite
+#### How to run g-flite
 
 1. Open terminal and check if your Golem node is up.
 
@@ -693,6 +752,53 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 
 6. After command completes, the output file `golem.wav` should be available and you can test it.
 
+---
+
+### Building gWASM applications
+
+gWASM application is an application integrated with Golem. It consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
+
+You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
+
+#### g-flite design
+
+This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?sample-application---g-flite).
+
+![g-flite design](/img/gwasm/g-flite-design.png)
+
+It is clear that there are two main components. First one is flite cross-compiled to WebAssembly. It serves as backend and is executed on providers' remote machines. 
+
+#### How to build custom gWASM application
+
+1. Write backend logic of your application. Supported languages are C and Rust for now. 
+
+2. Cross-compile backend component in compliance with gWASM requirements.
+
+3. Test it by sending gWASM task to testnet Golem.
+
+4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API.
+
+5. Develop a client component / user interface that invokes Golem adapter.
+
+Remark. Defining Golem adapter API is very important part of gWASM application.
+
+#### How to integrate an application with gWASM
+
+![integrating app with gWASM](/img/gwasm/integrating-app-with-gWASM.png)
+
+This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every programming language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
+
+1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
+
+2. Cross-compile this component in compliance with gWASM requirements.
+
+3. Test it by sending gWASM task to testnet Golem.
+
+4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API. API should imitate original components API. Asynchronous calls are preferable due to Golem tasks' nature.
+
+5. Combine Golem adapter with the rest of the application. And gWASM application is ready to go.
+
+Remark. Accessing Golem requires Golem specific paramters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 
 
 ---
 
@@ -800,7 +906,7 @@ Of course, if anything is unclear or you find some inconsistencies, please do su
 
 ---
 
-### How to use gWASM-store
+#### How to use gWASM-store
 
 1. Visit the github page with [gWASM-store](https://github.com/golemfactory/wasm-store).
 
@@ -1058,101 +1164,4 @@ $ cargo build && ./target/debug/sp-wasm-tests
 
 Licensed under [GNU General Public License v3.0](https://github.com/golemfactory/sp-wasm/blob/master/LICENSE).
 
----
 
-#### How to test gWASM locally
-
-1. Follow [these](https://docs.golem.network/#/Contributing/Creating-a-subnet-of-nodes) instructions and run two Golem nodes locally in your private subnet.
-
-2. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
-
-```bash
-git clone https://github.com/golemfactory/wasm-store.git
-```
-
-Then enter `hello` directory.
-
-3. Edit `task.json` file and update it.
-
-```json
-        "input_dir": "/your/path/to/input/dir",
-        "output_dir": "/your/path/to/output/dir",
-```
-
-4. Send task to one of your Golem nodes.
-
-```bash
-golemcli tasks create task.json
-```
-
-If you specified the datadir, add it to the command
-
-```bash
-golemcli tasks create task.json --datadir=/path/to/your/datadir
-```
-
-5. You can track the task progress by executing the following command.
-
-```bash
-golemcli tasks show
-```
-
-6. When it is done, check the result - the `out.txt` file.
-
-```bash
-cat out/subtask1/out.txt
-```
-
-The content should be
-
-```bash
-hello world!
-```
-
----
-
-### Building gWASM applications
-
-gWASM application is an application integrated with Golem. It consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
-
-You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
-
-#### g-flite design
-
-This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](https://docs.golem.network/#/Products/Brass-Beta/gWASM?sample-application---g-flite).
-
-![g-flite design](/img/gwasm/g-flite-design.png)
-
-It is clear that there are two main components. First one is flite cross-compiled to WebAssembly. It serves as backend and is executed on providers' remote machines. 
-
-#### How to build custom gWASM application
-
-1. Write backend logic of your application. Supported languages are C and Rust for now. 
-
-2. Cross-compile backend component in compliance with gWASM requirements.
-
-3. Test it by sending gWASM task to testnet Golem.
-
-4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API.
-
-5. Develop a client component / user interface that invokes Golem adapter.
-
-Remark. Defining Golem adapter API is very important part of gWASM application.
-
-#### How to integrate an application with gWASM
-
-![integrating app with gWASM](/img/gwasm/integrating-app-with-gWASM.png)
-
-This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every programming language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
-
-1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
-
-2. Cross-compile this component in compliance with gWASM requirements.
-
-3. Test it by sending gWASM task to testnet Golem.
-
-4. Develop Golem adapter, very similar to g-flite's Golem adapter but obviously with different API. API should imitate original components API. Asynchronous calls are preferable due to Golem tasks' nature.
-
-5. Combine Golem adapter with the rest of the application. And gWASM application is ready to go.
-
-Remark. Accessing Golem requires Golem specific paramters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 

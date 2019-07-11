@@ -86,7 +86,7 @@ In 0.20.0 [Brass Beta](Products/Brass-Beta/Installation) release we provide Gole
 In our [**gWASM**](Products/Brass-Beta/gWASM) integration, your data and **WASM** binary is transferred to the remote machine and executed. The target machine is secured by the in-sandbox execution. The binary is portable and compatible with various OS and environments since it is executed by a runtime engine rather than natively. The solution is designed to run large number of computations in parallel in order to profit from Golem Network capabilities.
 
 #### Disclaimer
-This is still a work in progress. The codebase and functionality may change frequently. We do our best to keep the documentation up to date and keep you informed. Please report back to us any issues that you may encounter. We are also open and look forward to your suggestions and experience to make our software better. You can message us here TODO(link).
+This is still a work in progress. The codebase and functionality may change frequently. We do our best to keep the documentation up to date and keep you informed. Please report back to us any issues that you may encounter. We are also open and look forward to your suggestions and experience to make our software better. You can message us on [gWASM channel](https://chat.golem.network/channel/gwasm) on our chat or write us an email to contact@golem.network entitled gWASM.
 
 The WebAssembly task is capable of running arbitrary code compiled to
 WebAssembly with Emscripten backend on Golem. Under the hood, the task uses
