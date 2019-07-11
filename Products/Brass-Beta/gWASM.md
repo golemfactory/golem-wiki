@@ -990,6 +990,9 @@ If you would like to launch a gWASM task in Golem, see [here](https://docs.golem
 This guide assumes you have successfully built the `wasm-sandbox` binary; for build instructions, see section [Build instructions](Products/Brass-Beta/gWASM?id=build-instructions) below. If you are running Linux, then you can also use the prebuilt binaries from [here](https://github.com/golemfactory/sp-wasm/releases).
 
 
+##### 1. Check instructions on how to create and cross-compile simple program [here](Products/Brass-Beta/gWASM?sample-application---g-flite&id=cross-compilation)
+
+
 ##### 2. Create input and output dirs and files
 
 The sandbox will require us to specify input and output paths together with output filenames to create, and any additional arguments (see [CLI arguments explained](#cli-arguments-explained) section below for detailed specification of the required arguments). Suppose we have the following file structure locally
