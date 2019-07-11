@@ -762,7 +762,7 @@ You can create gWASM application from the scratch or integrate existing applicat
 
 #### g-flite design
 
-This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](/gWASM?sample-application---g-flite&id=sample-application-g-flite).
+This section is focused on the design. Its intention is to demonstrate how to integrate with gWASM. For information on g-flite itself see [this](Products/Brass-Beta/gWASM?id=sample-application-g-flite).
 
 ![g-flite design](/img/gwasm/g-flite-design.png)
 
