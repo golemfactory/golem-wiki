@@ -293,7 +293,7 @@ The following section describes steps necessary to prepare and create a gWASM ta
 
 #### Program compilation
 
-First, you have to compile the code you want to run to WebAssembly using **Emscripteny+JavaScript** backend. The instructions on how to do that can be found [here](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program).
+First, you have to compile the code you want to run to WebAssembly using **Emscripten+JavaScript** backend. The instructions on how to do that can be found [here](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program).
 
 
 #### Subtask division
