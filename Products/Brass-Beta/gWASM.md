@@ -766,7 +766,17 @@ This section is focused on the design. Its intention is to demonstrate how to in
 
 ![g-flite design](/img/gwasm/g-flite-design.png)
 
-It is clear that there are two main components. First one is flite cross-compiled to WebAssembly. It serves as backend and is executed on providers' remote machines. 
+It is clear that there are two main components. First one is flite cross-compiled to WebAssembly. It serves as backend and is executed on providers' remote machines. Second one is the client. It is written in Rust. It serves as user interface and connects to Golem Node in order to send Golem tasks.
+
+* The client is the user interface. It is also responsible for splitting input data into chunks for subtasks and combining subtasks results into one result. There is no general way of splitting and combining data, they are use case specific. For that reason it is placed in the client.
+
+* Golem adapter creates, manages and completes Golem tasks. It creates `task.json` file, creates input folder and connects to Golem Node. It contains `golem-rpc-api` library that handles sole communication with Golem Node.
+
+* Golem Node exposes RPC interface that is used for communication. It has to be local for the client.
+
+* WASM flite program is flite program cross-compiled to WebAssembly. It is executed remotely by providers' Golem Nodes. Communication between requestor's Golem Node and providers' Golem Nodes is handled by Golem Network. Moreover, a provider's Golem Node manages execution of WASM flite program and sends results back to requestor's Golem Node.
+
+Remark. WASM flite program is not stored at requestor's Golem Node before the task is dispatched. The client sends WASM flite binaries along with the task and then it is executed at provider's machine.
 
 #### How to build custom gWASM application
 
