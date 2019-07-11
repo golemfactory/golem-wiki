@@ -747,6 +747,11 @@ The officially supported release is 16.04 at the moment.
 6. To make sure you can run golem without >`sudo` run >`$ sudo usermod -aG docker $USER` Warning: The docker group grants privileges equivalent to the root user. For details on how this impacts security in your system, look up: Docker Daemon Attack Surface.
 
 
+#### Experimental method
+
+?> If anyone with Ubuntu would like to test the package installation via **DEB** file it is on golem-dev releases [here](https://github.com/golemfactory/golem-dev/releases/download/0.20.0/golem_0.20.0-0_amd64.deb). Just download it and run `sudo apt install ./golem_0.20.0-0_amd64.deb` it will put golem binaries to `/opt/golem/0.20.0` and symlink `golem` `golemapp` `golemcli` and `hyperg` in `/usr/local/bin` so you can just start golem with simply typing it in console `golem`.
+
+
 #### Enable GPU support
 
 ##### Prerequisites

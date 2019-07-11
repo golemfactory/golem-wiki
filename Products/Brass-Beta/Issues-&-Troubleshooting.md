@@ -440,6 +440,24 @@ You should see a very basic screen with a blue background and limited list of op
 After you are sure that you have enabled virtualization save your settings and quit BIOS. Your computer will restart with its virtualization option enabled in normal mode. 
 
 
+---
+
+#### RAM warning
+
+Golem VM was started with a lower than configured amount of RAM because there was insufficient memory available.
+ 
+**Solution**
+Close any extraneous running applications. If you have a web browser open, try closing some tabs to free up memory. Afterwards, restart Golem. If you are unable to free more RAM consider assigning a lower amount of RAM to Golem by adjusting the resource slider in GUI.
+
+#### Disk space warning
+
+Golem VM was started with a minimal amount of RAM (1 GiB) due to disk requirements posed by the Hyper-V hypervisor.
+ 
+**Solution**
+The Hyper-V hypervisor needs to allocate disk space equal to the amount of RAM configured in Golem. Please try removing unnecessary files and applications, then restart Golem. If you cannot afford freeing this much disk space consider assigning a lower amount of RAM to Golem by adjusting the resource slider in GUI.
+
+
+
 
 
 

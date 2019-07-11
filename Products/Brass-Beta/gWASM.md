@@ -528,7 +528,7 @@ For the start, please get familiar with our demonstration application - g-flite.
 You need to run [Golem node](Products/Brass-Beta/Installation) locally, which is currently the default setup for our use cases.
 
 
-#### about
+#### About
 
 `g-flite` is a command-line utility which lets you run [flite](http://www.festvox.org/flite/) text-to-speech app on Golem Network.
 
