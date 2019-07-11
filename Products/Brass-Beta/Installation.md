@@ -371,7 +371,7 @@ Result:
 ```
 
 #### Install hyperg
-[hyperg binaries(hyperg)](https://github.com/mfranciszkiewicz/golem-hyperdrive/releases/)
+[hyperg binaries(hyperg)](https://github.com/golemfactory/simple-transfer/releases)
 
 Follow the same steps as for OpenSSL above, can be the same or a new folder.
 ?> The downloaded package contains a folder. Extract only `hyperg.exe` and siblings.
