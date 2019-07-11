@@ -17,7 +17,7 @@
 * [gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=gwasm-store)
 * [How to use gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-use-gwasm-store)
 * [Sandboxing](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing)
-* [How to test gWASM localy](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
+* [How to test gWASM locally](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
 
 ---
 
