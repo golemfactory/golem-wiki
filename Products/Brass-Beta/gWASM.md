@@ -9,7 +9,7 @@
 ?> Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
 
 * Learn [how to compile gWASM application](Products/Brass-Beta/gWASM?id=how-to-compile-gwasm-application)
-* Then [create and cross-compile simple program](Products/Brass-Beta/gWASM?id=create-and-cross-compile-simple-program)
+* Then [create and cross-compile simple program](Products/Brass-Beta/gWASM?id=cross-compilation)
 * Or check step by step guides for [cross compilation of C program](Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program-step-by-step)
 * Learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
 * How to run [your own gWASM task](Products/Brass-Beta/gWASM?id=how-to-run-your-own-gwasm-task)
@@ -28,7 +28,7 @@
 
 We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runtime to run WASM binaries. Because of this the applications must be compiled with the Emscripten compiler or compiled to Emscripten target.
 
-Typical gWASM application consists of a client and WASM binary. The client is non-WASM software. Its purpose is to connect to Golem node, create tasks and process results. The example of the client is [g-flite](Products/Brass-Beta/gWASM?id=sample-application). The WASM binary consists of the actual binary .wasm and the JavaScript glue code .js file (both are generated automatically when compiling with Emscripten). It is transferred with input data to provider’s machine and executed by WASM engine. The example is flite compiled to WebAssembly.
+Typical gWASM application consists of a client and WASM binary. The client is non-WASM software. Its purpose is to connect to Golem node, create tasks and process results. The example of the client is [g-flite](Products/Brass-Beta/gWASM?id=sample-application-g-flite). The WASM binary consists of the actual binary .wasm and the JavaScript glue code .js file (both are generated automatically when compiling with Emscripten). It is transferred with input data to provider’s machine and executed by WASM engine. The example is flite compiled to WebAssembly.
 
 ?> Until very recently, people mainly associated WebAssembly with web browsers. This trend is changing rapidly thanks to standardisation efforts in the form of WebAssembly System Interface **(or [WASI](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)) which will essentially allow WebAssembly to be run on the server**. gWASM is a nod in that direction, taking **WASM from the browser environment and enabling server-side computations**. This implies that gWASM will not run in a web browser but on the different Golem Nodes. Note that while gWASM is currently not WASI compatible, we are actively participating in WASI’s development together with Mozilla Foundation, and when it’s tagged stable (currently, still experimental), we will make gWasm WASI compatible as well.
 
@@ -48,7 +48,7 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ### How to compile gWASM application
 
-Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See [this](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program) for detailed instructions on cross-compiling of C and Rust code. Note that gWASM applications are executed in the [sandbox](Products/Brass-Beta/gWASM?id=sandboxing) and compilation must comply to its requirements.
+Many applications can be compiled to WASM. It is hard to say if a specific code is eligible. That may depend on used syscalls. Sometimes compilation requires some tweaks. If your application just reads data, makes computations and writes results, it is highly likely that it can be compiled to WASM. It is required to install emscripten. Note that WebAssembly is evolving very fast and it is expected to be more adaptive in time. It is also possible to compile Rust source code directly to WASM. See [this](Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program-step-by-step) for detailed instructions on cross-compiling of C and Rust code. Note that gWASM applications are executed in the [sandbox](Products/Brass-Beta/gWASM?id=sandboxing) and compilation must comply to its requirements.
 
 > Be sure that you are not violating any licenses or property rights, you take legal responsibility for your actions and it is absolutely fine if you use open source software or your own code.
 
@@ -416,7 +416,7 @@ hello world!
 
 #### How to run your own gWASM task
 
-You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
+You can run task from source or already cross-compiled to WASM. If you have run task already cross-compiled to WASM, make sure the compilation followed [guidelines](Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program-step-by-step). Use cases in [gWASM-store](https://github.com/golemfactory/wasm-store) are eligible. In that case skip the point 2  (Emscripten SDK requirement and cross-compilation)
 
 1. Create your working directory and enter it.
 
