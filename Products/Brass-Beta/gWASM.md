@@ -4,6 +4,25 @@
 
 ---
 
+
+#### Quick links
+
+* Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
+* Learn [how to compile gWASM application](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-compile-gwasm-application)
+* Then [create and cross-compile simple program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=_1-create-and-cross-compile-simple-program)
+* Or check step by step guides for [cross compilation of C program](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-cross-compile-c-program)
+* Learn how to [Create gWASM tasks in Golem](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
+* How to run [your own gWASM task](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-your-own-gwasm-task)
+* Check our [sample application - g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference
+* And learn [how to run g-flite](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-run-g-flite)
+* [gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=gwasm-store)
+* [How to use gWASM store](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-use-gwasm-store)
+* [Sandboxing](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing)
+* [How to test gWASM locally](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=how-to-test-gwasm-locally)
+
+---
+
+
 ### gWASM applications
 
 We use a standalone [SpiderMonkey](Products/Brass-Beta/gWASM?id=sandboxing) runtime to run WASM binaries. Because of this the applications must be compiled with the Emscripten compiler or compiled to Emscripten target.
