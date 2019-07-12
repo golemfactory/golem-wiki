@@ -740,12 +740,22 @@ The answer should be `False`.
 
 3. Go to [releases page](https://github.com/golemfactory/g-flite/releases) and get binaries for your OS. Unpack it.
 
-4. Get the text file you want to read. Any text file in English. Lets say it is `golem.txt`.
+4. Get the text file you want to read. Any text file in English. Lets say it is `golem.txt`, and paste it into your `g-flite` folder. 
 
-5. Run the command.
+5. In your terminal/command line `cd` into the `g-flite` directory.
+
+6. Run the command:
+
+**For Mac os and Linux**
 
 ```bash
-g_flite --subtasks 2 golem.txt golem.wav
+./g_flite --subtasks 2 golem.txt golem.wav
+```
+
+**For Windows**
+
+```bash
+g_flite.exe --subtasks 2 golem.txt golem.wav
 ```
 
 The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI program. For more information see [this](Products/Brass-Beta/gWASM?id=sample-application).
