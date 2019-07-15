@@ -97,4 +97,8 @@ the [WebAssembly Sandbox](https://github.com/golemfactory/sp-wasm).
 
 #### Usage 
 
-To read more about how to integrate your apps with **gWASM** head over here [**here**](Products/Brass-Beta/gWASM)
+There are two ways to use gWASM.
+* If you wrote your own algorithm, have custom computation or do tests, then you can create gWASM task yourself and send it directly to Golem Network. 
+* You can create an applicatin with gWASM backend as computation engine. You need to provide a client that serves as user interface and is responsible for creating gWASM tasks and managing them. End users of the application are not burden with technical details as your application seamlessly integrates with g WASM. The same way it is possible to integrate existing application with gWASM.
+
+To read more about how to send **gWASM** task or how to integrate apps with **gWASM** head over here [**here**](Products/Brass-Beta/gWASM)
