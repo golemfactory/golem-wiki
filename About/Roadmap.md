@@ -38,7 +38,7 @@ List of proposed  functionalities:
 * [x] Implementation of Blender and LuxRender tasks *LuxRender was defered due to small user base*
 * [ ] Concent Service 
 
-Current version: [0.19.1](https://golem-releases.cdn.golem.network/) 
+Current version: [0.20.1](https://golem-releases.cdn.golem.network/) 
 
 ### Clay Golem {docsify-ignore}
 > There is a chance (...) that a Clay Golem will be possessed by a chaotic evil spirit. If this happens control is lost and the Golem attacks the closest living creature.
