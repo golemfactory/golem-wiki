@@ -871,7 +871,7 @@ This step needs to be run from the Golem source directory.
 python3 setup.py develop --prefix=$HOME/.local
 ```
 
-#### _8.
+#### _8. Secure runtime_
 To run GLambda app first follow the instructions for [gVisor secure runtime installation](https://gvisor.dev/docs/user_guide/docker/). Once `runsc` runtime is configured the GLambda app will enable itself automatically on Golem startup.
 
 #### _9. Optional: Install test dependencies_
