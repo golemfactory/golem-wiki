@@ -85,6 +85,10 @@ This is something that our Concent service will address in the future, right now
 
 As a Provider, you just need to ensure you are sharing enough computing power on the network. Since that is a limited resource and the complexity of the tasks vary, there will still be timeouts. You can also make sure your connection is good to the best of your ability so you do not lose contact with nodes will computing for them.
 
+#### Disk usage
+
+It may happen then while running the Golem node for longer periods and computing a lot of tasks Golem will take a lot of your disk space. If you see that `~/Library/Application Support/golem/default/mainnet/ComputerRes` folder is getting too much of gigabytes open terminal/console and type `golemcli --mainnet res clear --provider` for the mainnet version. If on testnet then type `golemcli --testnet res clear --provider`. 
+
 
 
 

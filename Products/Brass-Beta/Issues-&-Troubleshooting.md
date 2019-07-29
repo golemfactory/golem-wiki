@@ -360,6 +360,12 @@ Those errors should be followed with particular issues that caused them along wi
 
 ---
 
+#### Disk usage
+
+It may happen then while running the Golem node for longer periods and computing a lot of tasks Golem will take a lot of your disk space. If you see that `~/Library/Application Support/golem/default/mainnet/ComputerRes` folder is getting too much of gigabytes open terminal/console and type `golemcli --mainnet res clear --provider` for the mainnet version. If on testnet then type `golemcli --testnet res clear --provider`. 
+
+---
+
 ## Port Forwarding Connection Errors
 In order to connect to other Nodes on th Golem Network, your router needs to support UPnP or you need to forward ports **40102**, **40103**, and **3282** manually. Forwarding ports manually requires setting a static IP as well. The process of forwarding ports varies based on your router model. For router specific instructions on how to forward your ports go to **[https://portforward.com/](https://portforward.com/)**, then follow the instructions.
 
