@@ -372,7 +372,7 @@ golemcli debug rpc golem.mainnet
 
 The answer should be `False`.
 
-3. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+3. Download the directory `https://github.com/golemfactory/wasm-store/tree/master/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
 
 ```bash
 git clone https://github.com/golemfactory/wasm-store.git
@@ -534,7 +534,7 @@ hello world!
 
 1. Follow [these](https://docs.golem.network/#/Contributing/Creating-a-subnet-of-nodes) instructions and run two Golem nodes locally in your private subnet.
 
-2. Download the directory `https://github.com/golemfactory/wasm-store/tree/lglen/sha1solver/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+2. Download the directory `https://github.com/golemfactory/wasm-store/tree/master/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
 
 ```bash
 git clone https://github.com/golemfactory/wasm-store.git

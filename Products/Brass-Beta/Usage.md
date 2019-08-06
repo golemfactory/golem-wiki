@@ -53,8 +53,10 @@ When submitting tasks to the network **as a Requestor**, it is important to **sh
 
 
 **Advanced**
-The Advanced view allows you set a more precise allocation of your computing power. You can adjust individual controls of CPU, RAM, and Disk Space. You can save multiple presets for different configurations.
-Note: You must stop Golem to set or change your computing power settings.
+
+The Advanced view allows you set a more precise allocation of your computing power. You can adjust individual controls of CPU, RAM, and Disk Space. 
+
+?> Note: You must stop Golem to set or change your computing power settings.
 
 
 
