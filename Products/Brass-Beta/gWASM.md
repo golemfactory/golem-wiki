@@ -532,9 +532,11 @@ hello world!
 
 #### How to test gWASM locally
 
-1. Follow [these](https://docs.golem.network/#/Contributing/Creating-a-subnet-of-nodes) instructions and run two Golem nodes locally in your private subnet.
+1. Install Golem on your machine. In order to do that please follow [these steps](/Products/Brass-Beta/Installation.md).
 
-2. Download the directory `https://github.com/golemfactory/wasm-store/tree/master/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
+2. Then create [a subnet of nodes](https://docs.golem.network/#/Contributing/Creating-a-subnet-of-nodes) and run two Golem nodes locally in your private subnet.
+
+3. Download the directory `https://github.com/golemfactory/wasm-store/tree/master/hello`. The easiest way is to download the [zipped repository](https://github.com/golemfactory/wasm-store/archive/lglen/sha1solver.zip) or clone the repository  with `git`
 
 ```bash
 git clone https://github.com/golemfactory/wasm-store.git
@@ -542,14 +544,14 @@ git clone https://github.com/golemfactory/wasm-store.git
 
 Then enter `hello` directory.
 
-3. Edit `task.json` file and update it.
+4. Edit `task.json` file and update it.
 
 ```json
         "input_dir": "/your/path/to/input/dir",
         "output_dir": "/your/path/to/output/dir",
 ```
 
-4. Send task to one of your Golem nodes.
+5. Send task to one of your Golem nodes.
 
 ```bash
 golemcli tasks create task.json
@@ -561,13 +563,13 @@ If you specified the datadir, add it to the command
 golemcli tasks create task.json --datadir=/path/to/your/datadir
 ```
 
-5. You can track the task progress by executing the following command.
+6. You can track the task progress by executing the following command.
 
 ```bash
 golemcli tasks show
 ```
 
-6. When it is done, check the result - the `out.txt` file.
+7. When it is done, check the result - the `out.txt` file.
 
 ```bash
 cat out/subtask1/out.txt
