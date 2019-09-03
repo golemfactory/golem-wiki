@@ -196,7 +196,7 @@ SUBCOMMANDS:
 │  0xde2922bc3cadc586b32641da75eebcd63ac061f4  │  confirmed  │  0.018694444444444445 GNT  │
 │  0xae363e38792c8e3d2778c1d4e6c90a664c084588  │  confirmed  │  0.003055555555555556 GNT  │
 │  0xae363e38792c8e3d2778c1d4e6c90a664c084588  │  confirmed  │  0.011138888888888889 GNT  │
-
+...
 │  0xde2922bc3cadc586b32641da75eebcd63ac061f4  │  confirmed  │  0.036951377709513395 GNT  │
 │  0xae70978e5ccb8a86757f6e0f149eec8eb76ffbea  │  confirmed  │  0.1 GNT                   │
 │  0xae70978e5ccb8a86757f6e0f149eec8eb76ffbea  │  confirmed  │  0.1 GNT                   │
@@ -245,7 +245,7 @@ SUBCOMMANDS:
 │  0xde2922bc3cadc586b32641da75eebcd63ac061f4  │  confirmed  │  0.018694444444444445 GNT  │
 │  0xae363e38792c8e3d2778c1d4e6c90a664c084588  │  confirmed  │  0.003055555555555556 GNT  │
 │  0xae363e38792c8e3d2778c1d4e6c90a664c084588  │  confirmed  │  0.011138888888888889 GNT  │
-
+...
 │  0xde2922bc3cadc586b32641da75eebcd63ac061f4  │  confirmed  │  0.036951377709513395 GNT  │
 │  0xae70978e5ccb8a86757f6e0f149eec8eb76ffbea  │  confirmed  │  0.1 GNT                   │
 │  0xae70978e5ccb8a86757f6e0f149eec8eb76ffbea  │  confirmed  │  0.1 GNT                   │
@@ -312,7 +312,7 @@ SUBCOMMANDS:
 │  12b135d8-b3a5-11e9-86da-f19b1796bd67  │  0xf1394254cf8345a4ac623c587635f402a21d27fa  │  confirmed  │  0.023270034353621512 GNT  │  0.000011827875 ETH  │
 │  1a49ee28-a4a5-11e9-badd-f19b1796bd67  │  0xd945b8e8dcbe9439cb4b2092e5b575ea425951a5  │  confirmed  │  0.016666666666666667 GNT  │  0.000010619375 ETH  │
 │  1a496b68-a4a5-11e9-916a-f19b1796bd67  │  0xcf9f0a732e952c997e33b70d10b1446e11336c5f  │  confirmed  │  0.016666666666666667 GNT  │  0.000010619375 ETH  │
-
+...
 │  42b4caf6-36b7-11e9-843c-f19b1796bd67  │  0x2ee350b08626268bbe2b88ae32b0d6df2e53bea9  │  confirmed  │  0.052753808845427667 GNT  │  0.000002605675 ETH  │
 │  42874810-36b7-11e9-bb0c-f19b1796bd67  │  0xd6f684c5cfa440d07756ea530c832620b6972fd0  │  confirmed  │  0.010571556268134177 GNT  │  0.000002605675 ETH  │
 │  427f3b18-36b7-11e9-90c6-f19b1796bd67  │  0xb66446857e3aec80918b839944c3b2993704f69d  │  confirmed  │  0.010566739827392324 GNT  │  0.000002605675 ETH  │
@@ -363,7 +363,7 @@ SUBCOMMANDS:
 │  12b135d8-b3a5-11e9-86da-f19b1796bd67  │  0xf1394254cf8345a4ac623c587635f402a21d27fa  │  confirmed  │  0.023270034353621512 GNT  │  0.000011827875 ETH  │
 │  1a49ee28-a4a5-11e9-badd-f19b1796bd67  │  0xd945b8e8dcbe9439cb4b2092e5b575ea425951a5  │  confirmed  │  0.016666666666666667 GNT  │  0.000010619375 ETH  │
 │  1a496b68-a4a5-11e9-916a-f19b1796bd67  │  0xcf9f0a732e952c997e33b70d10b1446e11336c5f  │  confirmed  │  0.016666666666666667 GNT  │  0.000010619375 ETH  │
-
+...
 │  42b4caf6-36b7-11e9-843c-f19b1796bd67  │  0x2ee350b08626268bbe2b88ae32b0d6df2e53bea9  │  confirmed  │  0.052753808845427667 GNT  │  0.000002605675 ETH  │
 │  42874810-36b7-11e9-bb0c-f19b1796bd67  │  0xd6f684c5cfa440d07756ea530c832620b6972fd0  │  confirmed  │  0.010571556268134177 GNT  │  0.000002605675 ETH  │
 │  427f3b18-36b7-11e9-90c6-f19b1796bd67  │  0xb66446857e3aec80918b839944c3b2993704f69d  │  confirmed  │  0.010566739827392324 GNT  │  0.000002605675 ETH  │
@@ -454,7 +454,7 @@ SUBCOMMANDS:
 │  89.163.148.82    │  40102  │  49bc25b4fde6d23d...bdf00e17fc753620  │                                │
 │  79.185.76.178    │  40102  │  4fe220d425711b3f...55db87a3e9fb34b3  │                                │
 │  109.220.72.53    │  40102  │  2fd8239f5f7d7d14...4cb8c3d2c2d117c7  │                                │
-
+...
 │  35.198.119.10    │  40102  │  cde73fb1b26ae227...c33cfafbe5261156  │  testnet-gf-devel-0 git        │
 │  139.99.157.15    │  40104  │  d2ee023cd8cc2d75...080f11472118bff4  │  vps148216 compute             │
 │  35.190.194.220   │  40102  │  bea9d6588636d368...ba2c096ff572885f  │  testnet-gf-compute-0 compute  │
@@ -787,43 +787,43 @@ To compute on gpu add:
 ###### `tasks restart` - Restart a task
 
 To restart a task you should provide:
-- <task_id>
+- `task_id`
 
 Example of a task restart command:
 `tasks restart 9378ddd8-cb18-11e9-930a-f19b1796bd67` 
 
-?> You can copy <task_id> from `tasks show` table
+?> You can copy `task_id` from `tasks show` table
 
 ---
 
 ###### `tasks abort` - Abort a task
 
 To abort a task you should provide:
-- <task_id>
+- `task_id`
 
 Example of a task abort command:
 `task abort 9378ddd8-cb18-11e9-930a-f19b1796bd67`
 
-?> You can copy <task_id> from `tasks show` table
+?> You can copy `task_id` from `tasks show` table
 
 ---
 
 ###### `tasks delete` - Delete a task
 
 To delete a task you should provide:
-- <task_id>
+- `task_id`
 
 Example of a task delete command:
 `task delete 9378ddd8-cb18-11e9-930a-f19b1796bd67`
 
-?> You can copy <task_id> from `tasks show` table
+?> You can copy `task_id` from `tasks show` table
 
 ---
 
 ###### `tasks abort` - Dump a task
 
 To dump a task you sgould provide additional [FLAG]:
-- <task_id>
+- `task_id`
 
 Example of a task dump command:
 `task dump 9378ddd8-cb18-11e9-930a-f19b1796bd67`
@@ -1133,7 +1133,7 @@ SUBCOMMANDS:
 ###### `envs enable` - Enable environment
 
 To enable particular environment you should provide:
-<name> - name of your environment, for eg. `BLENDER`
+`name` - name of your environment, for eg. `BLENDER`
 
 command for enabling an environment should look like this:
 `envs enable BLENDER`
@@ -1144,7 +1144,7 @@ after that you will see `envs show` with updated envs setup
 ###### `envs disable` - Disable environment
 
 In order to disable particular environment you should provide:
-<name> - name of your environment, for eg. `BLENDER`
+`name` - name of your environment, for eg. `BLENDER`
 
 Command for disable an environment should look like this:
 `envs disable BLENDER`
@@ -1155,7 +1155,7 @@ after that you will see `envs show` with updated envs setup
 ###### `envs recount` - Recount performance for an environment
 
 In order to recount particular environment you shouldn provide:
-<name> - name of your environment, for eg. `BLENDER`
+`name` - name of your environment, for eg. `BLENDER`
 
 command for recount an environment should look like this:
 `envs recount BLENDER`
@@ -1175,7 +1175,7 @@ So in this case this node will commision tasks to nodes that have at least 3 tim
 ###### `envs perf_mult_set` - Sets performance multiplier
 
 To set multiplier for commisioning tasks to more powerfull nodes you should provide additional:
-<multiplier>
+`multiplier`
 Command for setting a multiplier should look like this:
 `envs perf_mult_set 6`
 
