@@ -175,6 +175,8 @@ docker-machine rm -f golem
 
 *If you are upgrading from previous version of Golem on Windows 10 Home eddition you will not need to install Docker Toolbox, as it was allready installed during previous installations.*
 
+!> If, while using Docker Toolbox, Golem fails to run benchmarks or compute tasks, please restart the Golem App (make sure the background process is restarted, not only the Electron front-end) and verify if the issues persist after restart.
+
 If this is clean install on Windows 10 Home (or you decide to go with Docker Toolbox) after installation of [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) please open your `Windows Power Shell` as an administrator and paste scripts provided below:
 
 *Those scripts will provide fixes to native Docker Toolbox software and allow Golem to work properly in this environment*
