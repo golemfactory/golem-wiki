@@ -727,6 +727,8 @@ curl https://sh.rustup.rs -sSf | sh
 
 ---
 
+!> If you’re installing Golem for the first time, please restart your machine (or log-out and log-in again) so that the docker environment is properly initialized.
+
 The officially supported release is 16.04 at the moment.
 
 1. Download and run installation script:
