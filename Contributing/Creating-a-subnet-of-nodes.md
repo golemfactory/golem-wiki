@@ -35,12 +35,15 @@ Since the `protocol_id` is restricted, nodes cannot connect to default (hardcode
 ```bash
 golemapp --password=your_password --accept-terms --datadir=/path/to/datadir1 --rpc-address=localhost:61001 --protocol_id=102938
 ```
+?> On MacOs your `--datadir` should be created in `$HOME/Library/Application\ Support/datadir1`
 
 When launching both golem instances on the same local machine we need to add two more args for `node_B` (a Provider):
 
 ```bash
  golemapp --password=your_password --accept-terms --datadir=/path/to/datadir2 --rpc-address=localhost:61002 --peer=localhost:40102 --protocol_id=102938
 ```
+
+?> On MacOs your `--datadir` should be created in `$HOME/Library/Application\ Support/datadir2`
 
 first to choose new RPC port for `node_B` (default is `61000`), and second to create separate data directory for it. Obviously we can supply `127.0.0.1` as `node_A` ip address then.
 
@@ -87,6 +90,8 @@ INFO     [golem.client                       ] Golem is listening on ports: P2P=
 Thus, it is important to launch nodes in order: `node_A` then `node_B` - according to the config file.
 
 You can check if nodes are connected by executing:
+
+?> Running `golemcli` should include additional `—port 61001 -I -d $HOME/Library/Application\ Support/datadir1`
 
 `golemcli network show` 
 
