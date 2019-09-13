@@ -389,6 +389,8 @@ Result:
 
 **Hyper-V**
 
+Skip this part when using Docker Toolbox
+
 [Docker for Windows Installer.exe](https://docs.docker.com/docker-for-windows/release-notes/)
 Hit 'Download' under the title of docker for windows 18.06.1
 
@@ -400,6 +402,8 @@ Follow the same steps as for OpenSSL above, can be the same or a new folder.
 ---
 
 **Docker Toolbox**
+
+Skip this part when using Hyper-V
 
 [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
 Hit `Get Docker Toolbox for Windows` and follow installation steps.
