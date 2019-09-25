@@ -677,7 +677,9 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 
 ### Building gWASM applications
 
-gWASM application is an application integrated with Golem. It consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
+Applications and services can benefit from gWASM. They can access external computing platform in order to improve performance and offload computations. Applications are not limited in design. But  You can build new application or integrate existing one. Although you need Golem connector. At the moment there are connectors in Rust and C. But there will be more.
+
+gWASM application is an application integrated with Golem. Usually it consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
 
 You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
 
