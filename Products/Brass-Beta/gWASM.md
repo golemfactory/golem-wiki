@@ -23,7 +23,7 @@ gWASM is an easy-to-use platform for distributed and parallel computations. Conv
 ?> Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
 
 * [Quick start - testing gWASM locally](Products/Brass-Beta/gWASM?id=quick-start-testing-gwasm-locally)
-* Learn [how to compile gWASM application](Products/Brass-Beta/gWASM?id=how-to-compile-gwasm-application)
+* Learn [how to build gWASM application](Products/Brass-Beta/gWASM?id=building-gwasm-applications)
 * Learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
 * Check our [sample application - g-flite](Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference of your own app
 * And learn [how to run g-flite](Products/Brass-Beta/gWASM?id=how-to-run-g-flite) - the simplest way to play arround with gWASM if you are not a developer
@@ -677,9 +677,13 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 
 ### Building gWASM applications
 
-gWASM application is an application integrated with Golem. It consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
+Applications and services can benefit from gWASM - they can access external computing platform in order to improve performance and offload computations. Applications are not limited in design. But offloaded computations are WebaAssembly. You can build new application or integrate existing one. Although you need Golem connector. At the moment there is connector for Rust. But there will be more, like c or C++.
 
-You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
+gWASM application is an application integrated with Golem. Usually it consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
+
+Basicly integrating applications with gWASM is not very different from [creating gWASM tasks](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem). The idea is to automate the whole process, so the application creates and controls tasks in Golem. The benefit of Golem is support for massive parallel computations. But there is no universal way to parallelize arbitrary computation. So the application provider is responsible for delivering an algorithm to divide its computations into subtasks. See this, the whole process is similar to map-reduce pattern, or split-execute-merge as it is named in gwasm-runner.
+
+There is more than one approach to integrate your application with gWASM. Despite you create from the scratch or integrate existing application with Golem. The simplest way is to use [gwasm-runner](https://github.com/golemfactory/gwasm-runner) as a framework. The another added value of gwasm-runner is that it supports seamlessly Golem Network, Golem Unlimited and local environment for executing target WebAssembly binaries. At the moment it is still under heavy development and you might need to use one of the branches. You can also use [gWASM-api](https://github.com/golemfactory/gwasm-rust-api) - lower level Golem adapter. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM. You can also write integration code by yourself and connect to Golem Node via RPC calls.
 
 #### g-flite design
 
