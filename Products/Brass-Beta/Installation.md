@@ -460,15 +460,6 @@ cd golem
 
 ?> Note if you did NOT use the installer and have NOT done the [docker configuration](Products/Brass-Beta/Installation?id=golem-installer) yet, now is a good time
 
-#### msbuild (once)
-
-While inside the golem source folder, run:
-
-```bash
-msbuild apps\rendering\resources\taskcollector\taskcollector.sln /p:Configuration=Release /p:Platform=x64
-```
-When errors occur something went wrong with your visual studio install. Try following the [pre-requisite guide](Products/Brass-Beta/Installation?id=visual-studio) again.
-
 
 #### Create docker machine (once)
 
