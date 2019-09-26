@@ -23,7 +23,7 @@ gWASM is an easy-to-use platform for distributed and parallel computations. Conv
 ?> Before you start building gWASM apps please download and install [Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) as it is required to run in the background during gWASM computations
 
 * [Quick start - testing gWASM locally](Products/Brass-Beta/gWASM?id=quick-start-testing-gwasm-locally)
-* Learn [how to compile gWASM application](Products/Brass-Beta/gWASM?id=how-to-compile-gwasm-application)
+* Learn [how to build gWASM application](Products/Brass-Beta/gWASM?id=building-gwasm-applications)
 * Learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
 * Check our [sample application - g-flite](Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference of your own app
 * And learn [how to run g-flite](Products/Brass-Beta/gWASM?id=how-to-run-g-flite) - the simplest way to play arround with gWASM if you are not a developer
