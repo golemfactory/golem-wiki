@@ -677,11 +677,13 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 
 ### Building gWASM applications
 
-Applications and services can benefit from gWASM. They can access external computing platform in order to improve performance and offload computations. Applications are not limited in design. But  You can build new application or integrate existing one. Although you need Golem connector. At the moment there are connectors in Rust and C. But there will be more.
+Applications and services can benefit from gWASM - they can access external computing platform in order to improve performance and offload computations. Applications are not limited in design. But offloaded computations are WebaAssembly. You can build new application or integrate existing one. Although you need Golem connector. At the moment there is connector for Rust. But there will be more, like c or C++.
 
 gWASM application is an application integrated with Golem. Usually it consists of a client and WASM binaries. The client is a user interface run locally, not necessarily written in WebAssembly. Its responsibility is to handle the burden of creating tasks and communication with Golem. WASM binaries act as backend and are executed in Golem Network.
 
-You can create gWASM application from the scratch or integrate existing application with Golem. In both cases gWASM act as backend. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM.
+Basicly integrating applications with gWASM is not very different from [creating gWASM tasks](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem). The idea is to automate the whole process, so the application creates and controls tasks in Golem. The benefit of Golem is support for massive parallel computations. But there is no universal way to parallelize arbitrary computation. So the application provider is responsible for delivering an algorithm to divide its computations into subtasks. See this, the whole process is similar to map-reduce pattern, or split-execute-merge as it is named in gwasm-runner.
+
+There is more than one approach to integrate your application with gWASM. Despite you create from the scratch or integrate existing application with Golem. The simplest way is to use [gwasm-runner](https://github.com/golemfactory/gwasm-runner) as a framework. The another added value of gwasm-runner is that it supports seamlessly Golem Network, Golem Unlimited and local environment for executing target WebAssembly binaries. At the moment it is still under heavy development and you might need to use one of the branches. You can also use [gWASM-api](https://github.com/golemfactory/gwasm-rust-api) - lower level Golem adapter. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM. You can also write integration code by yourself and connect to Golem Node via RPC calls.
 
 #### g-flite design
 
