@@ -265,6 +265,7 @@ Create a task from file, this is a json WASM example file:
         "wasm_name": "test.wasm",
         "input_dir": "/home/user/test_in",
         "output_dir": "/home/user/test_out",
+        "__comment":"there are two subtasks, but there will be four jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["arg1", "arg2"],
@@ -427,6 +428,7 @@ The answer should be `False`.
         "wasm_name": "hello.wasm",
         "input_dir": "/path/to/your/working/directory/hello/in",
         "output_dir": "/path/to/your/working/directory/hello/out",
+        "__comment":"there is one subtask, but there will be two jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["world"],
@@ -997,6 +999,7 @@ where the `task.json` would consist of
         "wasm_name": "program.wasm",
         "input_dir": "<abs_path_to_the_repo>/input_dir",
         "output_dir": "<abs_path_to_the_repo>/output_dir",
+        "__comment":"there are two subtasks, but there will be four jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["arg1_1", "arg1_2"],
