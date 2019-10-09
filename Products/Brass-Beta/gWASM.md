@@ -497,17 +497,13 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ### Sample application - g-flite
 
-For the start, please get familiar with our demonstration application - g-flite. This is an **end-to-end and ready to use Golem integration**. All internals and technical details are covered by the client and user friendly interface is exposed for your convenience. This includes creating Golem tasks and completing results. 
-You need to run [Golem node](Products/Brass-Beta/Installation) locally, which is currently the default setup for our use cases.
-
-
-#### About
-
 `g-flite` is a command-line utility which lets you run [flite](http://www.festvox.org/flite/) text-to-speech app on Golem Network.
 
 ![g_flite GIF demo](http://i.imgur.com/Ji1CdCN.gif)
 
-?> Note that `g-flite` currently requires that you have [Golem instance](Products/Brass-Beta/Installation) running on the same machine and **only testnet is currently supported** due to the fact that [our WASM platform](https://github.com/golemfactory/sp-wasm) is only available on the testnet.
+?> Note that `g-flite` currently requires that you have a [Golem instance](Products/Brass-Beta/Installation) running on the same machine. If you'd like to use `g-flite` on mainnet your Golem node's version must be `0.21` or higher.
+
+`g-flite` is our demo application and an **end-to-end, ready to use Golem integration**. Most of the implementation details (such as creating Golem tasks and collecting results) are covered by the client, which exposes a user-friendly API. You can use `g-flite` and its source code to familiarise yourself with how gWASM-enabled applications can be implemented.
 
 
 ##### Installation
