@@ -689,12 +689,10 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 Applications and services, both new and existing ones, can greatly benefit from gWASM. It grants them access to an external computing platform which can be used to improve performance by offloading and parallelising computations. The integrating applications are not limited in design when making use of gWASM (however, the offloaded computations must be executable within a WebAssembly sandbox).
 
 #### How to integrate with gWASM?
-Communicating with the requestor requires having a component to handle messages to and from the node. We currently provide a Rust implementation of such a connector - [gwasm-rust-api](https://github.com/golemfactory/gwasm-rust-api) (C and C++ implementations are planned for the future).
+Integrating applications with gWASM is not very different from [creating gWASM tasks](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem). The idea is to automate the whole process, so the application creates and controls tasks in Golem. The benefit of Golem is its support for massive parallel computations. But there is no universal way to parallelize arbitrary computation. Therefore, it is the application's job to define a way for splitting the work into subtasks, similar to the map-reduce pattern.
 
-Integrating applications with gWASM is not very different from [creating gWASM tasks](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem). The idea is to automate the whole process, so the application creates and controls tasks in Golem. The benefit of Golem is support for massive parallel computations. But there is no universal way to parallelize arbitrary computation. So the application provider is responsible for delivering an algorithm to divide its computations into subtasks. See this, the whole process is similar to map-reduce pattern, or split-execute-merge as it is named in gwasm-runner.
-
-TODO Decide on the paragraph below
-
+There is more than one approach to integrating your applications with gWASM. While it's possible to build an integration from scratch, we've prepared helper libraries and example applications to make the process easier for developers.
+The simplest way of creating gWASM applications is using [gwasm-runner](Products/Brass-Beta/gWASM?id=gwasm-runner) as a framework. The runner offers a simple API for defining how a task should be split and merged, along with integrations with the Golem network and Golem Unlimited working out of the box. For applications which require more custom logic or cannot be easily ported to use `gwasm-runner` there is also[gwasm-rust-api](https://github.com/golemfactory/gwasm-rust-api) - a lower level adapter for communicating with a Golem instance running locally. Lastly, you can also write your own integration code communicating with a Golem node via RPC.
 There is more than one approach to integrate your application with gWASM. Despite you create from the scratch or integrate existing application with Golem. The simplest way is to use [gwasm-runner](https://github.com/golemfactory/gwasm-runner) as a framework. The another added value of gwasm-runner is that it supports seamlessly Golem Network, Golem Unlimited and local environment for executing target WebAssembly binaries. At the moment it is still under heavy development and you might need to use one of the branches. You can also use [gWASM-api](https://github.com/golemfactory/gwasm-rust-api) - lower level Golem adapter. We prepared g-flite application for your convenience. It is an example how to integrate with gWASM. You can also write integration code by yourself and connect to Golem Node via RPC calls.
 
 #### g-flite design
@@ -713,9 +711,7 @@ It is clear that there are two main components. First one is flite cross-compile
 
 * WASM flite program is flite program cross-compiled to WebAssembly. It is executed remotely by providers' Golem Nodes. Communication between requestor's Golem Node and providers' Golem Nodes is handled by Golem Network. Moreover, a provider's Golem Node manages execution of WASM flite program and sends results back to requestor's Golem Node.
 
-Remark. WASM flite program is not stored at requestor's Golem Node before the task is dispatched. The client sends WASM flite binaries along with the task and then it is executed at provider's machine.
-
-TODO Add steps on runner
+Remark: WASM flite program is not stored at requestor's Golem Node before the task is dispatched. The client sends WASM flite binaries along with the task and then it is executed at provider's machine.
 
 #### How to build custom gWASM application
 
@@ -767,9 +763,7 @@ The runner API resembles the map-reduce paradigm. It provides a simple interface
 
 Please note that the `split` and `merge` phases will run locally, on the requestor's machine, while `execute` will run on the providers' machines. The code for these callbacks must be contained within the WASM binary for the application.
 
-To illustrate
-
-#### Runner API - example
+### gWASM runner - example
 
 The best way to present an API is by way of example. For the "hello world!" example,
 we'll try something really simple. Namely, we will try and sum integers in the range
@@ -942,6 +936,53 @@ Don't forget to add `gwasm-api` as a dependency in your `Cargo.toml`:
 [dependencies]
 gwasm-api = { git="https://github.com/golemfactory/gwasm-runner.git" }
 ```
+
+#### Building the example
+
+We're now going to demonstrate how you can compile your example application to WASM so that it can be executed using `gwasm-runner`. Please follow these steps:
+1. Install [rustup](https://rustup.rs).
+2. Install the [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html).
+3. Add the WASM compilation target for Rust. To do so, run the below command once you have install `rustup`:
+```bash
+rustup target add wasm32-unknown-emscripten
+```
+4. Go to the example project's root directory (where its `Cargo.toml` file is located) and build it by running:
+```bash
+cargo rustc --target=wasm32-unknown-emscripten -- -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
+```
+
+The flag `--target` specifies the target platform we want to compile to. The arguments which come after `--` will be passed directly to the compiler. In our case, we disable the async compilation feature of Emscripten. This is necessary if we'd like to execute our app on the Golem network, since the WASM sandbox used in the Golem client currently does not support that feature. This is a temporary situation and we expect this limitation to be lifted in the future releases of Golem.
+Also, please note that you will need to have the Emscripten SDK environment set up in the shell from which you're running `cargo rustc`. This is mentioned in the SDK's [installation instructions](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions).
+
+#### Running the example
+Once your application is compiled to WASM, you can run it using `gwasm-runner`!
+To do so, you can grab one of the pre-built binary releases of the runner from the [releases page on GitHub](https://github.com/golemfactory/gwasm-runner/releases). Alternatively, you can build the program from source by following the building instructions from the [readme](https://github.com/golemfactory/gwasm-runner#gwasm-runner).
+
+The below examples make the following assumptions:
+- the commands are run from the example project's root directory,
+- the project has been already compiled, meaning there's a `target` directory in the project's root,
+- `gwasm-runner` is available on your system's `PATH`.
+
+You can run the application in three different ways: locally on your machine, in the Golem network or within a Golem Unlimited cluster.
+
+To run the application locally (e.g. for testing purposes), issue the below command:
+```bash
+gwasm-runner target/wasm32-unknown-emscripten/debug/hello_world.wasm
+```
+
+To execute the application in the Golem network, add the `backend` flag like below:
+```bash
+gwasm-runner target/wasm32-unknown-emscripten/debug/hello_world.wasm --backend=Brass
+```
+
+In order for this to work, you'll need a Golem node (version 0.21+) running locally on your machine. By default, the runner will try to connect to `localhost:61000`. You can find more details on the defaults and how to override them on the [gwasm-runner wiki](https://github.com/golemfactory/gwasm-runner#running-on-the-golem-network).
+
+To run your app in a Golem Unlimited cluster, issue the following command:
+```bash
+gwasm-runner target/wasm32-unknown-emscripten/debug/hello_world.wasm --backend=gu://<ip_address>
+```
+
+You will need to substitute the `ip_addres` with the address of the GU hub you are connected to. Please refer to the Golem Unlimited [GitHub readme](https://github.com/golemfactory/golem-unlimited) for more details.
 
 ---
 
