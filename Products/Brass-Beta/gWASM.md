@@ -598,7 +598,7 @@ only one return value as is in this case, we need to wrap it up in a one-element
 
 `execute` function is actually where all the Golem magic happens. Every `Task` passed
 into the `execute` function is distributed over GU cluster (when `gwasm-runner`
-is used with the GU as the backend), or over Brass network (when `gwasm-runner` is
+is used with the GU as the backend), or over the Golem network (when `gwasm-runner` is
 used with the Brass as the backend). More on that later.
 
 All that's left now is to fill in `execute` with the summing logic, so let's do just that!
@@ -747,15 +747,21 @@ To execute the application in the Golem network, add the `backend` flag like bel
 gwasm-runner target/wasm32-unknown-emscripten/debug/hello_world.wasm --backend=Brass
 ```
 
-In order for this to work, you'll need a Golem node (version 0.21+) running locally on your machine with the default settings. 
+In order for this to work, you'll need a Golem node (version 0.21+) running locally on your machine. The default settings used by the Brass runner are listed below:
 
-| Setting     | Default value                 |
-| ----------- | ----------------------------- |
-| datadir     | `APP_DATA_DIR/golem/default`  |
-| RPC address | 127.0.0.1                     |
-| RPC port    | 61000                         |
+```json
+{
+    "data_dir": "/home/user/.local/share/golem/default",
+    "address": "127.0.0.1:61000",
+    "bid": 1.0,
+    "name": "gwasm-task",
+    "net": "testnet",
+    "subtask_timeout": "00:10:00",
+    "task_timeout": "00:30:00"
+}
+```
 
-You can find more details on the defaults and how to override them on the [gwasm-runner wiki](https://github.com/golemfactory/gwasm-runner#running-on-the-golem-network).
+To change the default values (e.g. when the datadir for your local Golem instance is located somewhere else) a JSON configuration file needs to be created. Under Linux, this file should be placed under: `~/.config/g-wasm-runner/brass/config.json`. You can copy the above JSON object, modify the fields' values and put it into that file. The runner will print its currently used configuration upon start-up.
 
 **Running on Golem Unlimited**
 
@@ -764,7 +770,7 @@ To run your app in a Golem Unlimited cluster, issue the following command:
 gwasm-runner target/wasm32-unknown-emscripten/debug/hello_world.wasm --backend=gu://<ip_address>
 ```
 
-You will need to substitute the `ip_address` with the address of the GU hub you are connected to. Please refer to the Golem Unlimited [documentation](https://github.com/golemfactory/golem-unlimited) for more details.
+You will need to substitute the `ip_address` with the address of the GU hub you are connected to.
 
 ---
 
