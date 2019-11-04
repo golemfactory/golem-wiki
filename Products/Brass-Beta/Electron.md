@@ -15,8 +15,10 @@ The desktop application (Golem's Graphic Interface) using Electron, React and Re
 git clone https://github.com/golemfactory/golem-electron
 ```
 
-##### 2. For Windows users only
+##### 2a. Install Nodejs
 - Download **Nodejs** from [their official site](https://nodejs.org/en/download/), and install on your machine.
+
+##### 2b. For Windows users only
 - Open PowerShell with administrator privileges and paste:
 ```bash
 npm --add-python-to-path='true' install --global --production windows-build-tools
