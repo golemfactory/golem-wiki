@@ -969,7 +969,7 @@ Substitute the mandelbrot.wasm path with the path to the file you downloaded in 
 
 4. Once the program finishes successfully, the output will be available in the directory where the gwasm-runner binary is placed. By default, the name of the output file is: `out.png`.
 
-The above instructions refer to running the application locally on your machine (for testing purposes). If you'd like to use the Golem network or Golem Unlimited for your computations, please refer to [this section](Products/Brass-Beta/gWASM?id=running-the-example).
+The above instructions refer to running the application locally on your machine (for testing purposes). If you'd like to use the Golem network or Golem Unlimited for your computations, please refer to [this section](#running-the-example).
 
 ---
 
