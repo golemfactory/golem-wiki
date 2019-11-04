@@ -953,6 +953,26 @@ The name of the output file `golem.wav` is arbitrary. Note that `g_flite` is CLI
 
 ---
 
+#### How to run a gWASM app using gwasm-runner
+
+1. Go to the gwasm-runner [releases page](https://github.com/golemfactory/gwasm-runner/releases) and get the latest binary for your OS.
+
+2. Go to the mandelbrot [releases page](https://github.com/golemfactory/mandelbrot/releases) and get the latest package. Unzip the package.
+
+3. In your terminal, go to the directory containing the gwasm-runner binary from step 3. and issue the below command:
+
+```bash
+./gwasm-runner <path to mandelbrot.wasm file> -- 1000 1000 4
+```
+
+Substitute the mandelbrot.wasm path with the path to the file you downloaded in step 4. Please note that the mandelbrot .wasm and .js files need to be in the same directory.
+
+4. Once the program finishes successfully, the output will be available in the directory where the gwasm-runner binary is placed. By default, the name of the output file is: `out.png`.
+
+The above instructions refer to running the application locally on your machine (for testing purposes). If you'd like to use the Golem network or Golem Unlimited for your computations, please refer to [this section](Products/Brass-Beta/gWASM?id=running-the-example).
+
+---
+
 ### Building gWASM applications
 
 #### Why integrate with gWASM?
