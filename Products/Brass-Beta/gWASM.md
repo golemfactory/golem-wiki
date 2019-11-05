@@ -1104,7 +1104,7 @@ for programs cross-compiled [from Rust](Products/Brass-Beta/gWASM?id=_12-rust).
 Now, we can try and compile the program with Emscripten. In order to do that you need Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
 
 ```
-$ emcc -o simple.js -s BINARYEN_ASYNC_COMPILATION=0 simple.c
+emcc -o simple.js -s BINARYEN_ASYNC_COMPILATION=0 simple.c
 ```
 
 Emscripten will then produce two files: `simple.js` and `simple.wasm`. The produced JavaScript file acts as glue code and sets up all of
@@ -1119,7 +1119,7 @@ Therefore, in order to alleviate the problem, make sure to always cross-compile 
 With Rust, firstly go ahead and create a new binary with `cargo`
 
 ```rust
-$ cargo new --bin simple
+cargo new --bin simple
 ```
 
 Then go ahead and paste the following to `simple/src/main.rs`
@@ -1151,7 +1151,7 @@ As was the case with [C program](Products/Brass-Beta/gWASM?id=_11-cc), it is imp
 In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install the required target which is `wasm32-unknown-emscripten`. The easiest way of doing so, as well as generally managing your Rust installations, is to use [rustup](https://rustup.rs/)
 
 ```rust
-$ rustup target add wasm32-unknown-emscripten
+rustup target add wasm32-unknown-emscripten
 ```
 
 Note that cross-compiling Rust to this target still requires that you have Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
@@ -1159,7 +1159,7 @@ Note that cross-compiling Rust to this target still requires that you have Emscr
 Now, we can compile our Rust program to Wasm. Make sure you are in the root of your Rust crate, i.e., at the top of `simple` if you didn't change the name of your crate, and run
 
 ```rust
-$ cargo rustc --target=wasm32-unknown-emscripten --release -- \
+cargo rustc --target=wasm32-unknown-emscripten --release -- \
   -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
 ```
 
@@ -1509,13 +1509,13 @@ To build natively on Linux, you need to follow the installation instructions of 
 After following the aforementioned instructions, to build the sandbox, run
 
 ```bash
-$ cargo build
+cargo build
 ```
 
 If you would like to build with SpiderMonkey's debug symbols and extensive logging, run instead
 
 ```bash
-$ cargo build --features "debugmozjs"
+cargo build --features "debugmozjs"
 ```
 
 
@@ -1565,13 +1565,13 @@ We welcome all issues and pull requests!
 When submitting a pull request, please make sure to run unit tests:
 
 ```bash
-$ cargo test
+cargo test
 ```
 
 and integration tests:
 
 ```bash
-$ cargo build && ./target/debug/sp-wasm-tests
+cargo build && ./target/debug/sp-wasm-tests
 ```
 
 

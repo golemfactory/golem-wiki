@@ -75,7 +75,7 @@ A set of tools to simplify and automate working with mesh-based decals, which  i
 
 ## Submitting a Task
 ![installer](/img/usage/add_task.jpg) 
-####  Two Ways to Add a Task
+####  Three Ways to Add a Task via GUI
 
 1. For individual users, there are two ways to add tasks to the Golem desktop app, via the Add Task button (circle with a “+” sign) on the main toolbar which allows the user to select a file through the system chooser or via drag and drop. Both single files or folders can be added.
 
@@ -83,6 +83,8 @@ A set of tools to simplify and automate working with mesh-based decals, which  i
 To add a file via drag and drop, simply drag a file (or multiple files inside a folder, in case of tasks with multiple resources) onto the Task view, and the task will be added.
 
 ?> **Note**: On Windows users can add a folder with files using the add task button and single files with drag & drop, On OS X users can add a file and folder in both, On Linux users can add a single file with drag & drop, On Ubuntu users can add a folder with drag & drop and add task button.
+
+3. **You can also create a task via [CLI](/Products/Brass-Beta/Command-line-interface?id=task-create-create-a-task-from-file-note-no-client-side-validation-is-performed-yet-this-will-change-in-the-future) from a `.json` file.**
 
 #### Task Settings
 ![installer](/img/usage/task_settings.jpg) 
@@ -165,7 +167,8 @@ Once your settings are complete you can set your price.
     - 5 x 0.5 GNT/hr x (15.5/60) = 0.645833333~ rounded up to 0.65
 
 
-Since price is directly tied to your subtask timeouts, it is important to test your typical workflow a few times in our alpha app to determine the best settings for the lowest price.
+Since price is directly tied to your subtask timeouts, it is important to test your typical workflow a few times in our beta app to determine the best settings for the lowest price.
+
 
 ## Task computations 
 
