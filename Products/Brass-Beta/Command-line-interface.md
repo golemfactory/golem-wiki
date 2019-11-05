@@ -41,7 +41,7 @@ SUBCOMMANDS:
     payments     Display payments
     network      Manage network
     settings     Manage settings
-    res          Manage provider resuorces
+    res          Manage provider resources
     tasks        Manage tasks
     test_task    Manage testing tasks
     acl          Manage peer access control lists
@@ -112,7 +112,7 @@ To make a withdraw you will have to specify:
 - `<currency>` - if you wish to withdraw GNT/ETH
 - `[gas_price]` - provide an amount for a gas price (in ETH)
 
-##### account withdraw exaple
+##### account withdraw example
 
 `account withdraw 0xDE333C68F700ccc28309853d2faBCbAD646D34ab 30 GNT 0.003`
 
@@ -183,7 +183,7 @@ SUBCOMMANDS:
 
 ###### `incomes all` - Display all incomes (prints table with all income transactions with their statuses and amounts) 
 
-###### Incomes all exaple:
+###### Incomes all example:
 
 ```
 ┌──────────────────────────────────────────────┬─────────────┬────────────────────────────┐
@@ -230,7 +230,7 @@ SUBCOMMANDS:
 
 ---
 
-###### `incomes confirmed` - Display confirmed incomes (filters all transactions and prints only confermed incomes)
+###### `incomes confirmed` - Display confirmed incomes (filters all transactions and prints only confirmed incomes)
 
 ###### Incomes confirmed example:
 
@@ -296,7 +296,7 @@ SUBCOMMANDS:
 
 ###### `payments all` - Display all payments (prints table with all income transactions with their statuses and amounts) 
 
-###### Payments all exaple:
+###### Payments all example:
 
 ```
 ┌────────────────────────────────────────┬──────────────────────────────────────────────┬─────────────┬────────────────────────────┬──────────────────────┐
@@ -345,7 +345,7 @@ SUBCOMMANDS:
 
 ---
 
-###### `payments confirmed` - Display confirmed payments (filters all transactions and prints only confermed payments)
+###### `payments confirmed` - Display confirmed payments (filters all transactions and prints only confirmed payments)
 
 ###### Payments confirmed example:
 
@@ -415,7 +415,7 @@ SUBCOMMANDS:
 
 ---
 
-###### `networok show` - Show connected nodes (Prints table of all currently connected nodes)
+###### `network show` - Show connected nodes (Prints table of all currently connected nodes)
 
 ###### Network show example
 
@@ -556,7 +556,7 @@ SUBCOMMANDS:
 
 ###### `settings set` - Change settings
 
-In order change particural setting you should include: 
+In order change a particular setting you should include: 
 - `<key>` - for eg. `node_name`
 - `<value>` - new value, for eg. `a new node name`
 
@@ -577,7 +577,7 @@ In order change particural setting you should include:
 ```
 res 0.1.9
 Golem Factory <contact@golem.network>
-Manage provider resuorces
+Manage provider resources
 
 USAGE:
     res [FLAGS] <SUBCOMMAND>
@@ -740,7 +740,7 @@ concent_enabled: true
 
 ###### `task create` - Create a task from file. Note: no client-side validation is performed yet. This will change in the future
 
-In oder to create a task you should define a path to your task .json file so:
+In order to create a task you should define a path to your task .json file so:
 `tasks create Documents/golem-task.json`
 
 Create a task from file, this is a json file, example file:
@@ -822,7 +822,7 @@ Example of a task delete command:
 
 ###### `tasks abort` - Dump a task
 
-To dump a task you sgould provide additional [FLAG]:
+To dump a task you should provide additional [FLAG]:
 - `task_id`
 
 Example of a task dump command:
@@ -1174,7 +1174,7 @@ So in this case this node will commision tasks to nodes that have at least 3 tim
 
 ###### `envs perf_mult_set` - Sets performance multiplier
 
-To set multiplier for commisioning tasks to more powerfull nodes you should provide additional:
+To set multiplier for commissioning tasks to more powerful nodes you should provide additional:
 `multiplier`
 Command for setting a multiplier should look like this:
 `envs perf_mult_set 6`

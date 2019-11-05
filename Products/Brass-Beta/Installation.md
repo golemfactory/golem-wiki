@@ -112,7 +112,7 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 
   ##### Docker Toolbox
 
-  If you are upgrading from previous version of Golem on Windows 10 Home eddition you will need to install Docker Toolbox.
+  If you are upgrading from previous version of Golem on Windows 10 Home edition you will need to install Docker Toolbox.
 
   After installation of [Docker Toolbox](https://github.com/docker/toolbox/releases/download/v18.06.1-ce/DockerToolbox-18.06.1-ce.exe) please open your `Windows Power Shell` as an administrator and paste scripts provided below:
 
@@ -167,9 +167,9 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 ---
 
 ### Windows - upgrade {docsify-ignore}
-Currently there is no in app uprgade avaliable. You need to download newest installer, and follow installation steps.
+Currently there is no in app upgrade available. You need to download newest installer, and follow installation steps.
 
-?> If you are upgrading from previous version of Golem on Windows 10 Home eddition you will not need to install Docker Toolbox, as it was allready installed during previous installations.
+?> If you are upgrading from previous version of Golem on Windows 10 Home edition you will not need to install Docker Toolbox, as it was already installed during previous installations.
 
 ---
 
@@ -266,7 +266,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 Download the installer ( rustup-init.exe ) and run it, make sure to add to path in the installer options or [manually](https://www.google.nl/search?q=add+folder+to+path+windows+10) after install.
 
-For rust and python to find each other you also need to add `<Python36 install location>\libs` to the environment variable `LIB`.
+For rust and python to find each other, you also need to add `<Python36 install location>\libs` to the environment variable `LIB`.
 ?> Restart all open cmd and powershell windows for this change to take effect.
 
 #### Validate install:
@@ -547,7 +547,7 @@ python golemapp.py
 
 ---
 
-1. First, you have to install Homebrew, a package manager for macOS. Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keybord and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
+1. First, you have to install Homebrew, a package manager for macOS. Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
@@ -570,7 +570,7 @@ Docker for Mac will be installed alongside Golem. Make sure to accept Docker ins
 ---
 
 ### Mac Os - upgrade {docsify-ignore}
-Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keybord and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
+Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
 ```bash
 brew update
@@ -583,7 +583,7 @@ brew link hyperg
 ```
 
 ### MacOs - reinstall {docsify-ignore}
-Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keybord and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
+Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
 ```bash
 brew tap golemfactory/golem
@@ -592,7 +592,7 @@ brew cask reinstall golem
 ```
 
 ### MacOs - remove {docsify-ignore}
-Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keybord and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
+Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
 ```bash
 brew cask uninstall golem-mainnet-launcher 
@@ -768,7 +768,7 @@ Run Golem normally and it will build the required docker images if the prerequis
 ---
 
 ### Ubuntu - upgrade {docsify-ignore}
-Currently there is no in app uprgade avaliable. You need to download newest installer, and follow installation steps.
+Currently there is no in app upgrade available. You need to download newest installer, and follow installation steps.
 
 ---
 
