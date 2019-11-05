@@ -11,7 +11,7 @@ If you want to give it a try check [how to compile gWASM application](Products/B
 
 ##### 2. Run your code in a decentralized network
 
-gWASM is an easy-to-use platform for distributed and parallel computations. Convert your code to a WebAssembly binary and execute it in a decentralized manner - within the Golem Network. If you want to give it a try learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
+gWASM is an easy-to-use platform for distributed and parallel computations. Convert your code to a WebAssembly binary and execute it in a decentralized manner - within the Golem Network. If you want to give it a try, learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
 
 
 ?> In our gWASM integration, your data and WASM binary is transferred to the remote machine and executed. The target machine is secured by the in-sandbox execution. The binary is portable and compatible with various OS and environments since it is executed by a runtime engine rather than natively. The solution is designed to run large number of computations in parallel in order to profit from Golem Network capabilities.
@@ -27,13 +27,13 @@ gWASM is an easy-to-use platform for distributed and parallel computations. Conv
 * [gwasm-runner](Products/Brass-Beta/gWASM?id=gwasm-runner) is a project with a single goal: making developing new gWASM apps as simple as possible
 * Learn how to [Create gWASM tasks in Golem](Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem)
 * Check our [sample application - g-flite](Products/Brass-Beta/gWASM?id=sample-application-g-flite) as a reference of your own app
-* And learn [how to run g-flite](Products/Brass-Beta/gWASM?id=how-to-run-g-flite) - the simplest way to play arround with gWASM if you are not a developer
+* And learn [how to run g-flite](Products/Brass-Beta/gWASM?id=how-to-run-g-flite) - the simplest way to play around with gWASM if you are not a developer
 
 ---
 
 #### Feedback
 
-If you would like to share your toughts about **gWASM** please fill out this **[short survey](https://forms.gle/7Kury1nuLNe3Wf656)**. It will help us make your experience better. 
+If you would like to share your thoughts about **gWASM** please fill out this **[short survey](https://forms.gle/7Kury1nuLNe3Wf656)**. It will help us make your experience better. 
 
 ---
 
@@ -42,7 +42,7 @@ If you would like to share your toughts about **gWASM** please fill out this **[
 In this quick tutorial you will
 
 * Install latest release of Golem
-* Run two nodes on the same machine (one being a Requestor, and seccond one being Provider) 
+* Run two nodes on the same machine (one being a Requestor, and second one being Provider) 
 * Run simple `hello world` task
 
 ---
@@ -239,7 +239,7 @@ The following options have to be specified for the WebAssembly task:
 subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside the program's virtual filesystem. The subtasks files are to be open in read-only mode.
 
 * `output_dir`: The path to the output directory where for each subtask, the output files specified in `output_file_paths` will be copied to a subdirectory named the 
-same as the subtask. It is an existing directory. Can be empty. If it is not empty, then the files are overriden.
+same as the subtask. It is an existing directory. Can be empty. If it is not empty, then the files are overridden.
 
 * `subtasks`: A dictionary containing the options for each subtask. The number of elements reflects the number of subtasks. The keys should be the subtask names, the values should be dictionaries with fields specified below:
 
@@ -500,7 +500,7 @@ A full working example of a gWASM app is [g-flite](Products/Brass-Beta/gWASM?id=
 
 **Our goal is to make computations fully deterministic.** This way we can verify the results' correctness via byte-to-byte comparison. The same computations repeated on various machines should always generate the same results. In our solution, we use redundant computations in order to enable verification of results.
 
-**WebAssembly** is a deterministic machine, but in some points it needs more consideration. **WebAssembly is single-threaded by design**, therefore issues such as synchronisation and order of execution do not play a role here. Floating-point operations are strict and deterministic with one exception - dealing with NaN values. We currently do not provide any way of allowing to enable/disable it. However, we do strive to enforce it at the Golem's app level meaning that gWASM will, for now, only be available on x86_64 architechtures. We are aware of other solutions which enforce deterministic floats and hence NaNs at the software level. However, we have decided not to go that route at the moment, as these solutions have a major negative performance impact. 
+**WebAssembly** is a deterministic machine, but in some points it needs more consideration. **WebAssembly is single-threaded by design**, therefore issues such as synchronisation and order of execution do not play a role here. Floating-point operations are strict and deterministic with one exception - dealing with NaN values. We currently do not provide any way of allowing to enable/disable it. However, we do strive to enforce it at the Golem's app level meaning that gWASM will, for now, only be available on x86_64 architectures. We are aware of other solutions which enforce deterministic floats and hence NaNs at the software level. However, we have decided not to go that route at the moment, as these solutions have a major negative performance impact. 
 
 Date and time operations are mocked, you should not rely on them. Currently you cannot access external devices (e.g. GPUs) which are sources of indeterminism. The sandbox emulates pseudo-random numbers generation. **Every node draws the same sequence of pseudo-random numbers.**
 
@@ -1001,7 +1001,7 @@ It is clear that there are two main components. First one is flite cross-compile
 
 * Golem Node exposes RPC interface that is used for communication. It has to be local for the client.
 
-* WASM flite program is flite program cross-compiled to WebAssembly. It is executed remotely by providers' Golem Nodes. Communication between requestor's Golem Node and providers' Golem Nodes is handled by Golem Network. Moreover, a provider's Golem Node manages execution of WASM flite program and sends results back to requestor's Golem Node.
+* WASM flite program is flite program cross-compiled to WebAssembly. It is executed remotely by providers' Golem Nodes. Communication between requestor's Golem Node and providers' Golem Nodes is handled by Golem Network. Moreover, a provider's Golem Node manages execution of WASM flite program and sends results back to the requestor's Golem Node.
 
 Remark: WASM flite program is not stored at requestor's Golem Node before the task is dispatched. The client sends WASM flite binaries along with the task and then it is executed at provider's machine.
 
@@ -1023,7 +1023,7 @@ Remark. Defining Golem adapter API is very important part of gWASM application.
 
 This section is a very brief guidelines how to integrate existing application with gWASM. It is very hard to say which application are eligible. For sure you need to have source code and not every programming language is supported - is able to be cross-compiled to WebAssembly. Optionally, you can rewrite selected parts in C or Rust and cross-compile them.
 
-1. Decompose the application and consider wich component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
+1. Decompose the application and consider which component is responsible for heavy computations. Files access is permitted but network access, GPU access, IPC, searching volumes etc are denied.
 
 2. Cross-compile this component in compliance with gWASM requirements.
 
@@ -1035,7 +1035,7 @@ This section is a very brief guidelines how to integrate existing application wi
 
 ![integrating app with gWASM](/img/gwasm/integrating-app-with-gWASM.png)
 
-Remark. Accessing Golem requires Golem specific paramters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 
+Remark. Accessing Golem requires Golem specific parameters like `subtask_timeout` or `bid`. You need to add such configuration to the application. 
 
 
 ---
@@ -1062,7 +1062,7 @@ Many applications can be compiled to WASM. It is hard to say if a specific code 
 
 * All files are mapped to RAM memory. So having input and output files size in total greater than a few GB is not supported. 
 
-* gWASM is still under developement. At the moment it is available for testnet only. We do not guarantee proper verification and settlement.
+* gWASM is still under development. At the moment it is available for testnet only. We do not guarantee proper verification and settlement.
 
 ---
 
@@ -1586,9 +1586,9 @@ Licensed under [GNU General Public License v3.0](https://github.com/golemfactory
 
 When requesting computation in external sources, the results should be verified whether they are correct. 
 
-In gWASM we adopted an approach similar to BOINC. Each subtask is sent to two providers. If the results match, then they are considered correct and providers are paid. If not, then third provider - arbiter - computes again this subtask. Its result is compared to the previous and matching two are paid. For more information you can read our blogpost [here](https://blog.golemproject.net/gwasm-verification/). This verfication scheme we call Verification by Redundancy - VbR.
+In gWASM we adopted an approach similar to BOINC. Each subtask is sent to two providers. If the results match, then they are considered correct and providers are paid. If not, then third provider - arbiter - computes again this subtask. Its result is compared to the previous and matching two are paid. For more information you can read our blogpost [here](https://blog.golemproject.net/gwasm-verification/). This verification scheme we call Verification by Redundancy - VbR.
 
-Comparing results itself is a challange. We ensured that computations in our [sandbox](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing) are deterministic. It limits the usage in some cases but it allows for byte-to-byte comparision.
+Comparing results itself is a challenge. We ensured that computations in our [sandbox](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing) are deterministic. It limits the usage in some cases but it allows for byte-to-byte comparison.
 
 When you request a task with some subtasks, be aware that there will be two times more jobs/computations. When you list subtasks for a given job in CLI, you will find two times more results. Its is because of VbR.
 

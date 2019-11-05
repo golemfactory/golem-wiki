@@ -1,5 +1,5 @@
 ## Docker Errors on MacOS
-Since 0.18.0 Golem uses Docker for Mac, the first step is to make sure that all previous Docker instances are removed from your machine. Open terminal, press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keybord and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
+Since 0.18.0 Golem uses Docker for Mac, the first step is to make sure that all previous Docker instances are removed from your machine. Open terminal, press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
 ```bash
 bash_docker-machine rm golem 
@@ -173,7 +173,7 @@ docker-machine rm -f golem
 
 ### Errors with Docker Toolbox
 
-*If you are upgrading from previous version of Golem on Windows 10 Home eddition you will not need to install Docker Toolbox, as it was allready installed during previous installations.*
+*If you are upgrading from previous version of Golem on Windows 10 Home edition you will not need to install Docker Toolbox, as it was already installed during previous installations.*
 
 !> If, while using Docker Toolbox, Golem fails to run benchmarks or compute tasks, please restart the Golem App (make sure the background process is restarted, not only the Electron front-end) and verify if the issues persist after restart.
 
