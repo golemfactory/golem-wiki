@@ -79,7 +79,7 @@ The user may choose simple verification, however the correctness of the computat
 
 ## gWASM
 
-In 0.20.0 [Brass Beta](Products/Brass-Beta/Installation) release we provide Golem-WASM integration available on testnet, called [**gWASM**](Products/Brass-Beta/gWASM). In the next release, we plan to enable it on mainnet. 
+In 0.21.0 [Brass Beta](Products/Brass-Beta/Installation) release we provided Golem-WASM integration available on mainnet, called [**gWASM**](Products/Brass-Beta/gWASM).
 
 ?> It is possible to compile many applications as WebAssembly binaries and run them in a secure and portable manner. To read more on WebAssembly, you can start with [this](https://webassembly.org/), however, note that there are many fantastic sources for beginners on the internet also.
 
