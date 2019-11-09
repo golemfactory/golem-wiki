@@ -1062,7 +1062,6 @@ Many applications can be compiled to WASM. It is hard to say if a specific code 
 
 * All files are mapped to RAM memory. So having input and output files size in total greater than a few GB is not supported. 
 
-* gWASM is still under development. At the moment it is available for testnet only. We do not guarantee proper verification and settlement.
 
 ---
 
