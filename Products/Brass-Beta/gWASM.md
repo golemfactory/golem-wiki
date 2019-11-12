@@ -222,7 +222,8 @@ To create the task, its JSON definition has to be created. The non-task-specific
 
 * `type` is always `wasm`.
 * `name` is arbitrary.
-* `bid` is price in GNT per hour for computation. It is maximal possible price and actual price is usually less than this. You pay only for the computation time - as we apply usage market for gWASM. In testnet the value is irrelevant.
+* `bid` is the price in GNT per hour for computation. It is a maximal possible price that you are willing to pay the provider. The actual price may be less than your bid as, because of the marketplace mechanism implemented in Golem, providers compete against each other which results in lower prices.  In testnet the value is irrelevant. 
+With gWASM, we have implemented verification by redundancy. This means that each subtask will be sent to two different providers and their computation results will be compared. This implies that you will pay for twice as many subtasks as you specified in the task definition. You can read more about this on our [blog post](https://blog.golemproject.net/gwasm-verification/).
 * `subtask_timeout` is arbitrary and does not affect payment value in gWASM. It should be reasonable long.
 * `timeout` is a task timeout. It should be at least two times `subtask_timeout`.
 

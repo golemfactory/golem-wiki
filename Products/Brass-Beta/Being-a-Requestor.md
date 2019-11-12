@@ -150,6 +150,8 @@ Once your settings are complete you can set your price.
 ![installer](/img/usage/task_settings_price.jpg) 
 #### The formula for calculating the estimated cost of a task
 
+?> **Note:** When you start the computation of your task the funds for this particular task will be "Locked" in your wallet (You can check the locked amount in expanded wallet window). During the task computation, you may notice that your GNT balance has increased. It happens because providers' bids for the computation are usually lower than the bid of your task. 
+
 >subtask amount x GNT/h x Subtask timeout settings in hourly increments
 
 **Examples:**
