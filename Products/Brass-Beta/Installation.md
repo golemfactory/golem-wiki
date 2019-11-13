@@ -802,8 +802,9 @@ and restart the system for changes to take effect.
 
   **3a.** Downloading binaries
 
-  Download the latest Linux release [here](https://github.com/mfranciszkiewicz/golem-hyperdrive/releases).
+  Download the latest Linux release [here](https://github.com/golemfactory/simple-transfer/releases).
   Extract the archive to a directory of your choosing, for example:
+  
   ```bash
   tar xzf hyperg_0.2.10_linux-x64.tar.gz $HOME/.local/bin/
   ```
