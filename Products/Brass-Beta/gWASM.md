@@ -510,20 +510,22 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ### gWASM runner
 
-[gwasm-runner](https://github.com/golemfactory/gwasm-runner) is a project with a single goal: making developing new gWASM apps as simple as possible. It includes three components:
+We have biult [gwasm-runner](https://github.com/golemfactory/gwasm-runner) to faciliate development of gWASM apps. It includes three components:
 
+- **gWASM dispatcher API** a minimalistic API with just three operations for creating gWASM runner compatible apps.
 - **a WebAssembly sandbox** for running **WASM code locally**,
 - **basic communication** with either a **Golem network** node or a **Golem Unlimited** hub,
-- **an API** used to define how to split work into smaller chunks and how these chunks should later be merged.
 
-#### Runner API
-?>  **The runner API resembles the map-reduce paradigm**. It provides a simple interface for creating gWASM apps. In essence: **if you can tailor your app to this API, you can run it on gWASM using `gwasm-runner`!** To integrate with the runner, an application must implement three callbacks:
+#### gWASM dispatcher API
+?>  It is a minimalistic (three-op) interface which resembles the map-reduce paradigm. In essence: **if you can tailor your app to this API, you can run it on gWASM using `gwasm-runner`!** To integrate with the runner, an application must implement three callbacks:
 
-1. **`split` - defines how we the computation can be parallelised, i.e. how it can be split into multiple subtasks.**
-2. **`execute` - performs computation on a single chunk of data as prepared in the split phase.**
-3. **`merge` - gathers and merges the computation results from the execute phase.**
+1. **`split` - divide the problem into subproblems.**
+2. **`execute` - performs computation for all subproblems independently.**
+3. **`merge` - collect all computation results and formulate final result.**
 
-> Please note that the `split` and `merge` phases will run locally, on the requestor's machine, while `execute` will run on the providers' machines. The code for these callbacks must be contained within the WASM binary for the application.
+> Please note that the `split` and `merge` phases will run locally, on the requestor's machine, while `execute` might be run remotely on the provider machines (in both `Unlimited` and `Brass` mode) or locally also on requestors' machine (in `Local` mode - for testing purposes). The code for these callbacks must be contained within the WASM binary.
+
+Here is the [gwasm-dispatcher crate source code](https://github.com/golemfactory/gwasm-runner/blob/master/gwasm-dispatcher/src/lib.rs) which contains this API.
 
 ### gWASM runner - example
 
@@ -537,7 +539,7 @@ So how do we do this? We proceed in stages in conformance with the runner API:
   3. **finally, we combine all intermediate sums into one final sum, our final value.**
 
 Before we dig in, please note that you can see the fully assembled example in
-[Final result](#final-result). The example is going to presented in the Rust programming
+[Final result](#final-result). The example is going to be presented in the Rust programming
 language. Firstly, just for convenience, let's introduce two
 helper "types" (or type aliases in Rust's terminology):
 
@@ -563,7 +565,7 @@ There is one technicality here we need to get our heads round. The API is constr
 in such a way that `split` returns a `Vec` of tuples. Hence, if we have only one
 return value as is in this case, we need to wrap it up in a one-element tuple, so
 `Vec<(Task,)>`. Furthermore, you've also probably noticed that `split` accepts
-a context argument, `SplitContext`. Within this argument, you can interface with
+a context argument, [`SplitContext`](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/trait.SplitContext.html). Within this argument, you can interface with
 the invoker of your gWASM app with `gwasm-runner` and receive and parse any
 passed in command line arguments.
 
@@ -585,9 +587,10 @@ fn split(_ctx: &mut dyn SplitContext) -> Vec<(Task,)> {
 
 #### Execute
 
-?> Having generated gWASM tasks, we now need to provide a method to generate a sum
-of each task's elements. The logic that performs this action is represented by
-an `execute` function of our API, and it's signature can be summarised as follows:
+?> Having generated gWASM tasks, we now need to provide a "worker" function which 
+in our case will calculate a sum of each task's elements. The logic that performs this action
+is represented by an `execute` function of our API, and it's signature can be summarised
+as follows:
 
 ```rust
 fn execute(task: Task) -> (TaskResult,);
@@ -621,13 +624,13 @@ fn merge(args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>);
 ```
 
 `merge` function takes two arguments: `args` vector of `String`s, and `results` vector
-of input `Task`s as well as the generated `TaskResult`s. You can think of `args` as
-the owned (for consumption) version of `SplitContext` you saw in `split` function.
-We will not dig deeper into the purpose of `args` at this time, and we refer the interested
-Reader to our [gwasm-api docs](https://golemfactory.github.io/gwasm-rust-api/gwasm_api/index.html).
-`results` vector is more interesting for us at this stage.
-Its structure is as follows: for each generated `Task` in the [Split](#split) step,
-we have a matching generated `TaskResult` in the [Merge](#merge) step.
+of input `Task`s with their corresponding `TaskResult`s. 
+
+You can think of `args` as the owned (for consumption) version of command line arguments (they are primarily accesible within `split` function via [`SplitContext`](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/trait.SplitContext.html)). It is here only for completeness, when `merge` also needs to access them.
+
+The `results` vector is much more interesting for us at this stage.
+Its structure is as follows: for each generated `Task` from the [Split](#split) step,
+we have a matching `TaskResult` calculated within the [Merge](#merge) step.
 
 Armed with this knowledge, we can finish our app with the `merge` logic, so let's do it!
 
@@ -650,15 +653,14 @@ fn main() {
 }
 ```
 
-Here, `dispatcher` is part of our `gwasm-api` is essentially speaking, it
-ties all 3 stages together.
+The `dispatcher` module is a core of our `gwasm-dispatcher` crate and ties all 3 stages of the gWASM app.
 
 Putting everything together, we get the following `main.rs` file for our
 "hello world!" app:
 
 ```rust
 // main.rs
-use gwasm_api::{dispatcher, SplitContext};
+use gwasm_dispatcher::{dispatcher, SplitContext};
 
 fn main() {
     dispatcher::run(split, execute, merge).unwrap()
@@ -691,12 +693,12 @@ fn merge(_args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>) {
 }
 ```
 
-> Don't forget to add `gwasm-api` as a dependency in your `Cargo.toml`:
+> Don't forget to add `gwasm-dispather` as a dependency in your `Cargo.toml`:
 
 ```toml
 // Cargo.toml
 [dependencies]
-gwasm-api = { git="https://github.com/golemfactory/gwasm-runner.git" }
+gwasm-dispatcher = { git="https://github.com/golemfactory/gwasm-runner.git" }
 ```
 
 #### Building the example
@@ -713,13 +715,15 @@ rustup target add wasm32-unknown-emscripten
 
 4. **Go to the example project's root directory (where its `Cargo.toml` file is located) and build it by running:**
 
+Activate the Emscripten SDK environment in your shell. This is mentioned in the SDK's [installation instructions](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions).
+
 ```bash
 cargo rustc --target=wasm32-unknown-emscripten -- -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
 ```
 
 The flag `--target` specifies the target platform we want to compile to. The arguments which come after `--` will be passed directly to the compiler. In our case, we disable the async compilation feature of Emscripten. This is necessary if we'd like to execute our app on the Golem network, since the WASM sandbox used in the Golem client currently does not support that feature. This is a temporary situation and we expect this limitation to be lifted in the future releases of Golem.
 
-Also, please note that you will need to have the Emscripten SDK environment set up in the shell from which you're running `cargo rustc`. This is mentioned in the SDK's [installation instructions](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions).
+
 
 #### Running the example
 Once your application is compiled to WASM, you can run it using `gwasm-runner`!
@@ -762,7 +766,7 @@ In order for this to work, you'll need a Golem node (version 0.21+) running loca
 }
 ```
 
-To change the default values (e.g. when the datadir for your local Golem instance is located somewhere else) a JSON configuration file needs to be created. Under Linux, this file should be placed under: `~/.config/g-wasm-runner/brass/config.json`. You can copy the above JSON object, modify the fields' values and put it into that file. The runner will print its currently used configuration upon start-up.
+To change the default values (e.g. the datadir for your local Golem instance) you need to manually create a JSON file under: `~/.config/g-wasm-runner/brass/config.json` for Linux and `~/Library/Application\ Support/g-wasm-runner/brass/config.json`. You can copy the above JSON object, and modify what you need. The runner will print its currently used configuration upon start-up.
 
 **Running on Golem Unlimited**
 
