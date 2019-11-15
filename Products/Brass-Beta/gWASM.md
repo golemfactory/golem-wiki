@@ -653,7 +653,7 @@ fn main() {
 }
 ```
 
-The `dispatcher` module is a core of our `gwasm-dispatcher` crate and ties all 3 stages of the gWASM app.
+The `dispatcher` module is the core of our `gwasm-dispatcher` crate and ties all 3 stages of the gWASM app.
 
 Putting everything together, we get the following `main.rs` file for our
 "hello world!" app:
