@@ -510,7 +510,7 @@ Date and time operations are mocked, you should not rely on them. Currently you 
 
 ### gWASM runner
 
-We have biult [gwasm-runner](https://github.com/golemfactory/gwasm-runner) to faciliate development of gWASM apps. It includes three components:
+We have built [gwasm-runner](https://github.com/golemfactory/gwasm-runner) to facilitate development of gWASM apps. It includes three components:
 
 - **gWASM dispatcher API** a minimalistic API with just three operations for creating gWASM runner compatible apps.
 - **a WebAssembly sandbox** for running **WASM code locally**,
