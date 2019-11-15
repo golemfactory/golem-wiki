@@ -517,7 +517,7 @@ We have built [gwasm-runner](https://github.com/golemfactory/gwasm-runner) to fa
 - **basic communication** with either a **Golem network** node or a **Golem Unlimited** hub,
 
 #### gWASM dispatcher API
-?>  It is a minimalistic (three-op) interface which resembles the map-reduce paradigm. In essence: **if you can tailor your app to this API, you can run it on gWASM using `gwasm-runner`!** To integrate with the runner, an application must implement three callbacks:
+?>  It is a minimalistic interface which resembles the map-reduce paradigm. In essence: **if you can tailor your app to this API, you can run it on gWASM using `gwasm-runner`!** To integrate with the runner, an application must implement three callbacks:
 
 1. **`split` - divide the problem into subproblems.**
 2. **`execute` - performs computation for all subproblems independently.**
@@ -587,9 +587,9 @@ fn split(_ctx: &mut dyn SplitContext) -> Vec<(Task,)> {
 
 #### Execute
 
-?> Having generated gWASM tasks, we now need to provide a "worker" function which 
-in our case will calculate a sum of each task's elements. The logic that performs this action
-is represented by an `execute` function of our API, and it's signature can be summarised
+?> Having generated gWASM tasks we now need to provide a "worker" function which, 
+in our case, will calculate a sum of each task's elements. The logic that performs this action
+is represented by an `execute` function of our API, and its signature can be summarised
 as follows:
 
 ```rust
@@ -626,7 +626,7 @@ fn merge(args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>);
 `merge` function takes two arguments: `args` vector of `String`s, and `results` vector
 of input `Task`s with their corresponding `TaskResult`s. 
 
-You can think of `args` as the owned (for consumption) version of command line arguments (they are primarily accesible within `split` function via [`SplitContext`](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/trait.SplitContext.html)). It is here only for completeness, when `merge` also needs to access them.
+You can think of `args` as the owned (for consumption) version of command line arguments (they are primarily accesible within `split` function via [`SplitContext`](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/trait.SplitContext.html)). It is here only for completeness, for when `merge` also needs access to them.
 
 The `results` vector is much more interesting for us at this stage.
 Its structure is as follows: for each generated `Task` from the [Split](#split) step,
@@ -766,7 +766,7 @@ In order for this to work, you'll need a Golem node (version 0.21+) running loca
 }
 ```
 
-To change the default values (e.g. the datadir for your local Golem instance) you need to manually create a JSON file under: `~/.config/g-wasm-runner/brass/config.json` for Linux and `~/Library/Application\ Support/g-wasm-runner/brass/config.json`. You can copy the above JSON object, and modify what you need. The runner will print its currently used configuration upon start-up.
+To change the default values (e.g. the datadir for your local Golem instance) you need to manually create a JSON file under: `~/.config/g-wasm-runner/brass/config.json` for Linux and `~/Library/Application\ Support/g-wasm-runner/brass/config.json` for macOS. You can copy the above JSON object and modify what you need. The runner will print its currently used configuration upon start-up.
 
 **Running on Golem Unlimited**
 
