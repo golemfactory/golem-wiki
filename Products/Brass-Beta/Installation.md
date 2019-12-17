@@ -761,7 +761,7 @@ The officially supported release is 16.04 at the moment.
 
 1. `wget https://raw.githubusercontent.com/golemfactory/golem/develop/Installer/Installer_Linux/install.sh`
 2. `chmod +x install.sh`
-3. `./install.sh --deps-only`
+3. `./install.sh`
 
 Run Golem normally and it will build the required docker images if the prerequisites have been satisfied.
 
