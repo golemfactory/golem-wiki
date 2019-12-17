@@ -145,25 +145,38 @@ The peers list you see reflects the nodes connected in the bottom left corner of
 #### Golem Settings allow you to:
 ![installer](/img/usage/node_stats.jpg)
 
-1. Change your Node Name
-2. View and copy your Node ID
-3. Access more information on how to backup your Golem
-4. Calculate performance benchmarks
-5. Set your prices
-6. Set Network Trust
-7. Change Default File Location
-8. Set custom Geth
-9. Check the the peers list 
+1. Change and adjust your node settings
+2. View your node statistics
+3. Access Control List
+4. Set your node name and check your node ID
+5. Your account QR code
+6. Access performance and benchmark settings
+7. Set your prices
+8. Concent Service settings (turn Concent Service on and off)
+9. Set Network Trust
+10. Change Default File Location
+11. Set custom Geth
+12. Check the the peers list 
 
 
 ?> **Note** You can increase the size of the app vertically to see Settings options more clearly!
 
-#### Node Name
+#### Node settings
+
+This tab allows you to change your node settings
+
+#### Node statistics
+![installer](/img/usage/node-statistics.jpg)
+
+View your node statistics. In the **Reasons for not supporting tasks** view you can hover over each item to learn on the reasons why your tasks when being a provider might have failed and adjust your node accordingly. For eg. turn on Concent Service. 
+
+#### Access Control list
+
+**Open mode** (default one) allows you to ban nodes from interacting with your node. Open mode is working as regular blackist. In this mode you are selecting nodes from **All known seeds** list, so all the nodes that you have previously interacted with. In **Restricted mode** you are creating your own network of trusted nodes. Here you have to manually provide *node ID* of all the nodes you want to connect to. This mode will exclude you from the rest of the network. 
+
+#### Node Name & Node ID
 
 Hover over your Node Name beneath your profile picture, until you see a “pencil” icon. Click to edit. This is shown along with your Node ID, so your node can be identified during computation.
-
-#### Node ID
-
 Your Node ID is a long HEX number used to identify you in the network. It is a unique identifier that cannot be changed. This is necessary for your node to connect to other nodes for computation, and for troubleshooting if any issues arise.
 
 #### Performance
