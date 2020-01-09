@@ -78,7 +78,13 @@ Transactions that are awaiting could be due to the other node not verifying the 
 
 This is something that our Concent service will address in the future, right now it is a risk of using the Beta. In this case, the transaction could still be waiting for the node to verify the work completed, IE, download the task.
 
-![installer](/img/usage/hiostory_view_timeout.jpg) 
+![installer](/img/usage/hiostory_view_timeout.jpg)
+
+#### I don't see GNT on Etherscan
+
+The GNT you are seeing in the Brass Golem is in our wrapper, GNTB ("B" stands for batching transactions). To facilitate batch transfers and more secure transactions going forward, we use GNTB for transfers then it is converted to GNT automatically for your use. If you want to view your GNTB balance, you can check out the smart contract and search for your address in the "Balance of" query section. Etherscan doesn't automatically detect GNTB transfer because batchTransfer doesn't emit ERC20 compliant Transfer event. So Golem can show non zero balance and etherscan will show no activity on the account. One can go to the [GNTB contract](https://etherscan.io/token/0xa7dfb33234098c66fde44907e918dad70a3f211c#readContract) and in the "read smart contract" tab put their address to query for the balance - it will be non zero. And after that etherscan may pick up and start showing token balance in the account view.
+You may also find the batching contract address in the Brass Beta visual interface in the account details. 
+Your tokens will be converted to GNT eventually and you will be able to withdraw it from your app.
 
 
 ## Timeouts and errors
