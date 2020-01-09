@@ -172,7 +172,8 @@ View your node's statistics. In the **Reasons for not supporting tasks** view yo
 
 #### Access Control List
 
-**Open mode** (default) allows you to ban nodes from interacting with your node. Open mode works like a regular blacklist. In this mode, you select nodes from the ones you have previously interacted with (**All known seeds**). In **Restricted mode**, you create your own network of trusted nodes. Here you have to manually provide the *node ID* of all the nodes you want to connect to. This mode will exclude you from the rest of the network. 
+**Open mode** (default) allows you to ban nodes from interacting with your node. Open mode works like a regular blacklist. In this mode, you select nodes from the ones you have previously interacted with (**All known seeds**). To be able to connect with the node which was previously added to your blacklist, you have to remove it from there first. Only after unlocking the node you will be able to interact with it both as a requestor and a provider.
+In **Restricted mode**, you create your own network of trusted nodes. Here you have to manually provide the *node ID* of all the nodes you want to connect to. This mode will exclude you from the rest of the network. 
 
 #### Node Name & Node ID
 
