@@ -22,6 +22,9 @@
 * [Understanding Logs](Products/Brass-Beta/Understanding-Logs.md)
 * [Testing](Products/Brass-Beta/Testing.md)
 * [gWASM](Products/Brass-Beta/gWASM.md)</ul>
+- <p class="product">Task API</p>
+<ul class="app-sub-sidebar">
+* [Task API docs](https://taskapi.docs.golem.network)</ul>
 - <p class="product">Unlimited</p>
 <ul class="app-sub-sidebar">
 * [Basic Usage](Products/Unlimited/Basic-Usage.md)</ul>
