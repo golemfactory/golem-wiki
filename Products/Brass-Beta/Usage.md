@@ -145,25 +145,39 @@ The peers list you see reflects the nodes connected in the bottom left corner of
 #### Golem Settings allow you to:
 ![installer](/img/usage/node_stats.jpg)
 
-1. Change your Node Name
-2. View and copy your Node ID
-3. Access more information on how to backup your Golem
-4. Calculate performance benchmarks
-5. Set your prices
-6. Set Network Trust
-7. Change Default File Location
-8. Set custom Geth
-9. Check the the peers list 
+1. Change and adjust your node settings
+2. View your node statistics
+3. Create and modify your node's Access Control List
+4. Set your node name and check your node ID
+5. View your account QR code
+6. Access performance and benchmark settings
+7. Set your prices
+8. Change Concent Service settings (turn Concent Service on and off)
+9. Set network trust
+10. Change the default location of output files
+11. Set custom Geth
+12. Check the node's peers list
 
 
 ?> **Note** You can increase the size of the app vertically to see Settings options more clearly!
 
-#### Node Name
+#### Node settings
+
+This tab allows you to change your node settings.
+
+#### Node statistics
+![installer](/img/usage/node-statistics.jpg)
+
+View your node's statistics. In the **Reasons for not supporting tasks** view you can hover over each item to learn why your node has failed computing tasks and what you can do to prevent these failures from happening (e.g. switch on the Concent Service).
+
+#### Access Control List
+
+**Open mode** (default) allows you to ban nodes from interacting with your node. Open mode works like a regular blacklist. In this mode, you select nodes from the ones you have previously interacted with (**All known seeds**). To be able to connect with the node which was previously added to your blacklist, you have to remove it from there first. Only after unlocking the node you will be able to interact with it both as a requestor and a provider.
+In **Restricted mode**, you create your own network of trusted nodes. Here you have to manually provide the *node ID* of all the nodes you want to connect to. This mode will exclude you from the rest of the network. 
+
+#### Node Name & Node ID
 
 Hover over your Node Name beneath your profile picture, until you see a “pencil” icon. Click to edit. This is shown along with your Node ID, so your node can be identified during computation.
-
-#### Node ID
-
 Your Node ID is a long HEX number used to identify you in the network. It is a unique identifier that cannot be changed. This is necessary for your node to connect to other nodes for computation, and for troubleshooting if any issues arise.
 
 #### Performance
@@ -233,8 +247,6 @@ There are options to start geth from golem on the current machine on a certain p
 ** **
 ## Concent service
 
-*So far, all Concent-related functions are enabled and available only when launching Golem on testnet. They will be enabled on mainnet, only after the Concent Service itself is officially launched into the Ethereum mainnet in one of the future releases.*
-
 ![installer](/img/usage/concent_intro.jpg)
 
 #### Brief overview
@@ -245,7 +257,9 @@ Concent is Golem’s network service, which aims to improve the integrity and se
 ![installer](/img/usage/concent_setup.jpg)
 
 #### Requirements
-To use the Concent Service, you will need to: accept Concent Service terms & conditions. Have some **GNT (used for the actual deposit)** and a small amount of **ETH (used for gas)** available on your account to submit a deposit to the Concent Service.
+To use the Concent Service, you will need to: 
+* accept Concent Service terms & conditions 
+* have some **GNT (used for the actual deposit)** and a small amount of **ETH (used for gas)** available on your account to submit a deposit to the Concent Service.
 
 #### How does it work?
 The flow of funds to the Concent Service is represented in the form of Deposits. To increase fairness in the network, you may opt-in to pledge a small amount of your funds to the Concent Service as a promise of ethical behavior in the network. Other Golem nodes may verify the presence of such a deposit and be more eager to work with you, knowing that there’s an objective party they can turn to in case their partner misbehaves.
@@ -255,29 +269,40 @@ The flow of funds to the Concent Service is represented in the form of Deposits.
 **All transactions in Concent Service are done on users behalf, so besides turning it on, there is no other action required. However Concent Service will require both GNT and ETH in order to create the deposit.**
 
 #### When will Concent Service intervene?
-1. Enforcing reports on the completion of a task If you act as a provider and your node cannot establish a connection with the requestor through the usual peer-to-peer communication channel to report the successful completion of their assigned task, it will seek assistance from the Concent Service in relaying that information back to the requestor, and more importantly, acknowledgment that the message was received can later be used to seek payment for the provided service.
 
-2. Enforcing results download In case problems arise while downloading results from providers, a requestor node will reach out to the Concent Service which in turn will ask the provider to upload their results to the Concent Node. Once the upload finishes, Concent will verify its integrity and make the results available for download by the requestor so the computation task’s flow may resume.
+**1. Enforcing reports on the completion of a task.**
 
-	On the other hand, should the Concent itself fail to acquire the results, it will provide the requestor with a proof of this failure which the requestor may later use, should the provider still seek payment for the task afterward.
+If you act as a provider and your node cannot establish a connection with the requestor through the usual peer-to-peer communication channel to report the successful completion of their assigned task, it will seek assistance from the Concent Service in relaying that information back to the requestor, and more importantly, acknowledgment that the message was received can later be used to seek payment for the provided service.
 
-3. Force acceptance of the results If for any reason, some time after the results are delivered to the requestor (either through normal communications - or - through Concent’s mediation in the scenarios above), the provider doesn’t receive a response regarding the result of verification, they will again use the Concent Service to acquire a verdict.
+**2. Enforcing results download.**
 
-	Normally, the Concent Service will ask the requestor to provide the verdict and if it is provided - whether it’s an acceptance or rejection of the results - that verdict is then relayed back to the provider.
+In case problems arise while downloading results from providers, a requestor node will reach out to the Concent Service which in turn will ask the provider to upload their results to the Concent Node. Once the upload finishes, Concent will verify its integrity and make the results available for download by the requestor so the computation task’s flow may resume.
 
-	It may happen that the requestor will go offline before they communicate their decision. In this use case, Concent Service will automatically assume acceptance of the results and will pay the provider on the requestor’s behalf using the requestor’s deposit.
+On the other hand, should the Concent itself fail to acquire the results, it will provide the requestor with a proof of this failure which the requestor may later use, should the provider still seek payment for the task afterward.
 
-4. Additional verification Should the requestor reject the provider’s computation result, an honest provider will obviously want to verify that decision with an objective party. Since verification is computationally expensive to the Concent Service, to prevent abuse of the service, in order to trigger this use case, the provider must submit their own deposit to the Concent Service.
+**3. Force acceptance of the results.**
 
-	After the Concent Service ensures that both parties have the required deposits and that the original resources package from the requestor and the result package from the provider are both uploaded with their integrity is intact, the Concent Service will run its own verification of the results and thus check if the rejection was justified.
+If for any reason, some time after the results are delivered to the requestor (either through normal communications - or - through Concent’s mediation in the scenarios above), the provider doesn’t receive a response regarding the result of verification, they will again use the Concent Service to acquire a verdict.
 
-	Should the Concent Service decide that the results of this computation were wrongly rejected, it will force payment from the requestor to the provider by transferring the adequate amount from the requestor’s deposit while at the same time using the same deposit to cover their own verification fee.
+Normally, the Concent Service will ask the requestor to provide the verdict and if it is provided - whether it’s an acceptance or rejection of the results - that verdict is then relayed back to the provider.
 
-	On the other hand, if the Concent’s own verification results in a failure, the Concent Service will be forced to cover the verification fee using the provider’s deposit.
+It may happen that the requestor will go offline before they communicate their decision. In this use case, Concent Service will automatically assume acceptance of the results and will pay the provider on the requestor’s behalf using the requestor’s deposit.
 
-5. Force payment Every node that acts in the network as a requestor has the appropriate time to make the payment for tasks they commission to providers. Once this time expires, providers may ask the Concent Service to force payment for such tasks using the requestors deposits.
+**4. Additional verification.**
 
-	In this situation, Concent Service will search the Ethereum blockchain to see if indeed the payment for said tasks hadn’t been made directly and will only use the deposit if it fails to identify matching transactions.
+Should the requestor reject the provider’s computation result, an honest provider will obviously want to verify that decision with an objective party. Since verification is computationally expensive to the Concent Service, to prevent abuse of the service, in order to trigger this use case, the provider must submit their own deposit to the Concent Service.
+
+After the Concent Service ensures that both parties have the required deposits and that the original resources package from the requestor and the result package from the provider are both uploaded with their integrity is intact, the Concent Service will run its own verification of the results and thus check if the rejection was justified.
+
+Should the Concent Service decide that the results of this computation were wrongly rejected, it will force payment from the requestor to the provider by transferring the adequate amount from the requestor’s deposit while at the same time using the same deposit to cover their own verification fee.
+
+On the other hand, if the Concent’s own verification results in a failure, the Concent Service will be forced to cover the verification fee using the provider’s deposit.
+
+**5. Force payment.**
+
+Every node that acts in the network as a requestor has the appropriate time to make the payment for tasks they commission to providers. Once this time expires, providers may ask the Concent Service to force payment for such tasks using the requestors deposits.
+
+In this situation, Concent Service will search the Ethereum blockchain to see if indeed the payment for said tasks hadn’t been made directly and will only use the deposit if it fails to identify matching transactions.
 
 **Mentioned above are current Concent Service use cases. They will expand in time, and all new implemented use cases will be described here in the documentation.**	
 
@@ -288,7 +313,7 @@ Yes, you can, but we strongly encourage you to use it to improve fairness in the
 If your node is not manifesting malicious behavior in the network, the only cost you will be charged with is transaction fees between you and the Concent Service. Payments from Deposit are going to be distributed through providers and requestors in regular amount.
 
 #### Why is Deposit amount higher than the cost of task?
-To ensure that you have enough funds to participate in the network. The real cost of a task is unchanging. The cost of the first Deposit payment made with Concent Service will be four times higher than the price of your task. Future Deposit payments will be based on the total cost of your jobs and the amount of funds in the Deposit. Providers using Concent Service will check if requestors have no less than twice the amount of funds in their Deposit for covering a task payment. In case they do not, the Concent Service will update the Deposit to match this requirement.
+The deposit is maintained to ensure that you have enough funds to cover the potential claims related to the tasks you request in the network. The cost of tasks is not changing. The amount of the first deposit transfer to the Concent Service will be four times higher than the price of your task. Future deposit transfers will be based on the total cost of your jobs and the amount of funds in the deposit. Providers using Concent Service will check if requestors have no less than twice the amount of funds in their deposit for covering a task payment. Knowing that, Requestors will update their deposit to match this requirement before requesting a new task.
 
 #### I can afford a task, but not a Deposit
 If you have enough tokens on your account to create a task you will have an option to either: top up your account with the required amount to continue with Concent Service or compute this particular task without the Concent Service.
@@ -371,4 +396,3 @@ From this data directory you want to include in your backup:
 ##### Restoring your backup
 
 To restore your settings and keys, move all the files back to the original locations mentioned above before running golem. Please note: In the current version it is not supported to restore the backup on another OS, or another user account, use this at own risk.
-
