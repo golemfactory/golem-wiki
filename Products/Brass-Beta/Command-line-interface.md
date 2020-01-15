@@ -782,6 +782,8 @@ To compute on gpu add:
     "compute_on": "gpu",
 ```
 
+###### `tasks create -n --dry run` - Standard dry run of a task. Checks tasks without commissioning it to the network. 
+
 ---
 
 ###### `tasks restart` - Restart a task
@@ -1231,6 +1233,82 @@ SUBCOMMANDS:
     clear    Clear provider and requestor cache files
     help     Prints this message or the help of the given subcommand(s)
 ```
+
+---
+
+### Wallet
+
+?> Wallet operations 
+
+```
+wallet 0.3.0
+Golem Factory <contact@golem.network>
+Wallet operations
+
+USAGE:
+    wallet [FLAGS] <SUBCOMMAND>
+
+FLAGS:
+        --json    Return results in JSON format
+    -h, --help    Prints help information
+
+SUBCOMMANDS:
+    show    Show payments
+    help    Prints this message or the help of the given subcommand(s)
+```
+
+###### `wallet show` - Display all incomes (by default prints table with all income transactions with their statuses and amounts) 
+
+###### Wallet show example:
+
+┌────────────────┬─────────────┬─────────────────────────────┬─────────────┬───────────┐
+│  type          │  status     │  amount                     │  fee (ETH)  │  task_id  │
+├────────────────┼─────────────┼─────────────────────────────┼─────────────┼───────────┤
+│  task_payment  │  overdue    │  +0 GNT                     │  0 ETH      │           │
+...
+│  task_payment  │  confirmed  │  +0.014621102509523771 GNT  │  0 ETH      │           │
+│  task_payment  │  confirmed  │  +0.175055555555555556 GNT  │  0 ETH      │           │
+│  task_payment  │  confirmed  │  +0.035055555555555556 GNT  │  0 ETH      │           │
+│  task_payment  │  confirmed  │  +0.035055555555555556 GNT  │  0 ETH      │           │
+│  task_payment  │  confirmed  │  +0.005095359097787075 GNT  │  0 ETH      │           │
+│  task_payment  │  confirmed  │  +0.006861111111111112 GNT  │  0 ETH      │           │
+└────────────────┴─────────────┴─────────────────────────────┴─────────────┴───────────┘
+
+###### `wallet show --help` - Display additional wallet show commands
+
+```
+USAGE:
+    wallet show [FLAGS] [OPTIONS] [page]
+
+FLAGS:
+        --json    Return results in JSON format
+    -h, --help    Prints help information
+
+OPTIONS:
+        --direction <direction>              Operation direction [possible values: incoming, outgoing]
+        --operation-type <operation_type>    Operation type [possible values: transfer, deposit_transfer,
+                                             task_payment, deposit_payment]
+        --per-page <per_page>                How many records per page
+
+ARGS:
+    <page>    
+```
+
+`wallet show --direction outgoing` example:
+
+┌────────────────┬─────────────┬─────────────────────────────┬─────────────────────┬────────────────────────────────────────┐
+│  type          │  status     │  amount                     │  fee (ETH)          │  task_id                               │
+├────────────────┼─────────────┼─────────────────────────────┼─────────────────────┼────────────────────────────────────────┤
+│  task_payment  │  confirmed  │  -0.011994975363026472 GNT  │  0.00001230603 ETH  │  28d64c64-e91c-11e9-84ac-4035c2a052f0  │
+│  task_payment  │  confirmed  │  -0.012036930358726568 GNT  │  0.00001230603 ETH  │  28d64c64-e91c-11e9-84ac-4035c2a052f0  │
+...
+│  task_payment  │  confirmed  │  -0.009944444444444445 GNT  │  0.00001230603 ETH  │  28d64c64-e91c-11e9-84ac-4035c2a052f0  │
+│  task_payment  │  confirmed  │  -0.011961928322119616 GNT  │  0.00001230603 ETH  │  28d64c64-e91c-11e9-84ac-4035c2a052f0  │
+│  task_payment  │  confirmed  │  -0.009944444444444445 GNT  │  0.00001230603 ETH  │  28d64c64-e91c-11e9-84ac-4035c2a052f0  │
+│  task_payment  │  confirmed  │  -0.009944444444444445 GNT  │  0.00001230603 ETH  │  28d64c64-e91c-11e9-84ac-4035c2a052f0  │
+└────────────────┴─────────────┴─────────────────────────────┴─────────────────────┴────────────────────────────────────────┘
+
+?> Wallet show will soon replace `golemcli incomes` and `golemcli payments`
 
 ---
 
