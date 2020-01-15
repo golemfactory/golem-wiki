@@ -4,8 +4,8 @@
 
 * Golem recognizes if you are using a .blend and automatically assigns your task to the correct software.
 If you are rendering heavy tasks on Golem please make sure that you share/provide Golem with RAM (more than 8GB may be needed) to properly verify a task.
-* Golem supports all official Blender engines (Blender Render, Cycles Render) and uses settings from your .blend file. In the near future we are going to add samples for Cycles, but for now you should set your prefered samples amount inside Blender before adding a task.  
-* Scene files should be saved in .blend format - version 2.79
+* Golem supports official Blender engine - Cycles Render (currently we do not provide support for Eevee) and uses settings from your .blend file.  
+* Scene files should be saved in .blend format - version 2.8
 * If you are going to use additional assets you should include the main .blend file next to the assets folder. Also make sure that inside the scene all paths are correctly linked and that you use relative paths.
 * Please be sure to include all the assets before uploading a task to Golem.
 * Ensure that your scene does not have any random objects. You can turn off “random” in your scene or prebake elements if needed before adding them to Golem and attach cache files to the assets folder.
