@@ -180,7 +180,7 @@ To run golem from source on Windows you need to have:
 
 - [Git](https://git-scm.com/download/)
 - [Python 3.6 x64](https://www.python.org/ftp/python/3.6.2/python-3.6.2-amd64.exe)
-- [pywin32 221 x64 py3.6](https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe)
+- [pywin32 223 x64 py3.6](https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe)
 - [VisualStudio Express 2017 x64](https://www.visualstudio.com/vs/visual-studio-express/)
 - [Rust x64 Stable msvc](https://forge.rust-lang.org/other-installation-methods.html)
 - [Latest golem version](https://golem-releases.cdn.golem.network/)
@@ -221,7 +221,7 @@ python 3.6.4
 ?> Note that `3.6` is what we are looking for, higher patch numbers should be fine.
 
 #### Pywin32
-[pywin32 221 x64 py3.6](https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe)
+[pywin32 223 x64 py3.6](https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe)
 
 Download the installer and run it, make sure to select the python folder you just installed ( python 3.6 ).
 
