@@ -553,8 +553,8 @@ python golemapp.py
 
 2. Afterwards, run the following script in the terminal:
 ```bash
-brew tap caskroom/cask
 brew tap golemfactory/golem
+brew tap golemfactory/hyperg
 brew cask install golem
 ```
 3. Since 0.18.0 uses Docker for Mac, the first step is to make sure that all previous Docker instances are removed from your machine. Open terminal and type:
