@@ -42,7 +42,7 @@ If you would like to share your thoughts about **gWASM** please fill out this **
 In this quick tutorial you will
 
 * Install latest release of Golem
-* Run two nodes on the same machine (one being a Requestor, and second one being Provider) 
+* Pull precompiled gwasm-tutorial docer image from our Devcon5 workshops 
 * Run simple `hello world` task
 
 ---
@@ -51,7 +51,294 @@ In this quick tutorial you will
 
 [Follow installation instructions](/Products/Brass-Beta/Installation.md). Remember that it is required to run in the background during gWASM computations.
 
-#### 2. Create a subnet of nodes
+----
+
+#### 2. Setup Development Environment
+
+?> To get started **you will need Docker with our image** on your machine. 
+If you don't have it yet:
+
+###### Pull gwasm-tutorial docker image
+
+If you already have working docker installation simply
+
+```bash
+docker pull docker.devcon.golem.network/gwasm-tutorial
+```
+And that's it! You should now be good to go!
+
+---
+
+Secondly, some of the exercises will produce some file output, so it might be useful to
+create a local scratch directory and map it to a specific internal Docker directory:
+
+```
+mkdir gwasm-tutorial-workspace
+```
+
+##### 2.a. On Unix, run:
+
+```
+docker run -it -v $(pwd)/gwasm-tutorial-workspace:/data docker.devcon.golem.network/gwasm-tutorial
+```
+
+##### 2.b. On Windows, however, run:
+
+```
+docker run -it -v %cd%\gwasm-tutorial-workspace:/data docker.devcon.golem.network/gwasm-tutorial
+```
+
+?> **Now you should be inside Docker and ready to go!**
+
+---
+
+#### 3. Hello World! example
+
+Before tackling some more interesting problems with gWasm, let's first get acquainted with
+the `gwasm-api`, the API which we'll use to interface our apps with gWasm. Essentially
+speaking, if you can tailor your app to this API, you can run it on gWasm using our
+`gwasm-runner` tool! So, without further gilding the lily, let's crack on!
+
+The best way to present an API is by way of example. For the "hello world!" example,
+we'll try something really simple. Namely, we will try and sum integers in the range
+of `1..100` inclusive, but we will split the task into `10` subtasks, or gWasm tasks.
+So how do we do this? We proceed in stages which we'll describe below in more detail:
+  1. we split the input array of `100` integers into `10` subarrays such that `[1,...,10]`,
+     `[11,...,20]`, `...`, `[91,...,100]`
+  2. for each subarray, we calculate the sum of elements; for instance, `sum([1,...,10]) = 55`
+  3. finally, we combine all intermediate sums into one final sum, our final value
+
+#### 3.1. The gWasm runner API
+
+Before we dig in, please note that you can see the fully assembled example in
+[Final result](#final-result). Firstly, just for convenience, let's introduce two
+helper "types" (or type aliases in Rust's terminology)
+
+```rust
+type Task = Vec<u64>;
+type TaskResult = u64;
+```
+
+Here, as you've probably already guessed, `Task = Vec<u64>` represents the gWasm task, so
+a subarray of integers we will sum to generate the `TaskResult`, i.e., a `u64` value.
+
+##### Split
+
+`split` function is responsible for splitting the input problem into subproblems, or gWasm
+tasks. It's signature can be summarised as follows:
+
+```rust
+fn split(ctx: &mut dyn SplitContext) -> Vec<(Task,)>;
+```
+
+Firstly, note that, as expected, `split` is required to generate a vector of tasks.
+There is one technicality here we need to get our heads round. The API is constructed
+in such a way that `split` returns a `Vec` of tuples. Hence, if we have only one
+return value as is in this case, we need to wrap it up in a one-element tuple, so
+`Vec<(Task,)>`. Furthermore, you've also probably noticed that `split` accepts
+a context argument, `SplitContext`. Within this argument, you can interface with
+the invoker of your gWasm app with `gwasm-runner` and receive and parse any
+passed in command line arguments.
+
+Now, back to our example. Our implementation of `split` needs to generate a vector
+of `10` `Task`s. Let's do this then!
+
+```rust
+fn split(_ctx: &mut dyn SplitContext) -> Vec<(Task,)> {
+    const NUM_SUBTASKS: usize = 10;              // number of gWasm tasks we'll generate
+    let arr: Vec<u64> = (1..=100).collect();     // this is our input vector of 100 integers
+    let mut tasks: Vec<(Task,)> = Vec::new();    // note the one-element tuple
+    for chunk in arr.chunks(NUM_SUBTASKS) {      // split the input into chunks, 10 integers each
+        let task: Task = chunk.to_vec();         // convert chunk into Task
+        tasks.push((task,));                     // save each task
+    }
+    tasks
+}
+```
+
+##### Exec
+
+Having generated gWasm tasks, we now need to provide a method to generate a sum
+of each task's elements. The logic that performs this action is represented by
+an `exec` function of our API, and it's signature can be summarised as follows:
+
+```rust
+fn exec(task: Task) -> (TaskResult,);
+```
+
+Just like in `split`'s case, `exec` is subject to the same technicality. That is,
+the API is constructed in such a way that `exec` returns a tuple. Hence, if we have
+only one return value as is in this case, we need to wrap it up in a one-element tuple.
+
+`exec` function is actually where all the Golem magic happens. Every `Task` passed
+into the `exec` function is distributed over GU cluster (when `gwasm-runner`
+is used with the GU as the backend), or over Brass network (when `gwasm-runner` is
+used with the Brass as the backend). More on that later.
+
+All that's left now is to fill in `exec` with the summing logic, so let's do just that!
+
+```rust
+fn exec(task: Task) -> (TaskResult,) {
+    let task_result: u64 = task.into_iter().sum(); // this is the sum of our sub-problem
+    (task_result,)                                 // note the one-element tuple like for `split`
+}
+```
+
+##### Merge
+
+Finally, we need to merge the intermediate sums into the final sum, and hence, the
+solution to our problem. This is done in the `merge` function:
+
+```rust
+fn merge(args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>);
+```
+
+`merge` function takes two arguments: `args` vector of `String`s, and `results` vector
+of input `Task`s as well as the generated `TaskResult`s. You can think of `args` as
+the owned (for consumption) version of `SplitContext` you saw in `split` function.
+We will not dig deeper into the purpose of `args` at this time, and we refer the interested
+Reader to our [gwasm-api docs]. `results` vector is more interesting for us at this stage.
+Its structure is as follows: for each generated `Task` in the [Split](#split) step,
+we have a matching generated `TaskResult` in the [Merge](#merge) step.
+
+Armed with this knowledge, we can finish our app with the `merge` logic, so let's do it!
+
+```rust
+fn merge(_args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>) {
+    let task_results: Vec<TaskResult> = results.into_iter().map(|(_, (result,))| result).collect(); // extract intermediate sums
+    let final_sum: u64 = task_results.into_iter().sum();                                            // merge sums into final sum
+    let expected: u64 = (1..=100).sum();                                                            // calculate the sum directly
+    assert_eq!(final_sum, expected, "the sums should be equal")                                     // check that both solutions match
+}
+```
+
+##### Final result
+
+Finally, we can put all of this together into one final `main` function:
+
+```rust
+fn main() {
+    dispatcher::run(split, exec, merge).unwrap()
+}
+```
+
+Here, `dispatcher` is part of our `gwasm-api` is essentially speaking, it
+ties all 3 stages together.
+
+Putting everything together, we get the following `main.rs` file for our
+"hello world!" app:
+
+```rust
+// main.rs
+use gwasm_api::{dispatcher, SplitContext};
+
+fn main() {
+    dispatcher::run(split, exec, merge).unwrap()
+}
+
+type Task = Vec<u64>;
+type TaskResult = u64;
+
+fn split(_ctx: &mut dyn SplitContext) -> Vec<(Task,)> {
+    const NUM_SUBTASKS: usize = 10;
+    let arr: Vec<u64> = (1..=100).collect();
+    let mut tasks: Vec<(Task,)> = Vec::new();
+    for chunk in arr.chunks(NUM_SUBTASKS) {
+        let task: Task = chunk.to_vec();
+        tasks.push((task,));
+    }
+    tasks
+}
+
+fn exec(task: Task) -> (TaskResult,) {
+    let task_result: u64 = task.into_iter().sum();
+    (task_result,)
+}
+
+fn merge(_args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>) {
+    let task_results: Vec<TaskResult> = results.into_iter().map(|(_, (result,))| result).collect();
+    let final_sum: u64 = task_results.into_iter().sum();
+    let expected: u64 = (1..=100).sum();
+    assert_eq!(final_sum, expected, "the sums should be equal")
+}
+```
+
+Don't forget to add `gwasm-api` as a dependency in your `Cargo.toml`:
+
+```toml
+// Cargo.toml
+[dependencies]
+gwasm-api = { git="https://github.com/golemfactory/gwasm-runner.git" }
+```
+
+All of the code presented in this tutorial is available for you prepackaged as a crate
+inside your Docker environment in `/root/hello-gwasm-runner/` folder. You can browse the `main.rs`
+using Vi editor as follows:
+
+```
+vi /root/hello-gwasm-runner/src/main.rs
+```
+
+Alternatively, if you want to clone the source, you can do so by cloning [hello-gwasm-runner]
+on Github.
+
+[hello-gwasm-runner]: https://github.com/golemfactory/hello-gwasm-runner
+
+#### 3.2. Build
+
+Let's try and build our "hello world!" app.
+
+##### Docker-based setup
+
+In your console where you are running `gwasm-tutorial` image, navigate to the `/root/hello-gwasm-runner`
+directory
+
+```
+cd /root/hello-gwasm-runner
+```
+
+and run
+
+```
+cargo build --release
+```
+
+You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
+
+```
+ls target/wasm32-unknown-emscripten/release
+```
+
+##### Standalone
+
+If you are following the tutorial without Docker, you can get the full source code of the app
+from the [github/golemfactory/hello-gwasm-runner] repo. Then, you can build it using standard
+`cargo build` command
+
+```
+cargo build --release
+```
+
+You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
+
+```
+ls target/wasm32-unknown-emscripten/release
+```
+
+#### 3.3. Run!
+
+In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it
+using Brass backend.
+
+##### Run locally
+
+```
+gwasm-runner -v --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
+```
+
+
+
+<!-- #### 2. Create a subnet of nodes
 
 Open up your terminal or command line and follow the steps below:
 
@@ -158,7 +445,7 @@ The content should be
 
 ```bash
 hello world!
-```
+``` -->
 
 ---
 
