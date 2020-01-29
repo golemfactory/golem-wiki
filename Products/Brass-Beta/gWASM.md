@@ -44,7 +44,8 @@ If you would like to share your thoughts about **gWASM** please fill out this **
 In this quick tutorial you will
 
 * Install latest release of Golem
-* Download latest gWASM runner backend 
+* Install Rustlang and emscripten
+* Download latest gWASM runner (Command line tool for running gWasm compatible apps locally, via Golem Unlimited or via Brass Golem.)
 * Run simple `hello world` task
 
 ---
@@ -53,11 +54,33 @@ In this quick tutorial you will
 
 [Follow installation instructions](/Products/Brass-Beta/Installation.md). Remember that it is required to run in the background during gWASM computations.
 
+---
+
+#### 2. Prerequisites
+
+Make sure that you have **Rustlang** and **emscripten** installed on your machine. 
+
+* [Rust](https://www.rust-lang.org/tools/install) - rustup toolchain add nightly `rustup target add wasm32-unknown-emscripten --toolchain nightly` TODO [JK - Rust issue link]
+* [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions)
+
+!> For **Windows** users! If you encounter any issues with **emscripten** on Windows we do recommend downloading **WSL** [Windows Subsystem for Linux](https://docs.microsoft.com/pl-pl/windows/wsl/install-win10) and following with the Linux instructions.
+
+
 ----
 
-#### 2. Setup Development Environment
+#### 3. Setup Development Environment
 
-?> To get started **you will need gWASM runner backend** on your machine:
+**gWASM runner** introduces minimalistic [gwasm dispatcher API](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/index.html) that resembles map-reduce paradigm.
+This API with only three operations:
+
+1. `split` - divide the problem into subproblems.
+2. `execute` - performs computation for all subproblems independently.
+3. `merge` - collect all computation results and formulate final result.
+
+enables developers to easily implement applications and run them on top of the [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
+
+
+?> Download **gWASM runner** for your OS:
 
 
 [gWASM runner for Windows](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-win64-0.3.1.zip)
@@ -83,7 +106,7 @@ mkdir gwasm-tutorial-workspace
 
 ---
 
-#### 3. Hello World! example
+#### 4. Hello World! example
 
 Before tackling some more interesting problems with gWasm, let's first get acquainted with
 the `gwasm-api`, the API which we'll use to interface our apps with gWasm. Essentially
@@ -99,7 +122,7 @@ So how do we do this? We proceed in stages which we'll describe below in more de
   2. for each subarray, we calculate the sum of elements; for instance, `sum([1,...,10]) = 55`
   3. finally, we combine all intermediate sums into one final sum, our final value
 
-#### 3.1. The gWasm runner API
+#### 4.1. The gWasm runner API
 
 Before we dig in, please note that you can see the fully assembled example in
 [Final result](#final-result). Firstly, just for convenience, let's introduce two
@@ -162,9 +185,9 @@ the API is constructed in such a way that `exec` returns a tuple. Hence, if we h
 only one return value as is in this case, we need to wrap it up in a one-element tuple.
 
 `exec` function is actually where all the Golem magic happens. Every `Task` passed
-into the `exec` function is distributed over GU cluster (when `gwasm-runner`
-is used with the GU as the backend), or over Brass network (when `gwasm-runner` is
-used with the Brass as the backend). More on that later.
+into the `exec` function is distributed over Brass network (when `gwasm-runner`
+is used with the Brass beta as the backend), or over GU cluster (when `gwasm-runner` is
+used with the GU as the backend). More on that later.
 
 All that's left now is to fill in `exec` with the summing logic, so let's do just that!
 
@@ -262,20 +285,12 @@ Don't forget to add `gwasm-api` as a dependency in your `Cargo.toml`:
 gwasm-api = { git="https://github.com/golemfactory/gwasm-runner.git" }
 ```
 
-All of the code presented in this tutorial is available for you prepackaged as a crate
-inside your Docker environment in `/root/hello-gwasm-runner/` folder. You can browse the `main.rs`
-using Vi editor as follows:
-
-```
-vi /root/hello-gwasm-runner/src/main.rs
-```
-
-Alternatively, if you want to clone the source, you can do so by cloning [hello-gwasm-runner]
+If you want to clone the source, you can do so by cloning [hello-gwasm-runner]
 on Github.
 
 [hello-gwasm-runner]: https://github.com/golemfactory/hello-gwasm-runner
 
-#### 3.2. Build
+#### 4.2. Build
 
 Let's try and build our "hello world!" app.
 
@@ -283,12 +298,14 @@ Let's try and build our "hello world!" app.
 ##### Standalone
 
 You can get the full source code of the app
-from the [github/golemfactory/hello-gwasm-runner] repo. Then, you can build it using standard
+from the [github/golemfactory/hello-gwasm-runner](https://github.com/golemfactory/hello-gwasm-runner) repo. Then, you can build it using standard
 `cargo build` command
 
 ```
 cargo build --release
 ```
+
+!> If you have issues with `build` make sure that you have **Python2** in your PATH as `python2`
 
 You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
 
@@ -296,7 +313,7 @@ You should then be able to find the build artifacts in `target/wasm32-unknown-em
 ls target/wasm32-unknown-emscripten/release
 ```
 
-#### 3.3. Run!
+#### 4.3. Run!
 
 In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Brass Beta:
 
