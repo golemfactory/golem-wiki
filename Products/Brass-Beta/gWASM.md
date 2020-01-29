@@ -39,10 +39,12 @@ If you would like to share your thoughts about **gWASM** please fill out this **
 
 ### Quick start - testing gWASM locally
 
+?> This tutorial is based on our Devcon5 gWASM workshops `hello world!` example. If you would like to set up your own Golem Unlimited cluster then follow instructions at [devcon5 worksops page](https://devcon.golem.network)
+
 In this quick tutorial you will
 
 * Install latest release of Golem
-* Pull precompiled gwasm-tutorial docer image from our Devcon5 workshops 
+* Download latest gWASM runner backend 
 * Run simple `hello world` task
 
 ---
@@ -55,40 +57,29 @@ In this quick tutorial you will
 
 #### 2. Setup Development Environment
 
-?> To get started **you will need Docker with our image** on your machine. 
-If you don't have it yet:
+?> To get started **you will need gWASM runner backend** on your machine:
 
-###### Pull gwasm-tutorial docker image
 
-If you already have working docker installation simply
+[gWASM runner for Windows](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-win64-0.3.1.zip)
 
-```bash
-docker pull docker.devcon.golem.network/gwasm-tutorial
-```
-And that's it! You should now be good to go!
+
+[gWASM runner for MacOs](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-macos-0.3.1.gz)
+
+
+[gWASM runner for Linux](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-linux-0.3.1.tar.gz)
+
+
 
 ---
 
 Secondly, some of the exercises will produce some file output, so it might be useful to
-create a local scratch directory and map it to a specific internal Docker directory:
+create a local scratch directory and map it to a specific internal directory:
 
 ```
 mkdir gwasm-tutorial-workspace
 ```
 
-##### 2.a. On Unix, run:
-
-```
-docker run -it -v $(pwd)/gwasm-tutorial-workspace:/data docker.devcon.golem.network/gwasm-tutorial
-```
-
-##### 2.b. On Windows, however, run:
-
-```
-docker run -it -v %cd%\gwasm-tutorial-workspace:/data docker.devcon.golem.network/gwasm-tutorial
-```
-
-?> **Now you should be inside Docker and ready to go!**
+**CD into created directory and you should be ready to go!**
 
 ---
 
@@ -288,30 +279,10 @@ on Github.
 
 Let's try and build our "hello world!" app.
 
-##### Docker-based setup
-
-In your console where you are running `gwasm-tutorial` image, navigate to the `/root/hello-gwasm-runner`
-directory
-
-```
-cd /root/hello-gwasm-runner
-```
-
-and run
-
-```
-cargo build --release
-```
-
-You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
-
-```
-ls target/wasm32-unknown-emscripten/release
-```
 
 ##### Standalone
 
-If you are following the tutorial without Docker, you can get the full source code of the app
+You can get the full source code of the app
 from the [github/golemfactory/hello-gwasm-runner] repo. Then, you can build it using standard
 `cargo build` command
 
@@ -327,10 +298,15 @@ ls target/wasm32-unknown-emscripten/release
 
 #### 3.3. Run!
 
-In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it
-using Brass backend.
+In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Brass Beta:
 
 ##### Run locally
+
+```
+gwasm-runner -v target/wasm32-unknown-emscripten/release/hello_world.wasm
+```
+
+##### Run on Golem Brass Beta
 
 ```
 gwasm-runner -v --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
