@@ -79,14 +79,19 @@ This API with only three operations:
 
 enables developers to easily implement applications and run them on top of the [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
 
+?> For Unix systems (or bash owners: default MacOs and Libux) **install gWASM runner** with:
 
-?> Download **gWASM runner** for your OS:
+```bash
+curl -sSf https://golemfactory.github.io/gwasm-runner/runner-update.sh |  bash
+```
+
+?> Or download **gWASM runner binary** for your OS:
 
 
 [gWASM runner for Windows](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-win64-0.3.1.zip)
 
 
-[gWASM runner for MacOs](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-macos-0.3.1.gz)
+[gWASM runner for MacOs](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-macos-0.3.1.tar.gz)
 
 
 [gWASM runner for Linux](https://github.com/golemfactory/gwasm-runner/releases/download/0.3.1/gwasm-runner-linux-0.3.1.tar.gz)
