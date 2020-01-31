@@ -60,8 +60,11 @@ In this quick tutorial you will
 
 Make sure that you have **Rustlang** and **emscripten** installed on your machine. 
 
-* [Rust](https://www.rust-lang.org/tools/install) - rustup toolchain add nightly `rustup target add wasm32-unknown-emscripten --toolchain nightly` (**NB** it is currently necessary to rely on the `nightly` toolchain due to a bug with the Emscripten target in Rust, which has already been fixed -- see [rust-lang/rust#67976](https://github.com/rust-lang/rust/pull/67976) for reference -- however, won't land in stable for a couple of releases. Once it lands in stable, we'll update the docs. Until then, please use the `nightly` toolchain to build your gWasm apps using Rust.)
+* [Rust](https://www.rust-lang.org/tools/install) - **stable version 1.38** `rustup toolchain add 1.38.0` cd into project directory and `rustup override set 1.38.0`
+
+<!-- rustup toolchain add nightly `rustup target add wasm32-unknown-emscripten --toolchain nightly` (**NB** it is currently necessary to rely on the `nightly` toolchain due to a bug with the Emscripten target in Rust, which has already been fixed -- see [rust-lang/rust#67976](https://github.com/rust-lang/rust/pull/67976) for reference -- however, won't land in stable for a couple of releases. Once it lands in stable, we'll update the docs. Until then, please use the `nightly` toolchain to build your gWasm apps using Rust.) -->
 * [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions)
+After installation make sure to **get a specific version using the fastcomp backend**. `./emsdk install 1.38.45-fastcomp`
 
 !> For **Windows** users! If you encounter any issues with **emscripten** on Windows we do recommend downloading **WSL** [Windows Subsystem for Linux](https://docs.microsoft.com/pl-pl/windows/wsl/install-win10) and following with the Linux instructions.
 
@@ -127,7 +130,52 @@ So how do we do this? We proceed in stages which we'll describe below in more de
   2. for each subarray, we calculate the sum of elements; for instance, `sum([1,...,10]) = 55`
   3. finally, we combine all intermediate sums into one final sum, our final value
 
-#### 4.1. The gWasm runner API
+#### 4.1 Clone hello-gwasm-runner
+
+You can do so by cloning [hello-gwasm-runner] on Github.
+
+[hello-gwasm-runner]: https://github.com/golemfactory/hello-gwasm-runner
+
+#### 4.2. Build
+
+Let's try and build our "hello world!" app.
+
+
+##### Standalone
+
+You can get the full source code of the app
+from the [github/golemfactory/hello-gwasm-runner](https://github.com/golemfactory/hello-gwasm-runner) repo. Then, you can build it using standard
+`cargo build` command
+
+```
+cargo build --release
+```
+
+!> If you have issues with `build` make sure that you have **Python2** in your PATH as `python2`
+
+You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
+
+```
+ls target/wasm32-unknown-emscripten/release
+```
+
+#### 4.3. Run!
+
+In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Brass Beta:
+
+##### Run locally
+
+```
+gwasm-runner -v target/wasm32-unknown-emscripten/release/hello_world.wasm
+```
+
+##### Run on Golem Brass Beta
+
+```
+gwasm-runner -v --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
+```
+
+#### 4.4. The gWasm runner API explained
 
 Before we dig in, please note that you can see the fully assembled example in
 [Final result](#final-result). Firstly, just for convenience, let's introduce two
@@ -288,50 +336,6 @@ Don't forget to add `gwasm-api` as a dependency in your `Cargo.toml`:
 // Cargo.toml
 [dependencies]
 gwasm-api = { git="https://github.com/golemfactory/gwasm-runner.git" }
-```
-
-If you want to clone the source, you can do so by cloning [hello-gwasm-runner]
-on Github.
-
-[hello-gwasm-runner]: https://github.com/golemfactory/hello-gwasm-runner
-
-#### 4.2. Build
-
-Let's try and build our "hello world!" app.
-
-
-##### Standalone
-
-You can get the full source code of the app
-from the [github/golemfactory/hello-gwasm-runner](https://github.com/golemfactory/hello-gwasm-runner) repo. Then, you can build it using standard
-`cargo build` command
-
-```
-cargo build --release
-```
-
-!> If you have issues with `build` make sure that you have **Python2** in your PATH as `python2`
-
-You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
-
-```
-ls target/wasm32-unknown-emscripten/release
-```
-
-#### 4.3. Run!
-
-In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Brass Beta:
-
-##### Run locally
-
-```
-gwasm-runner -v target/wasm32-unknown-emscripten/release/hello_world.wasm
-```
-
-##### Run on Golem Brass Beta
-
-```
-gwasm-runner -v --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
 
