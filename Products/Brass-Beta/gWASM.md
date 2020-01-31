@@ -52,7 +52,7 @@ In this quick tutorial you will
 
 #### 1. Install Golem 
 
-[Follow installation instructions](/Products/Brass-Beta/Installation.md). Remember that it is required to run in the background during gWASM computations.
+[Follow installation instructions](/Products/Brass-Beta/Installation.md). Remember that it is required to run Golem instance in the background during gWASM computations.
 
 ---
 
@@ -1880,4 +1880,3 @@ In gWASM we adopted an approach similar to BOINC. Each subtask is sent to two pr
 Comparing results itself is a challenge. We ensured that computations in our [sandbox](https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=sandboxing) are deterministic. It limits the usage in some cases but it allows for byte-to-byte comparison.
 
 When you request a task with some subtasks, be aware that there will be two times more jobs/computations. When you list subtasks for a given job in CLI, you will find two times more results. Its is because of VbR.
-
