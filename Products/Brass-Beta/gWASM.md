@@ -60,7 +60,7 @@ In this quick tutorial you will
 
 Make sure that you have **Rustlang** and **emscripten** installed on your machine. 
 
-* [Rust](https://www.rust-lang.org/tools/install) - rustup toolchain add nightly `rustup target add wasm32-unknown-emscripten --toolchain nightly` TODO [JK - Rust issue link]
+* [Rust](https://www.rust-lang.org/tools/install) - rustup toolchain add nightly `rustup target add wasm32-unknown-emscripten --toolchain nightly` (**NB** it is currently necessary to rely on the `nightly` toolchain due to a bug with the Emscripten target in Rust, which has already been fixed -- see [rust-lang/rust#67976](https://github.com/rust-lang/rust/pull/67976) for reference -- however, won't land in stable for a couple of releases. Once it lands in stable, we'll update the docs. Until then, please use the `nightly` toolchain to build your gWasm apps using Rust.)
 * [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions)
 
 !> For **Windows** users! If you encounter any issues with **emscripten** on Windows we do recommend downloading **WSL** [Windows Subsystem for Linux](https://docs.microsoft.com/pl-pl/windows/wsl/install-win10) and following with the Linux instructions.
