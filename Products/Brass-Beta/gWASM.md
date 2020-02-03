@@ -43,20 +43,14 @@ If you would like to share your thoughts about **gWASM** please fill out this **
 
 In this quick tutorial you will
 
-* Install latest release of Golem
 * Install Rustlang (*stable version 1.38.0*) and emscripten (*1.28.45-fastcomp*)
 * Download latest gWASM runner (Command line tool for running gWasm compatible apps locally, via Golem Unlimited or via Brass Golem.)
 * Run simple `hello world` task
 
----
-
-#### 1. Install Golem 
-
-[Follow installation instructions](/Products/Brass-Beta/Installation.md). Remember that it is required to run Golem instance in the background during gWASM computations.
 
 ---
 
-#### 2. Prerequisites
+#### 1. Prerequisites
 
 Make sure that you have **Rustlang** and **emscripten** installed on your machine. 
 
@@ -91,7 +85,7 @@ After installation make sure to **get a specific version using the fastcomp back
 
 ----
 
-#### 3. Setup Development Environment
+#### 2. Setup Development Environment
 
 **gWASM runner** introduces minimalistic [gwasm dispatcher API](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/index.html) that resembles map-reduce paradigm.
 This API with only three operations:
@@ -141,7 +135,7 @@ for this directory.
 
 ---
 
-#### 4. Hello World! example
+#### 3. Hello World! example
 
 Before tackling some more interesting problems with gWasm, let's first get acquainted with
 the `gwasm-api`, the API which we'll use to interface our apps with gWasm. Essentially
@@ -157,13 +151,13 @@ So how do we do this? We proceed in stages which we'll describe below in more de
   2. for each subarray, we calculate the sum of elements; for instance, `sum([1,...,10]) = 55`
   3. finally, we combine all intermediate sums into one final sum, our final value
 
-#### 4.1. Clone hello-gwasm-runner
+#### 3.1. Clone hello-gwasm-runner
 
 You can do so by cloning [hello-gwasm-runner] on Github.
 
 [hello-gwasm-runner]: https://github.com/golemfactory/hello-gwasm-runner
 
-#### 4.2. Build
+#### 3.2. Build
 
 Let's try and build our "hello world!" app.
 
@@ -186,7 +180,7 @@ You should then be able to find the build artifacts in `target/wasm32-unknown-em
 ls target/wasm32-unknown-emscripten/release
 ```
 
-#### 4.3. Run!
+#### 3.3. Run!
 
 In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Brass Beta:
 
@@ -198,11 +192,15 @@ gwasm-runner -v target/wasm32-unknown-emscripten/release/hello_world.wasm
 
 ##### Run on Golem Brass Beta
 
+In order to do so, you have to have **Golem Brass Beta** Installed on your machine. [Follow installation instructions](/Products/Brass-Beta/Installation.md). 
+
+> Remember that it is required to run Golem instance in the background during gWASM computations.
+
 ```
 gwasm-runner -v --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
-#### 4.4. The gWasm runner API explained
+#### 4. The gWasm runner API explained
 
 Before we dig in, please note that you can see the fully assembled example in
 [Final result](#final-result). Firstly, just for convenience, let's introduce two
