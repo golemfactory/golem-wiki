@@ -229,7 +229,7 @@ In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and w
 ##### Run locally
 
 ```
-gwasm-runner -v target/wasm32-unknown-emscripten/release/hello_world.wasm
+gwasm-runner target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
 ##### Run on Golem Brass Beta
@@ -238,8 +238,25 @@ In order to do so, you have to have **Golem Brass Beta** Installed on your machi
 
 > Remember that it is required to run Golem instance in the background during gWASM computations.
 
+When creating a task in the Golem network, there are some more parameters which can be defined. For example, we want to be able to specify how much we're willing to pay for the computation or what the timeout for a task should be. These Golem-specific parameters can be defined in a configuration file which will be used by the runner. By default, these values are the following:
+
 ```
-gwasm-runner -v --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
+{
+    "data_dir": "/home/user/.local/share/golem/default",
+    "address": "127.0.0.1:61000",
+    "bid": 1.0,
+    "name": "gwasm-task",
+    "net": "testnet",
+    "subtask_timeout": "00:10:00",
+    "task_timeout": "00:30:00"
+}
+```
+
+?> To change the default values (e.g. the datadir for your local Golem instance) you need to manually create a JSON file under: `$HOME/.config/g-wasm-runner/brass/config.json` for Linux and `$HOME/Library/Application\ Support/g-wasm-runner/brass/config.json`. You can copy the above JSON object, and modify what you need. On Windows will usually refer to `{FOLDERID_LocalAppData}/g-wasm-runner/brass` The runner will print its currently used configuration upon start-up.
+
+
+```
+gwasm-runner --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
 #### 4. The gWasm runner API explained
