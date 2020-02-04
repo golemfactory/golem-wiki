@@ -77,17 +77,39 @@ rustup override set 1.38.0
 ```
 
 <!-- rustup toolchain add nightly `rustup target add wasm32-unknown-emscripten --toolchain nightly` (**NB** it is currently necessary to rely on the `nightly` toolchain due to a bug with the Emscripten target in Rust, which has already been fixed -- see [rust-lang/rust#67976](https://github.com/rust-lang/rust/pull/67976) for reference -- however, won't land in stable for a couple of releases. Once it lands in stable, we'll update the docs. Until then, please use the `nightly` toolchain to build your gWasm apps using Rust.) -->
-**2.2.** [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions)
-After installation make sure to **get a specific version using the fastcomp backend**. 
+**2.2.** [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions) - **with 1.38.0-fastcomp backend**
 
+To install get the emsdk repo:
+```bash
+git clone https://github.com/emscripten-core/emsdk.git
+```
+
+Enter that directory:
+```bash
+cd emsdk
+```
+
+Fetch the latest version of the emsdk:
+```bash
+git pull
+```
+
+Download and install the latest SDK tools:
+```bash
+./emsdk install latest
+```
+
+Make sure to **get a specific version using the fastcomp backend**:
 ```bash
 ./emsdk install 1.38.45-fastcomp
 ```
 
+Make the `1.38.45-fastcomp` "active" for the current user:
 ```bash
 ./emsdk activate 1.38.45-fastcomp
-``` 
+```
 
+Activate PATH and other environment virables in the current terminal
 ```bash
 source ./emsdk_env.sh
 ```
