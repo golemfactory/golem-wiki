@@ -65,7 +65,7 @@ golemapp --password=your_password --accept-terms --datadir=/path/to/datadir1 --r
 ##### 2b. Add two more args when starting `node_B` (a Provider):
 
 ```bash
- golemapp --password=your_password --accept-terms --datadir=/path/to/datadir2 --rpc-address=localhost:61002 --peer=localhost:40102 --protocol_id=102938
+golemapp --password=your_password --accept-terms --datadir=/path/to/datadir2 --rpc-address=localhost:61002 --peer=localhost:40102 --protocol_id=102938
 ```
 
 ?> On MacOs your `--datadir` should be created in `$HOME/Library/Application\ Support/datadir2`
@@ -1152,7 +1152,7 @@ As was the case with [C program](Products/Brass-Beta/gWASM?id=_11-cc), it is imp
 In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install rustc 1.38.0 toolchain which includes fastcomp backend for `wasm32-unknown-emscripten` target
 
 ```bash
-$ rustup toolchain add 1.38.0
+rustup toolchain add 1.38.0
 ```
 
 Then, we need to install the required target which is `wasm32-unknown-emscripten`. The easiest way of doing so, as well as generally managing your Rust installations, is to use [rustup](https://rustup.rs/)
@@ -1166,7 +1166,7 @@ Note that cross-compiling Rust to this target still requires that you have Emscr
 Now, we can compile our Rust program to Wasm. Make sure you are in the root of your Rust crate, i.e., at the top of `simple` if you didn't change the name of your crate, and run
 
 ```rust
-$ cargo +1.38.0 build --target=wasm32-unknown-emscripten --release
+cargo +1.38.0 build --target=wasm32-unknown-emscripten --release
 ```
 
 If everything went OK, you should now see two files:
@@ -1496,7 +1496,7 @@ You are running Wasm!
 To build using Docker, simply run
 
 ```bash
-$ ./build.sh
+./build.sh
 ```
 
 If you are running Windows, then you can invoke the command in the shell script manually in the command line as follows
@@ -1513,7 +1513,7 @@ docker build -t wasm-sandbox:latest .
 To build natively on Linux, first install rustc `1.38.0` toolchain
 
 ```bash
-$ rustup toolchain add 1.38.0
+rustup toolchain add 1.38.0
 ```
 
 Next, you need to follow the installation instructions of [servo/rust-mozjs](https://github.com/servo/rust-mozjs) and [servo/mozjs](https://github.com/servo/mozjs). The latter is Mozilla's Servo's SpiderMonkey fork and low-level Rust bindings, and as such, requires C/C++ compiler and Autoconf 2.13. See [servo/mozjs/README.md](https://github.com/servo/mozjs) for detailed building instructions.
