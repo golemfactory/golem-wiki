@@ -1149,8 +1149,7 @@ fn main() -> io::Result<()> {
 
 As was the case with [C program](Products/Brass-Beta/gWASM?id=_11-cc), it is important to notice here that the sandbox communicates the results of computation by reading and writing to files. Thus, every Wasm program is required to at the very least create an output file. If your code does not include file manipulation in its main body, then the Emscripten compiler, by default, will not initialise JavaScript `FS` library, and will trip the sandbox.
 
-In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install rustc 1.38.0 toolchain which
-includes fastcomp backend for `wasm32-unknown-emscripten` target
+In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install rustc 1.38.0 toolchain which includes fastcomp backend for `wasm32-unknown-emscripten` target
 
 ```bash
 $ rustup toolchain add 1.38.0
