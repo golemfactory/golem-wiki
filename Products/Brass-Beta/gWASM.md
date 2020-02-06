@@ -1108,14 +1108,11 @@ for programs cross-compiled [from Rust](Products/Brass-Beta/gWASM?id=_12-rust).
 Now, we can try and compile the program with Emscripten. In order to do that you need Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
 
 ```
-emcc -o simple.js -s BINARYEN_ASYNC_COMPILATION=0 simple.c
+emcc -o simple.js simple.c
 ```
 
 Emscripten will then produce two files: `simple.js` and `simple.wasm`. The produced JavaScript file acts as glue code and sets up all of
 the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our C program cross-compiled to Wasm.
-
-Note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0`. By default, the Emscripten compiler enables async IO lib when cross-compiling to Wasm which we currently do not support.
-Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
 #### Rust
@@ -1152,10 +1149,17 @@ fn main() -> io::Result<()> {
 
 As was the case with [C program](Products/Brass-Beta/gWASM?id=_11-cc), it is important to notice here that the sandbox communicates the results of computation by reading and writing to files. Thus, every Wasm program is required to at the very least create an output file. If your code does not include file manipulation in its main body, then the Emscripten compiler, by default, will not initialise JavaScript `FS` library, and will trip the sandbox.
 
-In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install the required target which is `wasm32-unknown-emscripten`. The easiest way of doing so, as well as generally managing your Rust installations, is to use [rustup](https://rustup.rs/)
+In order to cross-compile Rust to Wasm compatible with Golem's sandbox, firstly we need to install rustc 1.38.0 toolchain which
+includes fastcomp backend for `wasm32-unknown-emscripten` target
+
+```bash
+$ rustup toolchain add 1.38.0
+```
+
+Then, we need to install the required target which is `wasm32-unknown-emscripten`. The easiest way of doing so, as well as generally managing your Rust installations, is to use [rustup](https://rustup.rs/)
 
 ```rust
-rustup target add wasm32-unknown-emscripten
+rustup target add wasm32-unknown-emscripten --toolchain 1.38.0
 ```
 
 Note that cross-compiling Rust to this target still requires that you have Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
@@ -1163,8 +1167,7 @@ Note that cross-compiling Rust to this target still requires that you have Emscr
 Now, we can compile our Rust program to Wasm. Make sure you are in the root of your Rust crate, i.e., at the top of `simple` if you didn't change the name of your crate, and run
 
 ```rust
-cargo rustc --target=wasm32-unknown-emscripten --release -- \
-  -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
+$ cargo +1.38.0 build --target=wasm32-unknown-emscripten --release
 ```
 
 If everything went OK, you should now see two files:
@@ -1172,8 +1175,6 @@ If everything went OK, you should now see two files:
 `simple.js` and `simple.wasm` in `simple/target/wasm32-unknown-emscripten/release`.
 
 Just like in [C program](Products/Brass-Beta/gWASM?id=_11-cc)'s case, the produced JavaScript file acts as glue code and sets up all of the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our Rust program cross-compiled to Wasm.
-
-Again, note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0` passed as additional compiler flags to `rustc`. By default, when building for target `wasm32-unknown-emscripten` with `rustc` the compiler will cross-compile with default Emscripten compiler flags which require async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 
 #### How to cross-compile C program - step by step
@@ -1508,18 +1509,26 @@ docker build -t wasm-sandbox:latest .
 
 ##### Natively on Linux
 
-To build natively on Linux, you need to follow the installation instructions of [servo/rust-mozjs](https://github.com/servo/rust-mozjs) and [servo/mozjs](https://github.com/servo/mozjs). The latter is Mozilla's Servo's SpiderMonkey fork and low-level Rust bindings, and as such, requires C/C++ compiler and Autoconf 2.13. See [servo/mozjs/README.md](https://github.com/servo/mozjs) for detailed building instructions.
+?> **NOTE: Building the sandbox from source requires rustc 1.38.0 due to fastcomp backend compability for `wasm32-unknown-emscripten` target, and other changes that are incompatible with SpiderMonkey Rust wrappers.**
+
+To build natively on Linux, first install rustc `1.38.0` toolchain
+
+```bash
+$ rustup toolchain add 1.38.0
+```
+
+Next, you need to follow the installation instructions of [servo/rust-mozjs](https://github.com/servo/rust-mozjs) and [servo/mozjs](https://github.com/servo/mozjs). The latter is Mozilla's Servo's SpiderMonkey fork and low-level Rust bindings, and as such, requires C/C++ compiler and Autoconf 2.13. See [servo/mozjs/README.md](https://github.com/servo/mozjs) for detailed building instructions.
 
 After following the aforementioned instructions, to build the sandbox, run
 
 ```bash
-cargo build
+cargo +1.38.0 build
 ```
 
 If you would like to build with SpiderMonkey's debug symbols and extensive logging, run instead
 
 ```bash
-cargo build --features "debugmozjs"
+cargo build +1.38.0 --features "debugmozjs"
 ```
 
 
@@ -1553,7 +1562,7 @@ RUST_LOG=debug
 
 #### Caveats
 
-* If you were following the [Quick start guide](Products/Brass-Beta/gWASM?id=quick-start-guide) you already know that every Wasm bin needs to be cross-compiled by Emscripten with `-s BINARYEN_ASYNC_COMPILATION=0` flag in order to turn off the use of async IO which we currently don't support.
+* Building the sandbox from source requires rustc 1.38.0 due to fastcomp backend compability for `wasm32-unknown-emscripten` target, and other changes that are incompatible with SpiderMonkey Rust wrappers.
 
 * Sometimes, if the binary you are cross-compiling is of substantial size, you might encounter a `asm2wasm` validation error stating that there is not enough memory assigned to Wasm. In this case, you can circumvent the problem by adding `-s TOTAL_MEMORY=value` flag. The value has to be an integer multiple of 1 Wasm memory page which is currently set at `65,536` bytes.
 
