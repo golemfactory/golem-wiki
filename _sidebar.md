@@ -21,10 +21,20 @@
 * [Issues & Troubleshooting](Products/Brass-Beta/Issues-&-Troubleshooting.md)
 * [Understanding Logs](Products/Brass-Beta/Understanding-Logs.md)
 * [Testing](Products/Brass-Beta/Testing.md)
-* [gWASM](Products/Brass-Beta/gWASM.md)</ul>
 - <p class="product">Task API</p>
 <ul class="app-sub-sidebar">
 * [Task API docs](https://taskapi.docs.golem.network)</ul>
+- <p class="product">gWASM</p>
+<ul class="app-sub-sidebar">
+* [About](Products/gWASM/About.md)
+* [Quick start](Products/gWASM/Quick-start.md)
+* [gWASM tasks](Products/gWASM/gWASM-tasks.md)
+* [gWASM applications](Products/gWASM/gWASM-applications.md)
+* [Sample gWASM application](Products/gWASM/Sample-application.md)
+* [Building gWASM applications](Products/gWASM/Building-gWASM-applications.md)
+* [gWASM-store](Products/gWASM/gWASM-store.md)
+* [Sandboxing](Products/gWASM/Sandboxing.md)
+* [Verification](Products/gWASM/Verification-in-gWASM.md)</ul>
 - <p class="product">Unlimited</p>
 <ul class="app-sub-sidebar">
 * [Basic Usage](Products/Unlimited/Basic-Usage.md)</ul>
