@@ -32,9 +32,9 @@ It communicates with external technologies. Some of them may be downloaded and i
 
 ### Brass Beta
 
-* Installing Golem Brass beta on [Windows 10](Products/Brass-Beta/Installation?id=windows-quick-install)
-* Installing Golem Brass beta on [MacOs](Products/Brass-Beta/Installation?id=macos-quick-install)
-* Installing Golem Brass beta on [Ubuntu](Products/Brass-Beta/Installation?id=ubuntu-quick-install)
+* Installing Golem Brass beta on [Windows 10](Products/Brass-Beta/Installation.md#windows---quick-install)
+* Installing Golem Brass beta on [MacOs](Products/Brass-Beta/Installation.md#macos---quick-install)
+* Installing Golem Brass beta on [Ubuntu](Products/Brass-Beta/Installation.md#ubuntu---quick-install)
 
 #### Usage & troubleshoothing
 
