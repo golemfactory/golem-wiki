@@ -55,9 +55,9 @@ You can acquire ETH through almost any cryptocurrency exchange. The most popular
 
 Please follow the instructions for your OS to install Golem:
 
-* **[Installation on Windows 10](Products/Brass-Beta/Installation?id=windows-quick-install)**
-* **[Installation on Mac](Products/Brass-Beta/Installation?id=macos-quick-install)**
-* **[Installation on Ubuntu](Products/Brass-Beta/Installation?id=ubuntu-quick-install)**
+* **[Installation on Windows 10](Installation.md#windows---quick-install)**
+* **[Installation on Mac](Installation.md#macos---quick-install)**
+* **[Installation on Ubuntu](Installation.md#ubuntu---quick-install)**
 
 
 Once you have successfully downloaded and installed Golem on your OS, run the app and then check to see if your ports are forwarded correctly on [canyouseeme.org](http://www.canyouseeme.org/). You must be running the Golem app in order to check ports **40102, 40103 and 3282** as Golem will listen them after fully started.
