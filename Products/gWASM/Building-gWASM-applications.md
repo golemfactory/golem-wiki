@@ -129,11 +129,13 @@ for programs cross-compiled [from Rust](Products/gWASM/Building-gWASM-applicatio
 Now, we can try and compile the program with Emscripten. In order to do that you need Emscripten SDK installed on your system. For instructions on how to do it, see [here](https://emscripten.org/docs/getting_started/downloads.html).
 
 ```
-emcc -o simple.js simple.c
+emcc -o simple.js -s BINARYEN_ASYNC_COMPILATION=0 simple.c
 ```
 
 Emscripten will then produce two files: `simple.js` and `simple.wasm`. The produced JavaScript file acts as glue code and sets up all of
 the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our C program cross-compiled to Wasm.
+
+?> *This flag will be not needed after the next release of Golem* Note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0`. By default, the Emscripten compiler enables async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 ### Rust
 
@@ -186,7 +188,8 @@ Note that cross-compiling Rust to this target still requires that you have Emscr
 Now, we can compile our Rust program to Wasm. Make sure you are in the root of your Rust crate, i.e., at the top of `simple` if you didn't change the name of your crate, and run
 
 ```rust
-cargo +1.38.0 build --target=wasm32-unknown-emscripten --release
+cargo +1.38.0 rustc --target=wasm32-unknown-emscripten --release -- \
+  -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
 ```
 
 If everything went OK, you should now see two files:
@@ -194,6 +197,10 @@ If everything went OK, you should now see two files:
 `simple.js` and `simple.wasm` in `simple/target/wasm32-unknown-emscripten/release`.
 
 Just like in [C program](Products/gWASM/Building-gWASM-applications?id=cc)'s case, the produced JavaScript file acts as glue code and sets up all of the rudimentary syscalls in JavaScript such as `MemFS` (in-memory filesystem), etc., while the `simple.wasm` is our Rust program cross-compiled to Wasm.
+
+Again, note here the compiler flag `-s BINARYEN_ASYNC_COMPILATION=0` passed as
+additional compiler flags to `rustc`. By default, when building for target `wasm32-unknown-emscripten` with `rustc` the compiler will cross-compile with default Emscripten compiler flags which
+require async IO lib when cross-compiling to Wasm which we currently do not support. Therefore, in order to alleviate the problem, make sure to always cross-compile with `-s BINARYEN_ASYNC_COMPILATION=0` flag.
 
 ### How to cross-compile C program - step by step
 

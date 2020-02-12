@@ -89,7 +89,7 @@ This API with only three operations:
 2. `execute` - performs computation for all subproblems independently.
 3. `merge` - collect all computation results and formulate final result.
 
-enables developers to easily implement applications and run them on top of the [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
+enables developers to easily implement applications and run them on top of the [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](Products/Brass-Beta/Installation).
 
 ?> For Unix systems (or bash owners: default MacOs and Linux) **install gWASM runner** with:
 

@@ -167,6 +167,8 @@ RUST_LOG=debug
 
 #### Caveats
 
+* If you were following the [Quick start guide](#quick-start-guide) you already know that every Wasm bin needs to be cross-compiled by Emscripten with `-s BINARYEN_ASYNC_COMPILATION=0` flag in order to turn off the use of async IO which we currently don't support.
+
 * Building the sandbox from source requires rustc 1.38.0 due to fastcomp backend compability for `wasm32-unknown-emscripten` target, and other changes that are incompatible with SpiderMonkey Rust wrappers.
 
 * Sometimes, if the binary you are cross-compiling is of substantial size, you might encounter a `asm2wasm` validation error stating that there is not enough memory assigned to Wasm. In this case, you can circumvent the problem by adding `-s TOTAL_MEMORY=value` flag. The value has to be an integer multiple of 1 Wasm memory page which is currently set at `65,536` bytes.
