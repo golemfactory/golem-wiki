@@ -221,7 +221,7 @@ fn merge(_args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>) {
 ```toml
 // Cargo.toml
 [dependencies]
-gwasm-dispatcher = { git="https://github.com/golemfactory/gwasm-runner.git" }
+gwasm-dispatcher = "0.1.0"
 ```
 
 #### Building the example
