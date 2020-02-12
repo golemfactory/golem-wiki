@@ -219,6 +219,6 @@ When creating a task in the Golem network, there are some more parameters which 
 gwasm-runner --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
-### Dig dipper into gWASM runner
+### Dig deeper into gWASM runner
 
 If you would like to know more about the gWASM runner dive into [gWASM applications section](Products/gWASM/gWASM-applications?id=introduction-to-gwasm-applications) where we [show gWASM runner example](/Products/gWASM/gWASM-applications?id=gwasm-runner) you have just compiled and computed. 
