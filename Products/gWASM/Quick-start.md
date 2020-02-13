@@ -1,12 +1,12 @@
 # Quick start - testing gWASM locally
 
-?> This tutorial is based on our Devcon5 gWASM workshops `hello world!` example. If you would like to set up your own Golem Unlimited cluster then follow instructions at [devcon5 worksops page](https://devcon.golem.network)
+?> This tutorial is based on our Devcon5 gWASM workshops `hello world!` example. If you would like to set up your own Golem Unlimited cluster then follow instructions at [devcon5 workshops page](https://devcon.golem.network).
 
-In this quick tutorial you will
+In this quick tutorial you will:
 
-1. **Install Rustlang (*stable version 1.38.0*) and emscripten (*1.28.45-fastcomp*)**
-2. **Download latest gWASM runner (Command line tool for running gWasm compatible apps locally, via Golem Unlimited or via Brass Golem.)**
-3. **Run simple `hello world` task**
+1. **Install Rust (*stable version 1.38.0*) and emscripten (*1.28.45-fastcomp*)**
+2. **Download latest gWASM runner (Command line tool for running gWASM compatible apps locally, via Golem Unlimited or via Brass Golem)**
+3. **Run a simple `hello world` task**
 
 
 ---
@@ -82,19 +82,19 @@ source ./emsdk_env.sh
 
 ### 2. Setup Development Environment
 
-**gWASM runner** introduces minimalistic [gwasm dispatcher API](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/index.html) that resembles map-reduce paradigm.
-This API with only three operations:
+**gWASM runner** introduces the minimalistic [gWASM dispatcher API](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/index.html) that resembles map-reduce paradigm.
+This API consists of only three operations:
 
 1. `split` - divide the problem into subproblems.
 2. `execute` - performs computation for all subproblems independently.
 3. `merge` - collect all computation results and formulate final result.
 
-enables developers to easily implement applications and run them on top of the [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](Products/Brass-Beta/Installation).
+gWASM runner enables developers to easily implement applications and run them on top of [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](Products/Brass-Beta/Installation).
 
-?> For Unix systems (or bash owners: default MacOs and Linux) **install gWASM runner** with:
+?> For Unix systems (or bash owners: default MacOS and Linux) **install gWASM runner** with:
 
 ```bash
-curl -sSf https://golemfactory.github.io/gwasm-runner/runner-update.sh |  bash
+curl -sSf https://golemfactory.github.io/gwasm-runner/runner-update.sh | bash
 ```
 
 ?> Or download **gWASM runner binary** for your OS:
@@ -139,14 +139,14 @@ for this directory.
 
 ### 3. Hello World! example
 
-Before tackling some more interesting problems with gWasm, let's first get acquainted with
-the `gwasm-api`, the API which we'll use to interface our apps with gWasm. Essentially
-speaking, if you can tailor your app to this API, you can run it on gWasm using our
+Before tackling some more interesting problems with gWASM, let's first get acquainted with
+the `gwasm-api`, the API which we'll use to interface our apps with gWASM. Essentially
+speaking, if you can tailor your app to this API, you can run it on gWASM using our
 `gwasm-runner` tool! So, without further gilding the lily, let's crack on!
 
-The best way to present an API is by way of example. For the "hello world!" example,
+The best way to present an API is by way of example. For the "Hello world!" example,
 we'll try something really simple. Namely, we will try and sum integers in the range
-of `1..100` inclusive, but we will split the task into `10` subtasks, or gWasm tasks.
+of `1..100` inclusive, but we will split the task into `10` subtasks, or gWASM tasks.
 So how do we do this? We proceed in stages which we'll describe below in more detail:
   1. we split the input array of `100` integers into `10` subarrays such that `[1,...,10]`,
      `[11,...,20]`, `...`, `[91,...,100]`
@@ -182,7 +182,7 @@ source ./emsdk_env.sh
 
 !> If you have further issues with `build`, make sure that you have **Python2** in your PATH as `python2`.
 
-You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
+Once the build is finished you can find the artifacts in `target/wasm32-unknown-emscripten/release`. 
 
 ```
 ls target/wasm32-unknown-emscripten/release
@@ -230,6 +230,7 @@ That's it!
 - Linux: `$HOME/.config/g-wasm-runner/brass/config.json` 
 - MacOS: `$HOME/Library/Application Support/g-wasm-runner/brass/config.json`
 - Windows: `C:\Users\<USER_NAME>\AppData\Roaming\Golem Factory\g-wasm-runner\brass\config.json`
+
 As for the contents, you can copy the JSON object shown above and modify its fields as required. The runner will print its currently used configuration upon start-up.
 
 
