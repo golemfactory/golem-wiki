@@ -69,7 +69,7 @@ Make the `1.38.45-fastcomp` "active" for the current user:
 ./emsdk activate 1.38.45-fastcomp
 ```
 
-Activate PATH and other environment virables in the current terminal
+Activate emscripten environment variables in the current terminal:
 ```bash
 source ./emsdk_env.sh
 ```
@@ -174,7 +174,13 @@ from the [github/golemfactory/hello-gwasm-runner](https://github.com/golemfactor
 cargo build --release
 ```
 
-!> If you have issues with `build` make sure that you have **Python2** in your PATH as `python2`
+!> In case of compilation failing with the error `linker emcc not found` make sure you have emscripten SDK environment variables set in your shell. If you already went through the prerequisites section then it's likely you simply need to re-activate the emscripten SDK variables. To do so, source the script from the emscripten SDK directory:
+
+```bash
+source ./emsdk_env.sh
+```
+
+!> If you have further issues with `build`, make sure that you have **Python2** in your PATH as `python2`.
 
 You should then be able to find the build artifacts in `target/wasm32-unknown-emscripten/release`
 
@@ -198,13 +204,21 @@ In order to do so, you have to have **Golem Brass Beta** Installed on your machi
 
 > Remember that it is required to run Golem instance in the background during gWASM computations.
 
-When creating a task in the Golem network, there are some more parameters which can be defined. For example, we want to be able to specify how much we're willing to pay for the computation or what the timeout for a task should be. These Golem-specific parameters can be defined in a configuration file which will be used by the runner. By default, these values are the following:
+With your Golem node running, run the below command to compute your task on the Golem network:
+
+```bash
+gwasm-runner --backend=Brass target/wasm32-unknown-emscripten/release/hello_world.wasm
+```
+
+That's it!
+
+?> Should you need to change the default configuration for the runner (e.g. whether to use Ethereum's mainnet or testnet), there is an option to use a configuration file. By default, the following values are used when creating a Golem task:
 
 ```json
 {
     "data_dir": "/home/user/.local/share/golem/default",
     "address": "127.0.0.1:61000",
-    "bid": 1.0,
+    "budget": 1.0,
     "name": "gwasm-task",
     "net": "testnet",
     "subtask_timeout": "00:10:00",
@@ -212,12 +226,12 @@ When creating a task in the Golem network, there are some more parameters which 
 }
 ```
 
-?> To change the default values (e.g. the datadir for your local Golem instance) you need to manually create a JSON file under: `$HOME/.config/g-wasm-runner/brass/config.json` for Linux and `$HOME/Library/Application\ Support/g-wasm-runner/brass/config.json`. You can copy the above JSON object, and modify what you need. On Windows will usually refer to `{FOLDERID_LocalAppData}/g-wasm-runner/brass` The runner will print its currently used configuration upon start-up.
+?> To override the default values you will need to create your own, local configuration file. The path to the file depends on your operating system, here are examples for each platform:
+- Linux: `$HOME/.config/g-wasm-runner/brass/config.json` 
+- MacOS: `$HOME/Library/Application Support/g-wasm-runner/brass/config.json`
+- Windows: `C:\Users\<USER_NAME>\AppData\Roaming\Golem Factory\g-wasm-runner\brass\config.json`
+As for the contents, you can copy the JSON object shown above and modify its fields as required. The runner will print its currently used configuration upon start-up.
 
-
-```
-gwasm-runner --backend Brass -- target/wasm32-unknown-emscripten/release/hello_world.wasm
-```
 
 ### Dig deeper into gWASM runner
 
