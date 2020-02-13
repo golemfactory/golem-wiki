@@ -4,7 +4,7 @@
 
 In this quick tutorial you will:
 
-1. **Install Rust (*stable version 1.38.0*) and emscripten (*1.28.45-fastcomp*)**
+1. **Install Rust (*stable version 1.38.0*) and emscripten (*1.38.45-fastcomp*)**
 2. **Download latest gWASM runner (Command line tool for running gWASM compatible apps locally, via Golem Unlimited or via Brass Golem)**
 3. **Run a simple `hello world` task**
 
