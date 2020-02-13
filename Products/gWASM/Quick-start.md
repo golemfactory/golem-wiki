@@ -37,7 +37,7 @@ rustup toolchain add 1.38.0
 rustup override set 1.38.0
 ```
 
-**2.2.** [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions) - **with 1.38.0-fastcomp backend**
+**2.2.** [emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions) - **with 1.38.45-fastcomp backend**
 
 To install get the emsdk repo:
 ```bash
@@ -54,10 +54,10 @@ Fetch the latest version of the emsdk:
 git pull
 ```
 
-Download and install the latest SDK tools:
+<!-- Download and install the latest SDK tools:
 ```bash
 ./emsdk install latest
-```
+``` -->
 
 Make sure to **get a specific version using the fastcomp backend**:
 ```bash
@@ -85,9 +85,9 @@ source ./emsdk_env.sh
 **gWASM runner** introduces the minimalistic [gWASM dispatcher API](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/index.html) that resembles map-reduce paradigm.
 This API consists of only three operations:
 
-1. `split` - divide the problem into subproblems.
+1. `split` - divides the problem into subproblems.
 2. `execute` - performs computation for all subproblems independently.
-3. `merge` - collect all computation results and formulate final result.
+3. `merge` - collects all computation results and formulate final result.
 
 gWASM runner enables developers to easily implement applications and run them on top of [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](Products/Brass-Beta/Installation).
 
@@ -112,8 +112,7 @@ curl -sSf https://golemfactory.github.io/gwasm-runner/runner-update.sh | bash
 
 ---
 
-Secondly, some of the exercises will produce some file output, so it might be useful to
-create a local scratch directory and map it to a specific internal directory:
+It might be useful to create a local scratch directory:
 
 ```
 mkdir gwasm-tutorial-workspace
@@ -163,12 +162,7 @@ You can do so by cloning [hello-gwasm-runner] on Github.
 
 Let's try and build our "hello world!" app.
 
-
-#### Standalone
-
-You can get the full source code of the app
-from the [github/golemfactory/hello-gwasm-runner](https://github.com/golemfactory/hello-gwasm-runner) repo. Then, you can build it using standard
-`cargo build` command
+Now you can build it using standard `cargo build` command
 
 ```
 cargo build --release
