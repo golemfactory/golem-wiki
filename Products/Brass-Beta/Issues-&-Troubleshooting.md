@@ -295,6 +295,12 @@ If your node installed properly on Windows 10, but it does not want to start the
 
 ---
 
+#### Golem is not starting on MacOS after updating to Catalina
+
+If you have recently updated your MacOS to Catalina you most probably are welcomed with multiple permission popups from multiple applications. It is no different for Golem. You will most probably get notification that **hyperg cannot be verified** and Golem will not start. You have to close the application, go to `usr/local/Cellar/hyperg/0.3.6/bin/hyperg` and open it with the right click. After that your Golem node should start without any issues. 
+
+---
+
 #### Outdated Hyperg Version
 
 ```bash
@@ -464,6 +470,12 @@ Golem VM was started with a minimal amount of RAM (1 GiB) due to disk requiremen
 **Solution**
 The Hyper-V hypervisor needs to allocate disk space equal to the amount of RAM configured in Golem. Please try removing unnecessary files and applications, then restart Golem. If you cannot afford freeing this much disk space consider assigning a lower amount of RAM to Golem by adjusting the resource slider in GUI.
 
+---
+
+#### Bandwidth throttling
+
+Currently Golem app does not allow you to set manually the network bandwidth. There is a chance that the app will have this option developed in the future, but for the time being we recommend using external applications that enable bandwidth throttling for every app on your machine independently. For Windows users we recommend trying out [NetBalancer](https://netbalancer.com/download). For MacOS [Throttled Pro](http://intrarts.com/throttled.html) should do the job. For those of you who use Mac and are not afraid to do some hacking, following [this tutorial](https://blog.leiy.me/post/bw-throttling-on-mac/) is probably a better solution. 
+For Ubuntu users we recommend trying out **Wondershaper** which is avaliable in the official Ubuntu repositories. Just follow the instructions provided [here](https://vitux.com/how-to-limit-network-bandwidth-in-ubuntu/).
 
 
 
