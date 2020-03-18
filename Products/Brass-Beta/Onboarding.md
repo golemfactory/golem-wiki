@@ -37,7 +37,7 @@ Onboarding process is the same on all os-es. Instructions below were based on sc
 	---
 
 
-6. You will be asked to check if your ports 40102, 40103 and 3282 are forwarded, or if you have public IP. It is important, as without it Golem will not work. You can learn more here
+6. You will be asked to check if your ports 40102, 40103 and 3282 are forwarded, or if you have public IP. It is important, as without it Golem will not work. If you do not know how to forward your ports follow this [detailed instruction](https://bitcoin.org/en/full-node#enabling-connections).
 
 	![installer](/img/onboarding-windows/onboarding-05.jpg)
 
