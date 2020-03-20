@@ -1,14 +1,14 @@
 # Creating a subnet of nodes
 
-In order to have a subnet of nodes you have to install the latest Golem version. Please follow [this instructions](/Products/Brass-Beta/Installation.md).
-You will also need to get familiar with [Golem command line interface](/Products/Brass-Beta/Command-line-interface.md).
+In order to have a subnet of nodes you have to install the latest Golem version. Please follow [this instructions](/Products/Clay-Beta/Installation.md).
+You will also need to get familiar with [Golem command line interface](/Products/Clay-Beta/Command-line-interface.md).
 
 For compability, Golem nodes can connect **only** if they have **same `protocol_id`**.
-This restriction can be used to create a subnet of nodes. You can create subnet of nodes via CLI or by edditing config file. 
+This restriction can be used to create a subnet of nodes. You can create subnet of nodes via CLI or by edditing config file.
 
 ?> It is important to launch nodes in order: `node_A` then `node_B`
 
---- 
+---
 
 #### 1. via CLI arguments
 
@@ -65,7 +65,7 @@ seed host = <IP of node_A>
 rpc port = 61011 # change when both nodes on same machine
 ...
 ```
-2. run `node_A` with `--protocol_id=12345` 
+2. run `node_A` with `--protocol_id=12345`
 3. than run `node_B` with same `--protocol_id=12345`
 
 #### Checking if nodes are running properly
@@ -93,7 +93,7 @@ You can check if nodes are connected by executing:
 
 ?> Running `golemcli` should include additional `—port 61001 -I -d $HOME/Library/Application\ Support/datadir1`
 
-`golemcli network show` 
+`golemcli network show`
 
 on `node_A`. This should print out:
 

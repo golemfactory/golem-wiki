@@ -9,7 +9,7 @@ If you are rendering heavy tasks on Golem please make sure that you share/provid
 * If you are going to use additional assets you should include the main .blend file next to the assets folder. Also make sure that inside the scene all paths are correctly linked and that you use relative paths.
 * Please be sure to include all the assets before uploading a task to Golem.
 * Ensure that your scene does not have any random objects. You can turn off “random” in your scene or prebake elements if needed before adding them to Golem and attach cache files to the assets folder.
-* You should also use prebaking in case of having physical simulation in your scene (like fire, water, complicated glass, Volumetric lighting...) and attach cache files to the assets folder accordingly. 
+* You should also use prebaking in case of having physical simulation in your scene (like fire, water, complicated glass, Volumetric lighting...) and attach cache files to the assets folder accordingly.
 * We do not support compositing directly in this current Golem version.
 * If you are using FreeStyle brush modifiers that have randomly distributed values your scene may be rejected on verification.
 * Remember that we are here to help you, so if you are not sure about something just ask us on our Rocket Chat at chat.golem.network or by email at contact@golem.network
@@ -17,7 +17,7 @@ If you are rendering heavy tasks on Golem please make sure that you share/provid
 
 #### Blender plugins and add-ons
 
-We have tested most popular Blender plugins to check which of them are working well with Golem and which you should avoid. We will examine current issues alongside other Blender plugins trying to provide full support. Below you will find a list of plugins that are supported alongside those who are troublesome. If you would like to see other plugins tested, or you have issues with plugins that you use, please let us know on our Rocket Chat at chat.golem.network or by email at contact@golem.network. 
+We have tested most popular Blender plugins to check which of them are working well with Golem and which you should avoid. We will examine current issues alongside other Blender plugins trying to provide full support. Below you will find a list of plugins that are supported alongside those who are troublesome. If you would like to see other plugins tested, or you have issues with plugins that you use, please let us know on our Rocket Chat at chat.golem.network or by email at contact@golem.network.
 
 #### Supported plugins
 
@@ -27,38 +27,38 @@ Gaffer is a Blender add-on that helps you light your scenes by presenting all th
 [plugin website](https://www.blendermarket.com/products/gaffer-light-manager)
 
 **Pro-Lighting Studio**<br>
-Status: supported (Rarely minor issues with light temperature can be observed)<br> 
-Pro-Lighting Studio is a Blender addon that helps you produce gorgeous results, with dozens of interesting lighting suggestions for your model.<br> 
+Status: supported (Rarely minor issues with light temperature can be observed)<br>
+Pro-Lighting Studio is a Blender addon that helps you produce gorgeous results, with dozens of interesting lighting suggestions for your model.<br>
 [plugin website](https://www.blendermarket.com/products/pro-lighting-studio)
 
 **Pro-Lighting: Skies**<br>
-Status: supported (Rarely minor issues with light temperature can be observed)<br> 
+Status: supported (Rarely minor issues with light temperature can be observed)<br>
 Pro-Lighting: Skies contains a collection of 80 HDR skies that were captured by professional photographers around the world. Includes sunny, cloudy, overcast, morning, sunset, nighttime and evening skies.<br>
 [plugin website](https://www.blendermarket.com/products/pro-lighting-skies)
 
 **Realistic Nature Asset Pack**<br>
 Status: supported (including files as resources are required).<br>
-19 different nature models to quickly add realistic nature to any render!<br> 
+19 different nature models to quickly add realistic nature to any render!<br>
 [plugin website](https://www.blendermarket.com/products/realistic-nature-asset-pack)
 
 **The Grass Essentials**<br>
 Status: supported<br>
-The Grass Essentials is a pack of grass models and particle systems, that you can quickly import to any scene to have beautiful grass.<br> 
+The Grass Essentials is a pack of grass models and particle systems, that you can quickly import to any scene to have beautiful grass.<br>
 [plugin website](https://www.blendermarket.com/products/the-grass-essentials)
 
 #### Supported add-ons
 
 **ArchiMesh**<br>
-Status: supported <br> 
+Status: supported <br>
 This tool is specially designed to generate architecture elements<br>
 
-**Denoiser**<br> 
+**Denoiser**<br>
 Status: supported<br>
 It fixes issues with noise and light drops. Works as a part of Cycles rendering process and makes it faster.<br>
 
 **Shadow catcher**<br>
 Status: supported<br>
-It allows you to create transparent objects that receive shadows from other objects.<br> 
+It allows you to create transparent objects that receive shadows from other objects.<br>
 
 **Holdout**<br>
 Status: supported<br>
@@ -74,7 +74,7 @@ A set of tools to simplify and automate working with mesh-based decals, which  i
 ** **
 
 ## Submitting a Task
-![installer](/img/usage/add_task.jpg) 
+![installer](/img/usage/add_task.jpg)
 ####  Three Ways to Add a Task via GUI
 
 1. For individual users, there are two ways to add tasks to the Golem desktop app, via the Add Task button (circle with a “+” sign) on the main toolbar which allows the user to select a file through the system chooser or via drag and drop. Both single files or folders can be added.
@@ -84,12 +84,12 @@ To add a file via drag and drop, simply drag a file (or multiple files inside a 
 
 ?> **Note**: On Windows users can add a folder with files using the add task button and single files with drag & drop, On OS X users can add a file and folder in both, On Linux users can add a single file with drag & drop, On Ubuntu users can add a folder with drag & drop and add task button.
 
-3. **You can also create a task via [CLI](/Products/Brass-Beta/Command-line-interface?id=task-create-create-a-task-from-file-note-no-client-side-validation-is-performed-yet-this-will-change-in-the-future) from a `.json` file.**
+3. **You can also create a task via [CLI](/Products/Clay-Beta/Command-line-interface?id=task-create-create-a-task-from-file-note-no-client-side-validation-is-performed-yet-this-will-change-in-the-future) from a `.json` file.**
 
 #### Task Settings
-![installer](/img/usage/task_settings.jpg) 
+![installer](/img/usage/task_settings.jpg)
 
-Your Task Settings and computing time will vary depending on the complexity of your Blender file, but there are some basic principles to understand and general guidelines to use when submitting a task to the network. Below is a breakdown of all you see on the Task Settings screen. 
+Your Task Settings and computing time will vary depending on the complexity of your Blender file, but there are some basic principles to understand and general guidelines to use when submitting a task to the network. Below is a breakdown of all you see on the Task Settings screen.
 
 #### Local Render Test
 
@@ -116,7 +116,7 @@ This section includes all render specific settings:
 ?> **Note:** At this point you can save your settings as a preset. If your files use Cycles, there will be an option to set how many Samples you want instead of Frames. This will be implemented in future releases._
 
 #### Task and Subtask Timeouts
-![installer](/img/usage/task_settings_bottom.jpg) 
+![installer](/img/usage/task_settings_bottom.jpg)
 
 Task and Subtask timeouts are the most important settings when submitting a task. So be sure to carefully consider the size and complexity of your blender file when setting timeouts.
 
@@ -147,10 +147,10 @@ Once your settings are complete you can set your price.
 
 ## Pricing Best Practices
 
-![installer](/img/usage/task_settings_price.jpg) 
+![installer](/img/usage/task_settings_price.jpg)
 #### The formula for calculating the estimated cost of a task
 
-?> **Note:** When you start the computation of your task the funds for this particular task will be "Locked" in your wallet (You can check the locked amount in expanded wallet window). During the task computation, you may notice that your GNT balance has increased. It happens because providers' bids for the computation are usually lower than the bid of your task. 
+?> **Note:** When you start the computation of your task the funds for this particular task will be "Locked" in your wallet (You can check the locked amount in expanded wallet window). During the task computation, you may notice that your GNT balance has increased. It happens because providers' bids for the computation are usually lower than the bid of your task.
 
 >subtask amount x GNT/h x Subtask timeout settings in hourly increments
 
@@ -172,10 +172,10 @@ Once your settings are complete you can set your price.
 Since price is directly tied to your subtask timeouts, it is important to test your typical workflow a few times in our beta app to determine the best settings for the lowest price.
 
 
-## Task computations 
+## Task computations
 
 #### Tasks on GPU vs CPU
-Every scene is prepared for a different use case. This issue may be caused by your scene tile size settings. Optimal tile resolution for GPU is 512x512. 
+Every scene is prepared for a different use case. This issue may be caused by your scene tile size settings. Optimal tile resolution for GPU is 512x512.
 The maximum amount of individual textures is limited to 88 byte-image textures (PNG, JPEG, ..) and 5 float-image textures (OpenEXR, 16 bit TIFF, ..) on GTX 4xx/5xx cards. Newer cards do not have this limitation.
 
 #### Rendering hefty scenes on GPU
@@ -194,10 +194,3 @@ Usually, GPU rendering is much faster than CPU rendering, but there are use case
   - A screenshot or description of your task settings and network trust settings
   - Your Golem.log and Hyperg.log files
   - The name and size of the blender file you were attempting to render
-
-
-
-
-
-
-

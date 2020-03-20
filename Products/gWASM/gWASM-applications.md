@@ -24,7 +24,7 @@ A full working example of a gWASM app is [g-flite](Products/gWASM/Sample-applica
 
 **Our goal is to make computations fully deterministic.** This way we can verify the results' correctness via byte-to-byte comparison. The same computations repeated on various machines should always generate the same results. In our solution, we use redundant computations in order to enable verification of results.
 
-**WebAssembly** is a deterministic machine, but in some points it needs more consideration. **WebAssembly is single-threaded by design**, therefore issues such as synchronisation and order of execution do not play a role here. Floating-point operations are strict and deterministic with one exception - dealing with NaN values. We currently do not provide any way of allowing to enable/disable it. However, we do strive to enforce it at the Golem's app level meaning that gWASM will, for now, only be available on x86_64 architectures. We are aware of other solutions which enforce deterministic floats and hence NaNs at the software level. However, we have decided not to go that route at the moment, as these solutions have a major negative performance impact. 
+**WebAssembly** is a deterministic machine, but in some points it needs more consideration. **WebAssembly is single-threaded by design**, therefore issues such as synchronisation and order of execution do not play a role here. Floating-point operations are strict and deterministic with one exception - dealing with NaN values. We currently do not provide any way of allowing to enable/disable it. However, we do strive to enforce it at the Golem's app level meaning that gWASM will, for now, only be available on x86_64 architectures. We are aware of other solutions which enforce deterministic floats and hence NaNs at the software level. However, we have decided not to go that route at the moment, as these solutions have a major negative performance impact.
 
 Date and time operations are mocked, you should not rely on them. Currently you cannot access external devices (e.g. GPUs) which are sources of indeterminism. The sandbox emulates pseudo-random numbers generation. **Every node draws the same sequence of pseudo-random numbers.**
 
@@ -46,7 +46,7 @@ We have built [gwasm-runner](https://github.com/golemfactory/gwasm-runner) to fa
 2. **`execute` - performs computation for all subproblems independently.**
 3. **`merge` - collect all computation results and formulate final result.**
 
-> Please note that the `split` and `merge` phases will run locally, on the requestor's machine, while `execute` might be run remotely on the provider machines (in both `Unlimited` and `Brass` mode) or locally also on requestors' machine (in `Local` mode - for testing purposes). The code for these callbacks must be contained within the WASM binary.
+> Please note that the `split` and `merge` phases will run locally, on the requestor's machine, while `execute` might be run remotely on the provider machines (in both `Unlimited` and `Clay` mode) or locally also on requestors' machine (in `Local` mode - for testing purposes). The code for these callbacks must be contained within the WASM binary.
 
 Here is the [gwasm-dispatcher crate source code](https://github.com/golemfactory/gwasm-runner/blob/master/gwasm-dispatcher/src/lib.rs) which contains this API.
 
@@ -110,7 +110,7 @@ fn split(_ctx: &mut dyn SplitContext) -> Vec<(Task,)> {
 
 #### Execute
 
-?> Having generated gWASM tasks we now need to provide a "worker" function which, 
+?> Having generated gWASM tasks we now need to provide a "worker" function which,
 in our case, will calculate a sum of each task's elements. The logic that performs this action
 is represented by an `execute` function of our API, and its signature can be summarised
 as follows:
@@ -126,7 +126,7 @@ only one return value as is in this case, we need to wrap it up in a one-element
 `execute` function is actually where all the Golem magic happens. Every `Task` passed
 into the `execute` function is distributed over GU cluster (when `gwasm-runner`
 is used with the GU as the backend), or over the Golem network (when `gwasm-runner` is
-used with the Brass as the backend). More on that later.
+used with the Clay as the backend). More on that later.
 
 All that's left now is to fill in `execute` with the summing logic, so let's do just that!
 
@@ -147,7 +147,7 @@ fn merge(args: &Vec<String>, results: Vec<((Task,), (TaskResult,))>);
 ```
 
 `merge` function takes two arguments: `args` vector of `String`s, and `results` vector
-of input `Task`s with their corresponding `TaskResult`s. 
+of input `Task`s with their corresponding `TaskResult`s.
 
 You can think of `args` as the owned (for consumption) version of command line arguments (they are primarily accesible within `split` function via [`SplitContext`](https://golemfactory.github.io/gwasm-runner/gwasm_dispatcher/trait.SplitContext.html)). It is here only for completeness, for when `merge` also needs access to them.
 

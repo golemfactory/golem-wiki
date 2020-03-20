@@ -5,7 +5,7 @@
 In this quick tutorial you will:
 
 1. **Install Rust (*stable version 1.38.0*) and emscripten (*1.38.45-fastcomp*)**
-2. **Download latest gWASM runner (Command line tool for running gWASM compatible apps locally, via Golem Unlimited or via Brass Golem)**
+2. **Download latest gWASM runner (Command line tool for running gWASM compatible apps locally, via Golem Unlimited or via Clay Golem)**
 3. **Run a simple `hello world` task**
 
 
@@ -13,9 +13,9 @@ In this quick tutorial you will:
 
 ### 1. Prerequisites
 
-Make sure that you have **Rustlang** and **emscripten** installed on your machine. 
+Make sure that you have **Rustlang** and **emscripten** installed on your machine.
 
-**2.1.** [Rust](https://www.rust-lang.org/tools/install) - **stable version 1.38** 
+**2.1.** [Rust](https://www.rust-lang.org/tools/install) - **stable version 1.38**
 
 open up your console/terminal and paste:
 
@@ -29,7 +29,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```bash
 rustup toolchain add 1.38.0
-``` 
+```
 
 *In order to change toolchain for your directory:*
 
@@ -89,7 +89,7 @@ This API consists of only three operations:
 2. `execute` - performs computation for all subproblems independently.
 3. `merge` - collects all computation results and formulate final result.
 
-gWASM runner enables developers to easily implement applications and run them on top of [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Brass Golem 0.21 and later](Products/Brass-Beta/Installation).
+gWASM runner enables developers to easily implement applications and run them on top of [Golem Unlimited](https://github.com/golemfactory/golem-unlimited) and also on [Clay Golem](Products/Clay-Beta/Installation).
 
 ?> For Unix systems (or bash owners: default MacOS and Linux) **install gWASM runner** with:
 
@@ -120,11 +120,11 @@ mkdir gwasm-tutorial-workspace
 
 **CD into created directory and you should be ready to go!**
 
-Remember to set 
+Remember to set
 
 ```bash
 rustup override set 1.38.0
-``` 
+```
 
 and
 
@@ -176,7 +176,7 @@ source ./emsdk_env.sh
 
 !> If you have further issues with `build`, make sure that you have **Python2** in your PATH as `python2`.
 
-Once the build is finished you can find the artifacts in `target/wasm32-unknown-emscripten/release`. 
+Once the build is finished you can find the artifacts in `target/wasm32-unknown-emscripten/release`.
 
 ```
 ls target/wasm32-unknown-emscripten/release
@@ -184,7 +184,7 @@ ls target/wasm32-unknown-emscripten/release
 
 ### 3.3. Run!
 
-In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Brass Beta:
+In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and we'll run it using two backends: locally (using your own machine), and on the Golem Clay Beta:
 
 ##### Run locally
 
@@ -192,16 +192,16 @@ In order to execute our cool "hello world!" app, we'll use `gwasm-runner`, and w
 gwasm-runner target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
-##### Run on Golem Brass Beta
+##### Run on Golem Clay Beta
 
-In order to do so, you have to have **Golem Brass Beta** Installed on your machine. [Follow installation instructions](https://docs.golem.network/#/Products/Brass-Beta/Installation). 
+In order to do so, you have to have **Golem Clay Beta** Installed on your machine. [Follow installation instructions](https://docs.golem.network/#/Products/Clay-Beta/Installation).
 
 > Remember that it is required to run Golem instance in the background during gWASM computations.
 
 With your Golem node running, run the below command to compute your task on the Golem network:
 
 ```bash
-gwasm-runner --backend=Brass target/wasm32-unknown-emscripten/release/hello_world.wasm
+gwasm-runner --backend=Clay target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
 That's it!
@@ -230,4 +230,4 @@ As for the contents, you can copy the JSON object shown above and modify its fie
 
 ### Dig deeper into gWASM runner
 
-If you would like to know more about the gWASM runner dive into [gWASM applications section](Products/gWASM/gWASM-applications?id=introduction-to-gwasm-applications) where we [show gWASM runner example](/Products/gWASM/gWASM-applications?id=gwasm-runner) you have just compiled and computed. 
+If you would like to know more about the gWASM runner dive into [gWASM applications section](Products/gWASM/gWASM-applications?id=introduction-to-gwasm-applications) where we [show gWASM runner example](/Products/gWASM/gWASM-applications?id=gwasm-runner) you have just compiled and computed.

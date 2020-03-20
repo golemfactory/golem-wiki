@@ -1,5 +1,5 @@
 #### How are your going to verify computations?
-There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: simple correctness: checking of the result, eg. proof-of-work, redundant computation: ie. a few providers compute same part of the task and their results are compared, computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, analysis of output logs. See our [blog post](https://blog.golemproject.net/more-twain-less-cheating/) for more info on our verification ideas 
+There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: simple correctness: checking of the result, eg. proof-of-work, redundant computation: ie. a few providers compute same part of the task and their results are compared, computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, analysis of output logs. See our [blog post](https://blog.golemproject.net/more-twain-less-cheating/) for more info on our verification ideas
 
 #### Why are you making it decentralized?
 With decentralization, it will be possible to achieve full scalability without expanding and maintaining our own network and server infrastructure; the solution will also be free from single points of failure and resistant to attempts to disable and censor the network.
@@ -10,7 +10,7 @@ We are building the transaction framework on top of Ethereum. Ethereum gives us 
 #### Can Golem be copied?
 The Golem software is open-source and as such it can be forked by other parties. Golem forks may will emerge over time for either for specialised or general purposes. Golem's core business will remain unaffected by this. Golem business model strongly favors larger networks over smaller networks, so the first and largest network will always be preferable over the smaller networks.
 
-> Golem Network delivers is infrastructure, open for any project, software, dapp, community etc. willing to use it. 
+> Golem Network delivers is infrastructure, open for any project, software, dapp, community etc. willing to use it.
 
 Any individual or organisation interested in building a decentralized solution (or a decentralized marketplace) will be able to use Golem as a platform. Consequently, developers will not be interested in “copying” Golem, given they are provided the features they require. Requestors are free to choose where to buy computing power based on price and functionality. We consider Amazon Web Services, Google Cloud and other cloud providers as competitors, being our aim to provide similar functionalities at significantly lower prices.
 
@@ -38,15 +38,15 @@ For more demanding renders like the Production Benchmark (https://www.blender.or
 * 16 GB RAM
 * 6 cores
 
-Nvidia single core GPUS on Linux environment are supported as well, please make sure to have the software up to date. 
+Nvidia single core GPUS on Linux environment are supported as well, please make sure to have the software up to date.
 
 We do not have a standard for the "optimal" Golem machine. As the network grows there could be a way to determine which configurations perform better than others, and steadily, computing standards will become more refined. At the moment, you can follow the rule of thumb: "the more power you are willing to spare, the more tasks you will receive".
 
 #### What data do I share with Golem?
 
-It depends on you. You can use Golem app fully anonymously if you wish to. If this is the case, then during the first start of the app during the onboarding process, make sure to uncheck the icons that reads "I want to help Golem by sending my statistics." and "I want to help Golem by sending my logs.". If on the other hand, you would like to helps us improve the app, sending this data will helps us a lot with identifying the most common issues in the app. We use both traceback error and monitor data to help improve the app. We will automatically send any errors that occur in your Golem instance to our dev team so they can improve the product in later releases. We are creating a live feed of traceback errors so we can identify bugs quicker and speed up development on new features. 
+It depends on you. You can use Golem app fully anonymously if you wish to. If this is the case, then during the first start of the app during the onboarding process, make sure to uncheck the icons that reads "I want to help Golem by sending my statistics." and "I want to help Golem by sending my logs.". If on the other hand, you would like to helps us improve the app, sending this data will helps us a lot with identifying the most common issues in the app. We use both traceback error and monitor data to help improve the app. We will automatically send any errors that occur in your Golem instance to our dev team so they can improve the product in later releases. We are creating a live feed of traceback errors so we can identify bugs quicker and speed up development on new features.
 
-If you at any point change your mind, you can run golem trough the [CLI](/Products/Brass-Beta/Command-line-interface) and then `terms` type `n` both to `Enable monitor` and `Enable talkback`.
+If you at any point change your mind, you can run golem trough the [CLI](/Products/Clay-Beta/Command-line-interface) and then `terms` type `n` both to `Enable monitor` and `Enable talkback`.
 
 You can find out more in our [privacy policy](https://golem.network/privacy/)
 
@@ -86,15 +86,15 @@ In case you have any error while running Golem you should:
 
 * Make sure your ports are forwarded properly or have a router that supports uPNP
 
-* [Check your logs](/Products/Brass-Beta/Testing?id=where-are-the-logs), copy any Error or Critical message you find and search for them on our Github. This will help you find any related issues, open bugs, or troubleshooting tips
+* [Check your logs](/Products/Clay-Beta/Testing?id=where-are-the-logs), copy any Error or Critical message you find and search for them on our Github. This will help you find any related issues, open bugs, or troubleshooting tips
 
-* [Check our troubleshooting doc](/Products/Brass-Beta/Issues-&-Troubleshooting) for related errors and fixes
+* [Check our troubleshooting doc](/Products/Clay-Beta/Issues-&-Troubleshooting) for related errors and fixes
 
 * Reach out to us on [Rocket Chat](chat.golem.network) with a detailed description of the issue
 
 * Send a detailed description of the issues along with attached log files to contact@golem.network
 
-* If believe you have discovered a bug in the system or a missing critical feature, you can [create an issue on GitHub](https://github.com/golemfactory/golem/issues). Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. For more instruction on reporting issues [check here](Products/Brass-Beta/Testing?id=what-kind-of-comments-do-we-expect)
+* If believe you have discovered a bug in the system or a missing critical feature, you can [create an issue on GitHub](https://github.com/golemfactory/golem/issues). Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. For more instruction on reporting issues [check here](Products/Clay-Beta/Testing?id=what-kind-of-comments-do-we-expect)
 
 
 #### Does Golem Factory invest in other businesses? ICOs?
@@ -110,8 +110,8 @@ GNT is used to pay for rented computing power on the network. For more informati
 
 #### Can I deposit and withdraw real GNT and ETH during the Beta stage?
 
-Yes, Golem has been deployed into the Ethereum Mainnet in April 2018. 
-Make sure your Golem App is on mainnet to do so, and proceed only after learning how to do this properly. 
+Yes, Golem has been deployed into the Ethereum Mainnet in April 2018.
+Make sure your Golem App is on mainnet to do so, and proceed only after learning how to do this properly.
 We recommend you first using our testnet version to familiarize yourself with the app, before going to mainnet. Please remember transactions in the blockchain are irreversible and the Golem team cannot help if the wrong transaction is made.
 
 
@@ -139,9 +139,9 @@ As mentioned, transactions on the blockchain are irreversible. Moreover, we do n
 
 These are some suggestions that might help bring clarity to your issue:
 
-* Search for the transaction on etherscan.io, you only need to enter your public key/address in the “search” option 
+* Search for the transaction on etherscan.io, you only need to enter your public key/address in the “search” option
 * You can use your public key
 * Gather information from etherscan (wallet address, transaction ID, hashes, etc.) and send to your exchange’ support team
-* If the support team is off-duty (we try to cover as many time-zones as possible, but weekends are less active). Please post on the exchanges’ subreddit to get assistance from other users. 
+* If the support team is off-duty (we try to cover as many time-zones as possible, but weekends are less active). Please post on the exchanges’ subreddit to get assistance from other users.
 
 Golem Factory is solely dedicated to the improvement of the software. The GNT token is an important part of our ecosystem but as any other token, it operates on a free market. Golem Factory cannot provide assistance or assume any responsibility for  transactions between independent investors and 3rd party exchanges, or any event relating GNT87 happening outside of the Golem Software.

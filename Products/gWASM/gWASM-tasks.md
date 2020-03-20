@@ -1,6 +1,6 @@
 # Creating gWASM tasks in Golem
 
-If you want to run your WASM application (.wasm file and .js file), you can create tasks connecting directly to your Golem node. No additional client, like g-flite, is required. This is pretty straightforward. 
+If you want to run your WASM application (.wasm file and .js file), you can create tasks connecting directly to your Golem node. No additional client, like g-flite, is required. This is pretty straightforward.
 
 > Again, be sure that you are not violating any licenses or property rights: you take legal responsibility for your actions. It is absolutely fine if you use open source software or your own code.
 
@@ -57,7 +57,7 @@ To create the task, its JSON definition has to be created. The non-task-specific
 
 * `type` is always `wasm`.
 * `name` is arbitrary.
-* `bid` is the price in GNT per hour for computation. It is a maximal possible price that you are willing to pay the provider. The actual price may be less than your bid as, because of the marketplace mechanism implemented in Golem, providers compete against each other which results in lower prices.  In testnet the value is irrelevant. 
+* `bid` is the price in GNT per hour for computation. It is a maximal possible price that you are willing to pay the provider. The actual price may be less than your bid as, because of the marketplace mechanism implemented in Golem, providers compete against each other which results in lower prices.  In testnet the value is irrelevant.
 With gWASM, we have implemented verification by redundancy. This means that each subtask will be sent to two different providers and their computation results will be compared. This implies that you will pay for twice as many subtasks as you specified in the task definition. You can read more about this on our [blog post](https://blog.golemproject.net/gwasm-verification/).
 * `subtask_timeout` is arbitrary and does not affect payment value in gWASM. It should be reasonable long.
 * `timeout` is a task timeout. It should be at least two times `subtask_timeout`.
@@ -74,7 +74,7 @@ The following options have to be specified for the WebAssembly task:
 * `input_dir`: The path to the input directory containing the JavaScript and WebAssembly program files and the input subdirectories for each subtask. For each
 subtask, its input subdirectory will be mapped to `/` (which is also the *CWD*) inside the program's virtual filesystem. The subtasks files are to be open in read-only mode.
 
-* `output_dir`: The path to the output directory where for each subtask, the output files specified in `output_file_paths` will be copied to a subdirectory named the 
+* `output_dir`: The path to the output directory where for each subtask, the output files specified in `output_file_paths` will be copied to a subdirectory named the
 same as the subtask. It is an existing directory. Can be empty. If it is not empty, then the files are overridden.
 
 * `subtasks`: A dictionary containing the options for each subtask. The number of elements reflects the number of subtasks. The keys should be the subtask names, the values should be dictionaries with fields specified below:
@@ -84,7 +84,7 @@ same as the subtask. It is an existing directory. Can be empty. If it is not emp
     * `exec_args`: The execution arguments that will be passed to the program for this subtask.
 
     * `output_file_paths`: The paths to the files the program is expected to produce for this subtask. Each file specified here will be copied from the program's virtual filesystem to the output subdirectory for this subtask. If any of the files are missing, the subtask will fail.
-  
+
 
 ### Example
 
@@ -92,8 +92,8 @@ Create a task from file, this is a json WASM example file:
 
 ```json
 {
-    "type": "wasm", 
-    "name": "test", 
+    "type": "wasm",
+    "name": "test",
     "bid":  1,
     "subtask_timeout": "00:10:00",
     "timeout": "00:10:00",
@@ -136,7 +136,7 @@ golemcli tasks create path/to/the/task_definition.json
 golemcli
 ```
 
-If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Clay-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Clay-Beta/Command-line-interface) for CLI instructions.
 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 
@@ -202,7 +202,7 @@ You can run task from source or already cross-compiled to WASM. If you have run 
 
 2. Follow the instructions in [How to cross-compile C program](Products/gWASM/Building-gWASM-applications?id=cc).
 
-3. Create `in` directory. 
+3. Create `in` directory.
 
 ```bash
 mkdir in
@@ -236,7 +236,7 @@ The `hello` sample program does not use files so leave the directory empty. In c
 golemcli
 ```
 
-If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Clay-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Clay-Beta/Command-line-interface) for CLI instructions.
 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 

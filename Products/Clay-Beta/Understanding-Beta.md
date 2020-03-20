@@ -1,17 +1,17 @@
 # Understanding Beta
-  
-The current version of the app available for use is our **Brass Golem Beta**. We have built a
+
+The current version of the app available for use is our **Clay Golem Beta**. We have built a
 version of Golem that is good enough for a mainnet release, but we need help from our
 users to continue to test and help us improve the product from a  **usability**, **UX**, and **technical
 perspective**. Beta releases still tend to have bugs, products evolve as user needs change,
 and the Golem team is dedicated to putting user feedback into action. Before you download
-and install the mainnet Beta of Brass please review our **Terms and Conditions and User
+and install the mainnet Beta of Clay please review our **Terms and Conditions and User
 Interaction Guidelines** carefully.
-  
+
 As a Beta user there are some important **conditions** and **risks** that you must understand
 when using this app:
 
-* Brass Golem is now on the mainnet, using **real GNT and ETH**. This is great news, as
+* Clay Golem is on the mainnet, using **real GNT and ETH**. This is great news, as
 you can use the app to earn money and pay for computations. Users must take care
 when setting prices and depositing GNT or ETH for use in the app. In the
 cryptoworld, **there is no reversing transactions**. If you lose GNT because you sent it
@@ -32,10 +32,10 @@ your machine to use Golem.
 #### Risks
 
 ###### 1. Password
-We do not keep a copy of your password. Remember to write it down, otherwise there will be no option to recover it. Follow those guides to learn how to [backup your wallet](Products/Brass-Beta/Usage?id=backing-up-your-golem-wallet) and how to [backup your Golem app](Products/Brass-Beta/Usage?id=backing-up-your-golem-app)
+We do not keep a copy of your password. Remember to write it down, otherwise there will be no option to recover it. Follow those guides to learn how to [backup your wallet](Products/Clay-Beta/Usage?id=backing-up-your-golem-wallet) and how to [backup your Golem app](Products/Clay-Beta/Usage?id=backing-up-your-golem-app)
 
 ###### 2. Private key
-We do not have access to your private key. Remember to include it in your backup otherwise there will be no option to recover it. Follow those guides to learn how to [backup your wallet](Products/Brass-Beta/Usage?id=backing-up-your-golem-wallet)  and how to [backup your Golem app](Products/Brass-Beta/Usage?id=backing-up-your-golem-app)
+We do not have access to your private key. Remember to include it in your backup otherwise there will be no option to recover it. Follow those guides to learn how to [backup your wallet](Products/Clay-Beta/Usage?id=backing-up-your-golem-wallet)  and how to [backup your Golem app](Products/Clay-Beta/Usage?id=backing-up-your-golem-app)
 
 ###### 3. Secure your funds
 You should **not keep large amounts of GNT and ETH** in the beta version of the software, it should be considered as a **hot wallet**.
@@ -44,7 +44,7 @@ You should **not keep large amounts of GNT and ETH** in the beta version of the 
 Golem is still in the early stages of building a network, so it may happen that as a Provider you will not get tasks to compute, and therefore you will not earn tokens for sharing your resources.
 
 ###### 5. Failed payments
-We are preparing Concents to increase fairness inside the network, for now you are not guaranteed to get payments for work done in Beta. 
+We are preparing Concents to increase fairness inside the network, for now you are not guaranteed to get payments for work done in Beta.
 
 ###### 6. Awaiting for payments
 We use **batch transactions to minimize the cost of transactions**, so if you use Golem as a Provider **you may wait** for transfers for a maximum of **24h**.

@@ -5,12 +5,12 @@
 ---
 
 #### Brass Beta
-Golem is in its Beta stage named [**Brass Golem**](/Products/Brass-Beta/Understanding-Beta). Users can [install the software](Products/Brass-Beta/Installation) on a variety of platforms and [participate in both using it on mainnet or testing](/Products/Brass-Beta/Testing). [**Brass Golem**](/Products/Brass-Beta/Understanding-Beta) provides CGI rendering for Blender. The [Golem project milestones](About/Roadmap?id=golem-milestones) do not have set dates, Brass is expected to be completed in 2019. To follow our progress, please navigate and follow our [Kanban](https://trello.com/b/PL4ncR3O/golem-mid-term-goals)
+[**Brass Golem**](https://blog.golemproject.net/ready--set--launch-/) launch in 2018 and progressed up to version [0.22.1](https://github.com/golemfactory/golem/releases/tag/0.22.1).
 
 ---
 
-#### Clay
-**Clay Golem**, the second roadmap milestone, is under development.  We are introducing this new milestone in gradual improvements into Brass Golem, adding Clay functionalities, and making the software more robust progressively. 
+#### Clay Beta
+[**Clay Golem**](Products/Clay-Beta/), the second roadmap milestone, has now been released.  We introduced this new milestone in gradual improvements into Brass Golem, adding Clay functionalities, and making the software more robust progressively. Users can [install the software](Products/Clay-Beta/Installation) on a variety of platforms and [participate in both using it on mainnet or testing](/Products/Clay-Beta/Testing). [**Clay Golem**](/Products/Clay-Beta/Understanding-Beta) provides CGI rendering for Blender, gWASM application building, and interacts with the new Task API.
 
 ---
 
@@ -28,7 +28,7 @@ Part of the Golem team is focused strictly on developing [**Golem Unlimited**](P
 **Brass Golem** is where we are at the moment with our proof-of-concept, at a Beta stage, both mainnet and testnet available. This current version of Golem is only focused on rendering in Blender, and although it will be useful to CGI artists, we consider CGI rendering to be a proof of concept primarily, and also a training ground. Our team understands that Blender CGI rendering will not create enough turnover to cover the work in the project, however we are proud to have launched the first decentralized compute power marketplace.
 
 List of proposed  functionalities:
-* [x] Basic Task Definition Scheme 
+* [x] Basic Task Definition Scheme
 * [x] Basic Application Registry - first version of Ethereum-based Application Registry which allows to save tasks defined with basic task definition scheme
 * [x] IPFS integration for coordinating task data and content delivery, e.g. deliver files needed to compute a task, deliver the results back to the requester
 * [x] Docker environment with Golem-provided images for sandboxing the computations
@@ -36,14 +36,14 @@ List of proposed  functionalities:
 * [x] Basic UI and CLI
 * [x] Basic reputation system
 * [x] Implementation of Blender and LuxRender tasks *LuxRender was defered due to small user base*
-* [x] Concent Service 
+* [x] Concent Service
 
-Current version: [0.22.1](https://golem-releases.cdn.golem.network/) 
+Current version: [0.22.1](https://golem-releases.cdn.golem.network/)
 
 ### Clay Golem {docsify-ignore}
 > There is a chance (...) that a Clay Golem will be possessed by a chaotic evil spirit. If this happens control is lost and the Golem attacks the closest living creature.
 
-**Clay Golem** is under development. We are introducing this new milestone in gradual improvements into **Brass Golem**, adding Clay functionalities, and making the software more robust progressively. 
+**Clay Golem** is under development. We are introducing this new milestone in gradual improvements into **Brass Golem**, adding Clay functionalities, and making the software more robust progressively.
 
 Clay Golem introduces a significant progress leap from the Brass milestone. Clay Golem will introduce the Task API and the Application Registry, shaping Golem into a multi-purpose, generalized distributed computation solution. Developers will be able to build integrations with Golem. This feature, however, may come at the cost of compromised stability and security, so the version should be considered an experiment for early adopters and tech enthusiasts to prototype their new ideas and solutions on.
 
@@ -79,7 +79,7 @@ We envision Iron as a deeply tested Golem that gives more freedom to developers,
 
 * [ ] External data link: enables Golem to use resources and interface with software outside of the Golem network
 * [ ] Host-direct mode: a trusted mode for explicitly whitelisted applications or invulnerable environments, where Golem runs computation outside the Docker/VM
-* [ ] Certification support for Environments: 
+* [ ] Certification support for Environments:
 * [ ]  Network Status Dashboard: public website displaying basic stats about Golem network
 * [ ] Additional security mechanism: tasks that uses public data link or host-direct mode are particularly challenging for security. Additional means may be necessary to make running those tasks safer for providers (eg. central audit oracles, agreements contracts or code-execution observers may be implemented)
 * [ ] Golem web client: a web interface for Golem nodes as an alternative to the native GUI / console interface

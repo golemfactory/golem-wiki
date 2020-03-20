@@ -2,15 +2,15 @@
 Since 0.18.0 Golem uses Docker for Mac, the first step is to make sure that all previous Docker instances are removed from your machine. Open terminal, press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
 ```bash
-bash_docker-machine rm golem 
+bash_docker-machine rm golem
 brew uninstall --ignore-dependencies docker docker-machine docker-machine-driver-xhyve
 ```
 
 upgrade Golem:
 
 ```bash
-brew update 
-brew upgrade golem 
+brew update
+brew upgrade golem
 brew cask upgrade golem
 ```
 
@@ -22,7 +22,7 @@ Remember! Before you run Golem be sure to run Docker for Mac. <kbd>&#8984;</kbd>
 
 In order for Golem to work it needs to create a Docker VM, this allows for computations to be completed in an isolated environement from the **Requestor** and **Provider host** machines. Below you will see a list of common Docker Errors from Golem.log files, along with some troubleshooting tips.
 
-If you cannot find your golem.log file, check here for instructions on [log locations](Products/Brass-Beta/Understanding-Logs).
+If you cannot find your golem.log file, check here for instructions on [log locations](Products/Clay-Beta/Understanding-Logs).
 
 ---
 
@@ -119,7 +119,7 @@ If you don't see anything like this in the output that means shares need to be c
 4. Open "Permissions" tab and make sure "golem-docker" user has full control for subfolders and files:
     ![folder-permissions](/img/docker-errors/folder_permissions.png)
 
-4a. If you don't have `golem-docker` on list 
+4a. If you don't have `golem-docker` on list
 
 * Click "Add"
 * Type in "Enter object name to select" `golem-docker`
@@ -165,7 +165,7 @@ If you see error in your `golem.log` file, then follow these troubleshooting ste
     *This will remove the docker container.*
     ```bash
 docker-machine rm -f golem
-``` 
+```
 
 -  Relaunch Golem.
 
@@ -210,24 +210,24 @@ If you see either of these two errors in your `golem.log` file, then follow thes
 	*This command shows if docker is running any errors. It is good to run this command before and after running any of the following docker commands to see if the error is solved.*
 	```bash
 docker-machine ls
-``` 
+```
 
 	*This will restart docker’s golem instance.*
 	```bash
 docker-machine restart golem
-``` 
+```
 
 	*This will remove the docker container.*
 	```bash
 docker-machine rm golem
-``` 
+```
 
 
 Outside of the Docker Quickstart Terminal you can remove `.docker C:\Users\%USER%\.docker\machine\machines\golem`
 
 You can search for this directory in your Windows search bar and remove it. This will force remove the docker machine from the docker directory. Then run the following command in Docker Quickstart Terminal:
 
-```bash 
+```bash
 docker-machine create golem --driver virtualbox
 ```
 
@@ -297,7 +297,7 @@ If your node installed properly on Windows 10, but it does not want to start the
 
 #### Golem is not starting on MacOS after updating to Catalina
 
-If you have recently updated your MacOS to Catalina you most probably are welcomed with multiple permission popups from multiple applications. It is no different for Golem. You will most probably get notification that **hyperg cannot be verified** and Golem will not start. You have to close the application, go to `usr/local/Cellar/hyperg/0.3.6/bin/hyperg` and open it with the right click. After that your Golem node should start without any issues. 
+If you have recently updated your MacOS to Catalina you most probably are welcomed with multiple permission popups from multiple applications. It is no different for Golem. You will most probably get notification that **hyperg cannot be verified** and Golem will not start. You have to close the application, go to `usr/local/Cellar/hyperg/0.3.6/bin/hyperg` and open it with the right click. After that your Golem node should start without any issues.
 
 ---
 
@@ -316,12 +316,12 @@ Outdated hyperg version
 ```
 
 ##### MacOs
-- open terminal and type: 
+- open terminal and type:
 ```bash
 brew upgrade golem
 ```
 
-##### Windows 
+##### Windows
 - download the latest Golem installer from **[here](https://golem-releases.cdn.golem.network/)** and run it again.
 
 ---
@@ -351,7 +351,7 @@ There are issues with ethereum network right now, and values in your wallet can 
 ---
 
 #### Running and stopping
- 
+
 ```bash
 Error starting Golem
 ```
@@ -370,14 +370,14 @@ Those errors should be followed with particular issues that caused them along wi
 
 #### Disk usage
 
-It may happen then while running the Golem node for longer periods and computing a lot of tasks Golem will take a lot of your disk space. If you see that `~/Library/Application Support/golem/default/mainnet/ComputerRes` folder is getting too much of gigabytes open terminal/console and type `golemcli --mainnet res clear --provider` for the mainnet version. If on testnet then type `golemcli --testnet res clear --provider`. 
+It may happen then while running the Golem node for longer periods and computing a lot of tasks Golem will take a lot of your disk space. If you see that `~/Library/Application Support/golem/default/mainnet/ComputerRes` folder is getting too much of gigabytes open terminal/console and type `golemcli --mainnet res clear --provider` for the mainnet version. If on testnet then type `golemcli --testnet res clear --provider`.
 
 ---
 
 ## Port Forwarding Connection Errors
 In order to connect to other Nodes on th Golem Network, your router needs to support UPnP or you need to forward ports **40102**, **40103**, and **3282** manually. Forwarding ports manually requires setting a static IP as well. The process of forwarding ports varies based on your router model. For router specific instructions on how to forward your ports go to **[https://portforward.com/](https://portforward.com/)**, then follow the instructions.
 
-Once you have forwarded your ports try to connect to Golem. If you still cannot connect check your **[golem.log](/Products/Brass-Beta/Understanding-Logs)** for the following errors.
+Once you have forwarded your ports try to connect to Golem. If you still cannot connect check your **[golem.log](/Products/Clay-Beta/Understanding-Logs)** for the following errors.
 
 ---
 
@@ -438,7 +438,7 @@ This error means that hyperg is not connecting. Hyperg uses port 3282. Handshake
 * All ports on your router in the range 40102-60102 are blocked
 * `start-port` and `end-port` settings might have been modified on your router
 
-In both cases please check your router settings and make sure that none of ports mentioned above are blocked. 
+In both cases please check your router settings and make sure that none of ports mentioned above are blocked.
 
 ---
 
@@ -447,11 +447,11 @@ In both cases please check your router settings and make sure that none of ports
 
 Enabling processor virtualization using the BIOS is actually quite simple. Most modern computers should have this option, so there is a good chance that yours has it to. And it will take only few minutes to set it up.
 
-To boot into BIOS, you will need to restart your computer, so make sure that all of your work is saved in the apps you are currently using, and all of them are closed. Restart your computer, and you will see the BIOS screen before the Windows loading screen. You will need to hit the activator key, which in most cases is F2, F5, or F12. 
+To boot into BIOS, you will need to restart your computer, so make sure that all of your work is saved in the apps you are currently using, and all of them are closed. Restart your computer, and you will see the BIOS screen before the Windows loading screen. You will need to hit the activator key, which in most cases is F2, F5, or F12.
 
 You should see a very basic screen with a blue background and limited list of options to choose from. Most commonly those are Boot, Power Management, Advanced BIOS etc. Search for options that mention virtualization. It should be under Processor, Advanced CPU config. If you don’t see virtualization just click through each menu item and try to find it within your options. Look for terms like Virtualization Extensions, **Intel VT-x** or **VT-x**. If you find it you should be able to toggle it **on/off** or e**nabled/disabled** by pressing Enter <kbd>&#8996;</kbd>.
 
-After you are sure that you have enabled virtualization save your settings and quit BIOS. Your computer will restart with its virtualization option enabled in normal mode. 
+After you are sure that you have enabled virtualization save your settings and quit BIOS. Your computer will restart with its virtualization option enabled in normal mode.
 
 
 ---
@@ -459,14 +459,14 @@ After you are sure that you have enabled virtualization save your settings and q
 #### RAM warning
 
 Golem VM was started with a lower than configured amount of RAM because there was insufficient memory available.
- 
+
 **Solution**
 Close any extraneous running applications. If you have a web browser open, try closing some tabs to free up memory. Afterwards, restart Golem. If you are unable to free more RAM consider assigning a lower amount of RAM to Golem by adjusting the resource slider in GUI.
 
 #### Disk space warning
 
 Golem VM was started with a minimal amount of RAM (1 GiB) due to disk requirements posed by the Hyper-V hypervisor.
- 
+
 **Solution**
 The Hyper-V hypervisor needs to allocate disk space equal to the amount of RAM configured in Golem. Please try removing unnecessary files and applications, then restart Golem. If you cannot afford freeing this much disk space consider assigning a lower amount of RAM to Golem by adjusting the resource slider in GUI.
 
@@ -474,14 +474,5 @@ The Hyper-V hypervisor needs to allocate disk space equal to the amount of RAM c
 
 #### Bandwidth throttling
 
-Currently Golem app does not allow you to set manually the network bandwidth. There is a chance that the app will have this option developed in the future, but for the time being we recommend using external applications that enable bandwidth throttling for every app on your machine independently. For Windows users we recommend trying out [NetBalancer](https://netbalancer.com/download). For MacOS [Throttled Pro](http://intrarts.com/throttled.html) should do the job. For those of you who use Mac and are not afraid to do some hacking, following [this tutorial](https://blog.leiy.me/post/bw-throttling-on-mac/) is probably a better solution. 
+Currently Golem app does not allow you to set manually the network bandwidth. There is a chance that the app will have this option developed in the future, but for the time being we recommend using external applications that enable bandwidth throttling for every app on your machine independently. For Windows users we recommend trying out [NetBalancer](https://netbalancer.com/download). For MacOS [Throttled Pro](http://intrarts.com/throttled.html) should do the job. For those of you who use Mac and are not afraid to do some hacking, following [this tutorial](https://blog.leiy.me/post/bw-throttling-on-mac/) is probably a better solution.
 For Ubuntu users we recommend trying out **Wondershaper** which is avaliable in the official Ubuntu repositories. Just follow the instructions provided [here](https://vitux.com/how-to-limit-network-bandwidth-in-ubuntu/).
-
-
-
-
-
-
-
-
-

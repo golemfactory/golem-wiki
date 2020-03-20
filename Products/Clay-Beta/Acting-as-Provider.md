@@ -9,12 +9,12 @@ Users who want to rent out their idle computing power can decide what fraction o
 **Share your computing power and earn**. Joining the marketplace is as easy as installing the Golem app. Users have full control over their involvement and potential earnings.
 
 **Industry Leading Community Support**
-Speak to our team directly via Chat, Email, and Social Media. We encourage feedback of all types from our users. [Help Documentation and FAQs](/Products/Brass-Beta/Understanding-Beta).
+Speak to our team directly via Chat, Email, and Social Media. We encourage feedback of all types from our users. [Help Documentation and FAQs](/Products/Clay-Beta/Understanding-Beta).
 
 
 ## Charges
 
-##### GNT and ETH 
+##### GNT and ETH
 You do not need any GNT or ETH to get started as a Provider. As you accumulate GNT you will eventually want to make a withdrawal, so will need a small amount of ETH to pay for gas at that time.
 
 ##### Basics
@@ -25,17 +25,17 @@ The default settings are:
 > sProvider minimum: 0.1 GNT/hr Requestor maximum: 1 GNT/hr
 
 ##  Receiving tasks
-![installer](/img/usage/settings_view_price.jpg) 
+![installer](/img/usage/settings_view_price.jpg)
 
-Golem is still in BETA and the network still needs time to grow. Requestor traffic is currently lower than Provider traffic. This could you mean that you have to wait several hours for tasks to come in. As the network grows and our business development strategies bring more Requestors to the network, you will see tasks coming in more often. 
-![installer](/img/usage/canyouseeme.jpg) 
+Golem is still in BETA and the network still needs time to grow. Requestor traffic is currently lower than Provider traffic. This could you mean that you have to wait several hours for tasks to come in. As the network grows and our business development strategies bring more Requestors to the network, you will see tasks coming in more often.
+![installer](/img/usage/canyouseeme.jpg)
 If you can see your ports are open on canyouseeme.org while running the app and you have no docker errors, then all you need to do is turn on Golem and wait for tasks to come in!
 
 
 ##  GPU and CPU usage
-![installer](/img/usage/CPU_GPU.jpg) 
+![installer](/img/usage/CPU_GPU.jpg)
 
-?> For the time being, we support Nvidia within a Linux environment. 
+?> For the time being, we support Nvidia within a Linux environment.
 
 #### Enable GPU support
 
@@ -71,10 +71,10 @@ We will implement the option to run multiple Nvidia cards on Linux in the near f
 Golem allocates at most 75% of your RAM usage to make sure that the rest of your computer is working correctly while heavy computation are taking place in the background. So that's perfectly normal.
 
 
-## Awaiting transactions 
-Transactions can be awaiting for up to 30 days per our Terms and Conditions, but it rarely takes that long. 
+## Awaiting transactions
+Transactions can be awaiting for up to 30 days per our Terms and Conditions, but it rarely takes that long.
 
-Transactions that are awaiting could be due to the other node not verifying the task yet, it could be offline at the moment for example. It also has to do with the timing of batch transactions. GNT is sent to multiple nodes in batches to save users on Gas price. Some batches leave sooner than others. An imperfect but useful analogy would be like a train that waits for a certain number of passengers before it leaves. Network speed and the amount of transactions can change the time GNT is "awaiting". A payment could be rejected if the node went offline at a critical time during verification. In this case, that transaction is likely lost. 
+Transactions that are awaiting could be due to the other node not verifying the task yet, it could be offline at the moment for example. It also has to do with the timing of batch transactions. GNT is sent to multiple nodes in batches to save users on Gas price. Some batches leave sooner than others. An imperfect but useful analogy would be like a train that waits for a certain number of passengers before it leaves. Network speed and the amount of transactions can change the time GNT is "awaiting". A payment could be rejected if the node went offline at a critical time during verification. In this case, that transaction is likely lost.
 
 This is something that our Concent service will address in the future, right now it is a risk of using the Beta. In this case, the transaction could still be waiting for the node to verify the work completed, IE, download the task.
 
@@ -82,8 +82,8 @@ This is something that our Concent service will address in the future, right now
 
 #### I don't see GNT on Etherscan
 
-The GNT you are seeing in the Brass Golem is in our wrapper, GNTB ("B" stands for batching transactions). To facilitate batch transfers and more secure transactions going forward, we use GNTB for transfers then it is converted to GNT automatically for your use. If you want to view your GNTB balance, you can check out the smart contract and search for your address in the "Balance of" query section. Etherscan doesn't automatically detect GNTB transfer because batchTransfer doesn't emit ERC20 compliant Transfer event. So Golem can show non zero balance and etherscan will show no activity on the account. One can go to the [GNTB contract](https://etherscan.io/token/0xa7dfb33234098c66fde44907e918dad70a3f211c#readContract) and in the "read smart contract" tab put their address to query for the balance - it will be non zero. And after that etherscan may pick up and start showing token balance in the account view.
-You may also find the batching contract address in the Brass Beta visual interface in the account details. 
+The GNT you are seeing in the Clay Golem is in our wrapper, GNTB ("B" stands for batching transactions). To facilitate batch transfers and more secure transactions going forward, we use GNTB for transfers then it is converted to GNT automatically for your use. If you want to view your GNTB balance, you can check out the smart contract and search for your address in the "Balance of" query section. Etherscan doesn't automatically detect GNTB transfer because batchTransfer doesn't emit ERC20 compliant Transfer event. So Golem can show non zero balance and etherscan will show no activity on the account. One can go to the [GNTB contract](https://etherscan.io/token/0xa7dfb33234098c66fde44907e918dad70a3f211c#readContract) and in the "read smart contract" tab put their address to query for the balance - it will be non zero. And after that etherscan may pick up and start showing token balance in the account view.
+You may also find the batching contract address in the Clay Beta visual interface in the account details. 
 Your tokens will be converted to GNT eventually and you will be able to withdraw it from your app.
 
 
@@ -93,12 +93,4 @@ As a Provider, you just need to ensure you are sharing enough computing power on
 
 #### Disk usage
 
-It may happen then while running the Golem node for longer periods and computing a lot of tasks Golem will take a lot of your disk space. If you see that `~/Library/Application Support/golem/default/mainnet/ComputerRes` folder is getting too much of gigabytes open terminal/console and type `golemcli --mainnet res clear --provider` for the mainnet version. If on testnet then type `golemcli --testnet res clear --provider`. 
-
-
-
-
-
-
-
-
+It may happen then while running the Golem node for longer periods and computing a lot of tasks Golem will take a lot of your disk space. If you see that `~/Library/Application Support/golem/default/mainnet/ComputerRes` folder is getting too much of gigabytes open terminal/console and type `golemcli --mainnet res clear --provider` for the mainnet version. If on testnet then type `golemcli --testnet res clear --provider`.

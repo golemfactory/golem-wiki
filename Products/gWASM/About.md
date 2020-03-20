@@ -24,7 +24,7 @@ gWASM is an easy-to-use platform for distributed and parallel computations. Conv
 
 #### Quick links
 
-?> After [testing gWASM locally](Products/gWASM/Quick-start) please remember to [download and install Brass Golem](https://docs.golem.network/#/Products/Brass-Beta/Installation) or [Golem Unlimited](/Products/Unlimited/Basic-Usage) as it is required to run in the background during gWASM computations.
+?> After [testing gWASM locally](Products/gWASM/Quick-start) please remember to [download and install Clay Golem](https://docs.golem.network/#/Products/Clay-Beta/Installation) or [Golem Unlimited](/Products/Unlimited/Basic-Usage) as it is required to run in the background during gWASM computations.
 
 * [Quick start - testing gWASM locally](Products/gWASM/Quick-start)
 * [gwasm-runner](Products/gWASM/gWASM-applications?id=gwasm-runner) is a project with a single goal: making developing new gWASM apps as simple as possible
@@ -36,4 +36,4 @@ gWASM is an easy-to-use platform for distributed and parallel computations. Conv
 
 #### Feedback
 
-If you would like to share your thoughts about **gWASM** please fill out this **[short survey](https://forms.gle/7Kury1nuLNe3Wf656)**. It will help us make your experience better. 
+If you would like to share your thoughts about **gWASM** please fill out this **[short survey](https://forms.gle/7Kury1nuLNe3Wf656)**. It will help us make your experience better.
