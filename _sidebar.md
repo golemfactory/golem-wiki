@@ -8,19 +8,19 @@
 - [FAQ](About/FAQ.md)
 - [Knowledge Base](About/Knowledge-base.md)</ul> 
 - <p class="category">Products</p>
-- <p class="product">Brass Beta</p>
+- <p class="product">Clay Beta</p>
 <ul class="app-sub-sidebar">
-* [Understanding Beta](Products/Brass-Beta/Understanding-Beta.md)
-* [Installation](Products/Brass-Beta/Installation.md)
-* [Onboarding](Products/Brass-Beta/Onboarding.md)
-* [Golem Electron](Products/Brass-Beta/Electron.md)
-* [Command Line Interface](Products/Brass-Beta/Command-line-interface.md)
-* [Usage](Products/Brass-Beta/Usage.md)
-* [Being a Requestor](Products/Brass-Beta/Being-a-Requestor.md)
-* [Acting as Provider](Products/Brass-Beta/Acting-as-Provider.md)
-* [Issues & Troubleshooting](Products/Brass-Beta/Issues-&-Troubleshooting.md)
-* [Understanding Logs](Products/Brass-Beta/Understanding-Logs.md)
-* [Testing](Products/Brass-Beta/Testing.md)
+* [Understanding Beta](Products/Clay-Beta/Understanding-Beta.md)
+* [Installation](Products/Clay-Beta/Installation.md)
+* [Onboarding](Products/Clay-Beta/Onboarding.md)
+* [Golem Electron](Products/Clay-Beta/Electron.md)
+* [Command Line Interface](Products/Clay-Beta/Command-line-interface.md)
+* [Usage](Products/Clay-Beta/Usage.md)
+* [Being a Requestor](Products/Clay-Beta/Being-a-Requestor.md)
+* [Acting as Provider](Products/Clay-Beta/Acting-as-Provider.md)
+* [Issues & Troubleshooting](Products/Clay-Beta/Issues-&-Troubleshooting.md)
+* [Understanding Logs](Products/Clay-Beta/Understanding-Logs.md)
+* [Testing](Products/Clay-Beta/Testing.md)
 - <p class="product">Task API</p>
 <ul class="app-sub-sidebar">
 * [Task API docs](https://taskapi.docs.golem.network)</ul>

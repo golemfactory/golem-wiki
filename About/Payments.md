@@ -51,4 +51,4 @@ The main interest in every market is how much services cost and how much the use
 
 **Price strategies and selection functions are automated** and we provide default algorithms. The user does not need to set every single price or make micro decisions. The actual price is unknown for the users until an agreement is made. A provider's bid cannot be not less than its minimal price and a requestor's cost cannot be not greater than its maximal price. Users need to set theirs minimal price as a provider or, in the requestors’ case, the maximum price, and check the payments history afterwards.
 
-For a comprehensive, low level explanation on the Brass Golem Marketplace read the technical paper [here](About/Knowledge-base?id=brass-golem-marketplace)
+For a comprehensive, low level explanation on the Clay Golem Marketplace read the technical paper [here](About/Knowledge-base?id=brass-golem-marketplace)

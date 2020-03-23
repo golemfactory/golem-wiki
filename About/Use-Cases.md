@@ -79,11 +79,11 @@ The user may choose simple verification, however the correctness of the computat
 
 ## gWASM
 
-In 0.21.0 Brass Beta release we provided Golem-WASM integration available on mainnet, called [**gWASM**](Products/Clay-Beta/gWASM).
+In 0.21.0 Brass Beta release we provided Golem-WASM integration available on mainnet, called [**gWASM**](Products/gWASM/About).
 
 ?> It is possible to compile many applications as WebAssembly binaries and run them in a secure and portable manner. To read more on WebAssembly, you can start with [this](https://webassembly.org/), however, note that there are many fantastic sources for beginners on the internet also.
 
-In our [**gWASM**](Products/Clay-Beta/gWASM) integration, your data and **WASM** binary is transferred to the remote machine and executed. The target machine is secured by the in-sandbox execution. The binary is portable and compatible with various OS and environments since it is executed by a runtime engine rather than natively. The solution is designed to run large number of computations in parallel in order to profit from Golem Network capabilities.
+In our [**gWASM**](Products/gWASM/About) integration, your data and **WASM** binary is transferred to the remote machine and executed. The target machine is secured by the in-sandbox execution. The binary is portable and compatible with various OS and environments since it is executed by a runtime engine rather than natively. The solution is designed to run large number of computations in parallel in order to profit from Golem Network capabilities.
 
 #### Disclaimer
 This is still a work in progress. The codebase and functionality may change frequently. We do our best to keep the documentation up to date and keep you informed. Please report back to us any issues that you may encounter.
@@ -101,4 +101,4 @@ There are two ways to use gWASM.
 * If you wrote your own algorithm, have custom computation or do tests, then you can create gWASM task yourself and send it directly to **Golem Network**.
 * You can create an applicatin with gWASM backend as computation engine. You need to provide a client that serves as user interface and is responsible for creating gWASM tasks and managing them. End users of the application are not burden with technical details as your application seamlessly integrates with gWASM. The same way it is possible to integrate existing application with gWASM.
 
-To read more about how to send **gWASM** task or how to integrate apps with **gWASM** head over [**here**](Products/Clay-Beta/gWASM)
+To read more about how to send **gWASM** task or how to integrate apps with **gWASM** head over [**here**](Products/gWASM/Quick-start)
