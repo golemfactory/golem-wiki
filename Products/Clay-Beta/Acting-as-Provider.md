@@ -11,6 +11,11 @@ Users who want to rent out their idle computing power can decide what fraction o
 **Industry Leading Community Support**
 Speak to our team directly via Chat, Email, and Social Media. We encourage feedback of all types from our users. [Help Documentation and FAQs](/Products/Clay-Beta/Understanding-Beta).
 
+!> **Make sure you trust the developer before whitelisting their repository!**
+By default only apps verified and uploaded by the Golem Factory to our docker repository are whitelisted.
+Before whitelisting any other repository, make sure you trust the developer. Any apps they upload in the future will compute on your machine, also when they lose control over their docker repository account. In order to provide for other developers apps, you will need to whitelist the "provider prerequisite" docker hub repository.
+
+
 
 ## Charges
 
