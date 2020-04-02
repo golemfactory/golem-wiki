@@ -15,6 +15,10 @@ Speak to our team directly via Chat, Email, and Social Media. We encourage feedb
 By default only apps verified and uploaded by the Golem Factory to our docker repository are whitelisted.
 Before whitelisting any other repository, make sure you trust the developer. Any apps they upload in the future will compute on your machine, also when they lose control over their docker repository account. In order to provide for other developers apps, you will need to whitelist the "provider prerequisite" docker hub repository.
 
+?> You can find official repository those apps here: [golemfactoryapps](https://hub.docker.com/u/golemfactoryapps/?page=1)
+
+!> IF YOU DON'T KNOW WHAT YOU ARE DOING OR IF YOU DON'T KNOW THE DEVELOPER DON'T WHITELIST ANY ADDITIONAL REPOSITORIES
+
 
 
 ## Charges
