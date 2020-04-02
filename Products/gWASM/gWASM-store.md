@@ -7,7 +7,7 @@
 The list includes applications located directly in [this repo](https://github.com/golemfactory/wasm-store), as well as links that point to external sources.
 
 The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
-Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](Products/Brass-Beta/Command-line-interface)). Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
+Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](Products/Clay-Beta/Command-line-interface)). Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
 See [here](Products/gWASM/gWASM-tasks) to learn how to launch a Wasm task in Golem.
 
 The applications augmented with a GUI/CLI are naturally more user friendly, because they handle communication with Golem node. Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](Products/gWASM/Sample-application) app for instance.
@@ -73,8 +73,8 @@ where the `task.json` would consist of
 
 ```json
 {
-    "type": "wasm", 
-    "name": "program", 
+    "type": "wasm",
+    "name": "program",
     "bid":  1,
     "subtask_timeout": "00:10:00",
     "timeout": "00:10:00",
@@ -119,7 +119,7 @@ git clone https://github.com/golemfactory/wasm-store.git
 golemcli
 ```
 
-If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Clay-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Clay-Beta/Command-line-interface) for CLI instructions.
 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 

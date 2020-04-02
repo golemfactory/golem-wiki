@@ -1,8 +1,8 @@
-#### How to start testing 
+#### How to start testing
 
-Follow installation instructions from [this site](Products/Brass-Beta/Installation)
+Follow installation instructions from [this site](Products/Clay-Beta/Installation)
 
-**Check instruction for the new Electron-based Gui [here](Products/Brass-Beta/Electron)**
+**Check instruction for the new Electron-based Gui [here](Products/Clay-Beta/Electron)**
 
 For Beta tests we really need users with open ports and public IP or forwarded ports.
 If you don't have a public ip, your router doesn't support UPnP, you need to forward ports **40102, 40103 and 3282** to your machine from your router for Golem to accept tasks. Refer **[https://bitcoin.org/en/full-node#enabling-connections](https://bitcoin.org/en/full-node#enabling-connections)** for port forwarding instructions but use above ports instead. You may also need to open the ports through your firewall. For router specific instructions on how to forward your ports go to **[https://portforward.com/](https://portforward.com/)**
@@ -13,15 +13,15 @@ To check if your ports are forwarded correctly you can use **[www.canyouseeme.or
 #### What kind of comments do we expect?
 
 1. "[ERR]" Information about errors and bugs
-   - Did you encounter any problems? 
+   - Did you encounter any problems?
    - Did any errors occur?
-   - Did the application crash or stop working? 
+   - Did the application crash or stop working?
 2. "[UX]" Opinions about user experience
-   - Are some elements of the interface unintuitive or inconvenient? 
-   - Is the application behaving as you expected? 
+   - Are some elements of the interface unintuitive or inconvenient?
+   - Is the application behaving as you expected?
 3. "[FUNC]" Suggestions about functionalities
-   - Which core functionalities is the app lacking? 
-   - What would you add? 
+   - Which core functionalities is the app lacking?
+   - What would you add?
 
 
 
@@ -86,7 +86,7 @@ _(Optional: What could be a solution for that issue)_
 TODO: check if still is valid
 Creating a subnet of nodes [here](/Contributing/Creating-a-subnet-of-nodes)
 
-#### How can you send us your comments? 
+#### How can you send us your comments?
 Add a new issue to the repository or write a comment on [Rocket Chat](http://chat.golem.network). Add an annotation "[ERR]", "[UX]" or "[FUNC]" (see description above). If you add information about an error, please append as much information as possible, try to add screenshots and attach your logs to the issue. You can send your detailed comments to [contact@golem.network](mailto:contact@golem.network) with all the above information and attachments.
 
 #### Where are the logs?
@@ -104,4 +104,3 @@ By default, the log files are located at:
 - **Linux** *~/.local/share/golem/default/mainnet/logs*
 
 ?> **Note** For testnet users the logs are located in the rinkeby/logs rather than mainnet/logs folders.
-

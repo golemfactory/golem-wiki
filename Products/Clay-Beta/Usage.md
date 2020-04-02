@@ -9,10 +9,10 @@ We are happy to help. First off, it is important to know all the support resourc
 * [Ubuntu Server Install Video](https://www.youtube.com/watch?v=yP5SQq5mfR8)
 
 If you don't have a public IP, your router doesn't support UPnP, you need to forward ports 40102, 40103 and 3282 to your machine from your router for Golem to accept tasks. Refer to **[bitcoin.org](https://bitcoin.org/en/full-node#enabling-connections)**. For port forwarding instructions but use above ports instead. You may also need to open the ports through your firewall. For router specific instructions on how to forward your ports go to **[portforward.com](https://portforward.com/)**. To check if your ports are forwarded correctly you can use **[canyouseeme.org](www.canyouseeme.org)**
-Once you have successfully installed golem you can set the amount of computing power you want to share, and wait for tasks to come in. 
+Once you have successfully installed golem you can set the amount of computing power you want to share, and wait for tasks to come in.
 If you have any problems while setting up Golem feel free to reach out to us on **[chat.golem.network](https://chat.golem.network/home)**.
 
- 
+
  ---
 
 
@@ -20,8 +20,8 @@ If you have any problems while setting up Golem feel free to reach out to us on 
 #### Network
 
 ![installer](/img/usage/overview1.jpg)
-1. Access help docs and App Settings 
-2. Switch between Network and Task views 
+1. Access help docs and App Settings
+2. Switch between Network and Task views
 3. Access your wallet
 4. View transactions in History
 5. Access Advanced Resource Allocation settings
@@ -30,7 +30,7 @@ If you have any problems while setting up Golem feel free to reach out to us on 
 8. Start and Stop Golem - Connect/Disconnect to/from the network
 
 
-?> **Note** 
+?> **Note**
 You must stop Golem to set or change your computing power settings, network trust, price thresholds, and other settings.
 
 
@@ -40,21 +40,21 @@ You must stop Golem to set or change your computing power settings, network trus
 In the **collapsed wallet view** you can check your GNT/ETH balance along with its estimated USD value. The basic value display is restricted to 0.0000, but when you click in the balance, you will be able to check the exact amount that you currently have.
 You can also expand the wallet in order to get access to withdrawals and deposits account options. If you want to learn more go to the Depositing and Withdrawing Tokens section.
 
-Remember that **on the testnet there are no withdraws**, and there is no address to top up your account provided. 
-Remember while on mainnet that once you send any tokens to the provided address there is no option to cancel it. 
+Remember that **on the testnet there are no withdraws**, and there is no address to top up your account provided.
+Remember while on mainnet that once you send any tokens to the provided address there is no option to cancel it.
 If you have requested a task you may not be able to withdraw some ETH that was locked for security and transaction costs until the payment is made. It won’t take longer than 24 hours.
 
 #### Resources
 ![installer](/img/usage/resources_view.jpg)
 
-The Resources view shows a slider where you can easily set the amount of computing power you want to share with Requestors. 
+The Resources view shows a slider where you can easily set the amount of computing power you want to share with Requestors.
 The slider goes from 0 to 100, least power to most power. **At 100 Golem will still leave at least 1 core of your processor unused so you can continue to use your machine for personal tasks**. The more computing power you share, the more likely you are to get assigned a task from the network as your computer will be completing tasks at a faster rate.
 When submitting tasks to the network **as a Requestor**, it is important to **share enough computing power to allow the local render test to verify your task**. If you cannot complete the local render test, you will not be able to submit a task.
 
 
 **Advanced**
 
-The Advanced view allows you set a more precise allocation of your computing power. You can adjust individual controls of CPU, RAM, and Disk Space. 
+The Advanced view allows you set a more precise allocation of your computing power. You can adjust individual controls of CPU, RAM, and Disk Space.
 
 ?> Note: You must stop Golem to set or change your computing power settings.
 
@@ -173,7 +173,7 @@ View your node's statistics. In the **Reasons for not supporting tasks** view yo
 #### Access Control List
 
 **Open mode** (default) allows you to ban nodes from interacting with your node. Open mode works like a regular blacklist. In this mode, you select nodes from the ones you have previously interacted with (**All known seeds**). To be able to connect with the node which was previously added to your blacklist, you have to remove it from there first. Only after unlocking the node you will be able to interact with it both as a requestor and a provider.
-In **Restricted mode**, you create your own network of trusted nodes. Here you have to manually provide the *node ID* of all the nodes you want to connect to. This mode will exclude you from the rest of the network. 
+In **Restricted mode**, you create your own network of trusted nodes. Here you have to manually provide the *node ID* of all the nodes you want to connect to. This mode will exclude you from the rest of the network.
 
 #### Node Name & Node ID
 
@@ -193,13 +193,13 @@ Here you can calculate your machines performance benchmarks in 3 categories:
 
 Each app will run a local benchmark, with the same setting on each category and give you a score based on quickly the benchmark completes. Current apps available are blender, luxrender (testnet only)
 The score is not updated based on performance on the network, only when re-calculated.
- 
-* Blender benchmark is just rendering BMW scene:  **[blender.org/download/demo-files/](https://www.blender.org/download/demo-files/)** 
-* And here is the formula **[(magic_const / time_spent)](https://github.com/golemfactory/golem/blob/develop/apps/core/benchmark/benchmarkrunner.py#L71)**
- 
 
-?> **Note** 
-Click the calculate button to get a clearer understanding of your machine’s capabilities. 
+* Blender benchmark is just rendering BMW scene:  **[blender.org/download/demo-files/](https://www.blender.org/download/demo-files/)**
+* And here is the formula **[(magic_const / time_spent)](https://github.com/golemfactory/golem/blob/develop/apps/core/benchmark/benchmarkrunner.py#L71)**
+
+
+?> **Note**
+Click the calculate button to get a clearer understanding of your machine’s capabilities.
 
 **Performance slider** With performance slider (at the bottom of Performance tab) you are able to choose how powerful nodes are going to compute your tasks. This functionality will filter out all providers that do not meet your minimal performance requirements. If you do not want to filter any nodes from your requests just leave the slider at "0" - it will disable this function. After performing local benchmarks you'll see where in performance range your node is placed.
 
@@ -225,10 +225,10 @@ When you navigate to Network Trust you will see a slider and a switch between Pr
 * **Switch to Providing:** The slider can be set from 0 to 100. A low trust setting (closer to 0) will result in more task being assigned to you from both lower performing and higher performing Requestors. A high trust setting (closer to 100) will result in fewer tasks being assigned to you from more high performing Requestors.
 
 
-?> **Note** 
+?> **Note**
 Setting trust to 100 will mean that you will only work with nodes with which you have already successfully collaborated with in the past, so this is not recommended when you first start and have yet to compute or request a task.
 
-For Brass Beta, every user’s node starts with the same neutral reputation. Network Trust will become more important as the network grows and node reputations are established through consistent and accurate computations/transactions. As nodes begin to request and compute tasks, the reputation score changes. Reputation is determined by the speed, accuracy and frequency of computations from Providers and the consistency of Requestors. For example, if a Requestor submits a task and then cancels the computation halfway through, leaving providers without a task to compute, the Requestor’s reputation will be negatively impacted.
+For Clay Beta, every user’s node starts with the same neutral reputation. Network Trust will become more important as the network grows and node reputations are established through consistent and accurate computations/transactions. As nodes begin to request and compute tasks, the reputation score changes. Reputation is determined by the speed, accuracy and frequency of computations from Providers and the consistency of Requestors. For example, if a Requestor submits a task and then cancels the computation halfway through, leaving providers without a task to compute, the Requestor’s reputation will be negatively impacted.
 
 #### Default File Location
 ![installer](/img/usage/settings_view_filelocation.jpg)
@@ -257,8 +257,8 @@ Concent is Golem’s network service, which aims to improve the integrity and se
 ![installer](/img/usage/concent_setup.jpg)
 
 #### Requirements
-To use the Concent Service, you will need to: 
-* accept Concent Service terms & conditions 
+To use the Concent Service, you will need to:
+* accept Concent Service terms & conditions
 * have some **GNT (used for the actual deposit)** and a small amount of **ETH (used for gas)** available on your account to submit a deposit to the Concent Service.
 
 #### How does it work?
@@ -304,7 +304,7 @@ Every node that acts in the network as a requestor has the appropriate time to m
 
 In this situation, Concent Service will search the Ethereum blockchain to see if indeed the payment for said tasks hadn’t been made directly and will only use the deposit if it fails to identify matching transactions.
 
-**Mentioned above are current Concent Service use cases. They will expand in time, and all new implemented use cases will be described here in the documentation.**	
+**Mentioned above are current Concent Service use cases. They will expand in time, and all new implemented use cases will be described here in the documentation.**
 
 #### Can I request tasks without Concent Service?
 Yes, you can, but we strongly encourage you to use it to improve fairness in the network. Even when you are using Golem with Concent Service, you will be able to commision tasks without Concent Service, as there is an opt-out option implemented for each task in a task creation process.
@@ -349,7 +349,7 @@ Transaction to and from Concent Service can take some time, so please be patient
 
 Additionally, as mentioned earlier, all deposits are time-locked and the transfers from the deposit to the user’s wallet are scheduled only after a specific time after the Concent is disabled in the user’s Golem client.
 
-If the delay is higher than 48 hours, it probably means that at the moment there are too many transactions in Ethereum. You can read more about possible delay reasons [here](Products/Brass-Beta/Acting-as-Provider?id=awaiting-transactions)
+If the delay is higher than 48 hours, it probably means that at the moment there are too many transactions in Ethereum. You can read more about possible delay reasons [here](Products/Clay-Beta/Acting-as-Provider?id=awaiting-transactions)
 
 ** **
 ## Backup
@@ -357,7 +357,7 @@ If the delay is higher than 48 hours, it probably means that at the moment there
 #### Backing Up Your Golem Wallet
 
 ?> **Important**  Backing up your wallet does not mean that you will be able to easily reuse the wallet with the new app instance. It means that you will be able to recover your funds with use of external entities like **[myetherwallet](https://www.myetherwallet.com/)**.
-If you want to make a backup with reuse of the current ethereum address **[please backup whole golem app](Products/Brass-Beta/Usage?id=backing-up-your-golem-app)** and store files in a safe place.
+If you want to make a backup with reuse of the current ethereum address **[please backup whole golem app](Products/Clay-Beta/Usage?id=backing-up-your-golem-app)** and store files in a safe place.
 Your Golem wallet stores GNT and ETH for use on the network. We highly recommend that you backup your wallet when you begin to use your Golem app. That way if your computer crashes and you cannot recover your files, you have the keys to your wallet to recover your funds.
 
 ###### Finding Your Wallet Keys

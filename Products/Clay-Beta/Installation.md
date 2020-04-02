@@ -1,16 +1,16 @@
 
 # Installation
 ---
-* Before you install and run the Golem app please read and accept our [**Disclaimer and User Interaction Guidelines**](https://golem.network/disclaimer/). 
-* **[Minimum Requirements to Run Golem](Products/Brass-Beta/Installation?id=minimum-requirements-to-run-golem)**
-* **[Port Forwarding](Products/Brass-Beta/Installation?id=port-forwarding)**
-* **[Acquiring GNT and ETH for transactions](Products/Brass-Beta/Installation?id=acquiring-gnt-and-eth)**
-* For Windows users, Virtualization VT-X/AMD-v needs to be enabled in BIOS or your VMware settings. You can find instructions on enabling VT-X in BIOS **[here](Products/Brass-Beta/Issues-&-Troubleshooting?id=enabling-virtualization-in-bios)**
+* Before you install and run the Golem app please read and accept our [**Disclaimer and User Interaction Guidelines**](https://golem.network/disclaimer/).
+* **[Minimum Requirements to Run Golem](Products/Clay-Beta/Installation?id=minimum-requirements-to-run-golem)**
+* **[Port Forwarding](Products/Clay-Beta/Installation?id=port-forwarding)**
+* **[Acquiring GNT and ETH for transactions](Products/Clay-Beta/Installation?id=acquiring-gnt-and-eth)**
+* For Windows users, Virtualization VT-X/AMD-v needs to be enabled in BIOS or your VMware settings. You can find instructions on enabling VT-X in BIOS **[here](Products/Clay-Beta/Issues-&-Troubleshooting?id=enabling-virtualization-in-bios)**
 ---
 
 #### Minimum requirements to run Golem:
 
-?> We support 
+?> We support
 **Windows 10**, **OS X Sierra** and higher, and **Ubuntu 16.04 LTS.**
 
 In general we recommend a processor with multiple cores and lots of RAM. At minimum, you can run Golem with:
@@ -24,7 +24,7 @@ For more demanding renders like the **[Production Benchmark](https://www.blender
 * **6 cores**
 
 After initial tests we do not yet have a model for the "optimal" machine. This is where **you come in as a Beta user**. Try Golem with your machine and give us feedback on your experience.
- As the network grows there could be a way to determine which configurations perform better than others. Right now, our main focus it building a strong network. Over time, the computing standards will become more refined. 
+ As the network grows there could be a way to determine which configurations perform better than others. Right now, our main focus it building a strong network. Over time, the computing standards will become more refined.
 
 > The best rule of thumb right now is "the more power you are willing to spare, the more tasks you will be able to compute".
 
@@ -38,7 +38,7 @@ To check if your ports are forwarded correctly you can use **[www.canyouseeme.or
 Once you have forwarded your ports you are ready to install Golem.  
 
 #### Password
-!> You cannot reset your password if you lose it. No password recovery exists for the app right now. You will be able to print your password during onboarding process, or save it as a .PDF file so you can store it in safe and secure place. 
+!> You cannot reset your password if you lose it. No password recovery exists for the app right now. You will be able to print your password during onboarding process, or save it as a .PDF file so you can store it in safe and secure place.
 
 
 #### Acquiring GNT and ETH
@@ -55,9 +55,9 @@ You can acquire ETH through almost any cryptocurrency exchange. The most popular
 
 Please follow the instructions for your OS to install Golem:
 
-* **[Installation on Windows 10](Products/Brass-Beta/Installation?id=windows-quick-install)**
-* **[Installation on Mac](Products/Brass-Beta/Installation?id=macos-quick-install)**
-* **[Installation on Ubuntu](Products/Brass-Beta/Installation?id=ubuntu-quick-install)**
+* **[Installation on Windows 10](Products/Clay-Beta/Installation?id=windows-quick-install)**
+* **[Installation on Mac](Products/Clay-Beta/Installation?id=macos-quick-install)**
+* **[Installation on Ubuntu](Products/Clay-Beta/Installation?id=ubuntu-quick-install)**
 
 
 Once you have successfully downloaded and installed Golem on your OS, run the app and then check to see if your ports are forwarded correctly on [canyouseeme.org](http://www.canyouseeme.org/). You must be running the Golem app in order to check ports **40102, 40103 and 3282** as Golem will listen them after fully started.
@@ -98,7 +98,7 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 ![installer](/img/installation-windows/05-redist-allow.jpg)
 
 
-8. If you’re upgrading from versions prior to 0.19.x, be aware that Brass Golem Beta 0.19+ uses **Docker for Windows**. Docker for Windows comes with a new type of virtualization support: Hyper-V (Windows Server Virtualization) in place of the old Docker Toolbox. This virtualization change should provide a more stable environment for Golem nodes, but it does not come without difficulties. 
+8. If you’re upgrading from versions prior to Golem Brass 0.19.x, be aware that Brass Golem Beta 0.19+ and Golem Clay use **Docker for Windows**. Docker for Windows comes with a new type of virtualization support: Hyper-V (Windows Server Virtualization) in place of the old Docker Toolbox. This virtualization change should provide a more stable environment for Golem nodes, but it does not come without difficulties. 
 
   If you are a **Windows 10 Home** user you will **not be able to install Hyper-V** as it's not supported. Fortunately, we have kept Docker Toolbox support in this case. The only downside is, that you will have to install Docker Toolbox manually from now on, as it's no longer part of the install package.
 
@@ -106,7 +106,7 @@ Instructions below were based on screenshots from Golem version 0.19.0.
 
   ##### Docker for Windows (Hyper-V)
 
-  - Click `Yes` and follow installation instructions. 
+  - Click `Yes` and follow installation instructions.
 
   ?>After internal testing we have found out that leaving **Docker Toolbox** on Windows during installation of Hyper-V **may cause issues with Golem**, and thus is being uninstalled during Hyper-V installation.
 
@@ -173,7 +173,7 @@ Currently there is no in app upgrade available. You need to download newest inst
 
 ---
 
-## Windows - installation from source 
+## Windows - installation from source
 
 #### Pre-requisites
 To run golem from source on Windows you need to have:
@@ -319,14 +319,14 @@ This includes:
 - Restart your computer
 
 #### No installer alternative
-When you installed the golem application you can skip this chapter, move on to [First time setup](Products/Brass-Beta/Installation?id=first-time-setup)
+When you installed the golem application you can skip this chapter, move on to [First time setup](Products/Clay-Beta/Installation?id=first-time-setup)
 
 #### Enable Hyper-V *(skip for Docker Toolbox)*
 Go to your "[Windows features](https://www.google.nl/search?q=change+windows+features)" and enable Hyper-V. Restart your machine after the configuration has been applied
 
 #### Configure docker *(skip for Docker Toolbox)*
 
-Before you can configure docker you need the [Git](Products/Brass-Beta/Installation?id=git).
+Before you can configure docker you need the [Git](Products/Clay-Beta/Installation?id=git).
 Please clone the source directory now and then continue with this step.
 
 In an administrator PowerShell go to the golem source directory and run:
@@ -356,7 +356,7 @@ C:\GolemResources\ssleay32.dll
 
 #### Install golem-electron
 
-[Electron binaries(win-unpacked)](Products/Brass-Beta/Electron?id=installation)
+[Electron binaries(win-unpacked)](Products/Clay-Beta/Electron?id=installation)
 
 Follow the same steps as for OpenSSL above, can be the same or a new folder.
 
@@ -458,7 +458,7 @@ git clone https://github.com/golemfactory/golem
 cd golem
 ```
 
-?> Note if you did NOT use the installer and have NOT done the [docker configuration](Products/Brass-Beta/Installation?id=golem-installer) yet, now is a good time
+?> Note if you did NOT use the installer and have NOT done the [docker configuration](Products/Clay-Beta/Installation?id=golem-installer) yet, now is a good time
 
 
 #### Create docker machine (once)
@@ -563,7 +563,7 @@ docker-machine rm golem
 brew uninstall --ignore-dependencies docker docker-machine docker-machine-driver-xhyve
 ```
 
-Docker for Mac will be installed alongside Golem. Make sure to accept Docker installation requirements when prompted. 
+Docker for Mac will be installed alongside Golem. Make sure to accept Docker installation requirements when prompted.
 
 ?> Remember! Before you run Golem be sure to run Docker for Mac. Hit <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space, type Docker and press <kbd>&#8996;</kbd> Enter. Make sure that Docker is running properly. If you encounter any issues with the Docker for Mac please follow Docker [instructions](https://docs.docker.com/docker-for-mac/troubleshoot/#docker-knowledge-hub)
 
@@ -595,14 +595,14 @@ brew cask reinstall golem
 Press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 
 ```bash
-brew cask uninstall golem-mainnet-launcher 
+brew cask uninstall golem-mainnet-launcher
 brew cask uninstall golem
 brew uninstall golem
 ```
 
 ---
 
-## MacOS - installation from source 
+## MacOS - installation from source
 
 #### Get the code
 
@@ -705,7 +705,7 @@ curl https://sh.rustup.rs -sSf | sh
 
 **That's it!**
 
-** If you want to install GUI please follow [this instructions](Products/Brass-Beta/Electron?id=installation)**  
+** If you want to install GUI please follow [this instructions](Products/Clay-Beta/Electron?id=installation)**  
 
 ---
 
@@ -804,7 +804,7 @@ and restart the system for changes to take effect.
 
   Download the latest Linux release [here](https://github.com/golemfactory/simple-transfer/releases).
   Extract the archive to a directory of your choosing, for example:
-  
+
   ```bash
   tar xzf hyperg_0.2.10_linux-x64.tar.gz $HOME/.local/bin/
   ```
@@ -887,10 +887,10 @@ If you run into import problems, e.g. `ImportError: cannot import name keccak`, 
 
 #### Done!
 You are now ready to run Golem!
-To do so, either start the [Golem Electron app](Products/Brass-Beta/Electron) or start Golem manually from its source directory:
+To do so, either start the [Golem Electron app](Products/Clay-Beta/Electron) or start Golem manually from its source directory:
 
 ```bash
 ./golemapp.py
 ```
 
-For information on how to interact with Golem from the CLI, please take a look at [this page](Projects/Brass-Beta/Command-line-interface).
+For information on how to interact with Golem from the CLI, please take a look at [this page](Projects/Clay-Beta/Command-line-interface).

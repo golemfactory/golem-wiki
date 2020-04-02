@@ -4,7 +4,7 @@
 
 ![g_flite GIF demo](http://i.imgur.com/Ji1CdCN.gif)
 
-?> Note that `g-flite` currently requires that you have a [Golem instance](https://docs.golem.network/#/Products/Brass-Beta/Installation) running on the same machine. If you'd like to use `g-flite` on mainnet your Golem node's version must be `0.21` or higher.
+?> Note that `g-flite` currently requires that you have a [Golem instance](https://docs.golem.network/#/Products/Clay-Beta/Installation) running on the same machine. If you'd like to use `g-flite` on mainnet your Golem node's version must be `0.21` or higher.
 
 `g-flite` is our demo application and an **end-to-end, ready to use Golem integration**. Most of the implementation details (such as creating Golem tasks and collecting results) are covered by the client, which exposes a user-friendly API. You can use `g-flite` and its source code to familiarise yourself with how gWASM-enabled applications can be implemented.
 
@@ -134,7 +134,7 @@ Licensed under [GNU General Public License v3.0](https://github.com/golemfactory
 golemcli
 ```
 
-If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Brass-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) for CLI instructions.
+If the command is not recognized, then please check your Golem installation and system settings. See [this](https://docs.golem.network/#/Products/Clay-Beta/Installation) documentation for installation and settings instructions and [this](https://docs.golem.network/#/Products/Clay-Beta/Command-line-interface) for CLI instructions.
 
 If your Golem working directory is not default, then you need to point `datadir` as follows.
 
@@ -152,7 +152,7 @@ The answer should be `False`.
 
 3. Go to [releases page](https://github.com/golemfactory/g-flite/releases) and get binaries for your OS. Unpack it.
 
-4. Get the text file you want to read. Any text file in English. Lets say it is `golem.txt`, and paste it into your `g-flite` folder. 
+4. Get the text file you want to read. Any text file in English. Lets say it is `golem.txt`, and paste it into your `g-flite` folder.
 
 5. In your terminal/command line `cd` into the `g-flite` directory.
 
