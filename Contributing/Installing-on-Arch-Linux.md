@@ -17,7 +17,7 @@ New prerequisite was (from AUR):
 pacaur -S libsecp256k1-git
 ```
 Besides, setup Docker: https://wiki.archlinux.org/index.php/Docker
-Install HyperG (I put it into my virtualenv): https://github.com/mfranciszkiewicz/golem-hyperdrive/releases
+Install HyperG replacement - **simple transfer** (I put it into my virtualenv): https://github.com/golemfactory/simple-transfer/releases
 
 #### Setup the environment
 Create a virtualenv.
