@@ -188,7 +188,7 @@ This refers to us migrating GNT to be a fully ERC20 compliant token. We’ve bee
 Working together with ETHWorks and audit firms, our goal is to make sure that the passage to ERC20 allows the (new)GNT to be able to adapt to various matters: for instance, to be used for layer 2 scaling solutions, or Universal Logins, gassless transactions, among others. Right now, doing gassless transactions with the current GNT is cumbersome, and there are many solutions in the market that would be a great fit if GNT was ERC20.
 An added (big) benefit for migrating towards ERC20, is to leverage DeFi tools and protocols, especially DEXes. Providing the first (ERC20) GNT liquidity pools for Uniswap and other similar projects is something that’s definitely in our plans for a long time.
 
-As we continue the work & research, we may come up with more ideas that go beyond this, but our main focus remains on giving our users the chance to improve their Golem experience, trade without KYC (if they want to) - while we simultaneously look into all the DeFi ecosystem, and see if we can have the chance of using the token in other platforms.”
+As we continue the work & research, we may come up with more ideas that go beyond this, but our main focus remains on giving our users the chance to improve their Golem experience, trade without KYC (if they want to) - while we simultaneously look into all the DeFi ecosystem, and see if we can have the chance of using the token in other platforms.
 
 
 #### Why didn’t GNT start out as an ERC20 compliant token?
