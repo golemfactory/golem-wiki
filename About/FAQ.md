@@ -111,7 +111,7 @@ In case you have any error while running Golem you should:
 
 * [Check our troubleshooting doc](/Products/Clay-Beta/Issues-&-Troubleshooting) for related errors and fixes
 
-* Reach out to us on [Rocket Chat](chat.golem.network) with a detailed description of the issue
+* Reach out to us on [Golem Chat](chat.golem.network) with a detailed description of the issue
 
 * Send a detailed description of the issues along with attached log files to contact@golem.network
 
@@ -152,7 +152,7 @@ The two most popular wallets used to store Golem are:
 
 Be sure to read and follow the wallets safety instructions before sending your GNT to your new wallet. There are a lot of phishing scams out there, and if you are not careful, you can easily compromise your wallet security. If you follow their instructions carefully you should have no problem.
 
-For more wallet suggestions from our users go to our [chat](https://chat.golem.network) and pose your question in the #wallets room.
+For more wallet suggestions from our users go to our [chat](https://chat.golem.network).
 
 #### "I sent my tokens to the wrong address and my GNT is gone"
 
