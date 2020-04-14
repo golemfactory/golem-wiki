@@ -50,13 +50,13 @@ We do not have a standard for the "optimal" Golem machine. As the network grows 
 
 If you’re a developer and want to add your code to Golem, the simplest way is to use WebAssembly (WASM). See the [gWASM section](/Products/gWASM/About) of the documentation to learn more. The good news about WASM is that you can easily compile the code that is written in other languages. So if you have code written in C/C++/RUST, you can compile each to the WebAssembly binary and use it with Golem the same way you’d normally use WebAssembly code. If you don’t want to write anything in those languages or you want to do something more complicated, the Task API allows more versatility and is available on mainnet since the [Clay Golem](https://blog.golemproject.net/clay-golem-rises/) release.
 
-#### What is the Task API?
-
-Recently, [we introduced](https://blog.golemproject.net/the-shiny-new-task-api-fleshed-out/) the new Task API. The Task API is a python library containing a programming interface and utility functions. Updates created by requestors should be able to answer a short list of RPC calls. You can read more about these calls in the [Task API documentation](https://taskapi.docs.golem.network/).
-
 #### What is gWASM?
 
 [gWASM](/Products/gWASM/About) stands for WebAssembly on Golem. It is intended to be a bridge between applications and extensible infrastructure. It gives your applications or services easy access to external and decentralized computational power. This access happens in an elastic manner, meaning that you rent as much infrastructure as you need and when you need it.
+
+#### What is the Task API?
+
+Recently, [we introduced](https://blog.golemproject.net/the-shiny-new-task-api-fleshed-out/) the new Task API. The Task API is a python library containing a programming interface and utility functions. Updates created by requestors should be able to answer a short list of RPC calls. You can read more about these calls in the [Task API documentation](https://taskapi.docs.golem.network/).
 
 #### What data do I share with Golem?
 
@@ -115,7 +115,7 @@ In case you have any error while running Golem you should:
 
 * Send a detailed description of the issues along with attached log files to contact@golem.network
 
-* If believe you have discovered a bug in the system or a missing critical feature, you can [create an issue on GitHub](https://github.com/golemfactory/golem/issues). Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. For more instruction on reporting issues [check here](Products/Clay-Beta/Testing?id=what-kind-of-comments-do-we-expect)
+* If believe you have discovered a bug in the system or a missing critical feature, you can [create an issue on GitHub](https://github.com/golemfactory/golem/issues). Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. For more instruction on reporting issues [check here](/Products/Clay-Beta/Testing?id=what-kind-of-comments-do-we-expect)
 
 
 #### Does Golem Factory invest in other businesses? ICOs?
@@ -173,7 +173,7 @@ In order to allow for a future where censorship resistance and privacy is availa
 
 #### How does Golem Unlimited fit in the Golem Network ecosystem?
 
-Golem Unlimited allows users to create an internal trusted network of computers with one of them, called the Hub being in charge. The Hub is a requestor and other computers in the company join it as providers. It is meant for data center-like setup (e.g., render farms, or desktops within organization LAN) where network participants trust each other, but it will also support trusted P2P subnetworks (e.g., distributed team machines).
+[Golem Unlimited](Products/Unlimited/Basic-Usage) allows users to create an internal trusted network of computers with one of them, called the Hub being in charge. The Hub is a requestor and other computers in the company join it as providers. It is meant for data center-like setup (e.g., render farms, or desktops within organization LAN) where network participants trust each other, but it will also support trusted P2P subnetworks (e.g., distributed team machines).
 
 #### How is GPU integration coming along with MacOS and Windows?
 
@@ -185,7 +185,7 @@ This refers to us migrating GNT to be a fully ERC20 compliant token. We’ve bee
 
 #### How will GNT’s migration to the ERC20 standard benefit users?
 
-Working together with ETHWorks and audit firms, our goal is to make sure that the passage to ERC20 allows the (new)GNT to be able to adapt to various matters: for instance, to be used for layer 2 scaling solutions, or Universal Logins, gassless transactions, among others. Right now, doing gassless transactions with the current GNT is cumbersome, and there are many solutions in the market that would be a great fit if GNT was ERC20.
+Working together with ETHWorks and audit firms, our goal is to make sure that the passage to ERC20 allows the (new)GNT to be able to adapt to various matters: for instance, to be used for [layer 2 scaling solutions](https://blog.golemproject.net/scaling-golem-research-on-scalability-alternatives-update/), or Universal Logins, gassless transactions, among others. Right now, doing gassless transactions with the current GNT is cumbersome, and there are many solutions in the market that would be a great fit if GNT was ERC20.
 An added (big) benefit for migrating towards ERC20, is to leverage DeFi tools and protocols, especially DEXes. Providing the first (ERC20) GNT liquidity pools for Uniswap and other similar projects is something that’s definitely in our plans for a long time.
 
 As we continue the work & research, we may come up with more ideas that go beyond this, but our main focus remains on giving our users the chance to improve their Golem experience, trade without KYC (if they want to) - while we simultaneously look into all the DeFi ecosystem, and see if we can have the chance of using the token in other platforms.
