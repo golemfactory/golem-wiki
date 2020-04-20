@@ -52,6 +52,8 @@ Benchmarks:
 
 ### gWASM
 
+?> Any code that can be compiled to WASM, can be distributed on Golem Network. gWASM allows you to run WebAssembly binaries on providers’ machines by turning WASM into a container for server-side parallel computations.
+
 * [Quick start - testing gWASM locally](Products/gWASM/Quick-start)
 * [gwasm-runner](Products/gWASM/gWASM-applications?id=gwasm-runner) is a project with a single goal: making developing new gWASM apps as simple as possible
 * Learn how to [Create gWASM tasks in Golem](Products/gWASM/gWASM-tasks)
