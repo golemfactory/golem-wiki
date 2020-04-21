@@ -61,6 +61,13 @@ Inside zipped file you will find:
 
 ### Demos
 
+##### Building on top of Golem with gWASM
+Have you missed our workshop at Devcon5 in Osaka? Fear not! We're pleased to give you the very workshop re-recorded at our office at the heart of Poland in Warsaw. Learn about Golem, our meta-use case gWasm, and once you digested all the information... please remember to put what you learn into good use and start coding for gWasm!
+
+<iframe width="100%" height="315px" src="https://www.youtube.com/embed/tBbJYs4zlGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 ##### Graphene-ng demo part 1
 Golem is proud to introduce the demo for the Graphene-ng framework PoC, for Intel SGX execution
 
