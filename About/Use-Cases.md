@@ -6,7 +6,7 @@ Golem Factory will not explore and develop all possible use cases, but focus on 
 
 ---
 
-#### Use Case Pipeline
+## Use Case Pipeline
 
 ##### Benefits
 Golem is on the forefront distributed computing technology development and has been making groundbreaking strides in network security, P2P networking, blockchain and decentralized marketplace mechanisms. Golem provides software providers with more than access to computing resources and a built-in audience. We strongly encourage other developers to team up with us and work together on integrating various software solutions with Golem. For the most promising use-case proposals, our team is poised to jumpstart a cooperation through:
@@ -25,7 +25,7 @@ While there is great flexibility in how you can choose to develop your ideas wit
 - Small or moderate size (below 1 GB, preferably below 300 MB) of inputs & outputs, so computation takes significantly more time than sending data. Outputs tend to be the most computationally expensive.
 
 **NICE-TO-HAVE**
-- Non-sensitive Deterministic result of computations or a simple algorithm to verify whether the result of computations is correct.
+- Non-sensitive, deterministic result of computations or a simple algorithm to verify whether the result of computations is correct.
 - A working product with an established userbase.
 
 If you are not sure whether or not your idea would be a good fit for Golem, reach out to us and tell us more about what you plan to achieve. We are always excited to discuss new ideas with our users and potential partners.
@@ -67,7 +67,7 @@ After receiving all parts of rendered images, the requestor's node brings them t
 
 #### Verification
 
-The user may choose simple verification, however the correctness of the computation will not be checked (only image size and type is checked). Alternatively they may choose advanced verification, then a random, small part of the image is rendered locally and compared with the received result. This method is more secure but also slower.
+A random, small part of the image is rendered locally and compared with the received result using machine learning algorithm. 
 
 #### Task specific options guide
 
