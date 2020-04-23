@@ -196,12 +196,12 @@ gwasm-runner target/wasm32-unknown-emscripten/release/hello_world.wasm
 
 In order to do so, you have to have **Golem Clay Beta** Installed on your machine. [Follow installation instructions](https://docs.golem.network/#/Products/Clay-Beta/Installation).
 
-> Remember that it is required to run Golem instance in the background during gWASM computations.
+> Remember that it is required to run Golem instance in the background during gWASM computations. Note, gwasm-runner will use `--backend=Brass` to connect to Golem. For Clay (previously Brass Beta, and the repo name remained unchanged) it should stay `--backend=Brass` on the command line.
 
 With your Golem node running, run the below command to compute your task on the Golem network:
 
 ```bash
-gwasm-runner --backend=Clay target/wasm32-unknown-emscripten/release/hello_world.wasm
+gwasm-runner --backend=Brass target/wasm32-unknown-emscripten/release/hello_world.wasm
 ```
 
 That's it!
