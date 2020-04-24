@@ -65,4 +65,4 @@ If you are rendering heavy tasks on Golem please make sure that you share/provid
 
 ---
 
-Remember that we are here to help you, so if you are not sure about something just ask us on our [Rocket Chat](https://chat.golem.network) or contact@golem.network
+Remember that we are here to help you, so if you are not sure about something just ask us on our [Chat](https://chat.golem.network) or contact@golem.network
