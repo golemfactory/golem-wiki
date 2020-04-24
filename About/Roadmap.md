@@ -47,17 +47,18 @@ Current version: [0.22.1](https://golem-releases.cdn.golem.network/)
 
 Clay Golem introduces a significant progress leap from the Brass milestone. Clay Golem will introduce the Task API and the Application Registry, shaping Golem into a multi-purpose, generalized distributed computation solution. Developers will be able to build integrations with Golem. This feature, however, may come at the cost of compromised stability and security, so the version should be considered an experiment for early adopters and tech enthusiasts to prototype their new ideas and solutions on.
 
-* [ ] Basic Task API: an interface that allows a user to define simple tasks
+* [x] Basic Task API: an interface that allows a user to define simple tasks
 * [x] GPU support
-* [ ] Initial Transaction Framework Model with hard-coded payments schemes
-* [ ] Redundant verification: a verification scheme based on the comparison of redundant computation results
-* [ ] Basic subtask delegation: a mechanism for more fine grained subtasks distribution (e.g. can be used to help with creation of an ad-hoc proxy delegating tasks in a more efficient manner)
-* [ ] Basic tutorials for software developers
+* [x] Initial Transaction Framework Model with hard-coded payments schemes
+* [x] Redundant verification: a verification scheme based on the comparison of redundant computation results
+* [x] Basic subtask delegation: a mechanism for more fine grained subtasks distribution (e.g. can be used to help with creation of an ad-hoc proxy delegating tasks in a more efficient manner)
+* [x] Basic tutorials for software developers
 * [ ]  Support for virtual machines as a sandbox for computation
-* [ ]  Set of extended tutorials for developers explaining how to implement their own tasks for Golem network
+* [x]  Set of extended tutorials for developers explaining how to implement their own tasks for Golem network
 * [ ]  Example computational chemistry use case implementation
 * [ ]  Example machine learning use case implementation
 
+Current version: [0.23.0](https://golem-releases.cdn.golem.network/)
 
 ### Stone Golem {docsify-ignore}
 > Stone Golems do not revoke their creators control like (...) Clay Golems.
