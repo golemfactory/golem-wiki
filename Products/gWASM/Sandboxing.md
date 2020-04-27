@@ -9,7 +9,7 @@ We developed the sandbox and **every gWASM application is run within the sandbox
 
 ### Quick start guide
 
-This guide assumes you have successfully built the `wasm-sandbox` binary; for build instructions, see section [Build instructions](Products/gWASM/Sandboxing?id=build-instructions) below. If you are running Linux, then you can also use the prebuilt binaries from [here](https://github.com/golemfactory/sp-wasm/releases).
+This guide assumes you have successfully built the `wasm-sandbox` binary; the source code can be dowloaded from [here](https://github.com/golemfactory/sp-wasm); for build instructions, see section [Build instructions](Products/gWASM/Sandboxing?id=build-instructions) below. If you are running Linux, then you can also use the prebuilt binaries from [here](https://github.com/golemfactory/sp-wasm/releases).
 
 
 #### 1. [Check instructions on how to create and cross-compile simple program](Products/gWASM/Building-gWASM-applications?id=how-to-compile-gwasm-application)
