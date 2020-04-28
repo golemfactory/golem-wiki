@@ -179,6 +179,8 @@ In order to allow for a future where censorship resistance and privacy is availa
 
 There’s difficulty with exposing GPU to Docker containers on Windows and MacOS. GPU support is technically possible on both these operating systems, although we would need to tailor some new computation environments for those operating systems and make sure that the behaviour is consistent between them. As we continue to rely exclusively on Docker it’s not possible to use GPU with Golem on Windows and MacOS.
 
+It’s also worth noting that GPU is also not supported in gWASM. Since gWASM uses WASM underneath and that itself currently doesn’t have any notion of multi-threading, which would be required for the computation providers GPU to act as the general processing graphics processing unit (GPGPU). It might be possible to get around that, however, the catch would be that it would kill the determinism which we require in Golem task verification.
+
 #### What is the ERC20 migration and how will it take place?
 
 This refers to us migrating GNT to be a fully ERC20 compliant token. We’ve been working with ETHWorks on finding the best approach for this task.
