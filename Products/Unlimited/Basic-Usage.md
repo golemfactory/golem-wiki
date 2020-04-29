@@ -20,7 +20,7 @@ Golem Unlimited offers three execution environments:
 ---
 
 #### Use cases
-Most current integration for Golem Unlimited is [gwasm-runner](https://github.com/golemfactory/gwasm-runner/) which utlise gWASM execution environment and provides simplistic API that resembles map-reduce paradigm. It enables developers to easily implement simple applications and run them on top of the Golem Unlimited and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
+The most current integration for Golem Unlimited is [gwasm-runner](https://github.com/golemfactory/gwasm-runner/) which utilize gWASM execution environment and provides simplistic API that resembles map-reduce paradigm. It enables developers to easily implement simple applications and run them on top of the Golem Unlimited and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
 
 There are more integrations being prepared (outside Golem Unlimited team by with our support).
 To list a few:
@@ -28,12 +28,12 @@ To list a few:
 * [Hoard Compiler](https://github.com/hoardexchange/HoardCompiler) - Distributed C++ compiler
 for Visual Studio 2017 and 2019, which supports host direct mode only for Windows 10.
 
-Initially we have prepared plugins for two use cases that are right now deprecated:
+Initially we have prepared plugins for two use cases that are currently deprecated:
 * [Integer factorization](https://github.com/golemfactory/gu-int-factorization) - a "Hello
 World" for Golem Unlimited 
 * Mining - just to showcase the Golem Unlimited, not a industry grade minig solution 
 
-Here you can watch a short demo with above two: https://youtu.be/J0LBdg2j6Tk
+Here you can watch a short demo for the above two: https://youtu.be/J0LBdg2j6Tk
 They are not maitained any more.
 
 #### Installing and testing
