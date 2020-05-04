@@ -50,6 +50,8 @@ We do not have a standard for the "optimal" Golem machine. As the network grows 
 
 If you’re a developer and want to add your code to Golem, the simplest way is to use WebAssembly (WASM). See the [gWASM section](/Products/gWASM/About) of the documentation to learn more. The good news about WASM is that you can easily compile the code that is written in other languages. So if you have code written in C/C++/RUST, you can compile each to the WebAssembly binary and use it with Golem the same way you’d normally use WebAssembly code. If you don’t want to write anything in those languages or you want to do something more complicated, the Task API allows more versatility and is available on mainnet since the [Clay Golem](https://blog.golemproject.net/clay-golem-rises/) release.
 
+Additional resources that would be of interest include [Being a Requestor](/Products/Clay-Beta/Being-a-Requestor) and [Acting as a Provider](/Products/Clay-Beta/Acting-as-Provider) on Golem Network.
+
 #### What is gWASM?
 
 [gWASM](/Products/gWASM/About) stands for WebAssembly on Golem. It is intended to be a bridge between applications and extensible infrastructure. It gives your applications or services easy access to external and decentralized computational power. This access happens in an elastic manner, meaning that you rent as much infrastructure as you need and when you need it.
