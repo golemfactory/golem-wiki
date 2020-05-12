@@ -85,7 +85,7 @@ Transactions can be awaiting for up to 30 days per our Terms and Conditions, but
 
 Transactions that are awaiting could be due to the other node not verifying the task yet, it could be offline at the moment for example. It also has to do with the timing of batch transactions. GNT is sent to multiple nodes in batches to save users on Gas price. Some batches leave sooner than others. An imperfect but useful analogy would be like a train that waits for a certain number of passengers before it leaves. Network speed and the amount of transactions can change the time GNT is "awaiting". A payment could be rejected if the node went offline at a critical time during verification. In this case, that transaction is likely lost.
 
-This is something that our Concent service will address in the future, right now it is a risk of using the Beta. In this case, the transaction could still be waiting for the node to verify the work completed, IE, download the task.
+Our [Concent](/Products/Clay-Beta/Usage?id=concent-service) service to reduce the risk. Howver, please keep in mind that because of the Beta stage and probabilistic methods of verification the risk cannot be elimineted completly. In this case, the transaction could still be waiting for the node to verify the work completed, IE, download the task.
 
 ![installer](/img/usage/hiostory_view_timeout.jpg)
 
