@@ -1,3 +1,5 @@
+?> This part describes only being a requestor for Blender use case. If you are interested in requesting arbitrary task check how to use [gWASM](/Products/gWASM/About) or [Task API](https://taskapi.docs.golem.network/#task-api).
+
 ## Preparing your .blend file
 
 #### Checklist
@@ -12,7 +14,7 @@ If you are rendering heavy tasks on Golem please make sure that you share/provid
 * You should also use prebaking in case of having physical simulation in your scene (like fire, water, complicated glass, Volumetric lighting...) and attach cache files to the assets folder accordingly.
 * We do not support compositing directly in this current Golem version.
 * If you are using FreeStyle brush modifiers that have randomly distributed values your scene may be rejected on verification.
-* Remember that we are here to help you, so if you are not sure about something just ask us on our Rocket Chat at chat.golem.network or by email at contact@golem.network
+* Remember that we are here to help you, so if you are not sure about something just ask us on our chat [chat.golem.network](https://chat.golem.network) or by email at contact@golem.network
 
 
 #### Blender plugins and add-ons
@@ -113,7 +115,7 @@ This section includes all render specific settings:
 
 
 
-?> **Note:** At this point you can save your settings as a preset. If your files use Cycles, there will be an option to set how many Samples you want instead of Frames. This will be implemented in future releases._
+?> **Note:** At this point you can save your settings as a preset. If your files use Cycles, there will be an option to set how many Samples you want instead of Frames. This will be implemented in future releases.
 
 #### Task and Subtask Timeouts
 ![installer](/img/usage/task_settings_bottom.jpg)
@@ -158,7 +160,7 @@ Once your settings are complete you can set your price.
 
 * 5 substasks x 0.5 GNT/hr x 30mins Subtask Timeout = 1.25 GNT
     - 5 x 0.5 x (30/60) = 1.25
-* 10 subtasks x 1 GNT/hr x 1hr Subtask Timeout = 10 GNT_
+* 10 subtasks x 1 GNT/hr x 1hr Subtask Timeout = 10 GNT
     - 10 x 1 x 1 = 10
 
 ?>**Note:** If your settings result in a number with long decimal, Golem will round to the nearest 100th.
@@ -192,5 +194,5 @@ Usually, GPU rendering is much faster than CPU rendering, but there are use case
 - Check for errors in your logs found here
 - If you still cannot render a task send the following to contact@golem.network:
   - A screenshot or description of your task settings and network trust settings
-  - Your Golem.log and Hyperg.log files
+  - Your Golem [log files](Products/Clay-Beta/Understanding-Logs).
   - The name and size of the blender file you were attempting to render
