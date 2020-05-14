@@ -209,7 +209,7 @@ Click the calculate button to get a clearer understanding of your machine’s ca
 Here you can set the minimum price you will accept as a Provider and the maximum price you will pay per subtask as a Requestor.
 This is where you determine your place in the market. The lower your Provider price, the more likely it is that you will be chosen for tasks, but you will make less GNT per subtask. The converse will happen if your Provider price is higher.
 If you have a powerful machine and can compute tasks efficiently you can make more money as a Provider.
-For task specific pricing instructions go to our Pricing Best Practices section.
+For task specific pricing instructions go to our [Pricing Best Practices](/Products/Clay-Beta/Being-a-Requestor?id=pricing-best-practices) section.
 If your Requestor maximum is set very low, then you will only get the assigned the lowest price Providers. It is not always the case the low cost = low power machine, but low power machines could cause timeouts which could result in you paying more to get your task completed. A higher Requestor maximum will give you more access to more expensive Providers, which are likely to have more powerful and efficient machines than low price Providers.
 The default settings are:
 
@@ -335,9 +335,9 @@ There’s a caveat though - to mitigate possible attacks where a party would sub
 Unless of course, the user re-enables the Concent Service in their client before that time passes - in which case the deposit is locked again and a subsequent action to disable the Concent Service once more will start the 48-hour waiting period anew.
 
 #### How much can I save by not unlocking my deposit?
-The whole process of withdrawing and recreating the deposit may cost up to 200k of gas (for 10 Gwei and ETH price $100 it would be $0.2)
+The whole process of withdrawing and recreating the deposit may cost up to 200k of gas (for 10 Gwei and ETH price \$100 it would be \$0.2)
 
-Also after turning Concent Service off when the deposited funds are in a 48h “pending withdrawal” time period, you will be able to relock your funds. Relocking the deposit may cost up to 80k of gas (for 10 Gwei and ETH price $100 it would be $0.08).
+Also after turning Concent Service off when the deposited funds are in a 48h “pending withdrawal” time period, you will be able to relock your funds. Relocking the deposit may cost up to 80k of gas (for 10 Gwei and ETH price \$100 it would be \$0.08).
 
 #### What will happen with my tasks in the network when I turn Concent Service off?
 All tasks in the network that you have commissioned while the Concent Service was enabled will be treated as such and act accordingly and the aforementioned time-locking of deposits will ensure that any payments using deposits can still happen before the task’s timeout elapses. All future tasks will be created without Concent Service though until Concent Service is explicitly enabled once again.
@@ -356,7 +356,7 @@ If the delay is higher than 48 hours, it probably means that at the moment there
 
 #### Backing Up Your Golem Wallet
 
-?> **Important**  Backing up your wallet does not mean that you will be able to easily reuse the wallet with the new app instance. It means that you will be able to recover your funds with use of external entities like **[myetherwallet](https://www.myetherwallet.com/)**.
+?> **Important**  Backing up your wallet does not mean that you will be able to easily reuse the wallet with the new app instance. It means that you will be able to recover your funds with use of external entities like **[mycrypto](https://www.mycrypto.com/)**.
 If you want to make a backup with reuse of the current ethereum address **[please backup whole golem app](Products/Clay-Beta/Usage?id=backing-up-your-golem-app)** and store files in a safe place.
 Your Golem wallet stores GNT and ETH for use on the network. We highly recommend that you backup your wallet when you begin to use your Golem app. That way if your computer crashes and you cannot recover your files, you have the keys to your wallet to recover your funds.
 
@@ -382,7 +382,7 @@ The default data directory can be found in */golem/*, the location of *USER_DATA
 * **Mac Os:** *~/Library/Application Support/golem*
 * **Linux:** *~/.local/share/golem/*
 
-On windows *%LOCALAPPDATA%* is by default: *C:\Users\username\AppData\Local\Roaming*
+On windows *%LOCALAPPDATA%* is by default: *C:\Users\username\AppData\Local\*
 From this data directory you want to include in your backup:
 * **Ethereum keys:** *default/mainnet/transaction_system & default/mainnet/keys/keystore.json*
 * **GUI settings:** config.json (for Linux *home\.config\golem\config.json)*
