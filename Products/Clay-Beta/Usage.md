@@ -61,7 +61,7 @@ The Advanced view allows you set a more precise allocation of your computing pow
 
 
 #### History
-![installer](/img/usage/history_view.jpg)
+![installer](/img/usage/hiostory_view.jpg)
 
 The **History view** allows you to view both amounts spent and earned when sharing computing power and submitting tasks. The price shown is the price per subtask completed. We use batch transactions to minimize the cost of transactions, so if you use Golem as a Provider you may wait for transfers for a maximum of 24h.
 
