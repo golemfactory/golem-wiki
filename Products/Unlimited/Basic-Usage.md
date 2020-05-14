@@ -20,7 +20,7 @@ Golem Unlimited offers three execution environments:
 ---
 
 #### Use cases
-The most current integration for Golem Unlimited is [gwasm-runner](https://github.com/golemfactory/gwasm-runner/) which utilize gWASM execution environment and provides simplistic API that resembles map-reduce paradigm. It enables developers to easily implement simple applications and run them on top of the Golem Unlimited and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
+The most current integration for Golem Unlimited is [gwasm-runner](https://github.com/golemfactory/gwasm-runner/) which utilizes the gWASM execution environment and provides a simplistic API that resembles a map-reduce paradigm. It enables developers to easily implement simple applications and run them on top of Golem Unlimited and also on [Brass Golem 0.21 and later](https://blog.golemproject.net/brass-golem-beta-0-21-0-hello-mainnet-gwasm/).
 
 There are more integrations being prepared (outside Golem Unlimited team by with our support).
 To list a few:
