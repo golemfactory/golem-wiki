@@ -5,9 +5,9 @@
 [![Buildbot](https://shield.lwan.ws/img/MN1w5S/buildpackage_windows)](https://buildbot.golem.network/buildbot/#/builders/buildpackage_windows)
 [![codecov](https://codecov.io/gh/golemfactory/golem/branch/develop/graph/badge.svg)](https://codecov.io/gh/golemfactory/golem) -->
 
-?> Golem is a decentralized marketplace for computing power. It enables CPUs and GPUs to connect in a peer-to-peer network, enabling both application owners and individual users ("requestors") to rent resources from other users’ ("providers") machines. These resources can be used to complete tasks requiring any amount of computation time and capacity. 
+?> Golem is a decentralized marketplace for computing power. It enables CPUs and GPUs to connect in a peer-to-peer network, enabling both application owners and individual users ("requestors") to rent resources from other users’ ("providers") machines. These resources can be used to complete tasks requiring any amount of computation time and capacity.
 Nowadays, centralized cloud providers are in control of these services, these platforms are constrained by closed networks, proprietary payment systems, and hard-coded provisioning operations. Golem proposes an open-source, decentralized and user controlled alternative.
- 
+
 One core component to Golem’s built-in feature set is an [**Ethereum-based transaction system**](/About/Payments), which enables direct payments between requestors, providers, and software developers.
 
 
@@ -41,8 +41,8 @@ It communicates with external technologies. Some of them may be downloaded and i
 The most common problems are described in [Common issues & troubleshooting](Products/Clay-Beta/Issues-&-Troubleshooting) section
 
 >[!WARNING|style:callout]
-Golem Project is work in progress. The current version is a Beta stage -  named Clay Golem Beta - and it's not fully secure. 
->Check [this list of issues](https://github.com/golemfactory/golem/labels/security) for more details. 
+Golem Project is work in progress. The current version is a Beta stage -  named Clay Golem Beta - and it's not fully secure.
+>Check [this list of issues](https://github.com/golemfactory/golem/labels/security) for more details.
 >Make sure to understand all risks before installing the software.
 
 Benchmarks:
@@ -95,4 +95,3 @@ email contact@golem.network
 ### Job offers
 
 All current job offers can be found [here](https://golem.network/careers/)
-
