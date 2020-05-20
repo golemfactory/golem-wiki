@@ -71,7 +71,7 @@ You can find out more in our [privacy policy](https://golem.network/privacy/)
 #### How is data protected and kept private on Golem Network?
 
 For providers, the solution is relatively easy using Sandboxing. You can read about this more in the [Sandboxing section](/Products/gWASM/Sandboxing) of the documentation.
-The more interesting part of the question is ‘how are we going to protect the data you send as a requestor?’. In the classical scenario where you’re sending you data to the cloud, you’re not getting any protection. It’s essentially a trusted setup between the requestor and providers, an option which is also possible in Golem using Golem Unlimited.
+The more interesting part of the question is ‘how are we going to protect the data you send as a requestor?’. In the classical scenario where you’re sending your data to the cloud, you’re not getting any protection. It’s essentially a trusted setup between the requestor and providers, an option which is also possible in Golem using Golem Unlimited.
 
 #### How much money can I expect to make with Golem?
 
