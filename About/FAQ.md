@@ -2,8 +2,8 @@
 
 Golem is a decentralized computation network, a new way of distributing redundant computing power to those who are in need of it, on-demand. It creates a peer-to-peer network where users join on an equal basis to buy and sell computation, splitting up complicated tasks into smaller subtasks in the network. In Golem there’s no central authority and no user is more or less important than another.
 
-#### How are your going to verify computations?
-There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: simple correctness: checking of the result, eg. proof-of-work, redundant computation: ie. a few providers compute same part of the task and their results are compared, computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in rendered picture, analysis of output logs. See our [blog post](https://blog.golemproject.net/more-twain-less-cheating/) for more info on our verification ideas
+#### How are you going to verify computations?
+There will be different methods depending on the task type. In the future, a user who adds a new task can implement a new verification method that suits them. Possible solutions may involve: simple correctness: checking of the result, eg. proof-of-work, redundant computation: ie. a few providers compute same part of the task and their results are compared, computing small, random part of the task and comparing this part with the result sent by the provider, ie. comparing the color of few random pixels in the rendered picture, analysis of output logs. See our [blog post](https://blog.golemproject.net/more-twain-less-cheating/) for more info on our verification ideas.
 
 #### Why are you making it decentralized?
 With decentralization, it will be possible to achieve full scalability without expanding and maintaining our own network and server infrastructure; the solution will also be free from single points of failure and resistant to attempts to disable and censor the network.
@@ -12,25 +12,25 @@ With decentralization, it will be possible to achieve full scalability without e
 We are building the transaction framework on top of Ethereum. Ethereum gives us expressive power, which is much-needed when implementing advanced, trustless schemes. Check our [blog post](https://blog.golemproject.net/why-ethereum/) to learn more.
 
 #### Can Golem be copied?
-The Golem software is open-source and as such it can be forked by other parties. Golem forks may will emerge over time for either for specialised or general purposes. Golem's core business will remain unaffected by this. Golem business model strongly favors larger networks over smaller networks, so the first and largest network will always be preferable over the smaller networks.
+The Golem software is open-source and as such, it can be forked by other parties. Golem forks may emerge over time for either for specialised or general purposes. Golem's core business will remain unaffected by this. Golem business model strongly favors larger networks over smaller networks, so the first and largest network will always be preferable over the smaller networks.
 
 > Golem Network delivers is infrastructure, open for any project, software, dapp, community etc. willing to use it.
 
 Any individual or organisation interested in building a decentralized solution (or a decentralized marketplace) will be able to use Golem as a platform. Consequently, developers will not be interested in “copying” Golem, given they are provided the features they require. Requestors are free to choose where to buy computing power based on price and functionality. We consider Amazon Web Services, Google Cloud and other cloud providers as competitors, being our aim to provide similar functionalities at significantly lower prices.
 
 #### Fairness in the network
-The most important is facilitating a direct connection and a quick network that allows nodes to get tasks assigned to them as quickly as possible. It's a FIFO system. A competition layer is added where the nodes with the best price / benchmark / reputation will be favored by the requestors, based on their requirements. During the growth of the network, diverse methods will be tested and implemented to give the control to the users and ensure a healthy, fair, network.
+The most important is facilitating a direct connection and a quick network that allows nodes to get tasks assigned to them as quickly as possible. It's a FIFO system. A competition layer is added where the nodes with the best price / benchmark / reputation will be favored by the requestors, based on their requirements. During the growth of the network, diverse methods will be tested and implemented to give control to the users and ensure a healthy, fair, network.
 
 #### Golem vs supercomputers
 Supercomputers use fast low latency links between processors to exchange information about states of computation really (really) fast. Golem is being created to function in a different environment - medium to high latency connections. Golem is solving different sets of tasks at a fraction of the price.
 
 #### Are you using some external solutions / libraries?
-We're using modified version of Dat Project (https://datproject.org/) called HyperG for resource distribution and Docker (https://www.docker.com/) containers as computational environments.
+We're using a modified version of Dat Project (https://datproject.org/) called HyperG for resource distribution and Docker (https://www.docker.com/) containers as computational environments.
 
 
 #### What are the optimal settings for my machine to run Golem?
 
-In general we recommend a processor with multiple cores and lots of RAM. At minimum, you can run Golem with:
+In general, we recommend a processor with multiple cores and lots of RAM. At a minimum, you can run Golem with:
 
 * 2 GB RAM
 * 2 cores
@@ -71,7 +71,7 @@ You can find out more in our [privacy policy](https://golem.network/privacy/)
 #### How is data protected and kept private on Golem Network?
 
 For providers, the solution is relatively easy using Sandboxing. You can read about this more in the [Sandboxing section](/Products/gWASM/Sandboxing) of the documentation.
-The more interesting part of the question is ‘how are we going to protect the data you send as a requestor?’. In the classical scenario where you’re sending you data to the cloud, you’re not getting any protection. It’s essentially a trusted setup between the requestor and providers, an option which is also possible in Golem using Golem Unlimited.
+The more interesting part of the question is ‘how are we going to protect the data you send as a requestor?’. In the classical scenario where you’re sending your data to the cloud, you’re not getting any protection. It’s essentially a trusted setup between the requestor and providers, an option which is also possible in Golem using Golem Unlimited.
 
 #### How much money can I expect to make with Golem?
 
@@ -96,7 +96,7 @@ To help get more visibility for your request feel free to send us more details t
 Please include in your message:
 * Screenshots
 * Use Case
-* Pain points of existing system
+* Pain points of the existing system
 
 If your issue is severe and disrupting your workflow within the Golem App, you can report it here as well: https://github.com/golemfactory/golem/issues
 
@@ -117,12 +117,12 @@ In case you have any error while running Golem you should:
 
 * Send a detailed description of the issues along with attached log files to contact@golem.network
 
-* If believe you have discovered a bug in the system or a missing critical feature, you can [create an issue on GitHub](https://github.com/golemfactory/golem/issues). Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. For more instruction on reporting issues [check here](/Products/Clay-Beta/Testing?id=what-kind-of-comments-do-we-expect)
+* If you believe you have discovered a bug in the system or a missing critical feature, you can [create an issue on GitHub](https://github.com/golemfactory/golem/issues). Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. Please provide relevant log entries, screenshots, and detailed descriptions of expected vs. actual app behavior. For more instruction on reporting issues [check here](/Products/Clay-Beta/Testing?id=what-kind-of-comments-do-we-expect)
 
 
 #### Does Golem Factory invest in other businesses? ICOs?
 
-We do not invest in ICOs, nor we speculateETH or other cryptocurrencies. In cases where a project’s technology overlaps with Golem, or which would make good use cases for Golem, we might invest time and resources in cooperation for mutual benefit.
+We do not invest in ICOs, nor we speculate ETH or other cryptocurrencies. In cases where a project’s technology overlaps with Golem, or which would make good use cases for Golem, we might invest time and resources in cooperation for mutual benefit.
 
 Golem chooses to cooperate with the ecosystem by working together with others, rather than investing capital.
 
@@ -152,13 +152,13 @@ The two most popular wallets used to store Golem are:
 * https://mycrypto.com
 * https://metamask.io
 
-Be sure to read and follow the wallets safety instructions before sending your GNT to your new wallet. There are a lot of phishing scams out there, and if you are not careful, you can easily compromise your wallet security. If you follow their instructions carefully you should have no problem.
+Be sure to read and follow the wallet's safety instructions before sending your GNT to your new wallet. There are a lot of phishing scams out there, and if you are not careful, you can easily compromise your wallet security. If you follow their instructions carefully you should have no problem.
 
 For more wallet suggestions from our users go to our [chat](https://chat.golem.network).
 
 #### "I sent my tokens to the wrong address and my GNT is gone"
 
-As mentioned, transactions on the blockchain are irreversible. Moreover, we do not work directly with any exchanges or facilitate transactions of GNT from Wallets to Exchanges or vice versa. For that reason we cannot help you get your tokens back or reverse the transaction. Transactions on the blockchain are irreversible.
+As mentioned, transactions on the blockchain are irreversible. Moreover, we do not work directly with any exchanges or facilitate transactions of GNT from Wallets to Exchanges or vice versa. For that reason, we cannot help you get your tokens back or reverse the transaction. Transactions on the blockchain are irreversible.
 
 These are some suggestions that might help bring clarity to your issue:
 
@@ -189,7 +189,7 @@ This refers to us migrating GNT to be a fully ERC20 compliant token. We’ve bee
 
 #### How will GNT’s migration to the ERC20 standard benefit users?
 
-Working together with ETHWorks and audit firms, our goal is to make sure that the passage to ERC20 allows the (new)GNT to be able to adapt to various matters: for instance, to be used for [layer 2 scaling solutions](https://blog.golemproject.net/scaling-golem-research-on-scalability-alternatives-update/), or Universal Logins, gassless transactions, among others. Right now, doing gassless transactions with the current GNT is cumbersome, and there are many solutions in the market that would be a great fit if GNT was ERC20.
+Working together with ETHWorks and audit firms, our goal is to make sure that the passage to ERC20 allows the (new)GNT to be able to adapt to various matters: for instance, to be used for [layer 2 scaling solutions](https://blog.golemproject.net/scaling-golem-research-on-scalability-alternatives-update/), or Universal Logins, gasless transactions, among others. Right now, doing gassless transactions with the current GNT is cumbersome, and there are many solutions in the market that would be a great fit if GNT was ERC20.
 An added (big) benefit for migrating towards ERC20, is to leverage DeFi tools and protocols, especially DEXes. Providing the first (ERC20) GNT liquidity pools for Uniswap and other similar projects is something that’s definitely in our plans for a long time.
 
 As we continue the work & research, we may come up with more ideas that go beyond this, but our main focus remains on giving our users the chance to improve their Golem experience, trade without KYC (if they want to) - while we simultaneously look into all the DeFi ecosystem, and see if we can have the chance of using the token in other platforms.
