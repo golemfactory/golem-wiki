@@ -869,7 +869,7 @@ This step needs to be run from the Golem source directory.
 python3 setup.py develop --prefix=$HOME/.local
 ```
 
-#### _8. Secure runtime_
+#### _8. Optional: Secure runtime_
 To run GLambda app first follow the instructions for [gVisor secure runtime installation](https://gvisor.dev/docs/user_guide/docker/). Once `runsc` runtime is configured the GLambda app will enable itself automatically on Golem startup.
 
 #### _9. Optional: Install test dependencies_
@@ -893,4 +893,4 @@ To do so, either start the [Golem Electron app](Products/Clay-Beta/Electron) or 
 ./golemapp.py
 ```
 
-For information on how to interact with Golem from the CLI, please take a look at [this page](Projects/Clay-Beta/Command-line-interface).
+For information on how to interact with Golem from the CLI, please take a look at [this page](Products/Clay-Beta/Command-line-interface).

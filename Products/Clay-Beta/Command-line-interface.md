@@ -1,5 +1,5 @@
 ### Using the command line interface
-*Date*: 2019-09-02, *Version*: 0.1.9
+*Date*: 2020-05-13, *Version*: 0.3.1
 
 `golemcli` requires a running Golem node to work. To start Golem in headless mode, type:
 - for the packaged version:
@@ -16,14 +16,16 @@
 Run `golemcli` wo arguments to see top-level usage information:
 
 ```
-golemcli 0.1.9
+golemcli 0.3.1
 Golem Factory <contact@golem.network>
+Command line interface for Brass Golem Node
 
 USAGE:
     golemcli [FLAGS] [OPTIONS] [SUBCOMMAND]
 
 FLAGS:
     -i, --interactive    Enter interactive mode
+    -V, --version        Print version information
         --json           Return results in JSON format
     -h, --help           Prints help information
     -y, --assume-yes     Answer `YES` to any prompt without an user action
@@ -50,6 +52,7 @@ SUBCOMMANDS:
     cache        Manage disc cache
     debug        Debug RPC
     terms        Show and accept terms of use
+    wallet       Wallet operations
     shutdown     Quit after finishing ongoing tasks
     help         Prints this message or the help of the given subcommand(s)
 ```
@@ -64,11 +67,17 @@ SUBCOMMANDS:
 
 ```
 USAGE:
-    account [FLAGS] <SUBCOMMAND>
+    account [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC prot
 
 SUBCOMMANDS:
     info        Display account & financial info
@@ -158,7 +167,7 @@ General                                                Account
 ###### Incomes subcommands
 
 ```
-incomes 0.1.9
+incomes 0.3.1
 Golem Factory <contact@golem.network>
 Display incomes
 
@@ -166,11 +175,15 @@ USAGE:
     incomes [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt wihtout an user action
 
 OPTIONS:
-        --sort <sort_by>    Sort payments [possible values: payer, status, value]
+        --sort <sort_by>        Sort payments [possible values: payer, status, value]
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     all          Display all incomes
@@ -270,7 +283,7 @@ SUBCOMMANDS:
 ###### Payments subcommands
 
 ```
-payments 0.1.9
+payments 0.3.1
 Golem Factory <contact@golem.network>
 Display payments
 
@@ -278,12 +291,17 @@ USAGE:
     payments [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt wihtout an user action
 
 OPTIONS:
         --sort <sort_by>    Sort payments [possible values: subtask, payee, status, value,
                             fee]
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
+
 
 SUBCOMMANDS:
     all          Display all payments
@@ -386,16 +404,24 @@ SUBCOMMANDS:
 ###### Network subcommands
 
 ```
-network 0.1.9
+network 0.3.1
 Golem Factory <contact@golem.network>
 Manage network
 
 USAGE:
-    network [FLAGS] <SUBCOMMAND>
+    network [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt wihtout an user action
+    
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
+
 
 SUBCOMMANDS:
     status     Show client status
@@ -490,16 +516,22 @@ To connect to a particular node in the network you should include:
 ###### Settings positional arguments
 
 ```
-settings 0.1.9
+settings 0.3.1
 Golem Factory <contact@golem.network>
 Manage settings
 
 USAGE:
-    settings [FLAGS] <SUBCOMMAND>
+    settings [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt wihtout an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     show    Show current settings
@@ -575,16 +607,22 @@ In order change a particular setting you should include:
 ###### Res subcommands
 
 ```
-res 0.1.9
+res 0.3.1
 Golem Factory <contact@golem.network>
 Manage provider resources
 
 USAGE:
-    res [FLAGS] <SUBCOMMAND>
+    res [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json          Return results in JSON format
+    -h, --help          Prints help information
+    -y, --assume-yes    Answer `YES` to any prompt without an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     show      Display shared resources info
@@ -615,7 +653,7 @@ SUBCOMMANDS:
 In order change your provider resources you should include `--cores`, `--disk` or `--memory`: 
 
 ```
-res-update 0.1.9
+res-update 0.3.1
 Golem Factory <contact@golem.network>
 Change your provider resources
 
@@ -623,14 +661,18 @@ USAGE:
     res update [FLAGS] [OPTIONS]
 
 FLAGS:
-        --json     Return results in JSON format
+        --json        Return results in JSON format
         --apply    
-    -h, --help     Prints help information
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
 
 OPTIONS:
         --cores <cpu_cores>    
         --disk <disk>          
-        --memory <memory>      
+        --memory <memory>
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 ```
 
 ###### Resources update example
@@ -644,16 +686,22 @@ OPTIONS:
 ###### Tasks subcommands
 
 ```
-tasks 0.1.9
+tasks 0.3.1
 Golem Factory <contact@golem.network>
 Manage tasks
 
 USAGE:
-    tasks [FLAGS] <SUBCOMMAND>
+    tasks [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     show         Lists current tasks + task_id show task details
@@ -906,16 +954,22 @@ This command will clear all tasks from the `tasks show` list
 ###### Subtasks subcommands
 
 ```
-tasks-subtasks 0.1.9
+tasks-subtasks 0.3.1
 Golem Factory <contact@golem.network>
 Show sub-tasks
 
 USAGE:
-    tasks subtasks [FLAGS] <SUBCOMMAND>
+    tasks subtasks [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     help       Prints this message or the help of the given subcommand(s)
@@ -964,16 +1018,22 @@ Test task works the same as the `task` create, but it will not send your task to
 ###### `test_task` subcommands
 
 ```
-test_task 0.1.9
+test_task 0.3.1
 Golem Factory <contact@golem.network>
 Manage testing tasks
 
 USAGE:
-    test_task [FLAGS] <SUBCOMMAND>
+    test_task [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     run         Run testing task. It accepts a file like 'tasks create'.
@@ -992,7 +1052,7 @@ SUBCOMMANDS:
 ###### ACL subcommands
 
 ```
-acl 0.1.9
+acl 0.3.1
 Golem Factory <contact@golem.network>
 Manage peer access control lists
 
@@ -1000,8 +1060,14 @@ USAGE:
     acl [FLAGS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json           Return results in JSON format
+    -h, --help           Prints help information
+    -y, --assume-yes     Answer `YES` to any prompt without an user action
+
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     list     Show current access list status
@@ -1022,16 +1088,22 @@ SUBCOMMANDS:
 ###### `acl setup` subcommands
 
 ```
-acl-setup 0.1.9
+acl-setup 0.3.1
 Golem Factory <contact@golem.network>
 Creates new acl list with given configuration.
 
 USAGE:
-    acl setup [FLAGS] <SUBCOMMAND>
+    acl setup [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json           Return results in JSON format
+    -h, --help           Prints help information
+    -y, --assume-yes     Answer `YES` to any prompt without an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     all-except     Reset ACL to all nodes are allowed except listed.
@@ -1044,19 +1116,22 @@ SUBCOMMANDS:
 ###### `acl allow` - Allows interaction with given nodes. Removes from blacklist or adds to whitelist.
 
 ```
-acl-allow 0.1.9
+acl-allow 0.3.1
 Golem Factory <contact@golem.network>
 Allows interaction with given nodes. Removes from blacklist or adds to whitelist.
 
 USAGE:
-    acl allow [FLAGS] <node>...
+    acl allow [FLAGS] [OPTIONS] <node>...
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json           Return results in JSON format
+    -h, --help           Prints help information
+    -y, --assume-yes     Answer `YES` to any prompt without an user action
 
 OPTIONS:
-
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 ARGS:
     <node>...    GOLEM node id. it can be pattern in form <prefix>...<suffix>
@@ -1068,7 +1143,7 @@ ARGS:
 ###### `acl deny` -  Deny interaction with given nodes. Adds to blacklist or removes from whitelist.
 
 ```
-acl-deny 0.1.9
+acl-deny 0.3.1
 Golem Factory <contact@golem.network>
 Deny interaction with given nodes. Adds for blacklist or removes from whitelist.
 
@@ -1076,10 +1151,15 @@ USAGE:
     acl deny [FLAGS] [OPTIONS] <node>...
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json           Return results in JSON format
+    -h, --help           Prints help information
+    -y, --assume-yes     Answer `YES` to any prompt without an user action
 
 OPTIONS:
+    OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
     -s, --for-secs <for_secs>    Sets temporaty rule for given number of seconds.
 
 ARGS:
@@ -1093,16 +1173,22 @@ ARGS:
 ?> With this command you manage your node environments, like **BLENDER**, **BLENDER_NVGPU**, **WASM** and **glambda**
 
 ```
-envs 0.1.9
+envs 0.3.1
 Golem Factory <contact@golem.network>
 Manage environments
 
 USAGE:
-    envs [FLAGS] <SUBCOMMAND>
+    envs [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json           Return results in JSON format
+    -h, --help           Prints help information
+    -y, --assume-yes     Answer `YES` to any prompt without an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     show             Show environments
@@ -1190,16 +1276,22 @@ Command for setting a multiplier should look like this:
 With this command you are able to turn **Concent Service** **on** and **off**, check deposit balance and accept or decline its terms of use. 
 
 ```
-concent 0.1.9
+concent 0.3.1
 Golem Factory <contact@golem.network>
 Concent Service
 
 USAGE:
-    concent [FLAGS] <SUBCOMMAND>
+    concent [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+    
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     status     Shows Concent Service status
@@ -1217,16 +1309,22 @@ SUBCOMMANDS:
 ?> Manage disc cache
 
 ```
-cache 0.1.9
+cache 0.3.1
 Golem Factory <contact@golem.network>
 Manage disc cache
 
 USAGE:
-    cache [FLAGS] <SUBCOMMAND>
+    cache [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     show     Show information on used resources
@@ -1241,16 +1339,22 @@ SUBCOMMANDS:
 ?> Wallet operations 
 
 ```
-wallet 0.3.0
+wallet 0.3.1
 Golem Factory <contact@golem.network>
 Wallet operations
 
 USAGE:
-    wallet [FLAGS] <SUBCOMMAND>
+    wallet [FLAGS] [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
-        --json    Return results in JSON format
-    -h, --help    Prints help information
+        --json        Return results in JSON format
+    -h, --help        Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+ 
+OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
 
 SUBCOMMANDS:
     show    Show payments
@@ -1285,8 +1389,13 @@ USAGE:
 FLAGS:
         --json    Return results in JSON format
     -h, --help    Prints help information
+    -y, --assume-yes  Answer `YES` to any prompt without an user action
+ 
 
 OPTIONS:
+    -d, --datadir <data_dir>    Golem node's data dir
+    -a, --address <rpc_address> Golem node's RPC address
+    -p, --port <rpc_port>       Golem node's RPC port
         --direction <direction>              Operation direction [possible values: incoming, outgoing]
         --operation-type <operation_type>    Operation type [possible values: transfer, deposit_transfer,
                                              task_payment, deposit_payment]
