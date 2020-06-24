@@ -3,8 +3,8 @@
 
 
 We are happy to help. First off, it is important to know all the support resources you have at your disposal when setting up and running Golem. Feel free to check out the installation tutorial videos for your OS:
-* [Mac Install Video](https://www.youtube.com/watch?v=z94zrgvagh4)
-* [Windows 10 Install Video](https://www.youtube.com/watch?v=CNNy5A5A5f4)
+* [Mac Install Video](https://www.youtube.com/watch?v=TAozKguVoCc)
+* [Windows 10 Install Video](https://www.youtube.com/watch?v=LSI-QLnhuvI)
 * [Ubuntu Install Video](https://www.youtube.com/watch?v=OPpB3C15S4A)
 * [Ubuntu Server Install Video](https://www.youtube.com/watch?v=yP5SQq5mfR8)
 
