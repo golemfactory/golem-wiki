@@ -308,10 +308,8 @@ Every node that acts in the network as a requestor has the appropriate time to m
 
 In this situation, Concent Service will search the Ethereum blockchain to see if indeed the payment for said tasks hadn’t been made directly and will only use the deposit if it fails to identify matching transactions.
 
-**Mentioned above are current Concent Service use cases. They will expand in time, and all new implemented use cases will be described here in the documentation.**
-
 #### Can I request tasks without Concent Service?
-Yes, you can, but we strongly encourage you to use it to improve fairness in the network. Even when you are using Golem with Concent Service, you will be able to commision tasks without Concent Service, as there is an opt-out option implemented for each task in a task creation process.
+Yes, you can.
 
 #### Is Concent service free?
 If your node is not manifesting malicious behavior in the network, the only cost you will be charged with is transaction fees between you and the Concent Service. Payments from Deposit are going to be distributed through providers and requestors in regular amount.
