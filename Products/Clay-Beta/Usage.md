@@ -80,17 +80,21 @@ In the **Tasks tab** you can submit a task by dragging and dropping your Blender
 * Access help docs and App Settings
 
 **Submit a task**
+
 On the bottom left corner you will see a status icon: If it show a green circle with the message “Golem is Ready!” you can submit a task, or wait around for a task to be assigned to you. For more go to the Submitting a Task section
 Monitor progress of your task.
-You can keep track of time that it takes to compute your task. If you want to know more about timeout settings please read Task and Subtask Timeouts section
+You can keep track of time that it takes to compute your task. If you want to know more about timeout settings please read [Task and Subtask Timeouts](Products/Clay-Beta/Being-a-Requestor?id=task-and-subtask-timeouts) section.
 
 **View completed tasks**
+
 You can easily go through all the tasks that completed with success. You can delete completed tasks to make room for others, this does not delete the final product which is saved to your desired file location, it merely cleans up the UI. Clicking the arrow icon to the right on a task will take you to the Task settings.
 
 **Toggle the task preview option**
+
 On the bottom right corner of the this view you can toggle a switch to show a preview of your render.
 
 **Open more detailed preview window**
+
 If your task had a significant number of frames we highly recommend you use more detailed preview window to see all the computing and finished subtasks.
 ** **
 
@@ -101,7 +105,7 @@ GNT or Golem Network Token is needed to pay for computations on the network and 
 
 ##### ETH
 
-Golem uses the Ethereum blockchain to facilitate fast and secure payments between Requestors and Providers. ETH is the native currency of Ethereum and is used to pay for transaction fees on the network. Only a small amount is needed to complete a transaction. All Applications built on the Ethereum blockchain pay for transactions using ETH.
+Golem uses the Ethereum blockchain to facilitate fast and secure payments between Requestors and Providers. ETH is the native currency of Ethereum and is used to pay for transaction fees on the network. Only a small amount is needed to complete a transaction. Almost all Applications built on the Ethereum blockchain pay for transactions using ETH.
 
 ---
 
@@ -111,21 +115,21 @@ Golem uses the Ethereum blockchain to facilitate fast and secure payments betwee
 
 ##### Basics
 
-In order to participate in the Golem network as a Requestor, you will need some amount of GNT and ETH. If you are going to participate as a Provider you will need a small amount of ETH for withdrawals. If you have GNT and/or ETH stored in an external wallet, all you need to do is send your tokens to the public key of your Golem wallet. The exact location of the in-app wallet keys are inside the app directories under */keys/keystore.json*
+In order to participate in the Golem network as a Requestor, you will need some amount of GNT and ETH. If you are going to participate as a Provider you will need a small amount of ETH for withdrawals. If you have GNT and/or ETH stored in an external wallet, all you need to do is send your tokens to the public key of your Golem wallet. The exact location of the in-app wallet keys are inside the app directories under */keys/keystore.json*.
 
 !> **Warning** Do not use your Golem Wallet outside of the app. You should not use Golem’s wallet outside the Golem app. Trying to perform any operations on your address with external applications like MEW or other wallets may cause errors and you may be required to install a clean Golem app from scratch. You won’t lose your funds, you will still be able to withdraw them from your address to external applications.
 
 ##### Depositing
 Click the arrow to the right of your token balances display to expand your wallet settings.
 
-From here you can copy the public key listed where it says “Your Address”. Send GNT and/or ETH to this address using your personal wallet or exchange service. Remember that in order to perform computations in the network you will need some small amount of ETH (0.005 ETH is a good start)
+From here you can copy the public key listed where it says “Your Address”. Send GNT and/or ETH to this address using your personal wallet or exchange service. Remember that in order to perform computations in the network you will need some small amount of ETH (0.005 ETH is a good start).
 
 ##### Withdrawing
 Click the arrow to the right of your token balances display to expand your wallet settings.
 
 Click the “withdraw” button underneath the token balance from which you wish to withdraw. Choose the amount of GNT or ETH you wish to withdraw and enter the public key of the personal wallet or exchange to which you wish to withdraw your tokens.
 
-Click “Apply”
+Click “Apply”.
 
 #### Basics of Acquiring and Using GNT/ETH
 ##### Resources
@@ -304,10 +308,8 @@ Every node that acts in the network as a requestor has the appropriate time to m
 
 In this situation, Concent Service will search the Ethereum blockchain to see if indeed the payment for said tasks hadn’t been made directly and will only use the deposit if it fails to identify matching transactions.
 
-**Mentioned above are current Concent Service use cases. They will expand in time, and all new implemented use cases will be described here in the documentation.**
-
 #### Can I request tasks without Concent Service?
-Yes, you can, but we strongly encourage you to use it to improve fairness in the network. Even when you are using Golem with Concent Service, you will be able to commision tasks without Concent Service, as there is an opt-out option implemented for each task in a task creation process.
+Yes, you can.
 
 #### Is Concent service free?
 If your node is not manifesting malicious behavior in the network, the only cost you will be charged with is transaction fees between you and the Concent Service. Payments from Deposit are going to be distributed through providers and requestors in regular amount.
