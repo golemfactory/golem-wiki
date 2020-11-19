@@ -8,6 +8,10 @@
 - [FAQ](About/FAQ.md)
 - [Knowledge Base](About/Knowledge-base.md)</ul> 
 - <p class="category">Products</p>
+- <p class="product">Migrate</p>
+<ul class="app-sub-sidebar">
+* [Migration Guideline](Products/Migrate/migration-guideline.md)
+* [Migration Terms and Conditions](Products/Migrate/migration-terms-and-conditions.md)</ul>
 - <p class="product">Clay Beta</p>
 <ul class="app-sub-sidebar">
 * [Understanding Beta](Products/Clay-Beta/Understanding-Beta.md)
@@ -20,7 +24,7 @@
 * [Acting as Provider](Products/Clay-Beta/Acting-as-Provider.md)
 * [Issues & Troubleshooting](Products/Clay-Beta/Issues-&-Troubleshooting.md)
 * [Understanding Logs](Products/Clay-Beta/Understanding-Logs.md)
-* [Testing](Products/Clay-Beta/Testing.md)
+* [Testing](Products/Clay-Beta/Testing.md)</ul>
 - <p class="product">Task API</p>
 <ul class="app-sub-sidebar">
 * [Task API docs](https://taskapi.docs.golem.network)</ul>
