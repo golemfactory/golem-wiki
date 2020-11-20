@@ -1,37 +1,37 @@
 
 
-?> In this tutorial, we will guide you through the Golem Network Token migration process. We hope you find this process fairly simple and intuitive, and with this tutorial, you should be fully ready and feel more confident to migrate your GNT to GLM, the new token. Please take your time and make sure that you have read our [FAQs](https://blog.golemproject.net/gnt-to-erc20-migration-faqs/).
+?> In this tutorial, we will guide you through the Golem Network Token migration process. We have 3 options available for you to be able to migrate. We hope you find the options fairly simple and intuitive, and with this tutorial, you should be fully ready and feel more confident to migrate your GNT to GLM, the new token. Please take your time and make sure that you have read our [FAQs](https://blog.golemproject.net/gnt-to-erc20-migration-faqs/).
 
 ---
+
+## Option 1: Migrating with our Web Application via MetaMask
+
+> **Sidenote:** We chose the Metamask for our migration application. You can easily import any Ethereum address into this wallet, and it supports multiple accounts. Most importantly, you can easily use [your hardware wallets](https://metamask.zendesk.com/hc/en-us/articles/360020394612-How-to-connect-a-Trezor-or-Ledger-Hardware-Wallet) with it. You will also be able to migrate with and [MyCrypto](/Products/Migrate/migration-guideline?id=external-wallet-support) once their widget is ready and [script](Products/Migrate/migration-guideline?id=migrating-via-automated-script) when we’ve concluded the mainnet test.
 
 <iframe width="100%" height="315px" src="https://www.youtube.com/embed/DYX9Xn2HyWw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-## Safety first!
+**There are three paths avaible for you to migrate your GNT to GLM with our [Web Application via MetaMask](https://migrate.golem.network/):**
+
+* [Migration from an Ethereum address](/Products/Migrate/migration-guideline?id=path-1-migration-from-an-ethereum-address) (shown in the video above)
+* [Migration from the Golem app with an additional Ethereum account](/Products/Migrate/migration-guideline?id=path-2-migration-from-the-golem-app-with-an-additional-ethereum-account)
+* [Importing your Golem keys to Metamask](/Products/Migrate/migration-guideline?id=path-3-importing-your-golem-keys-to-metamask)
+
+The first two migration paths are pretty straightforward and intuitive. The third one, even though rather simple as well, has some limitations which should be considered before deciding to go forward. Please be advised, that if you want to continue using Clay Golem (that supports only old GNT) - you will need to create a new account, as the one you are migrating from will no longer be usable and compatible with Clay Golem token standard.
+
+---
+
+### Safety first!
 
 The first thing you want to do is **check the website address and the SECURITY CERTIFICATE (green padlock symbol next to the address)**. Please check this every time you visit the migration website just to avoid falling into scams such as duplicate sites. The address should say **migrate.golem.network**, and the certificate (green padlock symbol) should verify this.
 
 ![safety](/img/migration-tool-01.jpg)
 
----
-
-### Ways to migrate to GLM
-
-> **Sidenote:** We chose the Metamask for our migration application. You can easily import any Ethereum address into this wallet, and it supports multiple accounts. Most importantly, you can easily use [your hardware wallets](https://metamask.zendesk.com/hc/en-us/articles/360020394612-How-to-connect-a-Trezor-or-Ledger-Hardware-Wallet) with it. You will also be able to migrate with and [MyCrypto](/Products/Migrate/migration-guideline?id=external-wallet-support) once their widget is ready and [script](Products/Migrate/migration-guideline?id=migrating-via-automated-script) when we’ve concluded the mainnet test.
-
-
-**There are three options for you to migrate your GNT to GLM with our [migration app](https://migrate.golem.network/):**
-
-* [Migration from an Ethereum address](/Products/Migrate/migration-guideline?id=path-1-migration-from-an-ethereum-address)
-* [Migration from the Golem app with an additional Ethereum account](/Products/Migrate/migration-guideline?id=path-2-migration-from-the-golem-app-with-an-additional-ethereum-account)
-* [Importing your Golem keys to Metamask](/Products/Migrate/migration-guideline?id=path-3-importing-your-golem-keys-to-metamask)
-
-The first two migration paths are pretty straightforward and intuitive. The third one, even though rather simple as well, has some limitations which should be considered before deciding to go forward. Please be advised, that if you want to continue using Clay Golem (that supports only old GNT) - you will need to create a new account, as the one you are migrating from will no longer be usable and compatible with Clay Golem token standard. 
 
 ---
 
-## Path 1: Migration from an Ethereum address
+### Path 1: Migration from an Ethereum address
 
 To use Golem’s migration tool you will be asked to accept its terms and conditions. Without such permission we will not be able to support you in executing token migration.
 After agreeing to terms and conditions, you should connect the migration tool with your Metamask account (2). 
@@ -74,7 +74,7 @@ Congratulations! You’ve managed to migrate your old GNT tokens successfully. T
 ---
 
 
-## Path 2: Migration from the Golem app with an additional Ethereum account
+### Path 2: Migration from the Golem app with an additional Ethereum account
 
 In case you decide to migrate your tokens directly from the Golem app before you start, **please make sure to deactivate the Concent Service first, and unlock the deposited funds**. 
 
@@ -92,7 +92,7 @@ In case you decide to migrate your tokens directly from the Golem app before you
 
 5. The final (7) step is to confirm the transaction. The summary window will pop up for you, to be able to double-check the address and the amount that you are sending.
 
-6. For the next steps, [follow this link](/Products/Migrate/migration-guideline?id=option-1-migration-from-an-ethereum-address).
+6. For the next steps, [follow this link](/Products/Migrate/migration-guideline?id=path-1-migration-from-an-ethereum-address).
 
 ![migrate-golem-app](/img/migration-tool-09.jpg)
 
@@ -104,7 +104,7 @@ Return to the Golem App.
 
 ---
 
-## Path 3: Importing your Golem keys to Metamask
+### Path 3: Importing your Golem keys to Metamask
 
 !> **Important:**  Please bear in mind that Clay Golem app only supports the old GNT. Should you choose to import your Golem app keys to Metamask, after the migration of your old GNT, if you decide to continue using Clay Golem you will be required to create a new account, as the one you’ve imported keys from will no longer be usable. 
 
@@ -136,7 +136,7 @@ Your wallet keys can be found in your app directory. The locations of the app di
 
 ---
 
-## Migrate with MyCrypto
+## Option 2: Migrating with MyCrypto
 
 You also have the option to migrate your old GNT to GLM using the [MyCrypto](https://app.mycrypto.com/migrate/golem) migration tool - in this way you can connect MetaMask and WalletConnect, you also have the option to connect your Trezor or Ledger hardware wallet. Follow the steps below and also feel free to head over to the [MyCrypto blog](https://medium.com/mycrypto/migrate-your-tokens-directly-on-mycrypto-5e6cd45e15db).
 
@@ -164,7 +164,7 @@ Notes before you get started:
 
 That's it! You will just need to confirm the transaction on whichever method you're connected to MyCrypto and you've successfully migrated your GNT to GLM.
 
-## Migrating via Automated Script
+## Option 3: Migrating with our Automated Script
 
 This alternative for migration is not recommended for regular GNT users and holders. It should only be used by exchanges or other custodians with proper security protocols and engineering teams. Following this migration process without the proper experience will risk loss of tokens. If you are not confident that this migration alternative is for you then use the regular migration application.
 
