@@ -136,11 +136,33 @@ Your wallet keys can be found in your app directory. The locations of the app di
 
 ---
 
-## External wallet support
+## Migrate with MyCrypto
 
-MyCrypto (supports Ledger and Trezor):
+You also have the option to migrate your old GNT to GLM using the [MyCrypto](https://app.mycrypto.com/migrate/golem) migration tool - in this way you can connect MetaMask and WalletConnect, you also have the option to connect your Trezor or Ledger hardware wallet. Follow the steps below and also feel free to head over to the [MyCrypto blog](https://medium.com/mycrypto/migrate-your-tokens-directly-on-mycrypto-5e6cd45e15db).
 
-You will also have the option to migrate your tokens using [Mycrypto](https://mycrypto.com/account) once their widget is available - in this way you can connect a Trezor or Ledger hardware wallet to migrate. Head over to the [MyCrypto blog](https://medium.com/@mycrypto) and be on the lookout for an announcement on their upcoming Widget. If you don't see anything there then please wait for an announcement from their team. Note that the 19th of November is the start of migration and users can migrate at any point following.
+Notes before you get started:
+- If you have no accounts connected to app.mycrypto.com, you'll need to connect one first.
+- You'll get a notification to migrate if you have any accounts with GNT.
+- No update of any sort is required -- you may need to do a hard refresh of the site to clear the cache if you don't see the update.
+
+
+1. Look for the GNT migration notification or find the "Your Action Items" sections on the left to begin.
+
+![Your Action Items](/img/mycrypto-1.png)
+
+2. In the "Migrate your GNT to GLM" section, click on Migrate.
+
+![Migrate](/img/mycrypto-2.png)
+
+3. Select the amount of old GNT that you wish to migrate to GLM and click Migrate Golem Tokens.
+
+![Migrate Golem Tokens](/img/mycrypto-3.png)
+
+4. See the details of your transaction and click Confirm and Send.
+
+![Confirm and Send](/img/mycrypto-4.png)
+
+That's it! You will just need to confirm the transaction on whichever method you're connected to MyCrypto and you've successfully migrated your GNT to GLM.
 
 ## Migrating via Automated Script
 
