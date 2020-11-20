@@ -92,7 +92,7 @@ In case you decide to migrate your tokens directly from the Golem app before you
 
 5. The final (7) step is to confirm the transaction. The summary window will pop up for you, to be able to double-check the address and the amount that you are sending.
 
-6. For the next steps, [follow this link](/Products/Migrate/migration-guideline?id=option-1-migration-from-an-ethereum-address).
+6. For the next steps, [follow this link](/Products/Migrate/migration-guideline?id=path-1-migration-from-an-ethereum-address).
 
 ![migrate-golem-app](/img/migration-tool-09.jpg)
 
