@@ -164,7 +164,17 @@ Notes before you get started:
 
 That's it! You will just need to confirm the transaction on whichever method you're connected to MyCrypto and you've successfully migrated your GNT to GLM.
 
-## Option 3: Migrating with our Automated Script
+## Option 3: Migrating with MyEtherWallet
+
+1. Go to [MyEtherWallet](https://www.myetherwallet.com/). After connecting your wallet, on the main landing page "Dashboard" you will see "Golem Migrator - Migrate your old golem tokens today" in the DApps section.
+
+2. Select how much GNT you wish to migrate to GLM (remember that migration is one-way, once you've migrated the GNT is burned).
+
+3. Confirm the transaction and make sure you set an appropriate gas price (usually the default provided is suitable but you can also check [ethgasstation](https://www.ethgasstation.info/)).
+
+Congratulations, you've now migrated your GNT to GLM!
+
+## Option 4: Migrating with our Automated Script
 
 This alternative for migration is not recommended for regular GNT users and holders. It should only be used by exchanges or other custodians with proper security protocols and engineering teams. Following this migration process without the proper experience will risk loss of tokens. If you are not confident that this migration alternative is for you then use the regular migration application.
 
@@ -192,17 +202,7 @@ To run tests, simply `run npm test`
 
 ## GLM Migration exchange support
 
-If you’re storing your **GNT** in any of the following exchanges, there is no action required. They have expressed interest in migrating tokens on their user’s behalf. You do not need to migrate the tokens by yourself, we would recommend that you give your exchange time to organize and wait for an announcement. Larger exchanges will likely take longer to organize so please be patient. This list is continuously updated, so we might add more exchanges later:
-
-* Binance
-* Bitfinex
-* Bithumb
-* Bittrex
-* Coinbase
-* Huobi
-* Okex
-* Poloniex
-* Upbit
+If you’re storing your **GNT** in any of [the following exchanges](https://glm.golem.network/), there is no action required. They have expressed interest in migrating tokens on their user’s behalf. You do not need to migrate the tokens by yourself, we would recommend that you give your exchange time to organize and wait for an announcement. Larger exchanges will likely take longer to organize so please be patient.
 
 If you have any questions, we suggest you contact them directly as they might be better positioned to answer your doubts. You always have the option to migrate tokens yourself.
 
@@ -217,9 +217,15 @@ If you have any questions, we suggest you contact them directly as they might be
 
 ---
 
+##### I don't see my GLM in MetaMask, where is it?
+
+You might need to add the new GLM token. You can use [this quick add link](https://bit.ly/AddGLMmetamask) or add the token address: 0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429
+
+---
+
 ##### I'm holding GNT on an exchange. Do I need to do something?
 
-[Here you can see](Products/Migrate/migration-guideline?id=glm-migration-exchange-support) the list of exchanges supporting the migration. If your exhange is not listed we suggest you contact them directly. If you’re storing your GNT in any of the following exchanges, there is no action required. 
+[Here you can see](https://glm.golem.network/) the list of exchanges supporting the migration. If your exhange is not listed we suggest you contact them directly. If you’re storing your GNT in any of the following exchanges, there is no action required.
 
 ---
 
