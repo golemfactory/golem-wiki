@@ -375,7 +375,7 @@ It may happen then while running the Golem node for longer periods and computing
 ---
 
 ## Port Forwarding Connection Errors
-In order to connect to other Nodes on th Golem Network, your router needs to support UPnP or you need to forward ports **40102**, **40103**, and **3282** manually. Forwarding ports manually requires setting a static IP as well. The process of forwarding ports varies based on your router model. For router specific instructions on how to forward your ports go to **[https://portforward.com/](https://portforward.com/)**, then follow the instructions.
+In order to connect to other Nodes on the Golem Network, your router needs to support UPnP or you need to forward ports **40102**, **40103**, and **3282** manually. Forwarding ports manually requires setting a static IP as well. The process of forwarding ports varies based on your router model. For router specific instructions on how to forward your ports go to **[https://portforward.com/](https://portforward.com/)**, then follow the instructions.
 
 Once you have forwarded your ports try to connect to Golem. If you still cannot connect check your **[golem.log](/Products/Clay-Beta/Understanding-Logs)** for the following errors.
 
