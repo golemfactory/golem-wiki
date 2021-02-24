@@ -5,32 +5,23 @@
 [![Buildbot](https://shield.lwan.ws/img/MN1w5S/buildpackage_windows)](https://buildbot.golem.network/buildbot/#/builders/buildpackage_windows)
 [![codecov](https://codecov.io/gh/golemfactory/golem/branch/develop/graph/badge.svg)](https://codecov.io/gh/golemfactory/golem) -->
 
-?> Golem is a decentralized marketplace for computing power. It enables CPUs and GPUs to connect in a peer-to-peer network, enabling both application owners and individual users ("requestors") to rent resources from other users’ ("providers") machines. These resources can be used to complete tasks requiring any amount of computation time and capacity. 
-Nowadays, centralized cloud providers are in control of these services, these platforms are constrained by closed networks, proprietary payment systems, and hard-coded provisioning operations. Golem proposes an open-source, decentralized and user controlled alternative.
- 
-One core component to Golem’s built-in feature set is an [**Ethereum-based transaction system**](/About/Payments), which enables direct payments between requestors, providers, and software developers.
+?> Golem is a network of nodes that implement the Golem network protocol. We provide the default implementation of such a node in the form of the Golem daemon, called yagna.
 
+The nodes in the network can act as providers or requestors. Both the requestor and the provider share the same implementation of the Golem daemon.
+The diagram above shows the architecture of the network. For the sake of simplicity, it shows just one requestor and one provider.
 
----
-
-### Components
-
->Golem is open source software, distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html).
-
-It communicates with external technologies. Some of them may be downloaded and installed with the Golem package:
-* [Docker](https://www.docker.com/) (Apache License 2)
-* [FreeImage](http://freeimage.sourceforge.net/) (GPLv3)
-* [OpenEXR](http://www.openexr.com/) (modified BSD)
-* [OpenSSL](https://www.openssl.org/) (OpenSSL License)
-* [Python3.6](https://www.python.org/) (PSF license)
-* [OpenCV](https://opencv.org)
-* [Crossbar](https://crossbar.io)
 
 ---
 
 ## Products
 
+### Yagna (The New Milestone)
+
+* [SDK documentation](https://handbook.golem.network)
+
 ### Clay Beta
+
+!> **WARNING:** Clay Golem is no longer supported. To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
 
 * Installing Golem Clay beta on [Windows 10](Products/Clay-Beta/Installation?id=windows-quick-install)
 * Installing Golem Clay beta on [MacOs](Products/Clay-Beta/Installation?id=macos-quick-install)
@@ -52,6 +43,8 @@ Benchmarks:
 
 ### gWASM
 
+!> **WARNING:** Clay Golem is no longer supported. To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
 ?> Any code that can be compiled to WASM, can be distributed on Golem Network. gWASM allows you to run WebAssembly binaries on providers’ machines by turning WASM into a container for server-side parallel computations.
 
 * [Quick start - testing gWASM locally](Products/gWASM/Quick-start)
@@ -63,6 +56,8 @@ Benchmarks:
 ---
 
 ### task API
+
+!> **WARNING:** Clay Golem is no longer supported. To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
 
 The Task API is a python library containing a programming interface and utility functions. When using this library for their project, developers can build apps and have them easily run on Golem.
 

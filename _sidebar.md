@@ -1,11 +1,6 @@
 - <p class="category">About</p>
 <ul class="app-sub-sidebar">
 - [What is Golem](About/What-is-Golem.md)
-- [Payments](About/Payments.md)
-- [Security](About/Security.md)
-- [Use Cases](About/Use-Cases.md)
-- [Roadmap](About/Roadmap.md)
-- [FAQ](About/FAQ.md)
 - [Knowledge Base](About/Knowledge-base.md)</ul> 
 - <p class="category">Products</p>
 - <p class="product">Migrate</p>

@@ -1,5 +1,10 @@
 # Understanding Beta
-## WARNING: This section refers to documentation of the **old** Golem Network (Clay). To read the documentation for the new network (Yagna) , please head to the [Golem SDK documentation](https://handbook.golem.network)
+
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Network (Clay). To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
+
+---
+
 
 The current version of the app available for use is our **Clay Golem Beta**. We have built a
 version of Golem that is good enough for a mainnet release, but we need help from our

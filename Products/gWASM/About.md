@@ -1,3 +1,7 @@
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Network (Clay). To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
+---
+
 # gWASM
 
 ?> Any code that can be compiled to [WASM](https://webassembly.org/), can be distributed on [Golem Network](/../About/What-is-Golem). gWASM allows you to run WebAssembly binaries on providers’ machines by turning WASM into a container for server-side parallel computations.

@@ -44,18 +44,6 @@ Step by step instruction of acquiring GNT during crowdfunding
 
 [Croudfunding manual.pdf](About/img/Crowdfunding_Manual.pdf ':ignore')
 
----
-
-### Press Pack
-
-Inside zipped file you will find:
-
-* Golem Network brand guides 
-* Golem Network key visuals 
-* Golem Network logopack (both vector and raster files)
-* short intro on what is Golem
-
-[Download Golem Network Press pack](About/img/Golem.Network_press_pack.zip ':ignore')
 
 ---
 
