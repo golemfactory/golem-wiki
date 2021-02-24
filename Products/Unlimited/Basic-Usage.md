@@ -1,5 +1,5 @@
 # Golem Unlimited
-
+## WARNNING: This section refers to documentation of the **old** Golem Network (Clay). To read the documentation for the new network (Yagna) , please head to the [Golem SDK documentation](https://handbook.golem.network)
 ---
 
 Golem Unlimited utilizes **trusted** heterogeneous computing resources which are part time idle. It is meant for data center-like setup (e.g., render farms, or desktops within organisation LAN) where network participants trust each other, but it will also support trusted P2P subnetworks (e.g., distributed team machines).
