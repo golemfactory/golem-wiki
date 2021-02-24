@@ -1,6 +1,6 @@
 
 # Installation
-## WARNNING: This section refers to documentation of the **old** Golem Network (Clay). To read the documentation for the new network (Yagna) , please head to the [Golem SDK documentation](https://handbook.golem.network)
+## WARNING: This section refers to documentation of the **old** Golem Network (Clay). To read the documentation for the new network (Yagna) , please head to the [Golem SDK documentation](https://handbook.golem.network)
 ---
 * Before you install and run the Golem app please read and accept our [**Disclaimer and User Interaction Guidelines**](https://golem.network/disclaimer/).
 * **[Minimum Requirements to Run Golem](Products/Clay-Beta/Installation?id=minimum-requirements-to-run-golem)**
