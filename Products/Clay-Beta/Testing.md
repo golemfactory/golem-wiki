@@ -1,3 +1,9 @@
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Network (Clay). To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
+
+---
+
+
 #### How to start testing
 
 Follow installation instructions from [this site](Products/Clay-Beta/Installation)

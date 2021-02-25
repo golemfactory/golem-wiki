@@ -1,3 +1,5 @@
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Network (Clay). To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
 ## Docker Errors on MacOS
 Since 0.18.0 Golem uses Docker for Mac, the first step is to make sure that all previous Docker instances are removed from your machine. Open terminal, press <kbd>&#8984;</kbd> Command + <kbd>&#9251;</kbd> Space on your keyboard and type terminal. Hit <kbd>&#8996;</kbd> Enter and paste command lines provided below:
 

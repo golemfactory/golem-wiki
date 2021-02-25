@@ -1,6 +1,7 @@
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Unlimited. To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
 # Golem Unlimited
 
----
 
 Golem Unlimited utilizes **trusted** heterogeneous computing resources which are part time idle. It is meant for data center-like setup (e.g., render farms, or desktops within organisation LAN) where network participants trust each other, but it will also support trusted P2P subnetworks (e.g., distributed team machines).
 

@@ -1,3 +1,7 @@
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Network (Clay). To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
+---
+
 ### Using the command line interface
 *Date*: 2020-05-13, *Version*: 0.3.1
 

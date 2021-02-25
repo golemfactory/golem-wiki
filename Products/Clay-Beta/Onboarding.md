@@ -1,5 +1,9 @@
 # Onboarding
 
+!> **WARNING:** This section refers to documentation of the **old and not supported version of** Golem Network (Clay). To read the documentation for the New Network (Yagna), please head to the [Golem SDK documentation](https://handbook.golem.network)
+
+---
+
 Onboarding process is the same on all os-es. Instructions below were based on screenshots from Golem v 0.19.0 made on clean Windows 10 Pro installation.
 
 1. You should be presented with two icons on your desktop: "Golem Testnet" and "Golem Mainnet". As they work separately, you will have two different setups for your testnet and mainnet application (username, password, wallet). For the purpose of this tutorial we chose Mainnet
