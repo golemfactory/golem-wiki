@@ -213,7 +213,7 @@ If you have any questions, we suggest you contact them directly as they might be
 
 ##### What is the GLM Token Contract Address?
 
-[0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429](https://etherscan.io/token/0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429)
+[0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429](https://etherscan.io/token/0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429). Do not send tokens directly to this address.
 
 ---
 
@@ -249,14 +249,14 @@ Check if you have "allow contract data" set to "Yes" in your device. Without it 
 
 ##### I do not see GLM on Ledger Live
 
-That is correct. Ledger will support the GLM token appearance in December. If you see GLM toneks on etherscan than you are safe.
+That is correct. Ledger will support the GLM token appearance in December. If you see GLM tokens on etherscan than you are safe.
 
 ---
 
 ##### I'm holding GNT for the long haul. Should I migrate?
 
 Yes, you need to migrate. Basically the old token won't be supported in our new platform which we will soon launch into mainnet, therefore the token will lose its utility and subsequently, stop being supported by exchanges - which will cause it to depreciate.
-In short, it will die down. The good thing is the migration does not end, and it's 1:1 so you have plenty of time to do it without any issues, neither depreciation or paying high gas prices, etc. So read the guide, watch the tutorial, and migrate when you see gas in a decent price (so around 20 gwei is okaish) on [ethgasstation.info](https://ethgasstation.info)
+In short, it will die down. The good thing is the migration does not end, and it's 1:1 so you have plenty of time to do it without any issues, neither depreciation or paying high gas prices, etc. So read the guide, watch the tutorial, and migrate when you see gas in a decent price on [ethgasstation.info](https://ethgasstation.info)
 
 
 
