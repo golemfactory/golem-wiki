@@ -15,7 +15,7 @@ The diagram above shows the architecture of the network. For the sake of simplic
 
 ## Products
 
-### Yagna (The New Milestone)
+### Yagna (the current implementation of the Golem)
 
 * [SDK documentation](https://handbook.golem.network)
 
