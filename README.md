@@ -5,17 +5,13 @@
 [![Buildbot](https://shield.lwan.ws/img/MN1w5S/buildpackage_windows)](https://buildbot.golem.network/buildbot/#/builders/buildpackage_windows)
 [![codecov](https://codecov.io/gh/golemfactory/golem/branch/develop/graph/badge.svg)](https://codecov.io/gh/golemfactory/golem) -->
 
-?> Golem is a decentralized marketplace for computing power. It consists of a network of nodes that implement the Golem network protocol. We provide the default implementation of such a node in the form of the Golem daemon, called yagna.
-
-The nodes in the network can act as providers or requestors. Both the requestor and the provider share the same implementation of the Golem daemon.
-The diagram above shows the architecture of the network. For the sake of simplicity, it shows just one requestor and one provider.
-
+?> Golem is a decentralized computation network, a way of distributing redundant computing power to those who are in need of it, on-demand. It creates a peer-to-peer network where users run a node to buy and/or sell computation. An individual node will either act as a requestor, computing tasks with the use of the network's resources. Or the node will be a provider, selling idle computational resources to the requestors. Together they form the peer-to-peer marketplace known as the Golem Network. We provide the default implementation of such a node in the form of the Golem daemon, called Yagna.
 
 ---
 
 ## Products
 
-### Yagna (The New Milestone)
+### Yagna (the current implementation of the Golem)
 
 * [SDK documentation](https://handbook.golem.network)
 
