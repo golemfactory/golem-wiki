@@ -166,7 +166,7 @@ That's it! You will just need to confirm the transaction on whichever method you
 
 ## Option 3: Migrating with MyEtherWallet
 
-1. Go to [MyEtherWallet](https://www.myetherwallet.com/). After connecting your wallet, on the main landing page "Dashboard" you will see "Golem Migrator - Migrate your old golem tokens today" in the DApps section.
+1. Go to [MyEtherWallet V5](https://v5.myetherwallet.com/). After connecting your wallet, on the main landing page "Dashboard" you will need to scroll to the DApps section and click "View All", here you will see "Golem Migrator - Migrate your old golem tokens today" in the DApps section.
 
 2. Select how much GNT you wish to migrate to GLM (remember that migration is one-way, once you've migrated the GNT is burned).
 
